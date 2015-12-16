@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1a_match_hdl/serfmem_tf_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="serfmem_tf" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="37" />
+   <wvobject fp_name="/serfmem_tf/RAW_CLKCMS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RAW_CLKCMS</obj_property>
+      <obj_property name="ObjectShortName">RAW_CLKCMS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMSCK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMSCK</obj_property>
+      <obj_property name="ObjectShortName">SFMSCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMWP_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMWP_B</obj_property>
+      <obj_property name="ObjectShortName">SFMWP_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMRST_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMRST_B</obj_property>
+      <obj_property name="ObjectShortName">SFMRST_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMCS_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMCS_B</obj_property>
+      <obj_property name="ObjectShortName">SFMCS_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMOUT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMOUT</obj_property>
+      <obj_property name="ObjectShortName">SFMOUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/TDOSFM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TDOSFM</obj_property>
+      <obj_property name="ObjectShortName">TDOSFM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/TRGDLY0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TRGDLY0</obj_property>
+      <obj_property name="ObjectShortName">TRGDLY0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/FEBDLYAE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBDLYAE</obj_property>
+      <obj_property name="ObjectShortName">FEBDLYAE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/FEBDLYCLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBDLYCLK</obj_property>
+      <obj_property name="ObjectShortName">FEBDLYCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/FEBDLYIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBDLYIN</obj_property>
+      <obj_property name="ObjectShortName">FEBDLYIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/FEBLOADDLY" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBLOADDLY</obj_property>
+      <obj_property name="ObjectShortName">FEBLOADDLY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/DCFEB_IN_USE_FM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DCFEB_IN_USE_FM</obj_property>
+      <obj_property name="ObjectShortName">DCFEB_IN_USE_FM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/OPT_COP_ADJ_FM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OPT_COP_ADJ_FM[2:0]</obj_property>
+      <obj_property name="ObjectShortName">OPT_COP_ADJ_FM[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/XL1AOUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XL1AOUT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">XL1AOUT[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/CABLEDLY" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/CRATEID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CRATEID[6:0]</obj_property>
+      <obj_property name="ObjectShortName">CRATEID[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/L1FDLYOUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">L1FDLYOUT[3:0]</obj_property>
+      <obj_property name="ObjectShortName">L1FDLYOUT[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/KILLINPUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
+      <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMDOUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMDOUT[34:0]</obj_property>
+      <obj_property name="ObjectShortName">SFMDOUT[34:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/CLKCMS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKCMS</obj_property>
+      <obj_property name="ObjectShortName">CLKCMS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/RST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/DCFEB_IN_USE_JT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DCFEB_IN_USE_JT</obj_property>
+      <obj_property name="ObjectShortName">DCFEB_IN_USE_JT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/TCKSFM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TCKSFM</obj_property>
+      <obj_property name="ObjectShortName">TCKSFM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/TDISFM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TDISFM</obj_property>
+      <obj_property name="ObjectShortName">TDISFM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/TESTSFMIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TESTSFMIN</obj_property>
+      <obj_property name="ObjectShortName">TESTSFMIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SFMIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMIN</obj_property>
+      <obj_property name="ObjectShortName">SFMIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/OPT_COP_ADJ_JT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+      <obj_property name="ObjectShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/XL1AIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XL1AIN[1:0]</obj_property>
+      <obj_property name="ObjectShortName">XL1AIN[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SERFM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SERFM[10:0]</obj_property>
+      <obj_property name="ObjectShortName">SERFM[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/CBLDSET" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CBLDSET[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CBLDSET[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/FEBCLKDLYIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBCLKDLYIN[4:0]</obj_property>
+      <obj_property name="ObjectShortName">FEBCLKDLYIN[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/CRTIDIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CRTIDIN[6:0]</obj_property>
+      <obj_property name="ObjectShortName">CRTIDIN[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/L1FDLYIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">L1FDLYIN[3:0]</obj_property>
+      <obj_property name="ObjectShortName">L1FDLYIN[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/SETKILLIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SETKILLIN[2:0]</obj_property>
+      <obj_property name="ObjectShortName">SETKILLIN[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/serfmem_tf/PERIOD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group143" type="group">
+      <obj_property name="label">serfmem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/serfmem_tf/uut/CLKCMS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLKCMS</obj_property>
+         <obj_property name="ObjectShortName">CLKCMS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/RAW_CLKCMS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RAW_CLKCMS</obj_property>
+         <obj_property name="ObjectShortName">RAW_CLKCMS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/DCFEB_IN_USE_JT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DCFEB_IN_USE_JT</obj_property>
+         <obj_property name="ObjectShortName">DCFEB_IN_USE_JT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/TCKSFM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TCKSFM</obj_property>
+         <obj_property name="ObjectShortName">TCKSFM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/TDISFM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TDISFM</obj_property>
+         <obj_property name="ObjectShortName">TDISFM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/TESTSFMIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TESTSFMIN</obj_property>
+         <obj_property name="ObjectShortName">TESTSFMIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMIN</obj_property>
+         <obj_property name="ObjectShortName">SFMIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/OPT_COP_ADJ_JT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/XL1AIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">XL1AIN[1:0]</obj_property>
+         <obj_property name="ObjectShortName">XL1AIN[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SERFM" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SERFM[10:0]</obj_property>
+         <obj_property name="ObjectShortName">SERFM[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/CBLDSET" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CBLDSET[7:0]</obj_property>
+         <obj_property name="ObjectShortName">CBLDSET[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/FEBCLKDLYIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBCLKDLYIN[4:0]</obj_property>
+         <obj_property name="ObjectShortName">FEBCLKDLYIN[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/CRTIDIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CRTIDIN[6:0]</obj_property>
+         <obj_property name="ObjectShortName">CRTIDIN[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/L1FDLYIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1FDLYIN[3:0]</obj_property>
+         <obj_property name="ObjectShortName">L1FDLYIN[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SETKILLIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SETKILLIN[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SETKILLIN[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMWP_B" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMWP_B</obj_property>
+         <obj_property name="ObjectShortName">SFMWP_B</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMRST_B" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMRST_B</obj_property>
+         <obj_property name="ObjectShortName">SFMRST_B</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMCS_B" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMCS_B</obj_property>
+         <obj_property name="ObjectShortName">SFMCS_B</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/TDOSFM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TDOSFM</obj_property>
+         <obj_property name="ObjectShortName">TDOSFM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/TRGDLY0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TRGDLY0</obj_property>
+         <obj_property name="ObjectShortName">TRGDLY0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/FEBDLYCLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBDLYCLK</obj_property>
+         <obj_property name="ObjectShortName">FEBDLYCLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/FEBDLYIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBDLYIN</obj_property>
+         <obj_property name="ObjectShortName">FEBDLYIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/FEBLOADDLY" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBLOADDLY</obj_property>
+         <obj_property name="ObjectShortName">FEBLOADDLY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMDOUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMDOUT[34:0]</obj_property>
+         <obj_property name="ObjectShortName">SFMDOUT[34:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clkenain" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clkenain</obj_property>
+         <obj_property name="ObjectShortName">clkenain</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clkena" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clkena</obj_property>
+         <obj_property name="ObjectShortName">clkena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clksfm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clksfm</obj_property>
+         <obj_property name="ObjectShortName">clksfm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clka" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clka</obj_property>
+         <obj_property name="ObjectShortName">clka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/tclka" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tclka</obj_property>
+         <obj_property name="ObjectShortName">tclka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/preclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">preclk</obj_property>
+         <obj_property name="ObjectShortName">preclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clka_c" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clka_c</obj_property>
+         <obj_property name="ObjectShortName">clka_c</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/selshift" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">selshift</obj_property>
+         <obj_property name="ObjectShortName">selshift</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/shiftin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">shiftin</obj_property>
+         <obj_property name="ObjectShortName">shiftin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/shift34in" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">shift34in</obj_property>
+         <obj_property name="ObjectShortName">shift34in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/paddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">paddr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">paddr[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/raddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">raddr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">raddr[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadfinedly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadfinedly</obj_property>
+         <obj_property name="ObjectShortName">loadfinedly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadid</obj_property>
+         <obj_property name="ObjectShortName">loadid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadfebdly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadfebdly</obj_property>
+         <obj_property name="ObjectShortName">loadfebdly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/program" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">program</obj_property>
+         <obj_property name="ObjectShortName">program</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadinx" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadinx</obj_property>
+         <obj_property name="ObjectShortName">loadinx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/init" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">init</obj_property>
+         <obj_property name="ObjectShortName">init</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/regtrgdly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">regtrgdly</obj_property>
+         <obj_property name="ObjectShortName">regtrgdly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loaddly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loaddly</obj_property>
+         <obj_property name="ObjectShortName">loaddly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadwp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadwp</obj_property>
+         <obj_property name="ObjectShortName">loadwp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/sfmrst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sfmrst</obj_property>
+         <obj_property name="ObjectShortName">sfmrst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clr_raddr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_raddr</obj_property>
+         <obj_property name="ObjectShortName">clr_raddr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clr_paddr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_paddr</obj_property>
+         <obj_property name="ObjectShortName">clr_paddr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/chipen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">chipen</obj_property>
+         <obj_property name="ObjectShortName">chipen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rd_hdr_vt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rd_hdr_vt</obj_property>
+         <obj_property name="ObjectShortName">rd_hdr_vt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/prg_hdr_vt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prg_hdr_vt</obj_property>
+         <obj_property name="ObjectShortName">prg_hdr_vt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/testsfm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">testsfm</obj_property>
+         <obj_property name="ObjectShortName">testsfm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/testsfmcs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">testsfmcs</obj_property>
+         <obj_property name="ObjectShortName">testsfmcs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMSCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMSCK</obj_property>
+         <obj_property name="ObjectShortName">SFMSCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/SFMOUT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMOUT</obj_property>
+         <obj_property name="ObjectShortName">SFMOUT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/FEBDLYAE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBDLYAE</obj_property>
+         <obj_property name="ObjectShortName">FEBDLYAE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/DCFEB_IN_USE_FM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DCFEB_IN_USE_FM</obj_property>
+         <obj_property name="ObjectShortName">DCFEB_IN_USE_FM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/OPT_COP_ADJ_FM" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OPT_COP_ADJ_FM[2:0]</obj_property>
+         <obj_property name="ObjectShortName">OPT_COP_ADJ_FM[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/XL1AOUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">XL1AOUT[1:0]</obj_property>
+         <obj_property name="ObjectShortName">XL1AOUT[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/CABLEDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
+         <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/CRATEID" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CRATEID[6:0]</obj_property>
+         <obj_property name="ObjectShortName">CRATEID[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/L1FDLYOUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1FDLYOUT[3:0]</obj_property>
+         <obj_property name="ObjectShortName">L1FDLYOUT[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/KILLINPUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/cksfm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cksfm</obj_property>
+         <obj_property name="ObjectShortName">cksfm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/dv2clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dv2clk</obj_property>
+         <obj_property name="ObjectShortName">dv2clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/sfmdata" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sfmdata</obj_property>
+         <obj_property name="ObjectShortName">sfmdata</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/sfmdata_mon" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sfmdata_mon</obj_property>
+         <obj_property name="ObjectShortName">sfmdata_mon</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rst_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_1</obj_property>
+         <obj_property name="ObjectShortName">rst_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rst1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst1</obj_property>
+         <obj_property name="ObjectShortName">rst1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rst2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst2</obj_property>
+         <obj_property name="ObjectShortName">rst2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/dout" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dout[34:0]</obj_property>
+         <obj_property name="ObjectShortName">dout[34:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/febclkdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">febclkdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">febclkdly[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/dummy" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dummy[1:0]</obj_property>
+         <obj_property name="ObjectShortName">dummy[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/readshft" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">readshft</obj_property>
+         <obj_property name="ObjectShortName">readshft</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loopshft" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loopshft</obj_property>
+         <obj_property name="ObjectShortName">loopshft</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/program_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">program_1</obj_property>
+         <obj_property name="ObjectShortName">program_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadwp_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadwp_1</obj_property>
+         <obj_property name="ObjectShortName">loadwp_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/ready" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/ready_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ready_1</obj_property>
+         <obj_property name="ObjectShortName">ready_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadfinedly_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadfinedly_1</obj_property>
+         <obj_property name="ObjectShortName">loadfinedly_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadid_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadid_1</obj_property>
+         <obj_property name="ObjectShortName">loadid_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loadfebdly_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loadfebdly_1</obj_property>
+         <obj_property name="ObjectShortName">loadfebdly_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/le_loadfinedly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_loadfinedly</obj_property>
+         <obj_property name="ObjectShortName">le_loadfinedly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/le_loadid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_loadid</obj_property>
+         <obj_property name="ObjectShortName">le_loadid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/le_loadfebdly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_loadfebdly</obj_property>
+         <obj_property name="ObjectShortName">le_loadfebdly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/setid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">setid</obj_property>
+         <obj_property name="ObjectShortName">setid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/setfdly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">setfdly</obj_property>
+         <obj_property name="ObjectShortName">setfdly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/setfebdly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">setfebdly</obj_property>
+         <obj_property name="ObjectShortName">setfebdly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/setfebdly_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">setfebdly_1</obj_property>
+         <obj_property name="ObjectShortName">setfebdly_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/clkprog" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clkprog</obj_property>
+         <obj_property name="ObjectShortName">clkprog</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/prgfebclk" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">prgfebclk[7:0]</obj_property>
+         <obj_property name="ObjectShortName">prgfebclk[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/prgcnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">prgcnt[2:0]</obj_property>
+         <obj_property name="ObjectShortName">prgcnt[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/loaddly_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">loaddly_1</obj_property>
+         <obj_property name="ObjectShortName">loaddly_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/preprog" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">preprog</obj_property>
+         <obj_property name="ObjectShortName">preprog</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/delayprog" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">delayprog</obj_property>
+         <obj_property name="ObjectShortName">delayprog</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rstprog" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rstprog</obj_property>
+         <obj_property name="ObjectShortName">rstprog</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/raddr_done" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">raddr_done</obj_property>
+         <obj_property name="ObjectShortName">raddr_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/paddr_done" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">paddr_done</obj_property>
+         <obj_property name="ObjectShortName">paddr_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rchipen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rchipen</obj_property>
+         <obj_property name="ObjectShortName">rchipen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rclken" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rclken</obj_property>
+         <obj_property name="ObjectShortName">rclken</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/rdlycnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rdlycnt[3:0]</obj_property>
+         <obj_property name="ObjectShortName">rdlycnt[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/pchipen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pchipen</obj_property>
+         <obj_property name="ObjectShortName">pchipen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/tog_wp_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tog_wp_b</obj_property>
+         <obj_property name="ObjectShortName">tog_wp_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/testsfm_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">testsfm_1</obj_property>
+         <obj_property name="ObjectShortName">testsfm_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/testsfm_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">testsfm_2</obj_property>
+         <obj_property name="ObjectShortName">testsfm_2</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
