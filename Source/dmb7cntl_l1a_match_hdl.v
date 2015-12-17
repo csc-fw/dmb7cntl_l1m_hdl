@@ -239,6 +239,7 @@ wire [7:1] oeffmon_b;
 
 wire oeovlp;
 
+wire [15:0] gtrgdiag;
 wire [9:1] auxout;
 wire [8:1] multin;
 wire [8:1] fromconx;
@@ -588,6 +589,7 @@ gtrgfifo_i (
 	.CFEBBX(cfebbx),
 	.BXCOUNTOUT(gbxn),
 	.UPDN(l1abufcnt),
+	.GTRGDIAG(gtrgdiag),
 	.DAVERROR(cfebdaverr)
 );
 
@@ -820,6 +822,7 @@ frontmon_i (
 	.LCT(ostrip),               //  5:0
 	.MONOUT(monjtag),           //  9:1
 	.DIAGIN(diagcount),         // 16:1
+	.GTRGDIAG(gtrgdiag),        // 15:0
 	.MULTIN(multin),            //  8:1
 	// Outputs 
 	.OUTPUTENL_B(outputenl_b),

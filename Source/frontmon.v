@@ -38,6 +38,7 @@ module frontmon #(
 	input [5:0] LCT,
 	input [9:1] MONOUT,
 	input [16:1] DIAGIN,
+	input [15:0] GTRGDIAG,
 	input [8:1] MULTIN,
 	output OUTPUTENL_B,
 	output OUTPUTENH_B,
@@ -62,7 +63,7 @@ begin
 		4'd4    : MULTOUT = {  MONITOR, PULSE, INJECT, FIFOEMPT_B};
 		4'd5    : MULTOUT = {  MONOUT,   FIFOPAE_B};
 		4'd6    : MULTOUT = {  MONITOR, PULSE, INJECT, RENFFMON_B};
-		4'd7    : MULTOUT = DIAGIN;
+		4'd7    : MULTOUT = GTRGDIAG;
 		4'd9    : MULTOUT = {DIAGIN[16:9],8'h00};
 		4'd11   : MULTOUT = {AUXOUT,LCT[0],MONITOR[1],LCT[5:1]};
 		4'd14   : MULTOUT = TESTSTAT_MON;

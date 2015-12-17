@@ -52,6 +52,7 @@ module gtrgfifo #(
 	output [3:0] CFEBBX,
 	output [11:0] BXCOUNTOUT,
 	output [7:0] UPDN,
+	output [15:0] GTRGDIAG,
 	output reg [5:1] DAVERROR
 );
 
@@ -162,6 +163,8 @@ assign UPDN[6:0] = UPDN[7] ? l1abuf[9:3] : l1abuf[6:0];
 assign DAVMON = {adav0,tmbmon,(|cdav | |mdav)};
 assign MONITOR = {DPUSH,davs[0],davs[3],tmbmon,DAVMON[0],davs[16]};
 assign davs = {alct_dav_scope[1],lct_5bx_or,cfeb_md_davs,tmb_dav_scope[1]};
+
+assign GTRGDIAG = {lct_5bx_or,CABLEDLY[5:4],KILLINPUT[2:0],DAVEN[2],dly_cfeb_dav[2],cdav[2],cdav_dly[2],cdav_sync[2],DAV[2]};
 
 assign ramina = {davss,davs[16]};
 assign raminb = {raminbx[12],raminbx[12]};
@@ -410,25 +413,25 @@ end
 
 always @(posedge CLK)
 begin
-	alct_dav_scope = {alct_dav_scope[3:1],dly_alct_dav}; //ALCT DAV pipe
-	tmb_dav_scope  = {tmb_dav_scope[3:1],dly_tmb_dav};   //TMB DAV pipe
-	cfeb_dav_scope = {cfeb_dav_scope[3:1],cfeb_dav_or};  //CFEB DAV pipe
+	alct_dav_scope <= {alct_dav_scope[3:1],dly_alct_dav}; //ALCT DAV pipe
+	tmb_dav_scope  <= {tmb_dav_scope[3:1],dly_tmb_dav};   //TMB DAV pipe
+	cfeb_dav_scope <= {cfeb_dav_scope[3:1],cfeb_dav_or};  //CFEB DAV pipe
 end
 
 always @(posedge CLK or posedge RDRST)
 begin
 	if(RDRST)
 		begin
-			alct_dav_scope_reg = 5'b00000; //ALCT DAV scope
-			tmb_dav_scope_reg  = 5'b00000; //TMB DAV scope
-			cfeb_dav_scope_reg = 5'b00000; //CFEB DAV scope
+			alct_dav_scope_reg <= 5'b00000; //ALCT DAV scope
+			tmb_dav_scope_reg  <= 5'b00000; //TMB DAV scope
+			cfeb_dav_scope_reg <= 5'b00000; //CFEB DAV scope
 		end
 	else
 		if(DPUSH)
 			begin
-				alct_dav_scope_reg = {alct_dav_scope,dly_alct_dav}; //ALCT DAV scope
-				tmb_dav_scope_reg  = {tmb_dav_scope,dly_tmb_dav}; //TMB DAV scope
-				cfeb_dav_scope_reg = {cfeb_dav_scope,cfeb_dav_or}; //CFEB DAV scope
+				alct_dav_scope_reg <= {alct_dav_scope,dly_alct_dav}; //ALCT DAV scope
+				tmb_dav_scope_reg  <= {tmb_dav_scope,dly_tmb_dav}; //TMB DAV scope
+				cfeb_dav_scope_reg <= {cfeb_dav_scope,cfeb_dav_or}; //CFEB DAV scope
 			end
 end
 
@@ -441,34 +444,34 @@ end
 
 always @(posedge CLK)
 begin
-	lct0_m = {lct0_m[2:0],lct0_p1};
-	lct1_m = {lct1_m[2:0],lct1_p1};
-	lct2_m = {lct2_m[2:0],lct2_p1};
-	lct3_m = {lct3_m[2:0],lct3_p1};
-	lct4_m = {lct4_m[2:0],lct4_p1};
-	lct5_m = {lct5_m[2:0],lct5_p1};
+	lct0_m <= {lct0_m[2:0],lct0_p1};
+	lct1_m <= {lct1_m[2:0],lct1_p1};
+	lct2_m <= {lct2_m[2:0],lct2_p1};
+	lct3_m <= {lct3_m[2:0],lct3_p1};
+	lct4_m <= {lct4_m[2:0],lct4_p1};
+	lct5_m <= {lct5_m[2:0],lct5_p1};
 end
 
 always @(posedge CLK or posedge RDRST)
 begin
 	if(RDRST)
 		begin
-			lct0_m_reg = 5'b00000; 
-			lct1_m_reg = 5'b00000; 
-			lct2_m_reg = 5'b00000; 
-			lct3_m_reg = 5'b00000; 
-			lct4_m_reg = 5'b00000; 
-			lct5_m_reg = 5'b00000; 
+			lct0_m_reg <= 5'b00000; 
+			lct1_m_reg <= 5'b00000; 
+			lct2_m_reg <= 5'b00000; 
+			lct3_m_reg <= 5'b00000; 
+			lct4_m_reg <= 5'b00000; 
+			lct5_m_reg <= 5'b00000; 
 		end
 	else
 		if(DPUSH)
 			begin
-				lct0_m_reg = {lct0_m,lct0_p1};
-				lct1_m_reg = {lct1_m,lct1_p1};
-				lct2_m_reg = {lct2_m,lct2_p1};
-				lct3_m_reg = {lct3_m,lct3_p1};
-				lct4_m_reg = {lct4_m,lct4_p1};
-				lct5_m_reg = {lct5_m,lct5_p1};
+				lct0_m_reg <= {lct0_m,lct0_p1};
+				lct1_m_reg <= {lct1_m,lct1_p1};
+				lct2_m_reg <= {lct2_m,lct2_p1};
+				lct3_m_reg <= {lct3_m,lct3_p1};
+				lct4_m_reg <= {lct4_m,lct4_p1};
+				lct5_m_reg <= {lct5_m,lct5_p1};
 			end
 end
 

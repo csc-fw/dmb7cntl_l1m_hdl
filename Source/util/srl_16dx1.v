@@ -28,8 +28,11 @@ module srl_16dx1(
 );
 
 (* syn_srlstyle = "select_srl" *)
-   reg [15:0] sr;
 
+   reg [15:0] sr;
+	initial begin
+		sr = 16'h0000;
+	end
    always @(posedge CLK)begin
       if (CE)
          sr <= {sr[14:0], I};
