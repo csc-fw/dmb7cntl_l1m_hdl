@@ -305,13 +305,28 @@ begin
 	for(i=1;i<6;i=i+1) begin: idx1
 		// DAVs returned from CFEBs
 		sync_mux Cdav_Sync_Mux_i (.C(CLK),  .RST(RST),.D(DAV[i]),.S(CABLEDLY[5:4]),.KILL(killcfeb[i]),.Q(cdav_sync[i]),.ENOUT(DAVEN[i])); // Synchronization, clock phase selection, and cable delay (1.5 to 3 clocks)
-		srl_16dx1 Cdavrevf_srl_i (.CLK(CLK),.CE(DAVEN[i]),.A(~L1FINEDELAY),  .I(cdav_sync[i]),.O(cdav_dly[i]),    .Q15()); // Reverse L1A Fine delay
-		srl_16dx1 Cdavfdly_srl_i (.CLK(CLK),.CE(1'b1),    .A(FEBDAVDLY[3:0]),.I(cdav[i]),     .O(dly_cfeb_dav[i]),.Q15()); // CFEB DAV delay (4 bits)
+		srl_16dx1 Cdavrevf_srl_i (.CLK(CLK),.CE(1'b1),.A(~L1FINEDELAY),  .I(cdav_sync[i]),.O(cdav_dly[i]),    .Q15()); // Reverse L1A Fine delay
+		srl_16dx1 Cdavfdly_srl_i (.CLK(CLK),.CE(1'b1),.A(FEBDAVDLY[3:0]),.I(cdav[i]),     .O(dly_cfeb_dav[i]),.Q15()); // CFEB DAV delay (4 bits)
+		
+		always @(posedge CLK or posedge RST)
+		begin
+			if(RST)
+				begin
+					cdav[i] <= 1'b0;
+					mdav[i] <= 1'b0;
+				end
+			else
+				if(DAVEN[i])
+					begin
+						cdav[i] <= cdav_dly[i];
+						mdav[i] <= mdav_dly[i];
+					end
+		end
 		
 		// multiple Overlap errors (MOVLPs) from CFEBs
 		sync_mux Mdav_Sync_Mux_i (.C(CLK),  .RST(RST),.D(MOVLP[i]),.S(CABLEDLY[5:4]),.KILL(killcfeb[i]),.Q(mdav_sync[i]),.ENOUT(dummy[i])); // Synchronization, clock phase selection, and cable delay (1.5 to 3 clocks)
-		srl_16dx1 Mdavrevf_srl_i (.CLK(CLK),.CE(DAVEN[i]),.A(~L1FINEDELAY),  .I(mdav_sync[i]),.O(mdav_dly[i]),    .Q15()); // Reverse L1A Fine delay
-		srl_16dx1 Mdavfdly_srl_i (.CLK(CLK),.CE(1'b1),    .A(FEBDAVDLY[3:0]),.I(mdav[i]),     .O(dly_cfeb_mov[i]),.Q15()); // CFEB MOVLP delay (4 bits)
+		srl_16dx1 Mdavrevf_srl_i (.CLK(CLK),.CE(1'b1),.A(~L1FINEDELAY),  .I(mdav_sync[i]),.O(mdav_dly[i]),    .Q15()); // Reverse L1A Fine delay
+		srl_16dx1 Mdavfdly_srl_i (.CLK(CLK),.CE(1'b1),.A(FEBDAVDLY[3:0]),.I(mdav[i]),     .O(dly_cfeb_mov[i]),.Q15()); // CFEB MOVLP delay (4 bits)
 	end
 	for(i=0;i<12;i=i+1) begin: idx2
 		// BX Counter and delay
@@ -324,17 +339,9 @@ endgenerate
 always @(posedge CLK or posedge RST)
 begin
 	if(RST)
-		begin
-			cdav         <= 5'b00000;
-			mdav         <= 5'b00000;
-			cfeb_md_davs <= 10'b0000000000;
-		end
+		cfeb_md_davs <= 10'b0000000000;
 	else
-		begin
-			cdav         <= cdav_dly;
-			mdav         <= mdav_dly;
-			cfeb_md_davs <= {dly_cfeb_mov,dly_cfeb_dav};
-		end
+		cfeb_md_davs <= {dly_cfeb_mov,dly_cfeb_dav};
 end
 
 // DAV returned from TMB
