@@ -164,7 +164,7 @@ assign DAVMON = {adav0,tmbmon,(|cdav | |mdav)};
 assign MONITOR = {DPUSH,davs[0],davs[3],tmbmon,DAVMON[0],davs[16]};
 assign davs = {alct_dav_scope[1],lct_5bx_or,cfeb_md_davs,tmb_dav_scope[1]};
 
-assign GTRGDIAG = {lct_5bx_or,CABLEDLY[5:4],KILLINPUT[2:0],DAVEN[2],dly_cfeb_dav[2],cdav[2],cdav_dly[2],cdav_sync[2],DAV[2]};
+assign GTRGDIAG = {lct_5bx_or,CABLEDLY[5:4],KILLINPUT[2:0],DAVEN[3],dly_cfeb_dav[3],cdav[3],cdav_dly[3],cdav_sync[3],DAV[3]};
 
 assign ramina = {davss,davs[16]};
 assign raminb = {raminbx[12],raminbx[12]};
@@ -321,11 +321,20 @@ end
 endgenerate
 
 
-always @(posedge CLK)
+always @(posedge CLK or posedge RST)
 begin
-	cdav         <= cdav_dly;
-	mdav         <= mdav_dly;
-	cfeb_md_davs <= {dly_cfeb_mov,dly_cfeb_dav};
+	if(RST)
+		begin
+			cdav         <= 5'b00000;
+			mdav         <= 5'b00000;
+			cfeb_md_davs <= 10'b0000000000;
+		end
+	else
+		begin
+			cdav         <= cdav_dly;
+			mdav         <= mdav_dly;
+			cfeb_md_davs <= {dly_cfeb_mov,dly_cfeb_dav};
+		end
 end
 
 // DAV returned from TMB
