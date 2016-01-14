@@ -89,7 +89,8 @@ assign preinj  = finj_1 & ~finj_2; // leading edge
 assign prepls  = fpls_1 & ~fpls_2; // leading edge
 assign le_fped = FPED   & ~fped_1; // leading edge
 assign SYNCIP  = preinj | prepls;
-assign rstpls  = RST | pls_end;
+//assign rstpls  = RST | pls_end;
+assign rstpls  = RST | pls_end | PEDESTAL;
 assign INJECT  = INJDLY[0] ? pos_inj : neg_inj; 
 assign PULSE   = EXTDLY[0] ? pos_pls : neg_pls;
 assign ce_plscnt = (INJECT | PULSE) & (inj_hld | pls_hld);
@@ -155,8 +156,10 @@ begin
 		end
 end
 
-srl_16dx1 int_inject_delay_i (.CLK(CLK80), .CE(1'b1),.A(INJDLY[4:1]),.I(en_inj_hld),.O(dly_inj),.Q15());
-srl_16dx1 ext_pulse_delay_i  (.CLK(CLK80), .CE(1'b1),.A(EXTDLY[4:1]),.I(en_pls_hld),.O(dly_pls),.Q15());
+//srl_16dx1 int_inject_delay_i (.CLK(CLK80), .CE(1'b1),.A(INJDLY[4:1]),.I(en_inj_hld),.O(dly_inj),.Q15());
+//srl_16dx1 ext_pulse_delay_i  (.CLK(CLK80), .CE(1'b1),.A(EXTDLY[4:1]),.I(en_pls_hld),.O(dly_pls),.Q15());
+srl_16dx1 int_inject_delay_i (.CLK(CLK80), .CE(1'b1),.A(INJDLY[4:1]),.I(inj_hld),.O(dly_inj),.Q15());
+srl_16dx1 ext_pulse_delay_i  (.CLK(CLK80), .CE(1'b1),.A(EXTDLY[4:1]),.I(pls_hld),.O(dly_pls),.Q15());
 
 always @(posedge CLK80)
 begin

@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1a_match_hdl/trig_dav_tf_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="trig_dav_tf" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="46" />
+   <wvobject fp_name="/trig_dav_tf/RAWLCT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RAWLCT[5:0]</obj_property>
+      <obj_property name="ObjectShortName">RAWLCT[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/TMBDAV" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TMBDAV</obj_property>
+      <obj_property name="ObjectShortName">TMBDAV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/FEBDAV" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBDAV[5:1]</obj_property>
+      <obj_property name="ObjectShortName">FEBDAV[5:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/SCPSYN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SCPSYN</obj_property>
+      <obj_property name="ObjectShortName">SCPSYN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/L1M_LCT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">L1M_LCT[5:1]</obj_property>
+      <obj_property name="ObjectShortName">L1M_LCT[5:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/L1A_CFEB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">L1A_CFEB</obj_property>
+      <obj_property name="ObjectShortName">L1A_CFEB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/INJ_PULSE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">INJ_PULSE</obj_property>
+      <obj_property name="ObjectShortName">INJ_PULSE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/EXT_PULSE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">EXT_PULSE</obj_property>
+      <obj_property name="ObjectShortName">EXT_PULSE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/L1ASRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">L1ASRST</obj_property>
+      <obj_property name="ObjectShortName">L1ASRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/PREL1RLS_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PREL1RLS_B</obj_property>
+      <obj_property name="ObjectShortName">PREL1RLS_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/FEB_GRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FEB_GRST</obj_property>
+      <obj_property name="ObjectShortName">FEB_GRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CTRLREADY" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CTRLREADY</obj_property>
+      <obj_property name="ObjectShortName">CTRLREADY</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/le_inj" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">le_inj</obj_property>
+      <obj_property name="ObjectShortName">le_inj</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/inj_mid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inj_mid</obj_property>
+      <obj_property name="ObjectShortName">inj_mid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/rl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rl[9:1]</obj_property>
+      <obj_property name="ObjectShortName">rl[9:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/srl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">srl[9:1]</obj_property>
+      <obj_property name="ObjectShortName">srl[9:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/lw" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">lw[6:0]</obj_property>
+      <obj_property name="ObjectShortName">lw[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/pre_tmbdav" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pre_tmbdav</obj_property>
+      <obj_property name="ObjectShortName">pre_tmbdav</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/raw_l1a" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">raw_l1a</obj_property>
+      <obj_property name="ObjectShortName">raw_l1a</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/clkcms" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clkcms</obj_property>
+      <obj_property name="ObjectShortName">clkcms</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/clk80" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk80</obj_property>
+      <obj_property name="ObjectShortName">clk80</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/uut/mirrclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mirrclk</obj_property>
+      <obj_property name="ObjectShortName">mirrclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/uut/trgdly0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">trgdly0</obj_property>
+      <obj_property name="ObjectShortName">trgdly0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/fpgaready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">fpgaready</obj_property>
+      <obj_property name="ObjectShortName">fpgaready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/L1ACC" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">L1ACC</obj_property>
+      <obj_property name="ObjectShortName">L1ACC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/ALCTDAV" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ALCTDAV</obj_property>
+      <obj_property name="ObjectShortName">ALCTDAV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/MOLAP" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">MOLAP[5:1]</obj_property>
+      <obj_property name="ObjectShortName">MOLAP[5:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CCBCAL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CCBCAL[2:0]</obj_property>
+      <obj_property name="ObjectShortName">CCBCAL[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CCBCMD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CCBCMD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">CCBCMD[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CCBCMDSTRB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CCBCMDSTRB</obj_property>
+      <obj_property name="ObjectShortName">CCBCMDSTRB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CCBDATA" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CCBDATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CCBDATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CCBDATASTRB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CCBDATASTRB</obj_property>
+      <obj_property name="ObjectShortName">CCBDATASTRB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/BX0IN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">BX0IN</obj_property>
+      <obj_property name="ObjectShortName">BX0IN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/BXRSTIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">BXRSTIN</obj_property>
+      <obj_property name="ObjectShortName">BXRSTIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/L1ARSTIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">L1ARSTIN</obj_property>
+      <obj_property name="ObjectShortName">L1ARSTIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/RESETIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RESETIN</obj_property>
+      <obj_property name="ObjectShortName">RESETIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/CLKENAIN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKENAIN</obj_property>
+      <obj_property name="ObjectShortName">CLKENAIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/inj_1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inj_1</obj_property>
+      <obj_property name="ObjectShortName">inj_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/inj2lct" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inj2lct[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inj2lct[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/cfeblat" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cfeblat[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cfeblat[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/tmbd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmbd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tmbd[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/tmbdv" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmbdv[3:0]</obj_property>
+      <obj_property name="ObjectShortName">tmbdv[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/muxout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">muxout</obj_property>
+      <obj_property name="ObjectShortName">muxout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/trig_dav_tf/mtchw" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mtchw[6:1]</obj_property>
+      <obj_property name="ObjectShortName">mtchw[6:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group231" type="group">
+      <obj_property name="label">trigcntrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/CGTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CGTRG</obj_property>
+         <obj_property name="ObjectShortName">CGTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/BGTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">BGTRG</obj_property>
+         <obj_property name="ObjectShortName">BGTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/CMODE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CMODE</obj_property>
+         <obj_property name="ObjectShortName">CMODE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/CALTRGSEL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CALTRGSEL</obj_property>
+         <obj_property name="ObjectShortName">CALTRGSEL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/EAFEB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">EAFEB</obj_property>
+         <obj_property name="ObjectShortName">EAFEB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/DCFEB_IN_USE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DCFEB_IN_USE</obj_property>
+         <obj_property name="ObjectShortName">DCFEB_IN_USE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/OPT_COP_ADJ" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OPT_COP_ADJ[2:0]</obj_property>
+         <obj_property name="ObjectShortName">OPT_COP_ADJ[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/CSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">CSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/BSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">BSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">BSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/L1FINEDELAY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1FINEDELAY[3:0]</obj_property>
+         <obj_property name="ObjectShortName">L1FINEDELAY[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/L1LATNCY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1LATNCY[5:0]</obj_property>
+         <obj_property name="ObjectShortName">L1LATNCY[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/GPUSHDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">GPUSHDLY[4:0]</obj_property>
+         <obj_property name="ObjectShortName">GPUSHDLY[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/CABLEDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
+         <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/XL1ADLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">XL1ADLY[1:0]</obj_property>
+         <obj_property name="ObjectShortName">XL1ADLY[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/KILLINPUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/JTRGEN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">JTRGEN[3:0]</obj_property>
+         <obj_property name="ObjectShortName">JTRGEN[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/L1ACFEB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1ACFEB</obj_property>
+         <obj_property name="ObjectShortName">L1ACFEB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/L1A_MATCH" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1A_MATCH[5:1]</obj_property>
+         <obj_property name="ObjectShortName">L1A_MATCH[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/OSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">OSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/BOSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">BOSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">BOSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/bstrip_d" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bstrip_d[5:0]</obj_property>
+         <obj_property name="ObjectShortName">bstrip_d[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/strip_m1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">strip_m1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">strip_m1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/strip_m2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">strip_m2[5:1]</obj_property>
+         <obj_property name="ObjectShortName">strip_m2[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/killcfeb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">killcfeb[5:1]</obj_property>
+         <obj_property name="ObjectShortName">killcfeb[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/lct_match" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_match[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_match[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/l1mtch" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1mtch[5:0]</obj_property>
+         <obj_property name="ObjectShortName">l1mtch[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/d_lct_out_z" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">d_lct_out_z</obj_property>
+         <obj_property name="ObjectShortName">d_lct_out_z</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/jcalsel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">jcalsel</obj_property>
+         <obj_property name="ObjectShortName">jcalsel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/cal1_sel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cal1_sel</obj_property>
+         <obj_property name="ObjectShortName">cal1_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/cal_mode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cal_mode</obj_property>
+         <obj_property name="ObjectShortName">cal_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/all_sel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">all_sel</obj_property>
+         <obj_property name="ObjectShortName">all_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/l1a" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1a</obj_property>
+         <obj_property name="ObjectShortName">l1a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/gtrgout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgout</obj_property>
+         <obj_property name="ObjectShortName">gtrgout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/killalct" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">killalct</obj_property>
+         <obj_property name="ObjectShortName">killalct</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/killtmb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">killtmb</obj_property>
+         <obj_property name="ObjectShortName">killtmb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/d_lct_out_i" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">d_lct_out_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">d_lct_out_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/GFPUSH" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GFPUSH</obj_property>
+         <obj_property name="ObjectShortName">GFPUSH</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/LCTERR" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LCTERR</obj_property>
+         <obj_property name="ObjectShortName">LCTERR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/bstrip_r" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bstrip_r[5:0]</obj_property>
+         <obj_property name="ObjectShortName">bstrip_r[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/lct_match_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_match_1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_match_1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/bgtrg_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bgtrg_1</obj_property>
+         <obj_property name="ObjectShortName">bgtrg_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgcntrl_i/gtrgout_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgout_1</obj_property>
+         <obj_property name="ObjectShortName">gtrgout_1</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group167" type="group">
+      <obj_property name="label">trig_dav_sim</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/trig_dav_tf/uut/clkcms" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clkcms</obj_property>
+         <obj_property name="ObjectShortName">clkcms</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/clk80" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk80</obj_property>
+         <obj_property name="ObjectShortName">clk80</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/fpgaready" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpgaready</obj_property>
+         <obj_property name="ObjectShortName">fpgaready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/RAWLCT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">RAWLCT[5:0]</obj_property>
+         <obj_property name="ObjectShortName">RAWLCT[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/L1ACC" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1ACC</obj_property>
+         <obj_property name="ObjectShortName">L1ACC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ALCTDAV" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ALCTDAV</obj_property>
+         <obj_property name="ObjectShortName">ALCTDAV</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/TMBDAV" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TMBDAV</obj_property>
+         <obj_property name="ObjectShortName">TMBDAV</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/FEBDAV" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBDAV[5:1]</obj_property>
+         <obj_property name="ObjectShortName">FEBDAV[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/MOLAP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">MOLAP[5:1]</obj_property>
+         <obj_property name="ObjectShortName">MOLAP[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CCBCAL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBCAL[2:0]</obj_property>
+         <obj_property name="ObjectShortName">CCBCAL[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/SCPSYN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SCPSYN</obj_property>
+         <obj_property name="ObjectShortName">SCPSYN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/INJ_PULSE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">INJ_PULSE</obj_property>
+         <obj_property name="ObjectShortName">INJ_PULSE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/EXT_PULSE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">EXT_PULSE</obj_property>
+         <obj_property name="ObjectShortName">EXT_PULSE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CCBCMD" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBCMD[5:0]</obj_property>
+         <obj_property name="ObjectShortName">CCBCMD[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CCBCMDSTRB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBCMDSTRB</obj_property>
+         <obj_property name="ObjectShortName">CCBCMDSTRB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CCBDATA" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBDATA[7:0]</obj_property>
+         <obj_property name="ObjectShortName">CCBDATA[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CCBDATASTRB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBDATASTRB</obj_property>
+         <obj_property name="ObjectShortName">CCBDATASTRB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/BX0IN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">BX0IN</obj_property>
+         <obj_property name="ObjectShortName">BX0IN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/BXRSTIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">BXRSTIN</obj_property>
+         <obj_property name="ObjectShortName">BXRSTIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/L1ARSTIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1ARSTIN</obj_property>
+         <obj_property name="ObjectShortName">L1ARSTIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/RESETIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RESETIN</obj_property>
+         <obj_property name="ObjectShortName">RESETIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CLKENAIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLKENAIN</obj_property>
+         <obj_property name="ObjectShortName">CLKENAIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/L1ASRST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1ASRST</obj_property>
+         <obj_property name="ObjectShortName">L1ASRST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/PREL1RLS_B" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PREL1RLS_B</obj_property>
+         <obj_property name="ObjectShortName">PREL1RLS_B</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/le_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_rst</obj_property>
+         <obj_property name="ObjectShortName">le_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/febrst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">febrst</obj_property>
+         <obj_property name="ObjectShortName">febrst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/le_fpgaready" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_fpgaready</obj_property>
+         <obj_property name="ObjectShortName">le_fpgaready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/clr_fpgarst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_fpgarst</obj_property>
+         <obj_property name="ObjectShortName">clr_fpgarst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/fpgarst_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fpgarst_cnt[3:0]</obj_property>
+         <obj_property name="ObjectShortName">fpgarst_cnt[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/dv128clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dv128clk</obj_property>
+         <obj_property name="ObjectShortName">dv128clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/clr_crdy_cnt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_crdy_cnt</obj_property>
+         <obj_property name="ObjectShortName">clr_crdy_cnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/crdy_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">crdy_cnt[15:0]</obj_property>
+         <obj_property name="ObjectShortName">crdy_cnt[15:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/calgtrg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">calgtrg</obj_property>
+         <obj_property name="ObjectShortName">calgtrg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/cal_mode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cal_mode</obj_property>
+         <obj_property name="ObjectShortName">cal_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/caltrgsel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">caltrgsel</obj_property>
+         <obj_property name="ObjectShortName">caltrgsel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/enacfeb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">enacfeb</obj_property>
+         <obj_property name="ObjectShortName">enacfeb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/dcfeb_in_use_fm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dcfeb_in_use_fm</obj_property>
+         <obj_property name="ObjectShortName">dcfeb_in_use_fm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/opt_cop_adj_fm" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">opt_cop_adj_fm[2:0]</obj_property>
+         <obj_property name="ObjectShortName">opt_cop_adj_fm[2:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/callct" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">callct[5:0]</obj_property>
+         <obj_property name="ObjectShortName">callct[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/l1fndlym" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1fndlym[3:0]</obj_property>
+         <obj_property name="ObjectShortName">l1fndlym[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/l1latency" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1latency[5:0]</obj_property>
+         <obj_property name="ObjectShortName">l1latency[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/gpushdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">gpushdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">gpushdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/cabledly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cabledly[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cabledly[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/xl1a2cal" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xl1a2cal[1:0]</obj_property>
+         <obj_property name="ObjectShortName">xl1a2cal[1:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/killinput" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">killinput[2:0]</obj_property>
+         <obj_property name="ObjectShortName">killinput[2:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/jtrgen" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">jtrgen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">jtrgen[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/tmbdavdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tmbdavdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">tmbdavdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/alctdavdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alctdavdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">alctdavdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/febdavdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">febdavdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">febdavdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/injdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">injdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">injdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/extdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">extdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">extdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/calgdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">calgdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">calgdly[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/callctdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">callctdly[3:0]</obj_property>
+         <obj_property name="ObjectShortName">callctdly[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/l1acfeb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1acfeb</obj_property>
+         <obj_property name="ObjectShortName">l1acfeb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/gfpush" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gfpush</obj_property>
+         <obj_property name="ObjectShortName">gfpush</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/errorlct" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">errorlct</obj_property>
+         <obj_property name="ObjectShortName">errorlct</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/l1a_match" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1a_match[5:1]</obj_property>
+         <obj_property name="ObjectShortName">l1a_match[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ostrip" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ostrip[5:0]</obj_property>
+         <obj_property name="ObjectShortName">ostrip[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/lct" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct[5:0]</obj_property>
+         <obj_property name="ObjectShortName">lct[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/trgdly0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">trgdly0</obj_property>
+         <obj_property name="ObjectShortName">trgdly0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/outen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">outen</obj_property>
+         <obj_property name="ObjectShortName">outen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/clr0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr0</obj_property>
+         <obj_property name="ObjectShortName">clr0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/release_poh" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">release_poh</obj_property>
+         <obj_property name="ObjectShortName">release_poh</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/pwr_on_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pwr_on_cnt[7:0]</obj_property>
+         <obj_property name="ObjectShortName">pwr_on_cnt[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/davmon" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">davmon[2:0]</obj_property>
+         <obj_property name="ObjectShortName">davmon[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/dpush" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dpush</obj_property>
+         <obj_property name="ObjectShortName">dpush</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/lct2l1a" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct2l1a[7:0]</obj_property>
+         <obj_property name="ObjectShortName">lct2l1a[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/cdavtime" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cdavtime[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cdavtime[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/tmbdavtime" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tmbdavtime[7:0]</obj_property>
+         <obj_property name="ObjectShortName">tmbdavtime[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/cdavscope" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cdavscope[4:0]</obj_property>
+         <obj_property name="ObjectShortName">cdavscope[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/tmbdavscope" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tmbdavscope[4:0]</obj_property>
+         <obj_property name="ObjectShortName">tmbdavscope[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/affscope" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">affscope[4:0]</obj_property>
+         <obj_property name="ObjectShortName">affscope[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/clkena" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clkena</obj_property>
+         <obj_property name="ObjectShortName">clkena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/tmdavrst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tmdavrst</obj_property>
+         <obj_property name="ObjectShortName">tmdavrst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/pop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop</obj_property>
+         <obj_property name="ObjectShortName">pop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/bc0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bc0</obj_property>
+         <obj_property name="ObjectShortName">bc0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/bx0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bx0</obj_property>
+         <obj_property name="ObjectShortName">bx0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/bxrst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bxrst</obj_property>
+         <obj_property name="ObjectShortName">bxrst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/l1arst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1arst</obj_property>
+         <obj_property name="ObjectShortName">l1arst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/davenbl" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">davenbl[5:1]</obj_property>
+         <obj_property name="ObjectShortName">davenbl[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/cfebbx" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cfebbx[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cfebbx[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/gbxn" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">gbxn[11:0]</obj_property>
+         <obj_property name="ObjectShortName">gbxn[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/gtrgfifoerr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgfifoerr</obj_property>
+         <obj_property name="ObjectShortName">gtrgfifoerr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/gempty_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gempty_b</obj_property>
+         <obj_property name="ObjectShortName">gempty_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/monitor" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">monitor[7:1]</obj_property>
+         <obj_property name="ObjectShortName">monitor[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/davact" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">davact[16:0]</obj_property>
+         <obj_property name="ObjectShortName">davact[16:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/gtrgdiag" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgdiag[15:0]</obj_property>
+         <obj_property name="ObjectShortName">gtrgdiag[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbped" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbped</obj_property>
+         <obj_property name="ObjectShortName">ccbped</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbinjin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbinjin</obj_property>
+         <obj_property name="ObjectShortName">ccbinjin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbplsin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbplsin</obj_property>
+         <obj_property name="ObjectShortName">ccbplsin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/pedestal" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pedestal</obj_property>
+         <obj_property name="ObjectShortName">pedestal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/l1abufcnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1abufcnt[7:0]</obj_property>
+         <obj_property name="ObjectShortName">l1abufcnt[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/cfebdaverr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cfebdaverr[5:1]</obj_property>
+         <obj_property name="ObjectShortName">cfebdaverr[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/jrst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">jrst</obj_property>
+         <obj_property name="ObjectShortName">jrst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/inject" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">inject</obj_property>
+         <obj_property name="ObjectShortName">inject</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/pulse" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pulse</obj_property>
+         <obj_property name="ObjectShortName">pulse</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/prel1rls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prel1rls</obj_property>
+         <obj_property name="ObjectShortName">prel1rls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ttcdcal" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ttcdcal[2:0]</obj_property>
+         <obj_property name="ObjectShortName">ttcdcal[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/clr_ccbcal" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_ccbcal</obj_property>
+         <obj_property name="ObjectShortName">clr_ccbcal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/calcnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">calcnt[7:0]</obj_property>
+         <obj_property name="ObjectShortName">calcnt[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/callct_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">callct_1</obj_property>
+         <obj_property name="ObjectShortName">callct_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/scope" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">scope</obj_property>
+         <obj_property name="ObjectShortName">scope</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/prelctrqst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prelctrqst</obj_property>
+         <obj_property name="ObjectShortName">prelctrqst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/injplsmon" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">injplsmon</obj_property>
+         <obj_property name="ObjectShortName">injplsmon</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/L1M_LCT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1M_LCT[5:1]</obj_property>
+         <obj_property name="ObjectShortName">L1M_LCT[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/L1A_CFEB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1A_CFEB</obj_property>
+         <obj_property name="ObjectShortName">L1A_CFEB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/FEB_GRST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FEB_GRST</obj_property>
+         <obj_property name="ObjectShortName">FEB_GRST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/CTRLREADY" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CTRLREADY</obj_property>
+         <obj_property name="ObjectShortName">CTRLREADY</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/rst_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_1</obj_property>
+         <obj_property name="ObjectShortName">rst_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/rst_plsinj" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_plsinj</obj_property>
+         <obj_property name="ObjectShortName">rst_plsinj</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/fpgaready_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpgaready_1</obj_property>
+         <obj_property name="ObjectShortName">fpgaready_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/fpgaready_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpgaready_2</obj_property>
+         <obj_property name="ObjectShortName">fpgaready_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/fpgarst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpgarst</obj_property>
+         <obj_property name="ObjectShortName">fpgarst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ce_crdy_cnt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ce_crdy_cnt</obj_property>
+         <obj_property name="ObjectShortName">ce_crdy_cnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/mirrclk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mirrclk</obj_property>
+         <obj_property name="ObjectShortName">mirrclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/rstmirr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rstmirr</obj_property>
+         <obj_property name="ObjectShortName">rstmirr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/pwr_on_hold_off" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pwr_on_hold_off</obj_property>
+         <obj_property name="ObjectShortName">pwr_on_hold_off</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/jreadout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">jreadout</obj_property>
+         <obj_property name="ObjectShortName">jreadout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbinj" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbinj</obj_property>
+         <obj_property name="ObjectShortName">ccbinj</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbpls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbpls</obj_property>
+         <obj_property name="ObjectShortName">ccbpls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbinj_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbinj_1</obj_property>
+         <obj_property name="ObjectShortName">ccbinj_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbpls_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbpls_1</obj_property>
+         <obj_property name="ObjectShortName">ccbpls_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbpls_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbpls_2</obj_property>
+         <obj_property name="ObjectShortName">ccbpls_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/plsinjen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">plsinjen</obj_property>
+         <obj_property name="ObjectShortName">plsinjen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/trig_dav_tf/uut/ccbcal_dly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbcal_dly</obj_property>
+         <obj_property name="ObjectShortName">ccbcal_dly</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

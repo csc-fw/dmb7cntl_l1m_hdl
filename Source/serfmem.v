@@ -56,6 +56,7 @@ module serfmem #(
 	output reg [6:0] CRATEID,
 	output reg [3:0] L1FDLYOUT,
 	output reg [2:0] KILLINPUT,
+	output [7:0] SFMDIAG,
 	output [34:0] SFMDOUT
 );
 
@@ -142,6 +143,7 @@ assign SFMCS_B  = ~(rchipen | chipen | testsfmcs);
 assign SFMRST_B = ~sfmrst;
 assign TDOSFM   = testsfm & SFMIN;
 assign SFMWP_B  = tog_wp_b | TESTSFMIN;
+assign SFMDIAG  = {3'b000,febclkdly};
 
 assign testsfmcs = testsfm_1 & TESTSFMIN;
 assign testsfm   = testsfm_2 & TESTSFMIN;
@@ -166,7 +168,7 @@ assign sfmrst      = SERFM[10]; //JTAG instruction 31 (0x1f)
 assign FEBDLYCLK   = ~clkprog;
 assign FEBDLYIN    = prgfebclk[7];
 assign FEBLOADDLY  = loaddly;
-assign TRGDLY0     = ((febclkdly >= 5'd2) && (febclkdly <= 5'd14)) || (febclkdly >= 5'd27);
+assign TRGDLY0     = !(((febclkdly >= 5'd2) && (febclkdly <= 5'd14)) || (febclkdly >= 5'd27));
 
 assign selshift = readshft | paddr[7];
 assign shiftin  = loopshft | (readshft & SFMIN);

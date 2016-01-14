@@ -50,6 +50,11 @@ wire rstdata;
 wire [3:0] l1asrst_cnt;
 wire clr_l1asrst;
 
+initial
+begin
+	L1ASRST = 1'b0;
+end
+
 assign ncmd = ~CCBCMD;
 assign ncmdstrb = ~CMDSTRB;
 assign ndata = ~CCBDATA;

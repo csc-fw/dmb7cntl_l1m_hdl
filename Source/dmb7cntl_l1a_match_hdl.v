@@ -240,6 +240,8 @@ wire [7:1] oeffmon_b;
 wire oeovlp;
 
 wire [15:0] gtrgdiag;
+wire [15:0] gendiag;
+wire [7:0] sfmdiag;
 wire [9:1] auxout;
 wire [8:1] multin;
 wire [8:1] fromconx;
@@ -642,6 +644,7 @@ serfmem_i (
 	.CRATEID(crateid),
 	.L1FDLYOUT(l1fndlym),
 	.KILLINPUT(killinput),
+	.SFMDIAG(sfmdiag),
 	.SFMDOUT(statsfm)
 );
 
@@ -795,6 +798,7 @@ control_i (
 assign monitor[1] = l1acfeb;
 assign auxout = {l1acfeb,bxrst,pop,davmon[0],gempty_b,rst,gfpush,caltrgsel,cal_mode};
 assign diagcount = {caltrgsel,cal_mode,calgtrg,ccbinj,ccbinjin,plsinjen,monjtag[9:6],lct[0],jtrgen[1],jreadout,clkcms,davmon[0],gfpush};
+assign gendiag   = {8'h00,outen,mirrclk,trgdly0,sfmdiag[4:0]};
 
 //
 // FRONTMON -- Output to Front Panel Connector Utility Board
@@ -822,6 +826,7 @@ frontmon_i (
 	.LCT(ostrip),               //  5:0
 	.MONOUT(monjtag),           //  9:1
 	.DIAGIN(diagcount),         // 16:1
+	.GENDIAG(gendiag),          // 15:0
 	.GTRGDIAG(gtrgdiag),        // 15:0
 	.MULTIN(multin),            //  8:1
 	// Outputs 

@@ -38,6 +38,7 @@ module frontmon #(
 	input [5:0] LCT,
 	input [9:1] MONOUT,
 	input [16:1] DIAGIN,
+	input [15:0] GENDIAG,
 	input [15:0] GTRGDIAG,
 	input [8:1] MULTIN,
 	output OUTPUTENL_B,
