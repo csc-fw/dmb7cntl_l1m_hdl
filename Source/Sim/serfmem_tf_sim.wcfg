@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="37" />
+   <WVObjectSize size="36" />
    <wvobject fp_name="/serfmem_tf/RAW_CLKCMS" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">RAW_CLKCMS</obj_property>
       <obj_property name="ObjectShortName">RAW_CLKCMS</obj_property>
@@ -135,26 +135,27 @@
    <wvobject fp_name="/serfmem_tf/CBLDSET" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">CBLDSET[7:0]</obj_property>
       <obj_property name="ObjectShortName">CBLDSET[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/serfmem_tf/FEBCLKDLYIN" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">FEBCLKDLYIN[4:0]</obj_property>
       <obj_property name="ObjectShortName">FEBCLKDLYIN[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/serfmem_tf/CRTIDIN" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">CRTIDIN[6:0]</obj_property>
       <obj_property name="ObjectShortName">CRTIDIN[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/serfmem_tf/L1FDLYIN" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">L1FDLYIN[3:0]</obj_property>
       <obj_property name="ObjectShortName">L1FDLYIN[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/serfmem_tf/SETKILLIN" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">SETKILLIN[2:0]</obj_property>
       <obj_property name="ObjectShortName">SETKILLIN[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/serfmem_tf/PERIOD" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">PERIOD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">PERIOD[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="group143" type="group">
       <obj_property name="label">serfmem</obj_property>
@@ -162,10 +163,6 @@
       <wvobject fp_name="/serfmem_tf/uut/CLKCMS" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">CLKCMS</obj_property>
          <obj_property name="ObjectShortName">CLKCMS</obj_property>
-      </wvobject>
-      <wvobject fp_name="/serfmem_tf/uut/RAW_CLKCMS" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">RAW_CLKCMS</obj_property>
-         <obj_property name="ObjectShortName">RAW_CLKCMS</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/RST" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">RST</obj_property>
@@ -194,34 +191,42 @@
       <wvobject fp_name="/serfmem_tf/uut/OPT_COP_ADJ_JT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
          <obj_property name="ObjectShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/XL1AIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">XL1AIN[1:0]</obj_property>
          <obj_property name="ObjectShortName">XL1AIN[1:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/SERFM" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">SERFM[10:0]</obj_property>
          <obj_property name="ObjectShortName">SERFM[10:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/CBLDSET" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">CBLDSET[7:0]</obj_property>
          <obj_property name="ObjectShortName">CBLDSET[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/FEBCLKDLYIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">FEBCLKDLYIN[4:0]</obj_property>
          <obj_property name="ObjectShortName">FEBCLKDLYIN[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/CRTIDIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">CRTIDIN[6:0]</obj_property>
          <obj_property name="ObjectShortName">CRTIDIN[6:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/L1FDLYIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">L1FDLYIN[3:0]</obj_property>
          <obj_property name="ObjectShortName">L1FDLYIN[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/SETKILLIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">SETKILLIN[2:0]</obj_property>
          <obj_property name="ObjectShortName">SETKILLIN[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/SFMWP_B" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">SFMWP_B</obj_property>
@@ -258,6 +263,7 @@
       <wvobject fp_name="/serfmem_tf/uut/SFMDOUT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">SFMDOUT[34:0]</obj_property>
          <obj_property name="ObjectShortName">SFMDOUT[34:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/clkenain" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">clkenain</obj_property>
@@ -266,6 +272,10 @@
       <wvobject fp_name="/serfmem_tf/uut/clkena" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">clkena</obj_property>
          <obj_property name="ObjectShortName">clkena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/RAW_CLKCMS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RAW_CLKCMS</obj_property>
+         <obj_property name="ObjectShortName">RAW_CLKCMS</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/clksfm" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">clksfm</obj_property>
@@ -286,6 +296,14 @@
       <wvobject fp_name="/serfmem_tf/uut/clka_c" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">clka_c</obj_property>
          <obj_property name="ObjectShortName">clka_c</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/cken_a_c" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cken_a_c</obj_property>
+         <obj_property name="ObjectShortName">cken_a_c</obj_property>
+      </wvobject>
+      <wvobject fp_name="/serfmem_tf/uut/cken_sfm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cken_sfm</obj_property>
+         <obj_property name="ObjectShortName">cken_sfm</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/selshift" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">selshift</obj_property>
@@ -396,26 +414,32 @@
       <wvobject fp_name="/serfmem_tf/uut/OPT_COP_ADJ_FM" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">OPT_COP_ADJ_FM[2:0]</obj_property>
          <obj_property name="ObjectShortName">OPT_COP_ADJ_FM[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/XL1AOUT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">XL1AOUT[1:0]</obj_property>
          <obj_property name="ObjectShortName">XL1AOUT[1:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/CABLEDLY" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
          <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/CRATEID" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">CRATEID[6:0]</obj_property>
          <obj_property name="ObjectShortName">CRATEID[6:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/L1FDLYOUT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">L1FDLYOUT[3:0]</obj_property>
          <obj_property name="ObjectShortName">L1FDLYOUT[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/KILLINPUT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
          <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/cksfm" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">cksfm</obj_property>
@@ -448,6 +472,7 @@
       <wvobject fp_name="/serfmem_tf/uut/dout" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">dout[34:0]</obj_property>
          <obj_property name="ObjectShortName">dout[34:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/serfmem_tf/uut/febclkdly" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">febclkdly[4:0]</obj_property>

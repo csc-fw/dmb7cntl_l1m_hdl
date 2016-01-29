@@ -117,17 +117,17 @@ module serfmem_tf;
 	initial begin
 		// Initialize Inputs
 		RST = 1'b0;
-		DCFEB_IN_USE_JT = 1'b1;
 		TCKSFM = 1'b0;
 		TDISFM = 1'b0;
 		TESTSFMIN = 1'b0;
 		SERFM = 11'h000; //JTAG command inputs
 		SFMIN = 1'b1;
+		DCFEB_IN_USE_JT = 1'b1;
 		OPT_COP_ADJ_JT = 3'b000;
 		XL1AIN = 2'b01;
-		CBLDSET = 8'h40;
+		CBLDSET = 8'h0A;
 		FEBCLKDLYIN = 5'h1F;
-		CRTIDIN = 7'h00;
+		CRTIDIN = 7'h01;
 		L1FDLYIN = 4'h8;
 		SETKILLIN = 3'b000;
 
@@ -139,8 +139,23 @@ module serfmem_tf;
 		RST = 1'b1;
 		#(5*PERIOD);
 		RST = 1'b0;
-		#(2000*PERIOD);
-		
+		#(400*PERIOD);
+		SERFM = 11'h001;
+		#(25*PERIOD);
+		SERFM = 11'h000;
+		#(25*PERIOD);
+		SERFM = 11'h002;
+		#(25*PERIOD);
+		SERFM = 11'h000;
+		#(25*PERIOD);
+		SERFM = 11'h004;
+		#(25*PERIOD);
+		SERFM = 11'h000;
+		#(25*PERIOD);
+		SERFM = 11'h008;
+		#(25*PERIOD);
+		SERFM = 11'h000;
+		#(25*PERIOD);
 	end
       
 endmodule

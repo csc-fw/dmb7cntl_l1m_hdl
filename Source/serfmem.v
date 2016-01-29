@@ -69,6 +69,9 @@ wire tclka;
 wire preclk;
 reg dv2clk;
 wire clka_c;
+wire cken_a;
+wire cken_a_c;
+wire cken_sfm;
 reg  sfmdata;
 reg  sfmdata_mon;
 reg rst_1;
@@ -153,6 +156,10 @@ assign clkenain = clkena | loadid | loadfinedly | loadfebdly;
 assign clka     = clkena & dv2clk;
 assign tclka    = testsfm & TCKSFM;
 assign preclk   = clka | tclka;
+assign cken_sfm = clkenain & dv2clk;
+assign cken_a   = ~clka;
+assign cken_a_c = ~clka | testsfm;
+
 
 assign loadfinedly = SERFM[0];  //JTAG instruction 21 (0x15)
 assign loadid      = SERFM[1];  //JTAG instruction 22 (0x16)
@@ -172,7 +179,8 @@ assign TRGDLY0     = !(((febclkdly >= 5'd2) && (febclkdly <= 5'd14)) || (febclkd
 
 assign selshift = readshft | paddr[7];
 assign shiftin  = loopshft | (readshft & SFMIN);
-srl_nx1 #(.Depth(28)) sfm_in_srl_i (.CLK(clksfm), .CE(1'b1),.I(shiftin),.O(shift34in));
+//srl_nx1 #(.Depth(28)) sfm_in_srl_i (.CLK(clksfm), .CE(1'b1),.I(shiftin),.O(shift34in));
+srl_nx1 #(.Depth(28)) sfm_in_srl_i (.CLK(CLKCMS), .CE(cken_a),.I(shiftin),.O(shift34in));
 assign clr_raddr = rst1 | raddr_done;
 assign clr_paddr = rst1 | paddr_done;
 
@@ -190,7 +198,7 @@ end
 //
 // Clocks
 //
-BUFG BUFG_clksfm_i (.O(clksfm),.I(cksfm));
+//BUFG BUFG_clksfm_i (.O(clksfm),.I(cksfm));
 
 always @(posedge CLKCMS)
 begin
@@ -199,10 +207,10 @@ begin
 	else
 		dv2clk <= ~dv2clk;
 end
-always @(posedge CLKCMS)
-begin
-	cksfm <= clkenain & dv2clk;
-end
+//always @(posedge CLKCMS)
+//begin
+//	cksfm <= clkenain & dv2clk;
+//end
 
 (* IOB = "TREUE" *)
 always @(posedge CLKCMS)
@@ -210,17 +218,28 @@ begin
 	SFMSCK <= preclk;
 end
 
-BUFGMUX SFMout_ck_i (.O(clka_c),.I0(clka),.I1(RAW_CLKCMS),.S(testsfm));
+//BUFGMUX SFMout_ck_i (.O(clka_c),.I0(clka),.I1(RAW_CLKCMS),.S(testsfm));
 
-always @(posedge clka_c)
+//always @(posedge clka_c)
+//begin
+//	sfmdata_mon <= sfmdata;
+//end
+//
+//(* IOB = "TREUE" *)
+//always @(posedge clka_c)
+//begin
+//	SFMOUT <= sfmdata;
+//end
+
+always @(posedge CLKCMS)
 begin
-	sfmdata_mon <= sfmdata;
+	if(cken_a_c) sfmdata_mon <= sfmdata;
 end
 
 (* IOB = "TREUE" *)
-always @(posedge clka_c)
+always @(posedge CLKCMS)
 begin
-	SFMOUT <= sfmdata;
+	if(cken_a_c) SFMOUT <= sfmdata;
 end
 
 //
@@ -274,19 +293,34 @@ begin
 		end
 end
 
-always @(posedge clksfm)
+//always @(posedge clksfm)
+//begin
+//	if(selshift)
+//		dout <= {shift34in,dout[34:1]};
+//	else 
+//		begin
+//			if(loadfebdly)
+//				dout[34:17] <= {DCFEB_IN_USE_JT,OPT_COP_ADJ_JT,SETKILLIN,L1FDLYIN,XL1AIN,FEBCLKDLYIN};
+//			if(loadid)
+//				dout[16:10] <= CRTIDIN;
+//			if(loadfinedly)
+//				dout[9:0] <= {~CBLDSET,CBLDSET[7],1'b0};
+//		end
+//end
+always @(posedge CLKCMS)
 begin
-	if(selshift)
-		dout <= {shift34in,dout[34:1]};
-	else 
-		begin
-			if(loadfebdly)
-				dout[34:17] <= {DCFEB_IN_USE_JT,OPT_COP_ADJ_JT,SETKILLIN,L1FDLYIN,XL1AIN,FEBCLKDLYIN};
-			if(loadid)
-				dout[16:10] <= CRTIDIN;
-			if(loadfinedly)
-				dout[9:0] <= {~CBLDSET,CBLDSET[7],1'b0};
-		end
+	if(cken_sfm)
+		if(selshift)
+			dout <= {shift34in,dout[34:1]};
+		else 
+			begin
+				if(loadfebdly)
+					dout[34:17] <= {DCFEB_IN_USE_JT,OPT_COP_ADJ_JT,SETKILLIN,L1FDLYIN,XL1AIN,FEBCLKDLYIN};
+				if(loadid)
+					dout[16:10] <= CRTIDIN;
+				if(loadfinedly)
+					dout[9:0] <= {~CBLDSET,CBLDSET[7],1'b0};
+			end
 end
 
 always @(posedge CLKCMS)
