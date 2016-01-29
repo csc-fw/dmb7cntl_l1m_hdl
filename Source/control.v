@@ -140,6 +140,8 @@ wire [7:1] done;
 wire [7:1] errd_rst;
 wire jrdff;
 reg  rdffnxt_1;
+reg  rdffnxt_2;
+reg  rdffnxt_3;
 reg  [7:1] jref;
 reg  dtail7;
 reg  dtail8;
@@ -199,7 +201,7 @@ assign errd_rst = errord | done;
 
 assign oe       = prio_act & rdy & ~{2'b0,ovr};
 assign oe6      = prio_act[5:1] & ovr;
-assign jrdff    = RDFFNXT & ~rdffnxt_1;
+assign jrdff    = rdffnxt_2 & ~rdffnxt_3;
 assign doneovlp = pop_rst | dn_ovlp;
 assign done     = {7{pop_rst}} | dn_oe;
 assign crcen    = ~disdav & (oedata | ht_crc);
@@ -618,6 +620,8 @@ begin
 	rovr_1      <= rovr;
 	disdav      <= |(prio_act & fifordy_b);
 	rdffnxt_1   <= RDFFNXT;
+	rdffnxt_2   <= rdffnxt_1;
+	rdffnxt_3   <= rdffnxt_2;
 	rdoneovlp   <= doneovlp;
 	dint        <= dodatx  ? da_in : d_htov;
 	DOUT        <= dtail78 ? {da_in[15:12],cdcd}  : da_in;
