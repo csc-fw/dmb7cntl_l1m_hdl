@@ -400,7 +400,7 @@ cbnce #(
 l1a_cntr_i (
 	.CLK(CLKDDU),
 	.RST(RST | L1ARST),
-	.CE(startread),
+	.CE(busy_ce),
 	.Q(l1cnt)
 );
 
@@ -624,7 +624,7 @@ begin
 	rdffnxt_3   <= rdffnxt_2;
 	rdoneovlp   <= doneovlp;
 	dint        <= dodatx  ? da_in : d_htov;
-	DOUT        <= dtail78 ? {da_in[15:12],cdcd}  : da_in;
+	DOUT        <= dtail78 ? {dint[15:12],cdcd}  : dint;
 	dint_ovlp_b <= ovlpin_b;
 	dtail7      <= tail[7];
 	dtail8      <= dtail7;
@@ -650,7 +650,7 @@ begin
 	if(rst_dov)
 		dn_ovlp <= 1'b0;
 	else
-		dn_ovlp <= OEOVLP;
+		if(done_ce) dn_ovlp <= OEOVLP;
 end
 
 always @(posedge CLKDDU or posedge doneovlp)
