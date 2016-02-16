@@ -154,6 +154,7 @@ wire gfpush;
 wire errorlct;
 wire [5:1] l1a_match;
 wire [5:0] ostrip;
+wire [5:0] dly_aff;
 wire [5:0] lct;
 
 reg mirrclk;
@@ -438,6 +439,7 @@ trgcntrl_i (
 	.LCTERR(errorlct),
 	.L1A_MATCH(l1a_match),
 	.OSTRIP(ostrip),
+	.DLY_AFF(dly_aff),
 	.BOSTRIP(lct)
 );
 
@@ -795,7 +797,7 @@ control_i (
 	.DOUT(dout)           // 15:0
 );
 
-assign monitor[1] = l1acfeb;
+assign monitor[1] = gfpush;
 assign auxout = {l1acfeb,bxrst,pop,davmon[0],gempty_b,rst,gfpush,caltrgsel,cal_mode};
 assign diagcount = {caltrgsel,cal_mode,calgtrg,ccbinj,ccbinjin,plsinjen,monjtag[9:6],lct[0],jtrgen[1],jreadout,clkcms,davmon[0],gfpush};
 assign gendiag   = {8'h00,outen,mirrclk,trgdly0,sfmdiag[4:0]};
@@ -823,7 +825,7 @@ frontmon_i (
 	.MODECODE(FPMODE),          //  4:1
 	.AUXOUT(auxout),            //  9:1
 	.TESTSTAT_MON(teststat_mon),// 15:0
-	.LCT(ostrip),               //  5:0
+	.LCT(dly_aff),              //  5:0
 	.MONOUT(monjtag),           //  9:1
 	.DIAGIN(diagcount),         // 16:1
 	.GENDIAG(gendiag),          // 15:0

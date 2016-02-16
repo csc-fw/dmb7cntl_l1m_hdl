@@ -44,6 +44,7 @@ module trgcntrl #(
 	output reg LCTERR,
 	output [5:1] L1A_MATCH,
 	output [5:0] OSTRIP,
+	output [5:0] DLY_AFF,
 	output [5:0] BOSTRIP
 );
 
@@ -124,7 +125,9 @@ begin
 			pushdly pushdly_b (.CLK(CLK),.DIN(d_lct_out_b[i]),.DELAY(GPUSHDLY),.DOUT(d_push_out_b[i]));
 			pushdly pushdly_c (.CLK(CLK),.DIN(d_lct_out_c[i]),.DELAY(GPUSHDLY),.DOUT(d_push_out_c[i]));
 		end
+		
 		vote #(.Width(6)) l1mtch_vt    (.A(l1mtch_a),    .B(l1mtch_b),    .C(l1mtch_c),    .V(l1mtch));
+		vote #(.Width(6)) lctdly_vt    (.A(d_lct_out_a), .B(d_lct_out_b), .C(d_lct_out_c), .V(DLY_AFF));
 		vote #(.Width(6)) pushmtch_vt  (.A(d_push_out_a),.B(d_push_out_b),.C(d_push_out_c),.V(OSTRIP));
 	end
 	else
@@ -134,6 +137,7 @@ begin
 			lctdly  lctdly_i  (.CLK(CLK),.DIN(BOSTRIP[i]),.L1A(l1a),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_i[i]),.L1A_MATCH(l1mtch[i]));
 			pushdly pushdly_i (.CLK(CLK),.DIN(d_lct_out_i[i]),.DELAY(GPUSHDLY),.DOUT(OSTRIP[i]));
 		end
+		assign DLY_AFF = d_lct_out_i;
 	end
 end
 endgenerate
