@@ -208,6 +208,17 @@ assign crcen    = ~disdav & (oedata | ht_crc);
 assign errord   = davnodata | datanoend;
 assign ovlplast = {{3{ovlpend}},dint[15]};
 assign fcrst    = RST | FIFOMRST;
+
+initial begin
+	jref  = 7'h00;
+	ffrfl = 7'h00;
+	dodat = 1'b0;
+	st_tail = 1'b0;
+	ovlpin_b = 1'b1;
+	dint_ovlp_b = 1'b1;
+	prefflast = 1'b0;
+end		
+
   
 generate
 if(TMR==1) 
@@ -311,7 +322,7 @@ end
 always @(posedge CLKDDU or posedge pop_rst)
 begin
 	if(pop_rst)
-		RENFIFO_B  <= 1'b1;
+		RENFIFO_B  <= 7'h7F;
 	else
 		RENFIFO_B <= ~(jref | (ooe & ~{7{last}}));
 end
@@ -337,6 +348,7 @@ begin
 	if(pop_rst)
 		begin
 			gdav_2  <= 1'b0;
+			gdav_3  <= 1'b0;
 			busy    <= 1'b0;
 			busy_1  <= 1'b0;
 			oehdr   <= 8'h00;
@@ -545,7 +557,7 @@ begin
 		begin
 			if(JOEF[i]) jref[i] <= jrdff;
 		end
-		
+
 		(* IOB = "TRUE" *)
 		always @(negedge CLKDDU or posedge done[i]) // Negative edge
 		begin

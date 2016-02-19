@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1a_match_hdl/control_tf_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="control_tf" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/control_tf/GEMPTY_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">GEMPTY_B</obj_property>
+      <obj_property name="ObjectShortName">GEMPTY_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DATAIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATAIN[17:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAIN[17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/tadd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tadd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tadd[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/FFOR_B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">FFOR_B[7:1]</obj_property>
+      <obj_property name="ObjectShortName">FFOR_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAV" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DAV</obj_property>
+      <obj_property name="ObjectShortName">DAV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/POPBRAM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">POPBRAM</obj_property>
+      <obj_property name="ObjectShortName">POPBRAM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/OEOVLP" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">OEOVLP</obj_property>
+      <obj_property name="ObjectShortName">OEOVLP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/RENFIFO_B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RENFIFO_B[7:1]</obj_property>
+      <obj_property name="ObjectShortName">RENFIFO_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/OEFIFO_B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
+      <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/FEMP" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">FEMP[7:1]</obj_property>
+      <obj_property name="ObjectShortName">FEMP[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DOUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DOUT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DOUT[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/CLKCMS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKCMS</obj_property>
+      <obj_property name="ObjectShortName">CLKCMS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/CLKDDU" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKDDU</obj_property>
+      <obj_property name="ObjectShortName">CLKDDU</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/RST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/L1ARST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">L1ARST</obj_property>
+      <obj_property name="ObjectShortName">L1ARST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/FIFOMRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FIFOMRST</obj_property>
+      <obj_property name="ObjectShortName">FIFOMRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/GIGAEN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">GIGAEN</obj_property>
+      <obj_property name="ObjectShortName">GIGAEN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/RDFFNXT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RDFFNXT</obj_property>
+      <obj_property name="ObjectShortName">RDFFNXT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAVENBL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DAVENBL[5:1]</obj_property>
+      <obj_property name="ObjectShortName">DAVENBL[5:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAQMBID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DAQMBID[11:0]</obj_property>
+      <obj_property name="ObjectShortName">DAQMBID[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/CFEBBX" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CFEBBX[3:0]</obj_property>
+      <obj_property name="ObjectShortName">CFEBBX[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/BXN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">BXN[11:0]</obj_property>
+      <obj_property name="ObjectShortName">BXN[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAVACT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DAVACT[16:0]</obj_property>
+      <obj_property name="ObjectShortName">DAVACT[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/JOEF" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">JOEF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">JOEF[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/KILLINPUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
+      <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/STATUS" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">STATUS[47:0]</obj_property>
+      <obj_property name="ObjectShortName">STATUS[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/gadd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">gadd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">gadd[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="group443" type="group">
+      <obj_property name="label">control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/control_tf/uut/CLKCMS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLKCMS</obj_property>
+         <obj_property name="ObjectShortName">CLKCMS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/CLKDDU" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLKDDU</obj_property>
+         <obj_property name="ObjectShortName">CLKDDU</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/L1ARST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1ARST</obj_property>
+         <obj_property name="ObjectShortName">L1ARST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/FIFOMRST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FIFOMRST</obj_property>
+         <obj_property name="ObjectShortName">FIFOMRST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/RDFFNXT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RDFFNXT</obj_property>
+         <obj_property name="ObjectShortName">RDFFNXT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DAVENBL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DAVENBL[5:1]</obj_property>
+         <obj_property name="ObjectShortName">DAVENBL[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DAQMBID" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DAQMBID[11:0]</obj_property>
+         <obj_property name="ObjectShortName">DAQMBID[11:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/CFEBBX" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CFEBBX[3:0]</obj_property>
+         <obj_property name="ObjectShortName">CFEBBX[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/BXN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">BXN[11:0]</obj_property>
+         <obj_property name="ObjectShortName">BXN[11:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DATAIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DATAIN[17:0]</obj_property>
+         <obj_property name="ObjectShortName">DATAIN[17:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DAVACT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DAVACT[16:0]</obj_property>
+         <obj_property name="ObjectShortName">DAVACT[16:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/FFOR_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FFOR_B[7:1]</obj_property>
+         <obj_property name="ObjectShortName">FFOR_B[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/JOEF" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">JOEF[7:0]</obj_property>
+         <obj_property name="ObjectShortName">JOEF[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/KILLINPUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/STATUS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">STATUS[47:0]</obj_property>
+         <obj_property name="ObjectShortName">STATUS[47:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/OEOVLP" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">OEOVLP</obj_property>
+         <obj_property name="ObjectShortName">OEOVLP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/FEMP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FEMP[7:1]</obj_property>
+         <obj_property name="ObjectShortName">FEMP[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/busy_ce" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busy_ce</obj_property>
+         <obj_property name="ObjectShortName">busy_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/stpop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">stpop</obj_property>
+         <obj_property name="ObjectShortName">stpop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/pop_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop_rst</obj_property>
+         <obj_property name="ObjectShortName">pop_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/popbram_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">popbram_rst</obj_property>
+         <obj_property name="ObjectShortName">popbram_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/startread" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">startread</obj_property>
+         <obj_property name="ObjectShortName">startread</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oehdra" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oehdra</obj_property>
+         <obj_property name="ObjectShortName">oehdra</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oehdrb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oehdrb</obj_property>
+         <obj_property name="ObjectShortName">oehdrb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/taila" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">taila</obj_property>
+         <obj_property name="ObjectShortName">taila</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/tailb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tailb</obj_property>
+         <obj_property name="ObjectShortName">tailb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dodatx" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dodatx</obj_property>
+         <obj_property name="ObjectShortName">dodatx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/okdata" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">okdata</obj_property>
+         <obj_property name="ObjectShortName">okdata</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/okdata_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">okdata_rst</obj_property>
+         <obj_property name="ObjectShortName">okdata_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/l1only" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1only</obj_property>
+         <obj_property name="ObjectShortName">l1only</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/head_d12" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">head_d12</obj_property>
+         <obj_property name="ObjectShortName">head_d12</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/tail_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tail_rst</obj_property>
+         <obj_property name="ObjectShortName">tail_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ddcnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ddcnt[8:0]</obj_property>
+         <obj_property name="ObjectShortName">ddcnt[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fmt_ver" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fmt_ver[1:0]</obj_property>
+         <obj_property name="ObjectShortName">fmt_ver[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fendaverr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fendaverr</obj_property>
+         <obj_property name="ObjectShortName">fendaverr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/regcrc" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">regcrc[23:0]</obj_property>
+         <obj_property name="ObjectShortName">regcrc[23:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/l1cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1cnt[23:0]</obj_property>
+         <obj_property name="ObjectShortName">l1cnt[23:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/errord" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">errord[7:1]</obj_property>
+         <obj_property name="ObjectShortName">errord[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/killalct" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">killalct</obj_property>
+         <obj_property name="ObjectShortName">killalct</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/killtmb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">killtmb</obj_property>
+         <obj_property name="ObjectShortName">killtmb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/killcfeb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">killcfeb[5:1]</obj_property>
+         <obj_property name="ObjectShortName">killcfeb[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/killdcd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">killdcd[7:1]</obj_property>
+         <obj_property name="ObjectShortName">killdcd[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fffl" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fffl[7:1]</obj_property>
+         <obj_property name="ObjectShortName">fffl[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ffhf" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ffhf[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ffhf[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ffmt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ffmt[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ffmt[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oe" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">oe[7:1]</obj_property>
+         <obj_property name="ObjectShortName">oe[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oe6" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">oe6[5:1]</obj_property>
+         <obj_property name="ObjectShortName">oe6[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rovr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rovr[5:1]</obj_property>
+         <obj_property name="ObjectShortName">rovr[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rst_rovr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_rovr[5:1]</obj_property>
+         <obj_property name="ObjectShortName">rst_rovr[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/readovlp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">readovlp</obj_property>
+         <obj_property name="ObjectShortName">readovlp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpren" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpren</obj_property>
+         <obj_property name="ObjectShortName">ovlpren</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/doneovlp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">doneovlp</obj_property>
+         <obj_property name="ObjectShortName">doneovlp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rst_dov" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rst_dov</obj_property>
+         <obj_property name="ObjectShortName">rst_dov</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/last" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">last</obj_property>
+         <obj_property name="ObjectShortName">last</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/poplast" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">poplast</obj_property>
+         <obj_property name="ObjectShortName">poplast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/done_ce" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">done_ce</obj_property>
+         <obj_property name="ObjectShortName">done_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/done" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">done[7:1]</obj_property>
+         <obj_property name="ObjectShortName">done[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/errd_rst" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">errd_rst[7:1]</obj_property>
+         <obj_property name="ObjectShortName">errd_rst[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/jrdff" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">jrdff</obj_property>
+         <obj_property name="ObjectShortName">jrdff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpwen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpwen</obj_property>
+         <obj_property name="ObjectShortName">ovlpwen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/crcen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">crcen</obj_property>
+         <obj_property name="ObjectShortName">crcen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/qnoend" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">qnoend[11:0]</obj_property>
+         <obj_property name="ObjectShortName">qnoend[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlplast" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlplast[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlplast[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/preovlast" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">preovlast</obj_property>
+         <obj_property name="ObjectShortName">preovlast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fcrst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fcrst</obj_property>
+         <obj_property name="ObjectShortName">fcrst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpwa" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpwa[12:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlpwa[12:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpra" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpra[12:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlpra[12:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/doutx" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">doutx[19:0]</obj_property>
+         <obj_property name="ObjectShortName">doutx[19:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DAV" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DAV</obj_property>
+         <obj_property name="ObjectShortName">DAV</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/POPBRAM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">POPBRAM</obj_property>
+         <obj_property name="ObjectShortName">POPBRAM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/RENFIFO_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">RENFIFO_B[7:1]</obj_property>
+         <obj_property name="ObjectShortName">RENFIFO_B[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/OEFIFO_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
+         <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DOUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DOUT[15:0]</obj_property>
+         <obj_property name="ObjectShortName">DOUT[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/GEMPTY_B" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GEMPTY_B</obj_property>
+         <obj_property name="ObjectShortName">GEMPTY_B</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/GIGAEN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GIGAEN</obj_property>
+         <obj_property name="ObjectShortName">GIGAEN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/gdav_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gdav_1</obj_property>
+         <obj_property name="ObjectShortName">gdav_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/gdav_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gdav_2</obj_property>
+         <obj_property name="ObjectShortName">gdav_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/gdav_3" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gdav_3</obj_property>
+         <obj_property name="ObjectShortName">gdav_3</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/busy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busy</obj_property>
+         <obj_property name="ObjectShortName">busy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/busy_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">busy_1</obj_property>
+         <obj_property name="ObjectShortName">busy_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/pop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop</obj_property>
+         <obj_property name="ObjectShortName">pop</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/pop_m3" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop_m3</obj_property>
+         <obj_property name="ObjectShortName">pop_m3</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/pop_m2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop_m2</obj_property>
+         <obj_property name="ObjectShortName">pop_m2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/pop_m1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop_m1</obj_property>
+         <obj_property name="ObjectShortName">pop_m1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/pbram" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pbram</obj_property>
+         <obj_property name="ObjectShortName">pbram</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oehdr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">oehdr[8:1]</obj_property>
+         <obj_property name="ObjectShortName">oehdr[8:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/tail" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tail[8:1]</obj_property>
+         <obj_property name="ObjectShortName">tail[8:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/tail8_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tail8_1</obj_property>
+         <obj_property name="ObjectShortName">tail8_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oehdtl" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oehdtl</obj_property>
+         <obj_property name="ObjectShortName">oehdtl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dodat" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dodat</obj_property>
+         <obj_property name="ObjectShortName">dodat</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/st_tail" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">st_tail</obj_property>
+         <obj_property name="ObjectShortName">st_tail</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/data_hldoff" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">data_hldoff</obj_property>
+         <obj_property name="ObjectShortName">data_hldoff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/d_htov" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">d_htov[15:0]</obj_property>
+         <obj_property name="ObjectShortName">d_htov[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/da_in" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">da_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">da_in[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dint" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dint[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dint[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/cdcd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cdcd[11:0]</obj_property>
+         <obj_property name="ObjectShortName">cdcd[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/datanoend" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">datanoend[7:1]</obj_property>
+         <obj_property name="ObjectShortName">datanoend[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/davnodata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">davnodata[7:1]</obj_property>
+         <obj_property name="ObjectShortName">davnodata[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ffrfl" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ffrfl[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ffrfl[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fifordy_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fifordy_b[7:1]</obj_property>
+         <obj_property name="ObjectShortName">fifordy_b[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rdy" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rdy[7:1]</obj_property>
+         <obj_property name="ObjectShortName">rdy[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/r_act" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">r_act[7:1]</obj_property>
+         <obj_property name="ObjectShortName">r_act[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/prio_act" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">prio_act[7:1]</obj_property>
+         <obj_property name="ObjectShortName">prio_act[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ooe" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ooe[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ooe[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dn_oe" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dn_oe[7:1]</obj_property>
+         <obj_property name="ObjectShortName">dn_oe[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oe6_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">oe6_1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">oe6_1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovrin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovrin[5:1]</obj_property>
+         <obj_property name="ObjectShortName">ovrin[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovr[5:1]</obj_property>
+         <obj_property name="ObjectShortName">ovr[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rovr_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rovr_1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">rovr_1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dint_ovlp_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dint_ovlp_b</obj_property>
+         <obj_property name="ObjectShortName">dint_ovlp_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpin_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpin_b</obj_property>
+         <obj_property name="ObjectShortName">ovlpin_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rdyovlp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rdyovlp</obj_property>
+         <obj_property name="ObjectShortName">rdyovlp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpend" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpend</obj_property>
+         <obj_property name="ObjectShortName">ovlpend</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rdoneovlp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rdoneovlp</obj_property>
+         <obj_property name="ObjectShortName">rdoneovlp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dn_ovlp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dn_ovlp</obj_property>
+         <obj_property name="ObjectShortName">dn_ovlp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ooeovlp" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ooeovlp</obj_property>
+         <obj_property name="ObjectShortName">ooeovlp</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/disdav" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">disdav</obj_property>
+         <obj_property name="ObjectShortName">disdav</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/prefflast" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prefflast</obj_property>
+         <obj_property name="ObjectShortName">prefflast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rstlast" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rstlast</obj_property>
+         <obj_property name="ObjectShortName">rstlast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oeall" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oeall</obj_property>
+         <obj_property name="ObjectShortName">oeall</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/doeall" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">doeall</obj_property>
+         <obj_property name="ObjectShortName">doeall</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oeall_r" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oeall_r</obj_property>
+         <obj_property name="ObjectShortName">oeall_r</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/oedata" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">oedata</obj_property>
+         <obj_property name="ObjectShortName">oedata</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rdffnxt_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rdffnxt_1</obj_property>
+         <obj_property name="ObjectShortName">rdffnxt_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rdffnxt_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rdffnxt_2</obj_property>
+         <obj_property name="ObjectShortName">rdffnxt_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rdffnxt_3" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rdffnxt_3</obj_property>
+         <obj_property name="ObjectShortName">rdffnxt_3</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/jref" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">jref[7:1]</obj_property>
+         <obj_property name="ObjectShortName">jref[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dtail7" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dtail7</obj_property>
+         <obj_property name="ObjectShortName">dtail7</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dtail8" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dtail8</obj_property>
+         <obj_property name="ObjectShortName">dtail8</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/dtail78" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dtail78</obj_property>
+         <obj_property name="ObjectShortName">dtail78</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ht_crc" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ht_crc</obj_property>
+         <obj_property name="ObjectShortName">ht_crc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/rstcnt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rstcnt</obj_property>
+         <obj_property name="ObjectShortName">rstcnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpff_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpff_out[19:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlpff_out[19:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
