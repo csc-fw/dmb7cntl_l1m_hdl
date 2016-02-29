@@ -168,7 +168,7 @@ assign GEMPTY_B = (gadd == 3'h0) || (gadd == 3'h1);
 always @*
 begin
 	case (gadd)
-		3'h0: DAVACT = 17'h00001;
+		3'h0: DAVACT = 17'h00000;
 		3'h1: DAVACT = 17'h00001;
 		3'h2: DAVACT = 17'h00000;
 		3'h3: DAVACT = 17'h00000;

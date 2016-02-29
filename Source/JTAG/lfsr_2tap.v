@@ -38,6 +38,10 @@ module lfsr_2tap #(
 reg [N:1] lfsr;
 wire feedback;
 
+initial begin
+	lfsr = 0;
+end
+
 assign feedback = lfsr[N] ~^ lfsr[FB_tap];
 assign OUT = {lfsr[TAP_I],lfsr[TAP_H],lfsr[TAP_G],lfsr[TAP_F],lfsr[TAP_E],lfsr[TAP_D],lfsr[TAP_C],lfsr[TAP_B],lfsr[TAP_A]};
 

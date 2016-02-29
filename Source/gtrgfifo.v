@@ -282,6 +282,7 @@ begin : gtrg_ff_no_TMR
 
 	reg [17:0] davsout_r;
 	
+	(* ram_style = "block" *)
 	reg [17:0] gtrgff [1023:0];
 
 	always @(posedge CLK)

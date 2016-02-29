@@ -97,6 +97,11 @@ assign ce_plscnt = (INJECT | PULSE) & (inj_hld | pls_hld);
 assign LCTRQST = INJPLS | PRELCT;
 assign l1arqst = INJPLS | PREGTRG;
 
+initial begin
+	finj_1 = 1'b0;
+	fpls_1 = 1'b0;
+end
+
 (* IOB = "TRUE" *)
 always @(posedge CLKCMS)
 begin

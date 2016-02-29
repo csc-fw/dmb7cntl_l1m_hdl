@@ -73,7 +73,8 @@
 
 
 module jtagcom #(
-	parameter TMR = 0
+	parameter TMR = 0,
+	parameter SIM = 0
 )
 (
 	input CLKCMS,
@@ -200,71 +201,83 @@ wire [2:0] l4rtsel;
 wire [2:0] l5rtsel;
 wire [7:0] calcnt;
 
-//wire capture1;
-//wire capture2;
-//wire treset1;
-//wire treset2;
-//wire shift1;
-//wire shift2;
-//wire btdi1;
-//wire btdi2;
-//wire update1;
-//wire update2;
-//
-//assign capture = sel1 ? capture1 : capture2;
-//assign treset  = sel1 ? treset1  : treset2;
-//assign shift   = sel1 ? shift1   : shift2;
-//assign update  = sel1 ? update1  : update2;
-//assign BTDI    = sel1 ? btdi1    : btdi2;
-//
-//   BSCAN_VIRTEX6 #(
-//      .DISABLE_JTAG("FALSE"), // This attribute is unsupported. Please leave it at default.
-//      .JTAG_CHAIN(1)          // Value for USER command. Possible values: (1,2,3 or 4).
-//   )
-//   BSCAN_VIRTEX6_1 (
-//      .CAPTURE(capture1), // 1-bit output: CAPTURE output from TAP controller
-//      .DRCK(rw_drck1),       // 1-bit output: Data register output for USER functions
-//      .RESET(treset1),     // 1-bit output: Reset output for TAP controller
-//      .RUNTEST(), // 1-bit output: State output asserted when TAP controller is in Run Test Idle state.
-//      .SEL(sel1),         // 1-bit output: USER active output
-//      .SHIFT(shift1),     // 1-bit output: SHIFT output from TAP controller
-//      .TCK(),         // 1-bit output: Scan Clock output. Fabric connection to TAP Clock pin.
-//      .TDI(btdi1),         // 1-bit output: TDI output from TAP controller
-//      .TMS(),         // 1-bit output: Test Mode Select input. Fabric connection to TAP.
-//      .UPDATE(update1),   // 1-bit output: UPDATE output from TAP controller
-//      .TDO(tdo1)          // 1-bit input: Data input for USER function
-//   );
-//
-//   BSCAN_VIRTEX6 #(
-//      .DISABLE_JTAG("FALSE"), // This attribute is unsupported. Please leave it at default.
-//      .JTAG_CHAIN(2)          // Value for USER command. Possible values: (1,2,3 or 4).
-//   )
-//   BSCAN_VIRTEX6_2 (
-//      .CAPTURE(capture2), // 1-bit output: CAPTURE output from TAP controller
-//      .DRCK(rw_drck2),       // 1-bit output: Data register output for USER functions
-//      .RESET(treset2),     // 1-bit output: Reset output for TAP controller
-//      .RUNTEST(), // 1-bit output: State output asserted when TAP controller is in Run Test Idle state.
-//      .SEL(sel2),         // 1-bit output: USER active output
-//      .SHIFT(shift2),     // 1-bit output: SHIFT output from TAP controller
-//      .TCK(),         // 1-bit output: Scan Clock output. Fabric connection to TAP Clock pin.
-//      .TDI(btdi2),         // 1-bit output: TDI output from TAP controller
-//      .TMS(),         // 1-bit output: Test Mode Select input. Fabric connection to TAP.
-//      .UPDATE(update2),   // 1-bit output: UPDATE output from TAP controller
-//      .TDO(tdo2)          // 1-bit input: Data input for USER function
-//   );
-BSCAN_VIRTEX2 BSCAN_VIRTEX2_inst (
-	.CAPTURE(capture), // CAPTURE output from TAP controller
-	.DRCK1(rw_drck1),     // Data register output for USER1 functions
-	.DRCK2(rw_drck2),     // Data register output for USER2 functions
-	.RESET(treset),     // Reset output from TAP controller
-	.SEL1(sel1),       // USER1 active output
-	.SEL2(sel2),       // USER2 active output
-	.SHIFT(shift),     // SHIFT output from TAP controller
-	.TDI(BTDI),         // TDI output from TAP controller
-	.UPDATE(update),   // UPDATE output from TAP controller
-	.TDO1(tdo1),       // Data input for USER1 function
-	.TDO2(tdo2)        // Data input for USER2 function
-);
+generate
+if(SIM==1) 
+begin : BSCAN_VIRTEX6_SIM
+
+	wire capture1;
+	wire capture2;
+	wire treset1;
+	wire treset2;
+	wire shift1;
+	wire shift2;
+	wire btdi1;
+	wire btdi2;
+	wire update1;
+	wire update2;
+
+	assign capture = sel1 ? capture1 : capture2;
+	assign treset  = sel1 ? treset1  : treset2;
+	assign shift   = sel1 ? shift1   : shift2;
+	assign update  = sel1 ? update1  : update2;
+	assign BTDI    = sel1 ? btdi1    : btdi2;
+
+   BSCAN_VIRTEX6 #(
+      .DISABLE_JTAG("FALSE"), // This attribute is unsupported. Please leave it at default.
+      .JTAG_CHAIN(1)          // Value for USER command. Possible values: (1,2,3 or 4).
+   )
+   BSCAN_VIRTEX6_1 (
+      .CAPTURE(capture1), // 1-bit output: CAPTURE output from TAP controller
+      .DRCK(rw_drck1),       // 1-bit output: Data register output for USER functions
+      .RESET(treset1),     // 1-bit output: Reset output for TAP controller
+      .RUNTEST(), // 1-bit output: State output asserted when TAP controller is in Run Test Idle state.
+      .SEL(sel1),         // 1-bit output: USER active output
+      .SHIFT(shift1),     // 1-bit output: SHIFT output from TAP controller
+      .TCK(),         // 1-bit output: Scan Clock output. Fabric connection to TAP Clock pin.
+      .TDI(btdi1),         // 1-bit output: TDI output from TAP controller
+      .TMS(),         // 1-bit output: Test Mode Select input. Fabric connection to TAP.
+      .UPDATE(update1),   // 1-bit output: UPDATE output from TAP controller
+      .TDO(tdo1)          // 1-bit input: Data input for USER function
+   );
+
+   BSCAN_VIRTEX6 #(
+      .DISABLE_JTAG("FALSE"), // This attribute is unsupported. Please leave it at default.
+      .JTAG_CHAIN(2)          // Value for USER command. Possible values: (1,2,3 or 4).
+   )
+   BSCAN_VIRTEX6_2 (
+      .CAPTURE(capture2), // 1-bit output: CAPTURE output from TAP controller
+      .DRCK(rw_drck2),       // 1-bit output: Data register output for USER functions
+      .RESET(treset2),     // 1-bit output: Reset output for TAP controller
+      .RUNTEST(), // 1-bit output: State output asserted when TAP controller is in Run Test Idle state.
+      .SEL(sel2),         // 1-bit output: USER active output
+      .SHIFT(shift2),     // 1-bit output: SHIFT output from TAP controller
+      .TCK(),         // 1-bit output: Scan Clock output. Fabric connection to TAP Clock pin.
+      .TDI(btdi2),         // 1-bit output: TDI output from TAP controller
+      .TMS(),         // 1-bit output: Test Mode Select input. Fabric connection to TAP.
+      .UPDATE(update2),   // 1-bit output: UPDATE output from TAP controller
+      .TDO(tdo2)          // 1-bit input: Data input for USER function
+   );
+	
+end
+else 
+begin : BSCAN_VIRTEX2_imp
+	
+	BSCAN_VIRTEX2 BSCAN_VIRTEX2_inst (
+		.CAPTURE(capture), // CAPTURE output from TAP controller
+		.DRCK1(rw_drck1),     // Data register output for USER1 functions
+		.DRCK2(rw_drck2),     // Data register output for USER2 functions
+		.RESET(treset),     // Reset output from TAP controller
+		.SEL1(sel1),       // USER1 active output
+		.SEL2(sel2),       // USER2 active output
+		.SHIFT(shift),     // SHIFT output from TAP controller
+		.TDI(BTDI),         // TDI output from TAP controller
+		.UPDATE(update),   // UPDATE output from TAP controller
+		.TDO1(tdo1),       // Data input for USER1 function
+		.TDO2(tdo2)        // Data input for USER2 function
+	);
+
+end
+endgenerate
 
 //
 // Clocks
@@ -500,7 +513,8 @@ load_time_i(
 //
 // Set DCFEB 
 //
-user_wr_reg #(.width(4), .def_value({1'b0,3'd6}), .TMR(TMR))
+//user_wr_reg #(.width(4), .def_value({1'b0,3'd6}), .TMR(TMR))
+user_wr_reg #(.width(4), .def_value({1'b1,3'd0}), .TMR(TMR))
 set_dcfeb_i(
 	.CLK(CLKCMS),    // CLKCMS for update register
 	.DRCK(drck2),    // Data Reg Clock

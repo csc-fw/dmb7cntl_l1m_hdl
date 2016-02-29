@@ -62,13 +62,13 @@ module serfmem #(
 
 wire clkenain;
 wire clkena;
-wire clksfm;
-reg  cksfm;
+//wire clksfm;
+//reg  cksfm;
 wire clka;
 wire tclka;
 wire preclk;
 reg dv2clk;
-wire clka_c;
+//wire clka_c;
 wire cken_a;
 wire cken_a_c;
 wire cken_sfm;

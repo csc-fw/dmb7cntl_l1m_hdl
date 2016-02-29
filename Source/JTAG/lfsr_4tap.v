@@ -31,6 +31,10 @@ module lfsr_4tap #(
 reg [N:1] lfsr;
 wire feedback;
 
+initial begin
+	lfsr = 0;
+end
+
 assign feedback = lfsr[N] ~^ lfsr[FB_tap1] ~^ lfsr[FB_tap2] ~^ lfsr[FB_tap3];
 assign OUT = lfsr[N];
 

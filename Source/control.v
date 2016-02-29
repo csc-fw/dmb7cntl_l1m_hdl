@@ -58,7 +58,6 @@ wire busy_ce;
 wire stpop;
 reg  pop;
 wire pop_rst;
-reg  pop_m3;
 reg  pop_m2;
 reg  pop_m1;
 reg  pbram;
@@ -472,16 +471,15 @@ crc22 crc22_i(
 always @(posedge CLKDDU)
 begin
 	if(pop_rst) // Synchronous reset
-		pop_m3 <= 1'b0;
+		pop_m2 <= 1'b0;
 	if(stpop)
-		pop_m3 <= 1'b1;
+		pop_m2 <= 1'b1;
 end
 
 always @(posedge CLKDDU or posedge RST)
 begin
 	if(RST)
 		begin
-			pop_m2  <= 1'b0;
 			pop_m1  <= 1'b0;
 			pop     <= 1'b0;
 			oehdtl  <= 1'b0;
@@ -490,7 +488,6 @@ begin
 		end
 	else
 		begin
-			pop_m2  <= pop_m3;
 			pop_m1  <= pop_m2;
 			pop     <= pop_m1;
 			oehdtl  <= oehdra | oehdrb | taila | tailb;

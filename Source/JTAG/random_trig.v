@@ -17,6 +17,17 @@
 // Revision 0.01 - File Created
 // Additional Comments: 
 //
+// Trigger rate selection options for GTRGSEL, and LCTxSEL
+// SEL[3:1]		Rate
+// 0				0		KHz
+// 1				10		KHz
+// 2				20		KHz
+// 3				40		KHz
+// 4				80		KHz
+// 5				160	KHz
+// 6				310	KHz
+// 7				620	KHz
+//
 //////////////////////////////////////////////////////////////////////////////////
 module random_trig #(
 	parameter TMR = 0
@@ -63,6 +74,7 @@ wire [8:0] fbt;
 wire [8:0] fbu;
 wire [8:0] fbv;
 wire [8:0] fbw;
+
 //wire [8:0] fbx;
 wire gtrgab167;
 //wire gtrgbb87;
@@ -148,7 +160,6 @@ wire le_fburst;
 reg  burst1000;
 reg  finish1000;
 wire [9:0] burst_cnt;
-wire burst_rst;
 
 wire [5:1] lct_sel_or;
 wire [5:1] lct_fand;
@@ -181,6 +192,10 @@ wire gtrg_sand;
 wire gtrg_mid;
 wire gtrg_dly;
 wire rule2_ce;
+
+initial begin
+	burst1000 = 0;
+end
 
 assign {rlct1b137,rlct1b120,rlct1b103,rlct1b86,rlct1b69,rlct1b52,rlct1b34,rlct1b18,rlct1b1} = rlct1;
 assign {rlct2b137,rlct2b120,rlct2b103,rlct2b86,rlct2b68,rlct2b52,rlct2b35,rlct2b18,rlct2b1} = rlct2;
@@ -235,8 +250,6 @@ assign lct_sand   = {lct5_sand,lct4_sand,lct3_sand,lct2_sand,lct1_sand};
 
 assign lct_rst    = lct | lct_1;
 assign lct_or     = |lct;
-
-assign burst_rst  = !FBURST || finish1000;
 
 assign pprel1rls  = ENL1RLS & |GTRGSEL & gtrg_fand & gtrg_sand;
 assign l1rls_rst  = PREL1RLS | prel1rls_1;
@@ -319,6 +332,10 @@ lfsr_4tap #(.N(61),.FB_tap1(45),.FB_tap2(46),.FB_tap3(60))
 lfsr_4tap #(.N(62),.FB_tap1(5),.FB_tap2(6),.FB_tap3(61))
 	LFSR_FBO_i(.CLK(CLK),.OUT(fbob62));
 
+initial begin
+	SELRAN = 0;
+	PREL1RLS = 0;
+end
 always @(posedge CLK)
 begin
 	ftstart_1  <= FTSTART;
@@ -351,7 +368,7 @@ cbnce #(
 )
 burst_cntr_i (
 	.CLK(CLK),
-	.RST(burst_rst),
+	.RST(!burst1000),
 	.CE(GTRGOUT),
 	.Q(burst_cnt)
 );

@@ -19,7 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module dmb7cntl_l1a_match_hdl #(
-	parameter TMR = 0
+	parameter TMR = 0,
+	parameter SIM = 0
 )
 (
 	// clocks
@@ -676,7 +677,8 @@ begin
 end
 
 jtagcom #(
-	.TMR(TMR)
+	.TMR(TMR),
+	.SIM(SIM)
 )
 jtagcom_i (
 	// Inputs

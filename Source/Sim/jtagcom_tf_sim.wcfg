@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1a_match_hdl/jtagcom_tf_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="jtagcom_tf" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="57" />
+   <wvobject fp_name="/jtagcom_tf/JRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">JRST</obj_property>
+      <obj_property name="ObjectShortName">JRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/BTDI" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">BTDI</obj_property>
+      <obj_property name="ObjectShortName">BTDI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/SFMTEST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SFMTEST</obj_property>
+      <obj_property name="ObjectShortName">SFMTEST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TMDAVRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TMDAVRST</obj_property>
+      <obj_property name="ObjectShortName">TMDAVRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/JREADOUT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">JREADOUT</obj_property>
+      <obj_property name="ObjectShortName">JREADOUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/ENACFEB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ENACFEB</obj_property>
+      <obj_property name="ObjectShortName">ENACFEB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CAL_GTRG" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CAL_GTRG</obj_property>
+      <obj_property name="ObjectShortName">CAL_GTRG</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/SCPSYNC" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SCPSYNC</obj_property>
+      <obj_property name="ObjectShortName">SCPSYNC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/GLNKRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">GLNKRST</obj_property>
+      <obj_property name="ObjectShortName">GLNKRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/DCFEB_IN_USE_JT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DCFEB_IN_USE_JT</obj_property>
+      <obj_property name="ObjectShortName">DCFEB_IN_USE_JT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CAL_MODE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CAL_MODE</obj_property>
+      <obj_property name="ObjectShortName">CAL_MODE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TRGSEL" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TRGSEL</obj_property>
+      <obj_property name="ObjectShortName">TRGSEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/INJECT" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">INJECT</obj_property>
+      <obj_property name="ObjectShortName">INJECT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/PULSE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PULSE</obj_property>
+      <obj_property name="ObjectShortName">PULSE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/PREL1RLS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PREL1RLS</obj_property>
+      <obj_property name="ObjectShortName">PREL1RLS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/PEDESTAL" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PEDESTAL</obj_property>
+      <obj_property name="ObjectShortName">PEDESTAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/LCT_RQST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">LCT_RQST</obj_property>
+      <obj_property name="ObjectShortName">LCT_RQST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/JTRGEN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">JTRGEN[3:0]</obj_property>
+      <obj_property name="ObjectShortName">JTRGEN[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CABLEDLY" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
+      <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/XL1ADLY" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XL1ADLY[1:0]</obj_property>
+      <obj_property name="ObjectShortName">XL1ADLY[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/OPT_COP_ADJ_JT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+      <obj_property name="ObjectShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/FEBCLKDLY" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">FEBCLKDLY[4:0]</obj_property>
+      <obj_property name="ObjectShortName">FEBCLKDLY[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CRATEID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CRATEID[6:0]</obj_property>
+      <obj_property name="ObjectShortName">CRATEID[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/L1FNDLY" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">L1FNDLY[3:0]</obj_property>
+      <obj_property name="ObjectShortName">L1FNDLY[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/SETKILLIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SETKILLIN[2:0]</obj_property>
+      <obj_property name="ObjectShortName">SETKILLIN[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/LOADTIME" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">LOADTIME[25:0]</obj_property>
+      <obj_property name="ObjectShortName">LOADTIME[25:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/JOEF" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">JOEF[7:0]</obj_property>
+      <obj_property name="ObjectShortName">JOEF[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CAL_CFEB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CAL_CFEB[5:0]</obj_property>
+      <obj_property name="ObjectShortName">CAL_CFEB[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/l1latency" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">l1latency[5:0]</obj_property>
+      <obj_property name="ObjectShortName">l1latency[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CLKCMS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKCMS</obj_property>
+      <obj_property name="ObjectShortName">CLKCMS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/CLK80" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK80</obj_property>
+      <obj_property name="ObjectShortName">CLK80</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/RST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/ENL1RLS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ENL1RLS</obj_property>
+      <obj_property name="ObjectShortName">ENL1RLS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/PLSINJEN" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PLSINJEN</obj_property>
+      <obj_property name="ObjectShortName">PLSINJEN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TMDAV" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">TMDAV[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TMDAV[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TMCOUNT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">TMCOUNT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TMCOUNT[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TMS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TMS</obj_property>
+      <obj_property name="ObjectShortName">TMS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TDI" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TDI</obj_property>
+      <obj_property name="ObjectShortName">TDI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TCK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TCK</obj_property>
+      <obj_property name="ObjectShortName">TCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/TDO" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">TDO</obj_property>
+      <obj_property name="ObjectShortName">TDO</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/l1acfeb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">l1acfeb</obj_property>
+      <obj_property name="ObjectShortName">l1acfeb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/gfpush" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">gfpush</obj_property>
+      <obj_property name="ObjectShortName">gfpush</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/errorlct" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">errorlct</obj_property>
+      <obj_property name="ObjectShortName">errorlct</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/l1a_match" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">l1a_match[5:1]</obj_property>
+      <obj_property name="ObjectShortName">l1a_match[5:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/ostrip" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ostrip[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ostrip[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/dly_aff" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dly_aff[5:0]</obj_property>
+      <obj_property name="ObjectShortName">dly_aff[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/lct" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">lct[5:0]</obj_property>
+      <obj_property name="ObjectShortName">lct[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/trgset" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">trgset[191:0]</obj_property>
+      <obj_property name="ObjectShortName">trgset[191:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/trates" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">trates[17:0]</obj_property>
+      <obj_property name="ObjectShortName">trates[17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/jtagcom_tf/le_rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">le_rst</obj_property>
+      <obj_property name="ObjectShortName">le_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="group135" type="group">
+      <obj_property name="label">JTAGCOM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/CLKCMS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLKCMS</obj_property>
+         <obj_property name="ObjectShortName">CLKCMS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CLK80" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK80</obj_property>
+         <obj_property name="ObjectShortName">CLK80</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CCBPED" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBPED</obj_property>
+         <obj_property name="ObjectShortName">CCBPED</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CCBINJ" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBINJ</obj_property>
+         <obj_property name="ObjectShortName">CCBINJ</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CCBPLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBPLS</obj_property>
+         <obj_property name="ObjectShortName">CCBPLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/ENL1RLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ENL1RLS</obj_property>
+         <obj_property name="ObjectShortName">ENL1RLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/PLSINJEN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PLSINJEN</obj_property>
+         <obj_property name="ObjectShortName">PLSINJEN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/TDOSFM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TDOSFM</obj_property>
+         <obj_property name="ObjectShortName">TDOSFM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/REGXL1ADLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">REGXL1ADLY[1:0]</obj_property>
+         <obj_property name="ObjectShortName">REGXL1ADLY[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/TMDAV" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TMDAV[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TMDAV[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/TMCOUNT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TMCOUNT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TMCOUNT[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/STATSFM" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">STATSFM[34:0]</obj_property>
+         <obj_property name="ObjectShortName">STATSFM[34:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/STATUS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">STATUS[47:0]</obj_property>
+         <obj_property name="ObjectShortName">STATUS[47:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/JRST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">JRST</obj_property>
+         <obj_property name="ObjectShortName">JRST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/SFMTCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMTCK</obj_property>
+         <obj_property name="ObjectShortName">SFMTCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/BTDI" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">BTDI</obj_property>
+         <obj_property name="ObjectShortName">BTDI</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/SFMTEST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SFMTEST</obj_property>
+         <obj_property name="ObjectShortName">SFMTEST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/TMDAVRST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TMDAVRST</obj_property>
+         <obj_property name="ObjectShortName">TMDAVRST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/JREADOUT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">JREADOUT</obj_property>
+         <obj_property name="ObjectShortName">JREADOUT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CAL_GTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CAL_GTRG</obj_property>
+         <obj_property name="ObjectShortName">CAL_GTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/SCPSYNC" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SCPSYNC</obj_property>
+         <obj_property name="ObjectShortName">SCPSYNC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/GLNKRST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GLNKRST</obj_property>
+         <obj_property name="ObjectShortName">GLNKRST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/DCFEB_IN_USE_JT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DCFEB_IN_USE_JT</obj_property>
+         <obj_property name="ObjectShortName">DCFEB_IN_USE_JT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CAL_MODE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CAL_MODE</obj_property>
+         <obj_property name="ObjectShortName">CAL_MODE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/INJECT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">INJECT</obj_property>
+         <obj_property name="ObjectShortName">INJECT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/PULSE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PULSE</obj_property>
+         <obj_property name="ObjectShortName">PULSE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/PREL1RLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PREL1RLS</obj_property>
+         <obj_property name="ObjectShortName">PREL1RLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/PEDESTAL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PEDESTAL</obj_property>
+         <obj_property name="ObjectShortName">PEDESTAL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/LCT_RQST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LCT_RQST</obj_property>
+         <obj_property name="ObjectShortName">LCT_RQST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/TESTSTAT_MON" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TESTSTAT_MON[15:0]</obj_property>
+         <obj_property name="ObjectShortName">TESTSTAT_MON[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/MONOUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">MONOUT[9:1]</obj_property>
+         <obj_property name="ObjectShortName">MONOUT[9:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/SERFM" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SERFM[10:0]</obj_property>
+         <obj_property name="ObjectShortName">SERFM[10:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/JTRGEN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">JTRGEN[3:0]</obj_property>
+         <obj_property name="ObjectShortName">JTRGEN[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CABLEDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
+         <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/XL1ADLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">XL1ADLY[1:0]</obj_property>
+         <obj_property name="ObjectShortName">XL1ADLY[1:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/OPT_COP_ADJ_JT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">OPT_COP_ADJ_JT[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/FEBCLKDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FEBCLKDLY[4:0]</obj_property>
+         <obj_property name="ObjectShortName">FEBCLKDLY[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CRATEID" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CRATEID[6:0]</obj_property>
+         <obj_property name="ObjectShortName">CRATEID[6:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/L1FNDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1FNDLY[3:0]</obj_property>
+         <obj_property name="ObjectShortName">L1FNDLY[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/SETKILLIN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">SETKILLIN[2:0]</obj_property>
+         <obj_property name="ObjectShortName">SETKILLIN[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/LOADTIME" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LOADTIME[25:0]</obj_property>
+         <obj_property name="ObjectShortName">LOADTIME[25:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/jrstd" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">jrstd</obj_property>
+         <obj_property name="ObjectShortName">jrstd</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/sel1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sel1</obj_property>
+         <obj_property name="ObjectShortName">sel1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/sel2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sel2</obj_property>
+         <obj_property name="ObjectShortName">sel2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/treset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">treset</obj_property>
+         <obj_property name="ObjectShortName">treset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/capture" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">capture</obj_property>
+         <obj_property name="ObjectShortName">capture</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/shift" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">shift</obj_property>
+         <obj_property name="ObjectShortName">shift</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/update" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">update</obj_property>
+         <obj_property name="ObjectShortName">update</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdo1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdo1</obj_property>
+         <obj_property name="ObjectShortName">tdo1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdo2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdo2</obj_property>
+         <obj_property name="ObjectShortName">tdo2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/rw_drck1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw_drck1</obj_property>
+         <obj_property name="ObjectShortName">rw_drck1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/rw_drck2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw_drck2</obj_property>
+         <obj_property name="ObjectShortName">rw_drck2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/drck1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">drck1</obj_property>
+         <obj_property name="ObjectShortName">drck1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/drck2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">drck2</obj_property>
+         <obj_property name="ObjectShortName">drck2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdocald" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdocald</obj_property>
+         <obj_property name="ObjectShortName">tdocald</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdofeb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdofeb</obj_property>
+         <obj_property name="ObjectShortName">tdofeb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdocrid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdocrid</obj_property>
+         <obj_property name="ObjectShortName">tdocrid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdocbl" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdocbl</obj_property>
+         <obj_property name="ObjectShortName">tdocbl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdostat" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdostat</obj_property>
+         <obj_property name="ObjectShortName">tdostat</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdodav" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdodav</obj_property>
+         <obj_property name="ObjectShortName">tdodav</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdocfeb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdocfeb</obj_property>
+         <obj_property name="ObjectShortName">tdocfeb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdotime" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdotime</obj_property>
+         <obj_property name="ObjectShortName">tdotime</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdotmdav" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdotmdav</obj_property>
+         <obj_property name="ObjectShortName">tdotmdav</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdofifo" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdofifo</obj_property>
+         <obj_property name="ObjectShortName">tdofifo</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdodcfeb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdodcfeb</obj_property>
+         <obj_property name="ObjectShortName">tdodcfeb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdolctrq" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdolctrq</obj_property>
+         <obj_property name="ObjectShortName">tdolctrq</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdotsel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdotsel</obj_property>
+         <obj_property name="ObjectShortName">tdotsel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tdorate" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">tdorate</obj_property>
+         <obj_property name="ObjectShortName">tdorate</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/instr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">instr[47:0]</obj_property>
+         <obj_property name="ObjectShortName">instr[47:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/le_instr11" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_instr11</obj_property>
+         <obj_property name="ObjectShortName">le_instr11</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/le_instr39" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_instr39</obj_property>
+         <obj_property name="ObjectShortName">le_instr39</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/clr_ccbcal" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_ccbcal</obj_property>
+         <obj_property name="ObjectShortName">clr_ccbcal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/renfifo" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">renfifo[2:0]</obj_property>
+         <obj_property name="ObjectShortName">renfifo[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/callctdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">callctdly[3:0]</obj_property>
+         <obj_property name="ObjectShortName">callctdly[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calgdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">calgdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">calgdly[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/extdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">extdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">extdly[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/injdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">injdly[4:0]</obj_property>
+         <obj_property name="ObjectShortName">injdly[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/alctdav" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">alctdav[4:0]</obj_property>
+         <obj_property name="ObjectShortName">alctdav[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/l1alat" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1alat[5:0]</obj_property>
+         <obj_property name="ObjectShortName">l1alat[5:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/pushd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">pushd[4:0]</obj_property>
+         <obj_property name="ObjectShortName">pushd[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/tmbdav" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">tmbdav[4:0]</obj_property>
+         <obj_property name="ObjectShortName">tmbdav[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/febdav" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">febdav[4:0]</obj_property>
+         <obj_property name="ObjectShortName">febdav[4:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/cfeb_reg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cfeb_reg[5:1]</obj_property>
+         <obj_property name="ObjectShortName">cfeb_reg[5:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/rqdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rqdly[5:0]</obj_property>
+         <obj_property name="ObjectShortName">rqdly[5:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/dummy" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">dummy[15:6]</obj_property>
+         <obj_property name="ObjectShortName">dummy[15:6]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/prelctrqst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prelctrqst</obj_property>
+         <obj_property name="ObjectShortName">prelctrqst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/lctrqst_d1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lctrqst_d1</obj_property>
+         <obj_property name="ObjectShortName">lctrqst_d1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/lctrqst_d2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lctrqst_d2</obj_property>
+         <obj_property name="ObjectShortName">lctrqst_d2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/injplsmon" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">injplsmon</obj_property>
+         <obj_property name="ObjectShortName">injplsmon</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/scope" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">scope</obj_property>
+         <obj_property name="ObjectShortName">scope</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/callct_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">callct_1</obj_property>
+         <obj_property name="ObjectShortName">callct_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/prelct" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prelct</obj_property>
+         <obj_property name="ObjectShortName">prelct</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/pregtrg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pregtrg</obj_property>
+         <obj_property name="ObjectShortName">pregtrg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/rndmgtrg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rndmgtrg</obj_property>
+         <obj_property name="ObjectShortName">rndmgtrg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/randomtrg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">randomtrg</obj_property>
+         <obj_property name="ObjectShortName">randomtrg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/rndmlct" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rndmlct[5:0]</obj_property>
+         <obj_property name="ObjectShortName">rndmlct[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/grtsel" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">grtsel[2:0]</obj_property>
+         <obj_property name="ObjectShortName">grtsel[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/l1rtsel" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1rtsel[2:0]</obj_property>
+         <obj_property name="ObjectShortName">l1rtsel[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/l2rtsel" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l2rtsel[2:0]</obj_property>
+         <obj_property name="ObjectShortName">l2rtsel[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/l3rtsel" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l3rtsel[2:0]</obj_property>
+         <obj_property name="ObjectShortName">l3rtsel[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/l4rtsel" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l4rtsel[2:0]</obj_property>
+         <obj_property name="ObjectShortName">l4rtsel[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/l5rtsel" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l5rtsel[2:0]</obj_property>
+         <obj_property name="ObjectShortName">l5rtsel[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calcnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">calcnt[7:0]</obj_property>
+         <obj_property name="ObjectShortName">calcnt[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/capture1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">capture1</obj_property>
+         <obj_property name="ObjectShortName">capture1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/capture2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">capture2</obj_property>
+         <obj_property name="ObjectShortName">capture2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/treset1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">treset1</obj_property>
+         <obj_property name="ObjectShortName">treset1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/treset2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">treset2</obj_property>
+         <obj_property name="ObjectShortName">treset2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/shift1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">shift1</obj_property>
+         <obj_property name="ObjectShortName">shift1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/shift2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">shift2</obj_property>
+         <obj_property name="ObjectShortName">shift2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/btdi1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">btdi1</obj_property>
+         <obj_property name="ObjectShortName">btdi1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/btdi2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">btdi2</obj_property>
+         <obj_property name="ObjectShortName">btdi2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/update1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">update1</obj_property>
+         <obj_property name="ObjectShortName">update1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/update2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">update2</obj_property>
+         <obj_property name="ObjectShortName">update2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/ENACFEB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ENACFEB</obj_property>
+         <obj_property name="ObjectShortName">ENACFEB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/TRGSEL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TRGSEL</obj_property>
+         <obj_property name="ObjectShortName">TRGSEL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/JOEF" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">JOEF[7:0]</obj_property>
+         <obj_property name="ObjectShortName">JOEF[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/CAL_CFEB" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CAL_CFEB[5:0]</obj_property>
+         <obj_property name="ObjectShortName">CAL_CFEB[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/instr11_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">instr11_1</obj_property>
+         <obj_property name="ObjectShortName">instr11_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/instr39_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">instr39_1</obj_property>
+         <obj_property name="ObjectShortName">instr39_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/instr36_updt_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">instr36_updt_1</obj_property>
+         <obj_property name="ObjectShortName">instr36_updt_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/instr38_updt_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">instr38_updt_1</obj_property>
+         <obj_property name="ObjectShortName">instr38_updt_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/ccbcal" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbcal</obj_property>
+         <obj_property name="ObjectShortName">ccbcal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/ccbcal_dly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ccbcal_dly</obj_property>
+         <obj_property name="ObjectShortName">ccbcal_dly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/lctrqst_out" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lctrqst_out</obj_property>
+         <obj_property name="ObjectShortName">lctrqst_out</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group254" type="group">
+      <obj_property name="label">calib_trig</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CLKCMS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLKCMS</obj_property>
+         <obj_property name="ObjectShortName">CLKCMS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CLK80" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK80</obj_property>
+         <obj_property name="ObjectShortName">CLK80</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/FINJ" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FINJ</obj_property>
+         <obj_property name="ObjectShortName">FINJ</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/FPLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FPLS</obj_property>
+         <obj_property name="ObjectShortName">FPLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/FPED" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FPED</obj_property>
+         <obj_property name="ObjectShortName">FPED</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CCBINJ" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBINJ</obj_property>
+         <obj_property name="ObjectShortName">CCBINJ</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CCBPLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBPLS</obj_property>
+         <obj_property name="ObjectShortName">CCBPLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/PLSINJEN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PLSINJEN</obj_property>
+         <obj_property name="ObjectShortName">PLSINJEN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/PRELCT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PRELCT</obj_property>
+         <obj_property name="ObjectShortName">PRELCT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/PREGTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PREGTRG</obj_property>
+         <obj_property name="ObjectShortName">PREGTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/RNDMGTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RNDMGTRG</obj_property>
+         <obj_property name="ObjectShortName">RNDMGTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/INJDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">INJDLY[4:0]</obj_property>
+         <obj_property name="ObjectShortName">INJDLY[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/EXTDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">EXTDLY[4:0]</obj_property>
+         <obj_property name="ObjectShortName">EXTDLY[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CALLCTDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CALLCTDLY[3:0]</obj_property>
+         <obj_property name="ObjectShortName">CALLCTDLY[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CALGDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CALGDLY[4:0]</obj_property>
+         <obj_property name="ObjectShortName">CALGDLY[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/XL1ADLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">XL1ADLY[1:0]</obj_property>
+         <obj_property name="ObjectShortName">XL1ADLY[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/INJECT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">INJECT</obj_property>
+         <obj_property name="ObjectShortName">INJECT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/PULSE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PULSE</obj_property>
+         <obj_property name="ObjectShortName">PULSE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/SYNCIP" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SYNCIP</obj_property>
+         <obj_property name="ObjectShortName">SYNCIP</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/LCTRQST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LCTRQST</obj_property>
+         <obj_property name="ObjectShortName">LCTRQST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/preinj" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">preinj</obj_property>
+         <obj_property name="ObjectShortName">preinj</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/prepls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prepls</obj_property>
+         <obj_property name="ObjectShortName">prepls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/rstpls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rstpls</obj_property>
+         <obj_property name="ObjectShortName">rstpls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/dly_inj" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dly_inj</obj_property>
+         <obj_property name="ObjectShortName">dly_inj</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/dly_pls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dly_pls</obj_property>
+         <obj_property name="ObjectShortName">dly_pls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/rstplscnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rstplscnt[6:0]</obj_property>
+         <obj_property name="ObjectShortName">rstplscnt[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/ce_plscnt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ce_plscnt</obj_property>
+         <obj_property name="ObjectShortName">ce_plscnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/l1arqst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1arqst</obj_property>
+         <obj_property name="ObjectShortName">l1arqst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/lctd1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lctd1</obj_property>
+         <obj_property name="ObjectShortName">lctd1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/lctd3" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lctd3</obj_property>
+         <obj_property name="ObjectShortName">lctd3</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/fdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fdly[6:0]</obj_property>
+         <obj_property name="ObjectShortName">fdly[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/xdly" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">xdly[3:0]</obj_property>
+         <obj_property name="ObjectShortName">xdly[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/gdly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gdly</obj_property>
+         <obj_property name="ObjectShortName">gdly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/l1adly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1adly</obj_property>
+         <obj_property name="ObjectShortName">l1adly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/le_fped" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_fped</obj_property>
+         <obj_property name="ObjectShortName">le_fped</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/PEDESTAL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PEDESTAL</obj_property>
+         <obj_property name="ObjectShortName">PEDESTAL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CAL_GTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CAL_GTRG</obj_property>
+         <obj_property name="ObjectShortName">CAL_GTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/CALLCT_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CALLCT_1</obj_property>
+         <obj_property name="ObjectShortName">CALLCT_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/SCPSYN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SCPSYN</obj_property>
+         <obj_property name="ObjectShortName">SCPSYN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/INJPLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">INJPLS</obj_property>
+         <obj_property name="ObjectShortName">INJPLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/finj_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">finj_1</obj_property>
+         <obj_property name="ObjectShortName">finj_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/finj_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">finj_2</obj_property>
+         <obj_property name="ObjectShortName">finj_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/fpls_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpls_1</obj_property>
+         <obj_property name="ObjectShortName">fpls_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/fpls_2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fpls_2</obj_property>
+         <obj_property name="ObjectShortName">fpls_2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/fped_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fped_1</obj_property>
+         <obj_property name="ObjectShortName">fped_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/pls_end" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pls_end</obj_property>
+         <obj_property name="ObjectShortName">pls_end</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/inj_hld" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">inj_hld</obj_property>
+         <obj_property name="ObjectShortName">inj_hld</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/en_inj_hld" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">en_inj_hld</obj_property>
+         <obj_property name="ObjectShortName">en_inj_hld</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/pls_hld" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pls_hld</obj_property>
+         <obj_property name="ObjectShortName">pls_hld</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/en_pls_hld" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">en_pls_hld</obj_property>
+         <obj_property name="ObjectShortName">en_pls_hld</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/dly_inj_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dly_inj_1</obj_property>
+         <obj_property name="ObjectShortName">dly_inj_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/dly_pls_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">dly_pls_1</obj_property>
+         <obj_property name="ObjectShortName">dly_pls_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/neg_inj" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">neg_inj</obj_property>
+         <obj_property name="ObjectShortName">neg_inj</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/pos_inj" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pos_inj</obj_property>
+         <obj_property name="ObjectShortName">pos_inj</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/neg_pls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">neg_pls</obj_property>
+         <obj_property name="ObjectShortName">neg_pls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/pos_pls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pos_pls</obj_property>
+         <obj_property name="ObjectShortName">pos_pls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/lctd2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lctd2</obj_property>
+         <obj_property name="ObjectShortName">lctd2</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/l1amid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1amid</obj_property>
+         <obj_property name="ObjectShortName">l1amid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/calib_trig_i/l1amid2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1amid2</obj_property>
+         <obj_property name="ObjectShortName">l1amid2</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group263" type="group">
+      <obj_property name="label">trig_con</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/DRCK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DRCK</obj_property>
+         <obj_property name="ObjectShortName">DRCK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/DIN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DIN</obj_property>
+         <obj_property name="ObjectShortName">DIN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/SEL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SEL</obj_property>
+         <obj_property name="ObjectShortName">SEL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/FLOAD" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FLOAD</obj_property>
+         <obj_property name="ObjectShortName">FLOAD</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/FCYC" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FCYC</obj_property>
+         <obj_property name="ObjectShortName">FCYC</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/FCYCM" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FCYCM</obj_property>
+         <obj_property name="ObjectShortName">FCYCM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/SHIFT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SHIFT</obj_property>
+         <obj_property name="ObjectShortName">SHIFT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/PLSINJEN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PLSINJEN</obj_property>
+         <obj_property name="ObjectShortName">PLSINJEN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/CCBPED" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CCBPED</obj_property>
+         <obj_property name="ObjectShortName">CCBPED</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/LCTOUT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LCTOUT</obj_property>
+         <obj_property name="ObjectShortName">LCTOUT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/GTRGOUT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GTRGOUT</obj_property>
+         <obj_property name="ObjectShortName">GTRGOUT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/doutl" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">doutl[1:0]</obj_property>
+         <obj_property name="ObjectShortName">doutl[1:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/waddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">waddr[13:0]</obj_property>
+         <obj_property name="ObjectShortName">waddr[13:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/raddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">raddr[12:0]</obj_property>
+         <obj_property name="ObjectShortName">raddr[12:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/sela" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sela</obj_property>
+         <obj_property name="ObjectShortName">sela</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/le_fcyc" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_fcyc</obj_property>
+         <obj_property name="ObjectShortName">le_fcyc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/clr_waddr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_waddr</obj_property>
+         <obj_property name="ObjectShortName">clr_waddr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/clr_raddr" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clr_raddr</obj_property>
+         <obj_property name="ObjectShortName">clr_raddr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/renb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">renb</obj_property>
+         <obj_property name="ObjectShortName">renb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/cycle" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cycle</obj_property>
+         <obj_property name="ObjectShortName">cycle</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/fcyc_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fcyc_1</obj_property>
+         <obj_property name="ObjectShortName">fcyc_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/trig_con_i/stop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">stop</obj_property>
+         <obj_property name="ObjectShortName">stop</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group317" type="group">
+      <obj_property name="label">trrcntrl_i</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/CGTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CGTRG</obj_property>
+         <obj_property name="ObjectShortName">CGTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/BGTRG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">BGTRG</obj_property>
+         <obj_property name="ObjectShortName">BGTRG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/CMODE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CMODE</obj_property>
+         <obj_property name="ObjectShortName">CMODE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/CALTRGSEL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CALTRGSEL</obj_property>
+         <obj_property name="ObjectShortName">CALTRGSEL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/EAFEB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">EAFEB</obj_property>
+         <obj_property name="ObjectShortName">EAFEB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/DCFEB_IN_USE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DCFEB_IN_USE</obj_property>
+         <obj_property name="ObjectShortName">DCFEB_IN_USE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/OPT_COP_ADJ" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OPT_COP_ADJ[2:0]</obj_property>
+         <obj_property name="ObjectShortName">OPT_COP_ADJ[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/CSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">CSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/BSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">BSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">BSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/L1FINEDELAY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1FINEDELAY[3:0]</obj_property>
+         <obj_property name="ObjectShortName">L1FINEDELAY[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/L1LATNCY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1LATNCY[5:0]</obj_property>
+         <obj_property name="ObjectShortName">L1LATNCY[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/GPUSHDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">GPUSHDLY[4:0]</obj_property>
+         <obj_property name="ObjectShortName">GPUSHDLY[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/CABLEDLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">CABLEDLY[7:0]</obj_property>
+         <obj_property name="ObjectShortName">CABLEDLY[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/XL1ADLY" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">XL1ADLY[1:0]</obj_property>
+         <obj_property name="ObjectShortName">XL1ADLY[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/KILLINPUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
+         <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/JTRGEN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">JTRGEN[3:0]</obj_property>
+         <obj_property name="ObjectShortName">JTRGEN[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/L1ACFEB" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1ACFEB</obj_property>
+         <obj_property name="ObjectShortName">L1ACFEB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/L1A_MATCH" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">L1A_MATCH[5:1]</obj_property>
+         <obj_property name="ObjectShortName">L1A_MATCH[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/OSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">OSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/DLY_AFF" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DLY_AFF[5:0]</obj_property>
+         <obj_property name="ObjectShortName">DLY_AFF[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/BOSTRIP" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">BOSTRIP[5:0]</obj_property>
+         <obj_property name="ObjectShortName">BOSTRIP[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/bstrip_d" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bstrip_d[5:0]</obj_property>
+         <obj_property name="ObjectShortName">bstrip_d[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/strip_m1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">strip_m1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">strip_m1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/strip_m2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">strip_m2[5:1]</obj_property>
+         <obj_property name="ObjectShortName">strip_m2[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/killcfeb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">killcfeb[5:1]</obj_property>
+         <obj_property name="ObjectShortName">killcfeb[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/lct_match" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_match[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_match[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/l1mtch" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">l1mtch[5:0]</obj_property>
+         <obj_property name="ObjectShortName">l1mtch[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/jcalsel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">jcalsel</obj_property>
+         <obj_property name="ObjectShortName">jcalsel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/cal1_sel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cal1_sel</obj_property>
+         <obj_property name="ObjectShortName">cal1_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/cal_mode" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cal_mode</obj_property>
+         <obj_property name="ObjectShortName">cal_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/all_sel" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">all_sel</obj_property>
+         <obj_property name="ObjectShortName">all_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/killalct" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">killalct</obj_property>
+         <obj_property name="ObjectShortName">killalct</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/killtmb" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">killtmb</obj_property>
+         <obj_property name="ObjectShortName">killtmb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/gtrgout" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgout</obj_property>
+         <obj_property name="ObjectShortName">gtrgout</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/l1a" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1a</obj_property>
+         <obj_property name="ObjectShortName">l1a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/d_lct_out_i" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">d_lct_out_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">d_lct_out_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/GFPUSH" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GFPUSH</obj_property>
+         <obj_property name="ObjectShortName">GFPUSH</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/LCTERR" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LCTERR</obj_property>
+         <obj_property name="ObjectShortName">LCTERR</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/bstrip_r" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">bstrip_r[5:0]</obj_property>
+         <obj_property name="ObjectShortName">bstrip_r[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/lct_match_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_match_1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_match_1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/bgtrg_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">bgtrg_1</obj_property>
+         <obj_property name="ObjectShortName">bgtrg_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/trgcntrl_i/gtrgout_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgout_1</obj_property>
+         <obj_property name="ObjectShortName">gtrgout_1</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group451" type="group">
+      <obj_property name="label">random_trig_i</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/FTSTART" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FTSTART</obj_property>
+         <obj_property name="ObjectShortName">FTSTART</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/FBURST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FBURST</obj_property>
+         <obj_property name="ObjectShortName">FBURST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/ENL1RLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ENL1RLS</obj_property>
+         <obj_property name="ObjectShortName">ENL1RLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/GTRGSEL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">GTRGSEL[3:1]</obj_property>
+         <obj_property name="ObjectShortName">GTRGSEL[3:1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LCT1SEL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LCT1SEL[3:1]</obj_property>
+         <obj_property name="ObjectShortName">LCT1SEL[3:1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LCT2SEL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LCT2SEL[3:1]</obj_property>
+         <obj_property name="ObjectShortName">LCT2SEL[3:1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LCT3SEL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LCT3SEL[3:1]</obj_property>
+         <obj_property name="ObjectShortName">LCT3SEL[3:1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LCT4SEL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LCT4SEL[3:1]</obj_property>
+         <obj_property name="ObjectShortName">LCT4SEL[3:1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LCT5SEL" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LCT5SEL[3:1]</obj_property>
+         <obj_property name="ObjectShortName">LCT5SEL[3:1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LCTOUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">LCTOUT[5:0]</obj_property>
+         <obj_property name="ObjectShortName">LCTOUT[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rlct1[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rlct2[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct3" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct3[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rlct3[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rlct4[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rlct5[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlcta" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rlcta[8:0]</obj_property>
+         <obj_property name="ObjectShortName">rlcta[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrga" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrga[8:0]</obj_property>
+         <obj_property name="ObjectShortName">gtrga[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fba" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fba[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fba[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbb" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbb[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbb[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbc" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbc[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbc[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbd[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbd[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbe" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbe[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbe[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbf" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbf[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbf[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbg[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbg[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbh" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbh[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbh[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbp" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbp[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbp[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbq" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbq[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbq[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbr[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbs" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbs[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbs[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbt[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbt[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbu" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbu[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbu[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbv" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbv[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbv[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbw" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fbw[8:0]</obj_property>
+         <obj_property name="ObjectShortName">fbw[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrgab167" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgab167</obj_property>
+         <obj_property name="ObjectShortName">gtrgab167</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b1</obj_property>
+         <obj_property name="ObjectShortName">rlct1b1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b18" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b18</obj_property>
+         <obj_property name="ObjectShortName">rlct1b18</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b34" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b34</obj_property>
+         <obj_property name="ObjectShortName">rlct1b34</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b52" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b52</obj_property>
+         <obj_property name="ObjectShortName">rlct1b52</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b69" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b69</obj_property>
+         <obj_property name="ObjectShortName">rlct1b69</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b86" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b86</obj_property>
+         <obj_property name="ObjectShortName">rlct1b86</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b103" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b103</obj_property>
+         <obj_property name="ObjectShortName">rlct1b103</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b120" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b120</obj_property>
+         <obj_property name="ObjectShortName">rlct1b120</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct1b137" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct1b137</obj_property>
+         <obj_property name="ObjectShortName">rlct1b137</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b1</obj_property>
+         <obj_property name="ObjectShortName">rlct2b1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b18" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b18</obj_property>
+         <obj_property name="ObjectShortName">rlct2b18</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b35" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b35</obj_property>
+         <obj_property name="ObjectShortName">rlct2b35</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b52" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b52</obj_property>
+         <obj_property name="ObjectShortName">rlct2b52</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b68" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b68</obj_property>
+         <obj_property name="ObjectShortName">rlct2b68</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b86" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b86</obj_property>
+         <obj_property name="ObjectShortName">rlct2b86</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b103" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b103</obj_property>
+         <obj_property name="ObjectShortName">rlct2b103</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b120" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b120</obj_property>
+         <obj_property name="ObjectShortName">rlct2b120</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct2b137" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct2b137</obj_property>
+         <obj_property name="ObjectShortName">rlct2b137</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct3b161" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct3b161</obj_property>
+         <obj_property name="ObjectShortName">rlct3b161</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b1</obj_property>
+         <obj_property name="ObjectShortName">rlct4b1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b18" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b18</obj_property>
+         <obj_property name="ObjectShortName">rlct4b18</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b35" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b35</obj_property>
+         <obj_property name="ObjectShortName">rlct4b35</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b52" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b52</obj_property>
+         <obj_property name="ObjectShortName">rlct4b52</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b69" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b69</obj_property>
+         <obj_property name="ObjectShortName">rlct4b69</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b86" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b86</obj_property>
+         <obj_property name="ObjectShortName">rlct4b86</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b103" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b103</obj_property>
+         <obj_property name="ObjectShortName">rlct4b103</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b120" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b120</obj_property>
+         <obj_property name="ObjectShortName">rlct4b120</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct4b136" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct4b136</obj_property>
+         <obj_property name="ObjectShortName">rlct4b136</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b1</obj_property>
+         <obj_property name="ObjectShortName">rlct5b1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b18" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b18</obj_property>
+         <obj_property name="ObjectShortName">rlct5b18</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b35" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b35</obj_property>
+         <obj_property name="ObjectShortName">rlct5b35</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b52" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b52</obj_property>
+         <obj_property name="ObjectShortName">rlct5b52</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b69" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b69</obj_property>
+         <obj_property name="ObjectShortName">rlct5b69</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b86" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b86</obj_property>
+         <obj_property name="ObjectShortName">rlct5b86</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b103" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b103</obj_property>
+         <obj_property name="ObjectShortName">rlct5b103</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b120" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b120</obj_property>
+         <obj_property name="ObjectShortName">rlct5b120</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlct5b137" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlct5b137</obj_property>
+         <obj_property name="ObjectShortName">rlct5b137</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab1</obj_property>
+         <obj_property name="ObjectShortName">rlctab1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab10" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab10</obj_property>
+         <obj_property name="ObjectShortName">rlctab10</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab27" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab27</obj_property>
+         <obj_property name="ObjectShortName">rlctab27</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab44" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab44</obj_property>
+         <obj_property name="ObjectShortName">rlctab44</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab60" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab60</obj_property>
+         <obj_property name="ObjectShortName">rlctab60</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab74" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab74</obj_property>
+         <obj_property name="ObjectShortName">rlctab74</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab75" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab75</obj_property>
+         <obj_property name="ObjectShortName">rlctab75</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab86" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab86</obj_property>
+         <obj_property name="ObjectShortName">rlctab86</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rlctab87" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rlctab87</obj_property>
+         <obj_property name="ObjectShortName">rlctab87</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbab35" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbab35</obj_property>
+         <obj_property name="ObjectShortName">fbab35</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbbb36" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbbb36</obj_property>
+         <obj_property name="ObjectShortName">fbbb36</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbcb39" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbcb39</obj_property>
+         <obj_property name="ObjectShortName">fbcb39</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbdb41" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbdb41</obj_property>
+         <obj_property name="ObjectShortName">fbdb41</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbeb47" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbeb47</obj_property>
+         <obj_property name="ObjectShortName">fbeb47</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbfb49" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbfb49</obj_property>
+         <obj_property name="ObjectShortName">fbfb49</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbgb52" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbgb52</obj_property>
+         <obj_property name="ObjectShortName">fbgb52</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbhb55" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbhb55</obj_property>
+         <obj_property name="ObjectShortName">fbhb55</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbpb57" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbpb57</obj_property>
+         <obj_property name="ObjectShortName">fbpb57</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbqb60" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbqb60</obj_property>
+         <obj_property name="ObjectShortName">fbqb60</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbrb63" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbrb63</obj_property>
+         <obj_property name="ObjectShortName">fbrb63</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbsb65" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbsb65</obj_property>
+         <obj_property name="ObjectShortName">fbsb65</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbtb68" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbtb68</obj_property>
+         <obj_property name="ObjectShortName">fbtb68</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbub71" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbub71</obj_property>
+         <obj_property name="ObjectShortName">fbub71</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbvb73" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbvb73</obj_property>
+         <obj_property name="ObjectShortName">fbvb73</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbwb79" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbwb79</obj_property>
+         <obj_property name="ObjectShortName">fbwb79</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbyb34" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbyb34</obj_property>
+         <obj_property name="ObjectShortName">fbyb34</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbib38" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbib38</obj_property>
+         <obj_property name="ObjectShortName">fbib38</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbjb44" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbjb44</obj_property>
+         <obj_property name="ObjectShortName">fbjb44</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbkb45" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbkb45</obj_property>
+         <obj_property name="ObjectShortName">fbkb45</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fblb54" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fblb54</obj_property>
+         <obj_property name="ObjectShortName">fblb54</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbmb56" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbmb56</obj_property>
+         <obj_property name="ObjectShortName">fbmb56</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbnb61" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbnb61</obj_property>
+         <obj_property name="ObjectShortName">fbnb61</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fbob62" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fbob62</obj_property>
+         <obj_property name="ObjectShortName">fbob62</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/le_ftstart" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_ftstart</obj_property>
+         <obj_property name="ObjectShortName">le_ftstart</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/le_fburst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">le_fburst</obj_property>
+         <obj_property name="ObjectShortName">le_fburst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/burst_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">burst_cnt[9:0]</obj_property>
+         <obj_property name="ObjectShortName">burst_cnt[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/burst_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">burst_rst</obj_property>
+         <obj_property name="ObjectShortName">burst_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_sel_or" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_sel_or[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_sel_or[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_fand" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_fand[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_fand[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct1_fand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct1_fand</obj_property>
+         <obj_property name="ObjectShortName">lct1_fand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct2_fand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct2_fand</obj_property>
+         <obj_property name="ObjectShortName">lct2_fand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct3_fand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct3_fand</obj_property>
+         <obj_property name="ObjectShortName">lct3_fand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct4_fand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct4_fand</obj_property>
+         <obj_property name="ObjectShortName">lct4_fand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct5_fand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct5_fand</obj_property>
+         <obj_property name="ObjectShortName">lct5_fand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_sand" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_sand[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_sand[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct1_sand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct1_sand</obj_property>
+         <obj_property name="ObjectShortName">lct1_sand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct2_sand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct2_sand</obj_property>
+         <obj_property name="ObjectShortName">lct2_sand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct3_sand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct3_sand</obj_property>
+         <obj_property name="ObjectShortName">lct3_sand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct4_sand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct4_sand</obj_property>
+         <obj_property name="ObjectShortName">lct4_sand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct5_sand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct5_sand</obj_property>
+         <obj_property name="ObjectShortName">lct5_sand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_rst" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_rst[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_rst[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_or" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_or</obj_property>
+         <obj_property name="ObjectShortName">lct_or</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/pprel1rls" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pprel1rls</obj_property>
+         <obj_property name="ObjectShortName">pprel1rls</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/l1rls_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1rls_rst</obj_property>
+         <obj_property name="ObjectShortName">l1rls_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrg_rst" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrg_rst</obj_property>
+         <obj_property name="ObjectShortName">gtrg_rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rule2_cnt" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rule2_cnt[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rule2_cnt[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrg_fand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrg_fand</obj_property>
+         <obj_property name="ObjectShortName">gtrg_fand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrg_sand" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrg_sand</obj_property>
+         <obj_property name="ObjectShortName">gtrg_sand</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrg_mid" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrg_mid</obj_property>
+         <obj_property name="ObjectShortName">gtrg_mid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrg_dly" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrg_dly</obj_property>
+         <obj_property name="ObjectShortName">gtrg_dly</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/rule2_ce" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rule2_ce</obj_property>
+         <obj_property name="ObjectShortName">rule2_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/GTRGOUT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GTRGOUT</obj_property>
+         <obj_property name="ObjectShortName">GTRGOUT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/SELRAN" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">SELRAN</obj_property>
+         <obj_property name="ObjectShortName">SELRAN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/PREL1RLS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">PREL1RLS</obj_property>
+         <obj_property name="ObjectShortName">PREL1RLS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/ftstart_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ftstart_1</obj_property>
+         <obj_property name="ObjectShortName">ftstart_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/fburst_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">fburst_1</obj_property>
+         <obj_property name="ObjectShortName">fburst_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/burst1000" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">burst1000</obj_property>
+         <obj_property name="ObjectShortName">burst1000</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/finish1000" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">finish1000</obj_property>
+         <obj_property name="ObjectShortName">finish1000</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lct_1[5:1]</obj_property>
+         <obj_property name="ObjectShortName">lct_1[5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/prel1rls_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prel1rls_1</obj_property>
+         <obj_property name="ObjectShortName">prel1rls_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/gtrgout_1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">gtrgout_1</obj_property>
+         <obj_property name="ObjectShortName">gtrgout_1</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group500" type="group">
+      <obj_property name="label">lfsr_two_tap</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/OUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OUT[8:0]</obj_property>
+         <obj_property name="ObjectShortName">OUT[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/feedback" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">feedback</obj_property>
+         <obj_property name="ObjectShortName">feedback</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/lfsr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lfsr[161:1]</obj_property>
+         <obj_property name="ObjectShortName">lfsr[161:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/N" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">N[31:0]</obj_property>
+         <obj_property name="ObjectShortName">N[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/FB_tap" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FB_tap[31:0]</obj_property>
+         <obj_property name="ObjectShortName">FB_tap[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_A" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_A[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_A[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_B[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_B[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_C" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_C[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_C[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_D" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_D[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_E" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_E[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_F" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_F[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_F[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_G" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_G[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_G[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_H" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_H[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_H[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_LCT1_i/TAP_I" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_I[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_I[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group654" type="group">
+      <obj_property name="label">LFSR_GTRGA</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/OUT" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OUT[8:0]</obj_property>
+         <obj_property name="ObjectShortName">OUT[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/feedback" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">feedback</obj_property>
+         <obj_property name="ObjectShortName">feedback</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/lfsr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">lfsr[167:1]</obj_property>
+         <obj_property name="ObjectShortName">lfsr[167:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/N" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">N[31:0]</obj_property>
+         <obj_property name="ObjectShortName">N[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/FB_tap" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FB_tap[31:0]</obj_property>
+         <obj_property name="ObjectShortName">FB_tap[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_A" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_A[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_A[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_B[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_B[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_C" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_C[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_C[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_D" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_D[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_E" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_E[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_E[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_F" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_F[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_F[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_G" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_G[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_G[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_H" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_H[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_H[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/LFSR_GTRGA_i/TAP_I" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">TAP_I[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAP_I[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

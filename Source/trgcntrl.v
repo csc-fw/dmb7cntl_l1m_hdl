@@ -56,7 +56,6 @@ wire [5:1] killcfeb;
 wire [5:1] lct_match;
 reg  [5:1] lct_match_1;
 wire [5:0] l1mtch;
-wire d_lct_out_z;
 
 wire jcalsel;
 wire cal1_sel;

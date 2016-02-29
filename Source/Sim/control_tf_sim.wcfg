@@ -258,10 +258,6 @@
          <obj_property name="ElementShortName">okdata_rst</obj_property>
          <obj_property name="ObjectShortName">okdata_rst</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/l1only" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">l1only</obj_property>
-         <obj_property name="ObjectShortName">l1only</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/head_d12" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">head_d12</obj_property>
          <obj_property name="ObjectShortName">head_d12</obj_property>
@@ -349,6 +345,14 @@
          <obj_property name="ElementShortName">ovlpren</obj_property>
          <obj_property name="ObjectShortName">ovlpren</obj_property>
       </wvobject>
+      <wvobject fp_name="/control_tf/uut/l1only" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">l1only</obj_property>
+         <obj_property name="ObjectShortName">l1only</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/stpop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">stpop</obj_property>
+         <obj_property name="ObjectShortName">stpop</obj_property>
+      </wvobject>
       <wvobject fp_name="/control_tf/uut/doneovlp" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">doneovlp</obj_property>
          <obj_property name="ObjectShortName">doneovlp</obj_property>
@@ -417,10 +421,6 @@
          <obj_property name="ElementShortName">doutx[19:0]</obj_property>
          <obj_property name="ObjectShortName">doutx[19:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/DAV" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">DAV</obj_property>
-         <obj_property name="ObjectShortName">DAV</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/POPBRAM" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">POPBRAM</obj_property>
          <obj_property name="ObjectShortName">POPBRAM</obj_property>
@@ -437,6 +437,10 @@
          <obj_property name="ElementShortName">DOUT[15:0]</obj_property>
          <obj_property name="ObjectShortName">DOUT[15:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/DAV" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DAV</obj_property>
+         <obj_property name="ObjectShortName">DAV</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/GEMPTY_B" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">GEMPTY_B</obj_property>
@@ -466,9 +470,9 @@
          <obj_property name="ElementShortName">busy_1</obj_property>
          <obj_property name="ObjectShortName">busy_1</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/pop" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">pop</obj_property>
-         <obj_property name="ObjectShortName">pop</obj_property>
+      <wvobject fp_name="/control_tf/uut/stpop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">stpop</obj_property>
+         <obj_property name="ObjectShortName">stpop</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/pop_m3" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">pop_m3</obj_property>
@@ -482,6 +486,10 @@
          <obj_property name="ElementShortName">pop_m1</obj_property>
          <obj_property name="ObjectShortName">pop_m1</obj_property>
       </wvobject>
+      <wvobject fp_name="/control_tf/uut/pop" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pop</obj_property>
+         <obj_property name="ObjectShortName">pop</obj_property>
+      </wvobject>
       <wvobject fp_name="/control_tf/uut/pbram" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">pbram</obj_property>
          <obj_property name="ObjectShortName">pbram</obj_property>
@@ -489,10 +497,12 @@
       <wvobject fp_name="/control_tf/uut/oehdr" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">oehdr[8:1]</obj_property>
          <obj_property name="ObjectShortName">oehdr[8:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/tail" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">tail[8:1]</obj_property>
          <obj_property name="ObjectShortName">tail[8:1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/tail8_1" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">tail8_1</obj_property>
@@ -501,6 +511,10 @@
       <wvobject fp_name="/control_tf/uut/oehdtl" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">oehdtl</obj_property>
          <obj_property name="ObjectShortName">oehdtl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/disdav" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">disdav</obj_property>
+         <obj_property name="ObjectShortName">disdav</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/dodat" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">dodat</obj_property>
@@ -517,14 +531,17 @@
       <wvobject fp_name="/control_tf/uut/d_htov" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">d_htov[15:0]</obj_property>
          <obj_property name="ObjectShortName">d_htov[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/da_in" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">da_in[15:0]</obj_property>
          <obj_property name="ObjectShortName">da_in[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/dint" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">dint[15:0]</obj_property>
          <obj_property name="ObjectShortName">dint[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/cdcd" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">cdcd[11:0]</obj_property>
@@ -609,10 +626,6 @@
       <wvobject fp_name="/control_tf/uut/ooeovlp" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">ooeovlp</obj_property>
          <obj_property name="ObjectShortName">ooeovlp</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/disdav" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">disdav</obj_property>
-         <obj_property name="ObjectShortName">disdav</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/prefflast" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">prefflast</obj_property>
