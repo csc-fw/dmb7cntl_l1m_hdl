@@ -192,6 +192,7 @@ wire prelct;
 wire pregtrg;
 wire rndmgtrg;
 wire randomtrg;
+wire burst1000;
 wire [5:0] rndmlct;
 wire [2:0] grtsel;
 wire [2:0] l1rtsel;
@@ -296,7 +297,7 @@ assign JRST         = instr[1];
 assign jrstd        = instr[2];
 assign GLNKRST      = instr[14];
 assign SFMTEST      = instr[35];
-assign CAL_MODE     = |{instr[8],instr[7],instr[4],instr[3],ccbcal,randomtrg};
+assign CAL_MODE     = |{instr[8],instr[7],instr[4],instr[3],ccbcal,randomtrg,burst1000};
 assign SERFM        = instr[31:21];
 assign TESTSTAT_MON ={5'b00000,STATSFM[34:24]};
 assign LOADTIME     ={alctdav,l1alat,pushd,tmbdav,febdav};
@@ -723,6 +724,7 @@ random_trig_i(
 	
 	.GTRGOUT(rndmgtrg),
 	.SELRAN(randomtrg),
+	.BURST1000(burst1000),
 	.PREL1RLS(PREL1RLS),
 	.LCTOUT(rndmlct)
 );

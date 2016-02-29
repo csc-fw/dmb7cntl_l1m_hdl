@@ -86,7 +86,10 @@ module jtagcom_tf;
 	wire [5:0] lct;
 
 	// Instantiate the Unit Under Test (UUT)
-	jtagcom uut (
+	jtagcom  #(
+	.TMR(0),
+	.SIM(1)
+) uut (
 		.CLKCMS(CLKCMS), 
 		.CLK80(CLK80), 
 		.RST(RST), 

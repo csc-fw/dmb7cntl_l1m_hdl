@@ -46,6 +46,7 @@ module random_trig #(
 	input [3:1] LCT5SEL,
 	output reg GTRGOUT,
 	output reg SELRAN,
+	output reg BURST1000,
 	output reg PREL1RLS,
 	output [5:0] LCTOUT
 );
@@ -157,7 +158,6 @@ reg  ftstart_1;
 reg  fburst_1;
 wire le_ftstart;
 wire le_fburst;
-reg  burst1000;
 reg  finish1000;
 wire [9:0] burst_cnt;
 
@@ -194,7 +194,7 @@ wire gtrg_dly;
 wire rule2_ce;
 
 initial begin
-	burst1000 = 0;
+	BURST1000 = 0;
 end
 
 assign {rlct1b137,rlct1b120,rlct1b103,rlct1b86,rlct1b69,rlct1b52,rlct1b34,rlct1b18,rlct1b1} = rlct1;
@@ -353,10 +353,10 @@ end
 always @(posedge CLK or posedge finish1000)
 begin
 	if(finish1000)
-		burst1000 <= 1'b0;
+		BURST1000 <= 1'b0;
 	else
 		if(le_fburst)
-			burst1000 <= 1'b1;
+			BURST1000 <= 1'b1;
 end
 
 //
@@ -368,7 +368,7 @@ cbnce #(
 )
 burst_cntr_i (
 	.CLK(CLK),
-	.RST(!burst1000),
+	.RST(!BURST1000),
 	.CE(GTRGOUT),
 	.Q(burst_cnt)
 );
@@ -399,7 +399,7 @@ begin
 	if(gtrg_rst)
 		GTRGOUT <= 1'b0;
 	else
-		GTRGOUT <= (SELRAN | burst1000) & |GTRGSEL & gtrg_fand & gtrg_sand;
+		GTRGOUT <= (SELRAN | BURST1000) & |GTRGSEL & gtrg_fand & gtrg_sand;
 end
 
 

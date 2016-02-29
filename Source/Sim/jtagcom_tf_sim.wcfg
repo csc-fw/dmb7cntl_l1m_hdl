@@ -673,46 +673,6 @@
          <obj_property name="ElementShortName">calcnt[7:0]</obj_property>
          <obj_property name="ObjectShortName">calcnt[7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/capture1" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">capture1</obj_property>
-         <obj_property name="ObjectShortName">capture1</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/capture2" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">capture2</obj_property>
-         <obj_property name="ObjectShortName">capture2</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/treset1" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">treset1</obj_property>
-         <obj_property name="ObjectShortName">treset1</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/treset2" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">treset2</obj_property>
-         <obj_property name="ObjectShortName">treset2</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/shift1" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">shift1</obj_property>
-         <obj_property name="ObjectShortName">shift1</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/shift2" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">shift2</obj_property>
-         <obj_property name="ObjectShortName">shift2</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/btdi1" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">btdi1</obj_property>
-         <obj_property name="ObjectShortName">btdi1</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/btdi2" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">btdi2</obj_property>
-         <obj_property name="ObjectShortName">btdi2</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/update1" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">update1</obj_property>
-         <obj_property name="ObjectShortName">update1</obj_property>
-      </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/update2" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">update2</obj_property>
-         <obj_property name="ObjectShortName">update2</obj_property>
-      </wvobject>
       <wvobject fp_name="/jtagcom_tf/uut/ENACFEB" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">ENACFEB</obj_property>
          <obj_property name="ObjectShortName">ENACFEB</obj_property>
@@ -1727,10 +1687,6 @@
          <obj_property name="ObjectShortName">burst_cnt[9:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/burst_rst" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">burst_rst</obj_property>
-         <obj_property name="ObjectShortName">burst_rst</obj_property>
-      </wvobject>
       <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/lct_sel_or" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">lct_sel_or[5:1]</obj_property>
          <obj_property name="ObjectShortName">lct_sel_or[5:1]</obj_property>
@@ -1847,9 +1803,9 @@
          <obj_property name="ElementShortName">fburst_1</obj_property>
          <obj_property name="ObjectShortName">fburst_1</obj_property>
       </wvobject>
-      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/burst1000" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">burst1000</obj_property>
-         <obj_property name="ObjectShortName">burst1000</obj_property>
+      <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/BURST1000" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">BURST1000</obj_property>
+         <obj_property name="ObjectShortName">BURST1000</obj_property>
       </wvobject>
       <wvobject fp_name="/jtagcom_tf/uut/random_trig_i/finish1000" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">finish1000</obj_property>
