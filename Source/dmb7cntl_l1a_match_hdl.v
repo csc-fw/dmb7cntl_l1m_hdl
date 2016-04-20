@@ -111,7 +111,6 @@ module dmb7cntl_l1a_match_hdl #(
 wire rst;
 reg  rst_1;
 wire le_rst;
-wire febrst;
 reg  rst_plsinj;
 
 wire rxclk;
@@ -161,10 +160,19 @@ wire [3:0] jtrgen;
 wire l1acfeb;
 wire gfpush;
 wire errorlct;
-wire [5:1] l1a_match;
+wire [5:0] l1a_match;
 wire [5:0] psh_aff;
 wire [5:0] dly_aff;
 wire [5:0] lct;
+wire [5:1] enc_bit0;
+wire [5:1] enc_bit1;
+wire [5:1] enc_bit2;
+reg  [5:1] enc_bit0_1;
+reg  [5:1] enc_bit1_1;
+reg  [5:1] enc_bit2_1;
+wire [5:1] c_enc_bit0;
+wire [5:1] c_enc_bit1;
+wire [5:1] c_enc_bit2;
 
 reg mirrclk;
 reg rstmirr;
@@ -346,18 +354,10 @@ begin
 end
 
 assign le_rst       = rst & ~rst_1;
-assign febrst       = cabledly[0] ? rst_1 : rst;
 assign le_fpgaready = fpgaready & ~fpgaready_2;
 assign clr_fpgarst  = (fpgarst_cnt == 4'hF);
 assign clr_crdy_cnt = (crdy_cnt == 4'hF);
 
-
-(* IOB = "TRUE" *)
-always @(posedge clkcms)
-begin
-//	FEB_GRST <= febrst;
-	TRG_ENC_B2 <= {5{febrst}};
-end
 
 always @(posedge clkcms or posedge clr_fpgarst) // fpgarst lasts for 16 clock cycles
 begin
@@ -423,6 +423,7 @@ end
 //
 
 assign l1latency = davdly[20:15];
+assign use_clct_fm = 1'b0;
 
 trgcntrl #(
 	.TMR(TMR)
@@ -435,6 +436,7 @@ trgcntrl_i (
 	.CMODE(cal_mode),
 	.CALTRGSEL(caltrgsel),
 	.EAFEB(enacfeb),
+	.USE_CLCT(use_clct_fm),
 	.DCFEB_IN_USE(dcfeb_in_use_fm),
 	.OPT_COP_ADJ(opt_cop_adj_fm),
 	.CSTRIP(callct),
@@ -451,11 +453,12 @@ trgcntrl_i (
 	.L1ACFEB(l1acfeb),
 	.GFPUSH(gfpush),
 	.LCTERR(errorlct),
-	.L1A_MATCH(l1a_match),
+	.L1A_MATCH(l1a_match), //[5:0]
 	.PSH_AFF(psh_aff),
 	.DLY_AFF(dly_aff),
 	.PRE_LCT_OUT(lct)
 );
+
 
 //
 // Trigger encoding 
@@ -463,32 +466,51 @@ trgcntrl_i (
 generate
 if(ENC==1) 
 begin : trg_enc
-trig_encoder
-trgenc_i(
-	.ENCODE(encode_fm),
-	.DCFEB_IN_USE(dcfeb_in_use_fm),
-	.USE_CLCT(use_clct_fm),
-	.RESYNC_RST(),
-	.L1ACFEB(),
-	.PRE_LCT_OUT(), //[5:1]
-	.PLCT_MATCH(), //[5:1]
-	.CLCT_MATCH(), //[5:1]
-	.CFEB_RESYNC(),
-	.CRESYNC(), //[5:2]
-	.CFEB_LCT(), //[5:1]
-	.CFEB_L1A(),
-	.CL1A() //[5:2]
-);
+	trig_encoder
+	trgenc_i(
+		//inputs
+		.ENCODE(encode_fm),
+		.DCFEB_IN_USE(dcfeb_in_use_fm),
+		.RESYNC_RST(rst),
+		.L1ACFEB(l1acfeb),
+		.PRE_LCT_OUT(lct[5:1]), //[5:1]
+		.L1A_MATCH(l1a_match[5:1]),   //[5:1]
+		//outputs
+		.ENC_BIT0(enc_bit0),    //[5:1]
+		.ENC_BIT1(enc_bit1),    //[5:1]
+		.ENC_BIT2(enc_bit2)     //[5:1]
+	);
 end
 else
 begin : no_trg_enc
-//	assign ;
-//	assign ;
+
+	assign enc_bit0 = dcfeb_in_use_fm ? l1a_match[5:1] : lct[5:1]; //CFEB L1A_MATCH or LCT signal
+	assign enc_bit1 = {5{l1acfeb}};  //CFEB L1A
+	assign enc_bit2 = {5{rst}};      //CFEB Resync/Rst signal
+
 end
 endgenerate
 
 assign outen = mirrclk ^ trgdly0;
 assign clr0 = 1'b0;
+
+always @(posedge clkcms)
+begin
+	enc_bit0_1 <= enc_bit0;
+	enc_bit1_1 <= enc_bit1;
+	enc_bit2_1 <= enc_bit2;
+end
+
+assign c_enc_bit0 = CABLEDLY[0] ? enc_bit0_1 : enc_bit0;
+assign c_enc_bit1 = CABLEDLY[0] ? enc_bit1_1 : enc_bit1;
+assign c_enc_bit2 = CABLEDLY[0] ? enc_bit2_1 : enc_bit2;
+
+(* IOB = "TRUE" *)
+//always @(posedge clkcms)
+//begin
+////	FEB_GRST <= febrst;
+//	TRG_ENC_B2 <= {5{febrst}};
+//end
 
 (* IOB = "TRUE" *)
 always @(posedge clk80 or posedge rst)
@@ -496,15 +518,17 @@ begin
 	if(rst) begin
 //		L1M_LCT  <= 5'b00000;
 //		L1A_CFEB <= 1'b0;
-		TRG_ENC_B0  <= 5'b00000;
-		TRG_ENC_B1  <= 5'b00000;
+		TRG_ENC_B0 <= 5'b00000;
+		TRG_ENC_B1 <= 5'b00000;
+		TRG_ENC_B2 <= 5'b00000;
 	end
 	else
 		if(outen) begin
 //			L1M_LCT <= l1a_match;
 //			L1A_CFEB <= l1acfeb;
-			TRG_ENC_B0 <= l1a_match;
-			TRG_ENC_B1 <= {5{l1acfeb}};
+			TRG_ENC_B0 <= c_enc_bit0;
+			TRG_ENC_B1 <= c_enc_bit1;
+			TRG_ENC_B2 <= c_enc_bit2;
 		end
 end
 

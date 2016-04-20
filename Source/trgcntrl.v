@@ -28,6 +28,7 @@ module trgcntrl #(
 	input CMODE,
 	input CALTRGSEL,
 	input EAFEB,
+	input USE_CLCT,
 	input DCFEB_IN_USE,
 	input [2:0] OPT_COP_ADJ,
 	input [5:0] CSTRIP,
@@ -43,7 +44,7 @@ module trgcntrl #(
 	output L1ACFEB,
 	output reg GFPUSH,
 	output reg LCTERR,
-	output [5:1] L1A_MATCH,
+	output [5:0] L1A_MATCH,
 	output [5:0] PSH_AFF,
 	output [5:0] DLY_AFF,
 	output [5:0] PRE_LCT_OUT
@@ -54,9 +55,6 @@ wire [5:0] pre_lct_d;
 wire [5:1] strip_m1;
 wire [5:1] strip_m2;
 wire [5:1] killcfeb;
-wire [5:1] lct_match;
-reg  [5:1] lct_match_1;
-wire [5:0] l1mtch;
 
 wire jcalsel;
 wire cal1_sel;
@@ -64,8 +62,6 @@ wire cal_mode;
 wire all_sel;
 reg  bgtrg_1;
 wire l1a;
-wire gtrgout;
-reg  gtrgout_1;
 wire killalct;
 wire killtmb;
 
@@ -76,10 +72,7 @@ assign all_sel       = EAFEB     & ~cal_mode;
 assign {strip_m1,PRE_LCT_OUT[0]} = jcalsel ? CSTRIP : pre_lct_d;
 assign strip_m2      = all_sel ? {5{PRE_LCT_OUT[0]}} : strip_m1;
 assign PRE_LCT_OUT[5:1]  = strip_m2 & ~killcfeb;
-assign lct_match     = DCFEB_IN_USE ? l1mtch[5:1] : PRE_LCT_OUT[5:1];
-assign L1A_MATCH     = CABLEDLY[0] ? lct_match_1 : lct_match;
 assign l1a           = cal1_sel ? CGTRG : bgtrg_1;
-assign L1ACFEB       = CABLEDLY[0] ? gtrgout_1 : gtrgout;
 
 assign killalct = (KILLINPUT == 3'd1);
 assign killtmb  = (KILLINPUT == 3'd2);
@@ -94,10 +87,8 @@ end
 
 always @(posedge CLK)
 begin
-	lct_match_1 <= lct_match;
 	LCTERR <= PRE_LCT_OUT[0] ^ (|PRE_LCT_OUT[5:1]);
 	GFPUSH <= l1a;
-	gtrgout_1 <= gtrgout;
 end
 
 genvar i;
@@ -126,7 +117,7 @@ begin
 			pushdly pushdly_c (.CLK(CLK),.DIN(d_lct_out_c[i]),.DELAY(GPUSHDLY),.DOUT(d_push_out_c[i]));
 		end
 		
-		vote #(.Width(6)) l1mtch_vt    (.A(l1mtch_a),    .B(l1mtch_b),    .C(l1mtch_c),    .V(l1mtch));
+		vote #(.Width(6)) l1mtch_vt    (.A(l1mtch_a),    .B(l1mtch_b),    .C(l1mtch_c),    .V(L1A_MATCH));
 		vote #(.Width(6)) lctdly_vt    (.A(d_lct_out_a), .B(d_lct_out_b), .C(d_lct_out_c), .V(DLY_AFF));
 		vote #(.Width(6)) pushmtch_vt  (.A(d_push_out_a),.B(d_push_out_b),.C(d_push_out_c),.V(PSH_AFF));
 	end
@@ -134,7 +125,7 @@ begin
 	begin
 		wire [5:0] d_lct_out_i;
 		for(i=0;i<6;i=i+1) begin: idx2
-			lctdly  lctdly_i  (.CLK(CLK),.DIN(PRE_LCT_OUT[i]),.L1A(l1a),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_i[i]),.L1A_MATCH(l1mtch[i]));
+			lctdly  lctdly_i  (.CLK(CLK),.DIN(PRE_LCT_OUT[i]),.L1A(l1a),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_i[i]),.L1A_MATCH(L1A_MATCH[i]));
 			pushdly pushdly_i (.CLK(CLK),.DIN(d_lct_out_i[i]),.DELAY(GPUSHDLY),.DOUT(PSH_AFF[i]));
 		end
 		assign DLY_AFF = d_lct_out_i;
@@ -143,7 +134,7 @@ end
 endgenerate
 
 
-srl_16dx1 l1a_cfeb_srl_i (.CLK(CLK), .CE(1'b1),.A(L1FINEDELAY),.I(l1a),.O(gtrgout),.Q15());
+srl_16dx1 l1a_cfeb_srl_i (.CLK(CLK), .CE(1'b1),.A(L1FINEDELAY),.I(l1a),.O(L1ACFEB),.Q15());
 
 
 endmodule
