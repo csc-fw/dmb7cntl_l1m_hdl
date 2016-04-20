@@ -31,7 +31,7 @@ module gtrgfifo #(
 	input POP,
 	input BXRST,
 	input BC0,
-	input [5:0] STRIP,
+	input [5:0] PSH_AFF,
 	input [5:1] DAV,
 	input [3:0] L1FINEDELAY,
 	input [4:0] FEBDAVDLY,
@@ -136,7 +136,7 @@ wire [5:1] lct_5bx_or;
 
 wire [5:1] dummy;
 
-assign {lct5_p1,lct4_p1,lct3_p1,lct2_p1,lct1_p1,lct0_p1} = STRIP;
+assign {lct5_p1,lct4_p1,lct3_p1,lct2_p1,lct1_p1,lct0_p1} = PSH_AFF;
 assign davss      = |{lct0_m,lct0_p1}; // 5 bx OR of LCT0 which is the OR of all LCT for the 5 CFEBs
 assign lct_5bx_or = {|{lct5_m,lct5_p1}, |{lct4_m,lct4_p1}, |{lct3_m,lct3_p1}, |{lct2_m,lct2_p1}, |{lct1_m,lct1_p1}};
 
