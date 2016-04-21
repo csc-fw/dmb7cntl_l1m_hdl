@@ -440,6 +440,7 @@ trgcntrl_i (
 	.USE_CLCT(use_clct_fm),
 	.DCFEB_IN_USE(dcfeb_in_use_fm),
 	.OPT_COP_ADJ(opt_cop_adj_fm),
+	.CLCT_ADJ(clct_adj_fm),
 	.CSTRIP(callct),
 	.PRE_LCT_IN(PRE_LCT),
 	.CLCT(CLCT),
