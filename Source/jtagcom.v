@@ -67,7 +67,7 @@
 //  43     | Load (update) the L1A Fine delay (work with Function 41) (obsolete)
 //  44     | Set the Kill Input bits (obsolete -- done with instruction 16 instead)
 //  45     | Load (update) the Kill Input (work with Function 44) (obsolete -- done with instruction 23 instead)
-//  46     | Set DCFEB_IN_USE bit and OPT_COP_ADJ delay (1+3 bits)
+//  46     | Set ENCODE_JT, CLCT_ADJ_JT, USE_CLCT_JT, DCFEB_IN_USE_JT, and OPT_COP_ADJ_JT delay (1+3+1+1+3 bits)
 //
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -89,7 +89,7 @@ module jtagcom #(
 	input [1:0] REGXL1ADLY,
 	input [31:0] TMDAV,
 	input [31:0] TMCOUNT,
-	input [34:0] STATSFM,
+	input [39:0] STATSFM,
 	input [47:0] STATUS,
 	output JRST,
 	output SFMTCK,
@@ -101,6 +101,8 @@ module jtagcom #(
 	output CAL_GTRG,
 	output SCPSYNC,
 	output GLNKRST,
+	output ENCODE_JT,
+	output USE_CLCT_JT,
 	output DCFEB_IN_USE_JT,
 	output CAL_MODE,
 	output reg TRGSEL,
@@ -115,6 +117,7 @@ module jtagcom #(
 	output [3:0] JTRGEN,
 	output [7:0] CABLEDLY,
 	output [1:0] XL1ADLY,
+	output [2:0] CLCT_ADJ_JT,
 	output [2:0] OPT_COP_ADJ_JT,
 	output [4:0] FEBCLKDLY,
 	output [6:0] CRATEID,
@@ -299,7 +302,7 @@ assign GLNKRST      = instr[14];
 assign SFMTEST      = instr[35];
 assign CAL_MODE     = |{instr[8],instr[7],instr[4],instr[3],ccbcal,randomtrg,burst1000};
 assign SERFM        = instr[31:21];
-assign TESTSTAT_MON ={5'b00000,STATSFM[34:24]};
+assign TESTSTAT_MON ={STATSFM[39:24]};
 assign LOADTIME     ={alctdav,l1alat,pushd,tmbdav,febdav};
 assign MONOUT       ={scope,pregtrg,CAL_GTRG,injplsmon,1'b0,PULSE,CAL_GTRG,callct_1,instr[4]};
 
@@ -490,7 +493,7 @@ stat_mon_i(
 	.SHIFT(shift),     // Shift state
 	.CAPTURE(capture), // Capture state
 	.RST(RST),         // Reset default state
-	.BUS({5'b00000,STATSFM,STATUS}),      // Bus to capture
+	.BUS({STATSFM,STATUS}),      // Bus to capture
 	.TDO(tdostat)      // Serial Test Data Out
 );
 	
@@ -514,8 +517,8 @@ load_time_i(
 //
 // Set DCFEB 
 //
-//user_wr_reg #(.width(4), .def_value({1'b0,3'd6}), .TMR(TMR))
-user_wr_reg #(.width(4), .def_value({1'b1,3'd0}), .TMR(TMR))
+user_wr_reg #(.width(9), .def_value({1'b0,3'd0,1'b0,1'b0,3'd6}), .TMR(TMR))
+//user_wr_reg #(.width(9), .def_value({1'b0,3'd0,1'b0,1'b1,3'd0}), .TMR(TMR))
 set_dcfeb_i(
 	.CLK(CLKCMS),    // CLKCMS for update register
 	.DRCK(drck2),    // Data Reg Clock
@@ -525,7 +528,7 @@ set_dcfeb_i(
 	.SHIFT(shift),   // Shift state
 	.UPDATE(update), // Update state
 	.RST(jrstd),     // Reset default state
-	.PO({DCFEB_IN_USE_JT,OPT_COP_ADJ_JT}),   // Parallel output
+	.PO({ENCODE_JT,CLCT_ADJ_JT,USE_CLCT_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT}),   // Parallel output
 	.TDO(tdodcfeb)   // Serial Test Data Out
 );
 	

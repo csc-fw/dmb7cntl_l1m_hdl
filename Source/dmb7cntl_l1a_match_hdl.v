@@ -146,6 +146,7 @@ wire enacfeb;
 wire encode_fm;
 wire use_clct_fm;
 wire dcfeb_in_use_fm;
+wire [2:0] clct_adj_fm;
 wire [2:0] opt_cop_adj_fm;
 wire [5:0] callct;
 wire [3:0] l1fndlym;
@@ -215,8 +216,9 @@ wire dcfeb_in_use_jt;
 wire sfmtck;
 wire sfmtdi;
 wire sfmtest;
-wire [2:0]  opt_cop_adj_jt;
-wire [1:0]  xl1a2sfm;
+wire [2:0] clct_adj_jt;
+wire [2:0] opt_cop_adj_jt;
+wire [1:0] xl1a2sfm;
 wire [10:0] serfm;
 wire [7:0] cbldset;
 wire [4:0] febclkdly;
@@ -225,7 +227,7 @@ wire [6:0] crateid;
 wire [11:0] daqmbid;
 wire [3:0] l1fndly;
 wire [2:0] setkillin;
-wire [34:0] statsfm;
+wire [39:0] statsfm;
 
 wire ccbped;
 wire ccbinjin;
@@ -423,7 +425,6 @@ end
 //
 
 assign l1latency = davdly[20:15];
-assign use_clct_fm = 1'b0;
 
 trgcntrl #(
 	.TMR(TMR)
@@ -685,11 +686,14 @@ serfmem_i (
 	.CLKCMS(clkcms),
 	.RAW_CLKCMS(raw_clkcms),
 	.RST(fpgarst),
+	.ENCODE_JT(encode_jt),
+	.USE_CLCT_JT(use_clct_jt),
 	.DCFEB_IN_USE_JT(dcfeb_in_use_jt),
 	.TCKSFM(sfmtck),
 	.TDISFM(sfmtdi),
 	.TESTSFMIN(sfmtest),
 	.SFMIN(sfmso),
+	.CLCT_ADJ_JT(clct_adj_jt),
 	.OPT_COP_ADJ_JT(opt_cop_adj_jt),
 	.XL1AIN(xl1a2sfm),
 	.SERFM(serfm),
@@ -711,6 +715,9 @@ serfmem_i (
 	.FEBDLYCLK(FEBDLYCLK),
 	.FEBDLYIN(FEBDLYIN),
 	.FEBLOADDLY(LOADDLY_OUT),
+	.ENCODE_FM(encode_fm),
+	.CLCT_ADJ_FM(clct_adj_fm),
+	.USE_CLCT_FM(use_clct_fm),
 	.DCFEB_IN_USE_FM(dcfeb_in_use_fm),
 	.OPT_COP_ADJ_FM(opt_cop_adj_fm),
 	.XL1AOUT(xl1a2cal),
@@ -765,7 +772,7 @@ jtagcom_i (
 	.REGXL1ADLY(xl1a2cal), // 1:0
 	.TMDAV(tmdav), // 31:0
 	.TMCOUNT(tmcount), // 31:0
-	.STATSFM(statsfm), // 34:0
+	.STATSFM(statsfm), // 39:0
 	.STATUS(status), // 47:0
 	// Outputs 
 	.JRST(jrst),
@@ -778,6 +785,8 @@ jtagcom_i (
 	.CAL_GTRG(calgtrg),
 	.SCPSYNC(SCPSYN),
 	.GLNKRST(fifomrst),
+	.ENCODE_JT(encode_jt),
+	.USE_CLCT_JT(use_clct_jt),
 	.DCFEB_IN_USE_JT(dcfeb_in_use_jt),
 	.CAL_MODE(cal_mode),
 	.TRGSEL(caltrgsel),
@@ -793,6 +802,7 @@ jtagcom_i (
 	.JTRGEN(jtrgen), // 3:0
 	.CABLEDLY(cbldset), // 7:0
 	.XL1ADLY(xl1a2sfm), // 1:0
+	.CLCT_ADJ_JT(clct_adj_jt), // 2:0
 	.OPT_COP_ADJ_JT(opt_cop_adj_jt), // 2:0
 	.FEBCLKDLY(febclkdly), // 4:0
 	.CRATEID(crateidset), // 6:0
