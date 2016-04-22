@@ -503,11 +503,11 @@ begin
 	enc_bit2_1 <= enc_bit2;
 end
 
-assign c_enc_bit0 = CABLEDLY[0] ? enc_bit0_1 : enc_bit0;
-assign c_enc_bit1 = CABLEDLY[0] ? enc_bit1_1 : enc_bit1;
-assign c_enc_bit2 = CABLEDLY[0] ? enc_bit2_1 : enc_bit2;
+assign c_enc_bit0 = cabledly[0] ? enc_bit0_1 : enc_bit0;
+assign c_enc_bit1 = cabledly[0] ? enc_bit1_1 : enc_bit1;
+assign c_enc_bit2 = cabledly[0] ? enc_bit2_1 : enc_bit2;
 
-(* IOB = "TRUE" *)
+//(* IOB = "TRUE" *)
 //always @(posedge clkcms)
 //begin
 ////	FEB_GRST <= febrst;

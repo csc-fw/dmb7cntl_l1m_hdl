@@ -33,11 +33,9 @@ module trig_encoder(
 
 genvar i;
 generate
-begin
-	always @*
-	begin
-		if(ENCODE && !DCFEB_IN_USE)
-			for(i=1;i<6;i=i+1) begin: idx1
+	for(i=1;i<6;i=i+1) begin: idx1
+		always @* begin
+			if(ENCODE && !DCFEB_IN_USE)
 				casex({RESYNC_RST,L1A_MATCH[i],L1ACFEB,PRE_LCT_OUT[i]})
 					4'b0000 : {ENC_BIT2[i],ENC_BIT1[i],ENC_BIT0[i]} = 3'd0; 
 					4'b0001 : {ENC_BIT2[i],ENC_BIT1[i],ENC_BIT0[i]} = 3'd1; 
@@ -48,18 +46,16 @@ begin
 					4'b1xxx : {ENC_BIT2[i],ENC_BIT1[i],ENC_BIT0[i]} = 3'd7; 
 					default : {ENC_BIT2[i],ENC_BIT1[i],ENC_BIT0[i]} = 3'd0;
 				endcase
-			end
-		else
-			begin
+			else	begin
 				// L1A_MATCH is:
 				//		pre-LCT matched with L1A for (Use_CLCT ==0)
 				//		CLCT matched with L1A (Use_CLCT ==1)
-				ENC_BIT0 = DCFEB_IN_USE ? L1A_MATCH : PRE_LCT_OUT;
-				ENC_BIT1 = {5{L1ACFEB}};
-				ENC_BIT2 = {5{RESYNC_RST}};
+				ENC_BIT0[i] = DCFEB_IN_USE ? L1A_MATCH[i] : PRE_LCT_OUT[i];
+				ENC_BIT1[i] = L1ACFEB;
+				ENC_BIT2[i] = RESYNC_RST;
 			end
+		end
 	end
-end
 endgenerate
 
 
