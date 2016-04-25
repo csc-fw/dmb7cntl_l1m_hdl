@@ -31,7 +31,7 @@ module trgcntrl #(
 	input USE_CLCT,
 	input DCFEB_IN_USE,
 	input [2:0] OPT_COP_ADJ,
-	input [2:0] CLCT_ADJ,
+	input [3:0] CLCT_ADJ,
 	input [5:0] CSTRIP,
 	input [5:0] PRE_LCT_IN,
 	input [5:1] CLCT,

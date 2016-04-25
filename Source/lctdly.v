@@ -24,7 +24,7 @@ module lctdly(
     input CLCT,
     input L1A,
 	 input USE_CLCT,
-	 input [2:0] CLCT_ADJ,
+	 input [3:0] CLCT_ADJ,
     input [2:0] OPT_COP,
     input [5:0] DELAY,
     input [1:0] XL1ADLY,
@@ -43,7 +43,7 @@ wire dmidd;
 reg  dmidx;
 wire tdly;
 wire cdly;
-wire fx4in;
+wire fx2in;
 
 wire p1;
 reg  p0;
@@ -55,20 +55,20 @@ wire pre_l1a_match;
 
 assign pre_l1a_match = L1A & (p1 | p0 | m1 | m2 | m3);  // Asymmetric 5bx match (plus 1 minus 3)
 
-assign fx4in = USE_CLCT ? cdly : fdly[2];
+assign fx2in = USE_CLCT ? cdly : fdly[0];
 
 //
 // CLCT Delay
 //
-srl_16dx1 clctdelay_1 (.CLK(CLK), .CE(1'b1),.A({1'b0,CLCT_ADJ}),.I(CLCT),.O(cdly),.Q15()); // 16 clocks
+srl_16dx1 clctdelay_1 (.CLK(CLK), .CE(1'b1),.A(CLCT_ADJ),.I(CLCT),.O(cdly),.Q15()); // 16 clocks
 
 //
 // Fixed Delays
 //
 srl_16dx1 fixdelay_1 (.CLK(CLK), .CE(1'b1),.A(4'hF),.I(PLCT),   .O(fdly[0]),.Q15()); // 16 clocks
-srl_16dx1 fixdelay_2 (.CLK(CLK), .CE(1'b1),.A(4'hF),.I(fdly[0]),.O(fdly[1]),.Q15()); // 16 clocks
+srl_16dx1 fixdelay_2 (.CLK(CLK), .CE(1'b1),.A(4'hF),.I(fx2in),  .O(fdly[1]),.Q15()); // 16 clocks
 srl_16dx1 fixdelay_3 (.CLK(CLK), .CE(1'b1),.A(4'hF),.I(fdly[1]),.O(fdly[2]),.Q15()); // 16 clocks
-srl_16dx1 fixdelay_4 (.CLK(CLK), .CE(1'b1),.A(4'hE),.I(fx4in),  .O(fdly[3]),.Q15()); // 15 clocks
+srl_16dx1 fixdelay_4 (.CLK(CLK), .CE(1'b1),.A(4'hE),.I(fdly[2]),.O(fdly[3]),.Q15()); // 15 clocks
 
 //
 // Reverse Fine Delay

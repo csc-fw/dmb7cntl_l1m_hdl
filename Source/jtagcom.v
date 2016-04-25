@@ -89,7 +89,7 @@ module jtagcom #(
 	input [1:0] REGXL1ADLY,
 	input [31:0] TMDAV,
 	input [31:0] TMCOUNT,
-	input [39:0] STATSFM,
+	input [47:0] STATSFM,
 	input [47:0] STATUS,
 	output JRST,
 	output SFMTCK,
@@ -117,7 +117,7 @@ module jtagcom #(
 	output [3:0] JTRGEN,
 	output [7:0] CABLEDLY,
 	output [1:0] XL1ADLY,
-	output [2:0] CLCT_ADJ_JT,
+	output [3:0] CLCT_ADJ_JT,
 	output [2:0] OPT_COP_ADJ_JT,
 	output [4:0] FEBCLKDLY,
 	output [6:0] CRATEID,
@@ -302,7 +302,7 @@ assign GLNKRST      = instr[14];
 assign SFMTEST      = instr[35];
 assign CAL_MODE     = |{instr[8],instr[7],instr[4],instr[3],ccbcal,randomtrg,burst1000};
 assign SERFM        = instr[31:21];
-assign TESTSTAT_MON ={STATSFM[39:24]};
+assign TESTSTAT_MON ={6'h0,STATSFM[40:31]};
 assign LOADTIME     ={alctdav,l1alat,pushd,tmbdav,febdav};
 assign MONOUT       ={scope,pregtrg,CAL_GTRG,injplsmon,1'b0,PULSE,CAL_GTRG,callct_1,instr[4]};
 
@@ -483,7 +483,7 @@ set_caldly_i(
 //
 // Stat_Mon Status capture and shift
 //
-user_cap_reg #(.width(88))
+user_cap_reg #(.width(96))
 stat_mon_i(
 	.DRCK(drck2),      // Data Reg Clock
 	.FSH(1'b0),        // Shift Function
@@ -517,8 +517,8 @@ load_time_i(
 //
 // Set DCFEB 
 //
-user_wr_reg #(.width(9), .def_value({1'b0,3'd0,1'b0,1'b0,3'd6}), .TMR(TMR))
-//user_wr_reg #(.width(9), .def_value({1'b0,3'd0,1'b0,1'b1,3'd0}), .TMR(TMR))
+user_wr_reg #(.width(10), .def_value({1'b0,1'b0,4'd0,1'b0,3'd6}), .TMR(TMR))  //{trg_encode,use_clct,clct_adj[3:0],dcfeb_in_use,opt_cop_adj[2:0]}
+//user_wr_reg #(.width(10), .def_value({1'b0,1'b0,4'd0,1'b1,3'd0}), .TMR(TMR))
 set_dcfeb_i(
 	.CLK(CLKCMS),    // CLKCMS for update register
 	.DRCK(drck2),    // Data Reg Clock
@@ -528,7 +528,7 @@ set_dcfeb_i(
 	.SHIFT(shift),   // Shift state
 	.UPDATE(update), // Update state
 	.RST(jrstd),     // Reset default state
-	.PO({ENCODE_JT,CLCT_ADJ_JT,USE_CLCT_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT}),   // Parallel output
+	.PO({ENCODE_JT,USE_CLCT_JT,CLCT_ADJ_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT}),   // Parallel output
 	.TDO(tdodcfeb)   // Serial Test Data Out
 );
 	

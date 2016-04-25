@@ -146,7 +146,7 @@ wire enacfeb;
 wire encode_fm;
 wire use_clct_fm;
 wire dcfeb_in_use_fm;
-wire [2:0] clct_adj_fm;
+wire [3:0] clct_adj_fm;
 wire [2:0] opt_cop_adj_fm;
 wire [5:0] callct;
 wire [3:0] l1fndlym;
@@ -216,7 +216,7 @@ wire dcfeb_in_use_jt;
 wire sfmtck;
 wire sfmtdi;
 wire sfmtest;
-wire [2:0] clct_adj_jt;
+wire [3:0] clct_adj_jt;
 wire [2:0] opt_cop_adj_jt;
 wire [1:0] xl1a2sfm;
 wire [10:0] serfm;
@@ -227,7 +227,7 @@ wire [6:0] crateid;
 wire [11:0] daqmbid;
 wire [3:0] l1fndly;
 wire [2:0] setkillin;
-wire [39:0] statsfm;
+wire [47:0] statsfm;
 
 wire ccbped;
 wire ccbinjin;
@@ -773,7 +773,7 @@ jtagcom_i (
 	.REGXL1ADLY(xl1a2cal), // 1:0
 	.TMDAV(tmdav), // 31:0
 	.TMCOUNT(tmcount), // 31:0
-	.STATSFM(statsfm), // 39:0
+	.STATSFM(statsfm), // 47:0
 	.STATUS(status), // 47:0
 	// Outputs 
 	.JRST(jrst),
@@ -803,7 +803,7 @@ jtagcom_i (
 	.JTRGEN(jtrgen), // 3:0
 	.CABLEDLY(cbldset), // 7:0
 	.XL1ADLY(xl1a2sfm), // 1:0
-	.CLCT_ADJ_JT(clct_adj_jt), // 2:0
+	.CLCT_ADJ_JT(clct_adj_jt), // 3:0
 	.OPT_COP_ADJ_JT(opt_cop_adj_jt), // 2:0
 	.FEBCLKDLY(febclkdly), // 4:0
 	.CRATEID(crateidset), // 6:0
