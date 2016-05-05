@@ -21,7 +21,7 @@
 module dmb7cntl_l1a_match_hdl #(
 	parameter TMR = 0,
 	parameter SIM = 0,
-	parameter ENC = 0
+	parameter ENC = 1
 )
 (
 	// clocks
