@@ -515,9 +515,9 @@ assign c_enc_bit2 = cabledly[0] ? enc_bit2_1 : enc_bit2;
 //end
 
 (* IOB = "TRUE" *)
-always @(posedge clk80 or posedge rst)
+always @(posedge clk80 or posedge fpgarst)
 begin
-	if(rst) begin
+	if(fpgarst) begin
 //		L1M_LCT  <= 5'b00000;
 //		L1A_CFEB <= 1'b0;
 		TRG_ENC_B0 <= 5'b00000;
