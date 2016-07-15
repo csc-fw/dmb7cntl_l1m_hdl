@@ -20,8 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module dmb7cntl_l1a_match_hdl #(
 	parameter TMR = 0,
-	parameter SIM = 0,
-	parameter ENC = 1
+	parameter SIM = 0
 )
 (
 	// clocks
@@ -144,6 +143,8 @@ wire cal_mode;
 wire caltrgsel;
 wire enacfeb;
 wire encode_fm;
+wire mtch_3bx_fm;
+wire lat_12_5us_fm;
 wire use_clct_fm;
 wire dcfeb_in_use_fm;
 wire [3:0] clct_adj_fm;
@@ -211,6 +212,8 @@ wire sfmcs_b;
 wire sfmwp_b;
 wire sfmtdo;
 wire encode_jt;
+wire mtch_3bx_jt;
+wire lat_12_5us_jt;
 wire use_clct_jt;
 wire dcfeb_in_use_jt;
 wire sfmtck;
@@ -437,6 +440,8 @@ trgcntrl_i (
 	.CMODE(cal_mode),
 	.CALTRGSEL(caltrgsel),
 	.EAFEB(enacfeb),
+	.LAT_12_5US(lat_12_5us_fm),
+	.MTCH_3BX(mtch_3bx_fm),
 	.USE_CLCT(use_clct_fm),
 	.DCFEB_IN_USE(dcfeb_in_use_fm),
 	.OPT_COP_ADJ(opt_cop_adj_fm),
@@ -465,33 +470,20 @@ trgcntrl_i (
 //
 // Trigger encoding 
 //
-generate
-if(ENC==1) 
-begin : trg_enc
-	trig_encoder
-	trgenc_i(
-		//inputs
-		.ENCODE(encode_fm),
-		.DCFEB_IN_USE(dcfeb_in_use_fm),
-		.RESYNC_RST(rst),
-		.L1ACFEB(l1acfeb),
-		.PRE_LCT_OUT(lct[5:1]), //[5:1]
-		.L1A_MATCH(l1a_match[5:1]),   //[5:1]
-		//outputs
-		.ENC_BIT0(enc_bit0),    //[5:1]
-		.ENC_BIT1(enc_bit1),    //[5:1]
-		.ENC_BIT2(enc_bit2)     //[5:1]
-	);
-end
-else
-begin : no_trg_enc
-
-	assign enc_bit0 = dcfeb_in_use_fm ? l1a_match[5:1] : lct[5:1]; //CFEB L1A_MATCH or LCT signal
-	assign enc_bit1 = {5{l1acfeb}};  //CFEB L1A
-	assign enc_bit2 = {5{rst}};      //CFEB Resync/Rst signal
-
-end
-endgenerate
+trig_encoder
+trgenc_i(
+	//inputs
+	.ENCODE(encode_fm),
+	.DCFEB_IN_USE(dcfeb_in_use_fm),
+	.RESYNC_RST(rst),
+	.L1ACFEB(l1acfeb),
+	.PRE_LCT_OUT(lct[5:1]), //[5:1]
+	.L1A_MATCH(l1a_match[5:1]),   //[5:1]
+	//outputs
+	.ENC_BIT0(enc_bit0),    //[5:1]
+	.ENC_BIT1(enc_bit1),    //[5:1]
+	.ENC_BIT2(enc_bit2)     //[5:1]
+);
 
 assign outen = mirrclk ^ trgdly0;
 assign clr0 = 1'b0;
@@ -688,6 +680,8 @@ serfmem_i (
 	.RAW_CLKCMS(raw_clkcms),
 	.RST(fpgarst),
 	.ENCODE_JT(encode_jt),
+	.MTCH_3BX_JT(mtch_3bx_jt),
+	.LAT_12_5US_JT(lat_12_5us_jt),
 	.USE_CLCT_JT(use_clct_jt),
 	.DCFEB_IN_USE_JT(dcfeb_in_use_jt),
 	.TCKSFM(sfmtck),
@@ -717,6 +711,8 @@ serfmem_i (
 	.FEBDLYIN(FEBDLYIN),
 	.FEBLOADDLY(LOADDLY_OUT),
 	.ENCODE_FM(encode_fm),
+	.MTCH_3BX_FM(mtch_3bx_fm),
+	.LAT_12_5US_FM(lat_12_5us_fm),
 	.CLCT_ADJ_FM(clct_adj_fm),
 	.USE_CLCT_FM(use_clct_fm),
 	.DCFEB_IN_USE_FM(dcfeb_in_use_fm),
@@ -787,6 +783,8 @@ jtagcom_i (
 	.SCPSYNC(SCPSYN),
 	.GLNKRST(fifomrst),
 	.ENCODE_JT(encode_jt),
+	.MTCH_3BX_JT(mtch_3bx_jt),
+	.LAT_12_5US_JT(lat_12_5us_jt),
 	.USE_CLCT_JT(use_clct_jt),
 	.DCFEB_IN_USE_JT(dcfeb_in_use_jt),
 	.CAL_MODE(cal_mode),

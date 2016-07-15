@@ -26,6 +26,8 @@ module serfmem #(
 	input RAW_CLKCMS,
 	input RST,
 	input ENCODE_JT,
+	input MTCH_3BX_JT,
+	input LAT_12_5US_JT,
 	input USE_CLCT_JT,
 	input DCFEB_IN_USE_JT,
 	input TCKSFM,
@@ -53,6 +55,8 @@ module serfmem #(
 	output FEBDLYIN,
 	output FEBLOADDLY,
 	output reg ENCODE_FM,
+	output reg MTCH_3BX_FM,
+	output reg LAT_12_5US_FM,
 	output reg [3:0] CLCT_ADJ_FM,
 	output reg USE_CLCT_FM,
 	output reg DCFEB_IN_USE_FM,
@@ -83,10 +87,10 @@ reg  sfmdata_mon;
 reg rst_1;
 reg rst1;
 reg rst2;
-reg [40:0] dout;
+reg [42:0] dout;
 wire selshift;
 wire shiftin;
-wire shift40in;
+wire shift42in;
 reg [4:0] febclkdly;
 reg [1:0] dummy;
 reg readshft;
@@ -147,7 +151,7 @@ reg  testsfm_2;
 wire testsfm;
 wire testsfmcs;
 
-assign SFMDOUT  = {7'b0000000,ENCODE_FM,USE_CLCT_FM,CLCT_ADJ_FM,DCFEB_IN_USE_FM,OPT_COP_ADJ_FM,KILLINPUT,L1FDLYOUT,XL1AOUT,febclkdly,CRATEID,CABLEDLY,dummy[1:0]};
+assign SFMDOUT  = {5'b00000,ENCODE_FM,MTCH_3BX_FM,LAT_12_5US_FM,USE_CLCT_FM,CLCT_ADJ_FM,DCFEB_IN_USE_FM,OPT_COP_ADJ_FM,KILLINPUT,L1FDLYOUT,XL1AOUT,febclkdly,CRATEID,CABLEDLY,dummy[1:0]};
 assign SFMCS_B  = ~(rchipen | chipen | testsfmcs);
 assign SFMRST_B = ~sfmrst;
 assign TDOSFM   = testsfm & SFMIN;
@@ -186,7 +190,8 @@ assign TRGDLY0     = !(((febclkdly >= 5'd2) && (febclkdly <= 5'd14)) || (febclkd
 assign selshift = readshft | paddr[7];
 assign shiftin  = loopshft | (readshft & SFMIN);
 //srl_nx1 #(.Depth(28)) sfm_in_srl_i (.CLK(clksfm), .CE(1'b1),.I(shiftin),.O(shift34in));
-srl_nx1 #(.Depth(22)) sfm_in_srl_i (.CLK(CLKCMS), .CE(cken_a),.I(shiftin),.O(shift40in));
+//srl_nx1 #(.Depth(22)) sfm_in_srl_i (.CLK(CLKCMS), .CE(cken_a),.I(shiftin),.O(shift40in));
+srl_nx1 #(.Depth(20)) sfm_in_srl_i (.CLK(CLKCMS), .CE(cken_a),.I(shiftin),.O(shift42in));
 assign clr_raddr = rst1 | raddr_done;
 assign clr_paddr = rst1 | paddr_done;
 
@@ -317,11 +322,11 @@ always @(posedge CLKCMS)
 begin
 	if(cken_sfm)
 		if(selshift)
-			dout <= {shift40in,dout[40:1]};
+			dout <= {shift42in,dout[42:1]};
 		else 
 			begin
 				if(loadfebdly)
-					dout[40:17] <= {ENCODE_JT,USE_CLCT_JT,CLCT_ADJ_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT,SETKILLIN,L1FDLYIN,XL1AIN,FEBCLKDLYIN};
+					dout[42:17] <= {ENCODE_JT,MTCH_3BX_JT,LAT_12_5US_JT,USE_CLCT_JT,CLCT_ADJ_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT,SETKILLIN,L1FDLYIN,XL1AIN,FEBCLKDLYIN};
 				if(loadid)
 					dout[16:10] <= CRTIDIN;
 				if(loadfinedly)
@@ -333,7 +338,9 @@ always @(posedge CLKCMS)
 begin
 	if(ready)
 		begin
-			ENCODE_FM       <= dout[40];
+			ENCODE_FM       <= dout[42];
+			MTCH_3BX_FM     <= dout[41];
+			LAT_12_5US_FM   <= dout[40];
 			USE_CLCT_FM     <= dout[39];
 			CLCT_ADJ_FM     <= dout[38:35];
 			DCFEB_IN_USE_FM <= dout[34];
@@ -350,7 +357,9 @@ begin
 		begin
 			if(setfebdly)
 				begin
-					ENCODE_FM       <= dout[40];
+					ENCODE_FM       <= dout[42];
+					MTCH_3BX_FM     <= dout[41];
+					LAT_12_5US_FM   <= dout[40];
 					USE_CLCT_FM     <= dout[39];
 					CLCT_ADJ_FM     <= dout[38:35];
 					DCFEB_IN_USE_FM <= dout[34];

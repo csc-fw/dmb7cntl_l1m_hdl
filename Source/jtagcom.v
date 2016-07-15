@@ -67,7 +67,7 @@
 //  43     | Load (update) the L1A Fine delay (work with Function 41) (obsolete)
 //  44     | Set the Kill Input bits (obsolete -- done with instruction 16 instead)
 //  45     | Load (update) the Kill Input (work with Function 44) (obsolete -- done with instruction 23 instead)
-//  46     | Set ENCODE_JT, CLCT_ADJ_JT, USE_CLCT_JT, DCFEB_IN_USE_JT, and OPT_COP_ADJ_JT delay (1+3+1+1+3 bits)
+//  46     | Set ENCODE_JT, MTCH_3BX_JT, LAT_12_5US_JT, USE_CLCT_JT, CLCT_ADJ_JT, DCFEB_IN_USE_JT, and OPT_COP_ADJ_JT delay (1+1+1+1+4+1+3 bits)
 //
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -102,6 +102,8 @@ module jtagcom #(
 	output SCPSYNC,
 	output GLNKRST,
 	output ENCODE_JT,
+	output MTCH_3BX_JT,
+	output LAT_12_5US_JT,
 	output USE_CLCT_JT,
 	output DCFEB_IN_USE_JT,
 	output CAL_MODE,
@@ -515,9 +517,9 @@ load_time_i(
 );
 	
 //
-// Set DCFEB 
+// Set DMB/CFEB/DCFEB system configuration
 //
-user_wr_reg #(.width(10), .def_value({1'b0,1'b0,4'd0,1'b0,3'd6}), .TMR(TMR))  //{trg_encode,use_clct,clct_adj[3:0],dcfeb_in_use,opt_cop_adj[2:0]}
+user_wr_reg #(.width(12), .def_value({1'b0,1'b0,1'b0,1'b0,4'd0,1'b0,3'd6}), .TMR(TMR))  //{trg_encode,3bx_matching,12.5us_latency,use_clct,clct_adj[3:0],dcfeb_in_use,opt_cop_adj[2:0]}
 //user_wr_reg #(.width(10), .def_value({1'b0,1'b0,4'd0,1'b1,3'd0}), .TMR(TMR))
 set_dcfeb_i(
 	.CLK(CLKCMS),    // CLKCMS for update register
@@ -528,7 +530,7 @@ set_dcfeb_i(
 	.SHIFT(shift),   // Shift state
 	.UPDATE(update), // Update state
 	.RST(jrstd),     // Reset default state
-	.PO({ENCODE_JT,USE_CLCT_JT,CLCT_ADJ_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT}),   // Parallel output
+	.PO({ENCODE_JT,MTCH_3BX_JT,LAT_12_5US_JT,USE_CLCT_JT,CLCT_ADJ_JT,DCFEB_IN_USE_JT,OPT_COP_ADJ_JT}),   // Parallel output
 	.TDO(tdodcfeb)   // Serial Test Data Out
 );
 	
