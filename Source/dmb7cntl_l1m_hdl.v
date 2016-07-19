@@ -18,8 +18,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module dmb7cntl_l1a_match_hdl #(
-	parameter TMR = 0,
+module dmb7cntl_l1m_hdl #(
+	parameter TMR = 1,
 	parameter SIM = 0
 )
 (
