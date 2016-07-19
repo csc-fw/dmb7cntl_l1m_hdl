@@ -91,8 +91,8 @@ reg [42:0] dout;
 wire selshift;
 wire shiftin;
 wire shift42in;
-reg [4:0] febclkdly;
-reg [1:0] dummy;
+wire [4:0] febclkdly;
+wire [1:0] dummy;
 reg readshft;
 reg loopshft;
 wire [7:0] paddr;
@@ -404,9 +404,9 @@ begin : serfmem_reg_store_TMR
 				mtch_3bx_fm_b     <= dout[41];
 				lat_12_5us_fm_b   <= dout[40];
 				use_clct_fm_b     <= dout[39];
-				clct_bdj_fm_b     <= dout[38:35];
+				clct_adj_fm_b     <= dout[38:35];
 				dcfeb_in_use_fm_b <= dout[34];
-				opt_cop_bdj_fm_b  <= dout[33:31];
+				opt_cop_adj_fm_b  <= dout[33:31];
 				killinput_b       <= dout[30:28];
 				l1fdlyout_b       <= dout[27:24];
 				xl1aout_b         <= dout[23:22];
@@ -419,9 +419,9 @@ begin : serfmem_reg_store_TMR
 				mtch_3bx_fm_c     <= dout[41];
 				lat_12_5us_fm_c   <= dout[40];
 				use_clct_fm_c     <= dout[39];
-				clct_cdj_fm_c     <= dout[38:35];
+				clct_adj_fm_c     <= dout[38:35];
 				dcfeb_in_use_fm_c <= dout[34];
-				opt_cop_cdj_fm_c  <= dout[33:31];
+				opt_cop_adj_fm_c  <= dout[33:31];
 				killinput_c       <= dout[30:28];
 				l1fdlyout_c       <= dout[27:24];
 				xl1aout_c         <= dout[23:22];
@@ -450,9 +450,9 @@ begin : serfmem_reg_store_TMR
 						mtch_3bx_fm_b     <= dout[41];
 						lat_12_5us_fm_b   <= dout[40];
 						use_clct_fm_b     <= dout[39];
-						clct_bdj_fm_b     <= dout[38:35];
+						clct_adj_fm_b     <= dout[38:35];
 						dcfeb_in_use_fm_b <= dout[34];
-						opt_cop_bdj_fm_b  <= dout[33:31];
+						opt_cop_adj_fm_b  <= dout[33:31];
 						killinput_b       <= dout[30:28];
 						l1fdlyout_b       <= dout[27:24];
 						xl1aout_b         <= dout[23:22];
@@ -462,9 +462,9 @@ begin : serfmem_reg_store_TMR
 						mtch_3bx_fm_c     <= dout[41];
 						lat_12_5us_fm_c   <= dout[40];
 						use_clct_fm_c     <= dout[39];
-						clct_cdj_fm_c     <= dout[38:35];
+						clct_adj_fm_c     <= dout[38:35];
 						dcfeb_in_use_fm_c <= dout[34];
-						opt_cop_cdj_fm_c  <= dout[33:31];
+						opt_cop_adj_fm_c  <= dout[33:31];
 						killinput_c       <= dout[30:28];
 						l1fdlyout_c       <= dout[27:24];
 						xl1aout_c         <= dout[23:22];
@@ -488,7 +488,7 @@ begin : serfmem_reg_store_TMR
 			end
 	end
 	vote              encode_fm_vt_i       (.A(encode_fm_a),      .B(encode_fm_b),      .C(encode_fm_c),      .V(ENCODE_FM));
-	vote              mtch_3bx_fm_vt_i     (.A(mtch_3bx_fm_a),    .B(mtch_3bx_fm_c),    .C(mtch_3bx_fm_c),    .V(MTCH_3BX_FM));
+	vote              mtch_3bx_fm_vt_i     (.A(mtch_3bx_fm_a),    .B(mtch_3bx_fm_b),    .C(mtch_3bx_fm_c),    .V(MTCH_3BX_FM));
 	vote              lat_12_5us_fm_vt_i   (.A(lat_12_5us_fm_a),  .B(lat_12_5us_fm_b),  .C(lat_12_5us_fm_c),  .V(LAT_12_5US_FM));
 	vote              use_clct_fm_vt_i     (.A(use_clct_fm_a),    .B(use_clct_fm_b),    .C(use_clct_fm_c),    .V(USE_CLCT_FM));
 	vote #(.Width(4)) clct_adj_fm_vt_i     (.A(clct_adj_fm_a),    .B(clct_adj_fm_b),    .C(clct_adj_fm_c),    .V(CLCT_ADJ_FM));
@@ -497,7 +497,7 @@ begin : serfmem_reg_store_TMR
 	vote #(.Width(3)) killinput_vt_i       (.A(killinput_a),      .B(killinput_b),      .C(killinput_c),      .V(KILLINPUT));
 	vote #(.Width(4)) l1fdlyout_vt_i       (.A(l1fdlyout_a),      .B(l1fdlyout_b),      .C(l1fdlyout_c),      .V(L1FDLYOUT));
 	vote #(.Width(2)) xl1aout_vt_i         (.A(xl1aout_a),        .B(xl1aout_b),        .C(xl1aout_c),        .V(XL1AOUT));
-	vote #(.Width(5)) febclkdly_vt_i       (.A(febclkdly_a),      .B(febclkdly_b),      .C(febclkdly_c),      .V(FEBCLKDLY));
+	vote #(.Width(5)) febclkdly_vt_i       (.A(febclkdly_a),      .B(febclkdly_b),      .C(febclkdly_c),      .V(febclkdly));
 	vote #(.Width(7)) crateid_vt_i         (.A(crateid_a),        .B(crateid_b),        .C(crateid_c),        .V(CRATEID));
 	vote #(.Width(8)) cabledly_vt_i        (.A(cabledly_a),       .B(cabledly_b),       .C(cabledly_c),       .V(CABLEDLY));
 	vote #(.Width(2)) dummy_vt_i           (.A(dummy_a),          .B(dummy_b),          .C(dummy_c),          .V(dummy));
@@ -577,7 +577,7 @@ begin : serfmem_reg_store_no_TMR
 	assign KILLINPUT       = killinput_r;
 	assign L1FDLYOUT       = l1fdlyout_r;
 	assign XL1AOUT         = xl1aout_r;
-	assign FEBCLKDLY       = febclkdly_r;
+	assign febclkdly       = febclkdly_r;
 	assign CRATEID         = crateid_r;
 	assign CABLEDLY        = cabledly_r;
 	assign dummy           = dummy_r;
