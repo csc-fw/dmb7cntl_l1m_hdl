@@ -245,8 +245,11 @@ begin : gtrg_ff_TMR
 	(* syn_preserve = "true" *) reg [17:0] davsout_b;
 	(* syn_preserve = "true" *) reg [17:0] davsout_c;
 	
+	(* ram_style = "block" *)
 	(* syn_preserve = "true" *) reg  [17:0] gtrgffa [1023:0];
+	(* ram_style = "block" *)
 	(* syn_preserve = "true" *) reg  [17:0] gtrgffb [1023:0];
+	(* ram_style = "block" *)
 	(* syn_preserve = "true" *) reg  [17:0] gtrgffc [1023:0];
 	
 	always @(posedge CLK)

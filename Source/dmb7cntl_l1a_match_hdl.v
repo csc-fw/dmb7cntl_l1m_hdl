@@ -569,7 +569,8 @@ pwr_on_holdoff_i (
 
 // LCT to L1A timer
 trg_timer #(
-	.TMR(TMR)
+	.Width(10),
+	.TMR(0)
 )
 LCT_to_L1A_timer_i (
 	.CLK(clkcms),
@@ -577,12 +578,13 @@ LCT_to_L1A_timer_i (
 	.CLR(jreadout),
 	.START(lct[0]),
 	.STOP(gfpush),
-	.TIME(tmcount[7:0])
+	.TIME(tmcount[9:0])
 );
 
 // CFEB DAV to FIFO push timer
 trg_timer #(
-	.TMR(TMR)
+	.Width(6),
+	.TMR(0)
 )
 CFEB_DAV_to_push_timer_i (
 	.CLK(clkcms),
@@ -590,12 +592,13 @@ CFEB_DAV_to_push_timer_i (
 	.CLR(jreadout),
 	.START(davmon[0]),
 	.STOP(dpush),
-	.TIME(tmcount[15:8])
+	.TIME(tmcount[15:10])
 );
 
 // TMB DAV to FIFO push timer
 trg_timer #(
-	.TMR(TMR)
+	.Width(6),
+	.TMR(0)
 )
 TMB_DAV_to_push_timer_i (
 	.CLK(clkcms),
@@ -603,12 +606,15 @@ TMB_DAV_to_push_timer_i (
 	.CLR(jreadout),
 	.START(davmon[1]),
 	.STOP(dpush),
-	.TIME(tmcount[23:16])
+	.TIME(tmcount[21:16])
 );
+
+assign tmcount[23:22] = 2'b0;
 
 // ALCT DAV to FIFO push timer
 trg_timer #(
-	.TMR(TMR)
+	.Width(6),
+	.TMR(0)
 )
 ALCT_DAV_to_push_timer_i (
 	.CLK(clkcms),
@@ -616,8 +622,10 @@ ALCT_DAV_to_push_timer_i (
 	.CLR(jreadout),
 	.START(davmon[2]),
 	.STOP(dpush),
-	.TIME(tmcount[31:24])
+	.TIME(tmcount[29:24])
 );
+
+assign tmcount[31:30] = 2'b0;
 
 //
 // GTRGFIFO Global Trigger FIFO Control

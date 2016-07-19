@@ -54,18 +54,18 @@ module serfmem #(
 	output FEBDLYCLK,
 	output FEBDLYIN,
 	output FEBLOADDLY,
-	output reg ENCODE_FM,
-	output reg MTCH_3BX_FM,
-	output reg LAT_12_5US_FM,
-	output reg [3:0] CLCT_ADJ_FM,
-	output reg USE_CLCT_FM,
-	output reg DCFEB_IN_USE_FM,
-	output reg [2:0] OPT_COP_ADJ_FM,
-	output reg [1:0] XL1AOUT,
-	output reg [7:0] CABLEDLY,
-	output reg [6:0] CRATEID,
-	output reg [3:0] L1FDLYOUT,
-	output reg [2:0] KILLINPUT,
+	output ENCODE_FM,
+	output MTCH_3BX_FM,
+	output LAT_12_5US_FM,
+	output [3:0] CLCT_ADJ_FM,
+	output USE_CLCT_FM,
+	output DCFEB_IN_USE_FM,
+	output [2:0] OPT_COP_ADJ_FM,
+	output [1:0] XL1AOUT,
+	output [7:0] CABLEDLY,
+	output [6:0] CRATEID,
+	output [3:0] L1FDLYOUT,
+	output [2:0] KILLINPUT,
 	output [7:0] SFMDIAG,
 	output [47:0] SFMDOUT
 );
@@ -334,50 +334,256 @@ begin
 			end
 end
 
-always @(posedge CLKCMS)
-begin
-	if(ready)
-		begin
-			ENCODE_FM       <= dout[42];
-			MTCH_3BX_FM     <= dout[41];
-			LAT_12_5US_FM   <= dout[40];
-			USE_CLCT_FM     <= dout[39];
-			CLCT_ADJ_FM     <= dout[38:35];
-			DCFEB_IN_USE_FM <= dout[34];
-			OPT_COP_ADJ_FM  <= dout[33:31];
-			KILLINPUT       <= dout[30:28];
-			L1FDLYOUT       <= dout[27:24];
-			XL1AOUT         <= dout[23:22];
-			febclkdly       <= dout[21:17];
-			CRATEID         <= dout[16:10];
-			CABLEDLY        <= ~dout[9:2];
-			dummy[1:0]      <= dout[1:0];
-		end
-	else 
-		begin
-			if(setfebdly)
-				begin
-					ENCODE_FM       <= dout[42];
-					MTCH_3BX_FM     <= dout[41];
-					LAT_12_5US_FM   <= dout[40];
-					USE_CLCT_FM     <= dout[39];
-					CLCT_ADJ_FM     <= dout[38:35];
-					DCFEB_IN_USE_FM <= dout[34];
-					OPT_COP_ADJ_FM  <= dout[33:31];
-					KILLINPUT       <= dout[30:28];
-					L1FDLYOUT       <= dout[27:24];
-					XL1AOUT         <= dout[23:22];
-					febclkdly       <= dout[21:17];
-				end
-			if(setid)
-				CRATEID         <= dout[16:10];
-			if(setfdly)
-				begin
-					CABLEDLY        <= ~dout[9:2];
-					dummy[1:0]      <= dout[1:0];
-				end
-		end
+generate
+if(TMR==1) 
+begin : serfmem_reg_store_TMR
+
+	(* syn_preserve = "true" *) reg encode_fm_a;
+	(* syn_preserve = "true" *) reg encode_fm_b;
+	(* syn_preserve = "true" *) reg encode_fm_c;
+	(* syn_preserve = "true" *) reg mtch_3bx_fm_a;
+	(* syn_preserve = "true" *) reg mtch_3bx_fm_b;
+	(* syn_preserve = "true" *) reg mtch_3bx_fm_c;
+	(* syn_preserve = "true" *) reg lat_12_5us_fm_a;
+	(* syn_preserve = "true" *) reg lat_12_5us_fm_b;
+	(* syn_preserve = "true" *) reg lat_12_5us_fm_c;
+	(* syn_preserve = "true" *) reg use_clct_fm_a;
+	(* syn_preserve = "true" *) reg use_clct_fm_b;
+	(* syn_preserve = "true" *) reg use_clct_fm_c;
+	(* syn_preserve = "true" *) reg [3:0] clct_adj_fm_a;
+	(* syn_preserve = "true" *) reg [3:0] clct_adj_fm_b;
+	(* syn_preserve = "true" *) reg [3:0] clct_adj_fm_c;
+	(* syn_preserve = "true" *) reg dcfeb_in_use_fm_a;
+	(* syn_preserve = "true" *) reg dcfeb_in_use_fm_b;
+	(* syn_preserve = "true" *) reg dcfeb_in_use_fm_c;
+	(* syn_preserve = "true" *) reg [2:0] opt_cop_adj_fm_a;
+	(* syn_preserve = "true" *) reg [2:0] opt_cop_adj_fm_b;
+	(* syn_preserve = "true" *) reg [2:0] opt_cop_adj_fm_c;
+	(* syn_preserve = "true" *) reg [2:0] killinput_a;
+	(* syn_preserve = "true" *) reg [2:0] killinput_b;
+	(* syn_preserve = "true" *) reg [2:0] killinput_c;
+	(* syn_preserve = "true" *) reg [3:0] l1fdlyout_a;
+	(* syn_preserve = "true" *) reg [3:0] l1fdlyout_b;
+	(* syn_preserve = "true" *) reg [3:0] l1fdlyout_c;
+	(* syn_preserve = "true" *) reg [1:0] xl1aout_a;
+	(* syn_preserve = "true" *) reg [1:0] xl1aout_b;
+	(* syn_preserve = "true" *) reg [1:0] xl1aout_c;
+	(* syn_preserve = "true" *) reg [4:0] febclkdly_a;
+	(* syn_preserve = "true" *) reg [4:0] febclkdly_b;
+	(* syn_preserve = "true" *) reg [4:0] febclkdly_c;
+	(* syn_preserve = "true" *) reg [6:0] crateid_a;
+	(* syn_preserve = "true" *) reg [6:0] crateid_b;
+	(* syn_preserve = "true" *) reg [6:0] crateid_c;
+	(* syn_preserve = "true" *) reg [7:0] cabledly_a;
+	(* syn_preserve = "true" *) reg [7:0] cabledly_b;
+	(* syn_preserve = "true" *) reg [7:0] cabledly_c;
+	(* syn_preserve = "true" *) reg [1:0] dummy_a;
+	(* syn_preserve = "true" *) reg [1:0] dummy_b;
+	(* syn_preserve = "true" *) reg [1:0] dummy_c;
+	
+	always @(posedge CLKCMS)
+	begin
+		if(ready)
+			begin
+				encode_fm_a       <= dout[42];
+				mtch_3bx_fm_a     <= dout[41];
+				lat_12_5us_fm_a   <= dout[40];
+				use_clct_fm_a     <= dout[39];
+				clct_adj_fm_a     <= dout[38:35];
+				dcfeb_in_use_fm_a <= dout[34];
+				opt_cop_adj_fm_a  <= dout[33:31];
+				killinput_a       <= dout[30:28];
+				l1fdlyout_a       <= dout[27:24];
+				xl1aout_a         <= dout[23:22];
+				febclkdly_a       <= dout[21:17];
+				crateid_a         <= dout[16:10];
+				cabledly_a        <= ~dout[9:2];
+				dummy_a           <= dout[1:0];
+
+				encode_fm_b       <= dout[42];
+				mtch_3bx_fm_b     <= dout[41];
+				lat_12_5us_fm_b   <= dout[40];
+				use_clct_fm_b     <= dout[39];
+				clct_bdj_fm_b     <= dout[38:35];
+				dcfeb_in_use_fm_b <= dout[34];
+				opt_cop_bdj_fm_b  <= dout[33:31];
+				killinput_b       <= dout[30:28];
+				l1fdlyout_b       <= dout[27:24];
+				xl1aout_b         <= dout[23:22];
+				febclkdly_b       <= dout[21:17];
+				crateid_b         <= dout[16:10];
+				cabledly_b        <= ~dout[9:2];
+				dummy_b           <= dout[1:0];
+
+				encode_fm_c       <= dout[42];
+				mtch_3bx_fm_c     <= dout[41];
+				lat_12_5us_fm_c   <= dout[40];
+				use_clct_fm_c     <= dout[39];
+				clct_cdj_fm_c     <= dout[38:35];
+				dcfeb_in_use_fm_c <= dout[34];
+				opt_cop_cdj_fm_c  <= dout[33:31];
+				killinput_c       <= dout[30:28];
+				l1fdlyout_c       <= dout[27:24];
+				xl1aout_c         <= dout[23:22];
+				febclkdly_c       <= dout[21:17];
+				crateid_c         <= dout[16:10];
+				cabledly_c        <= ~dout[9:2];
+				dummy_c           <= dout[1:0];
+			end
+		else 
+			begin
+				if(setfebdly)
+					begin
+						encode_fm_a       <= dout[42];
+						mtch_3bx_fm_a     <= dout[41];
+						lat_12_5us_fm_a   <= dout[40];
+						use_clct_fm_a     <= dout[39];
+						clct_adj_fm_a     <= dout[38:35];
+						dcfeb_in_use_fm_a <= dout[34];
+						opt_cop_adj_fm_a  <= dout[33:31];
+						killinput_a       <= dout[30:28];
+						l1fdlyout_a       <= dout[27:24];
+						xl1aout_a         <= dout[23:22];
+						febclkdly_a       <= dout[21:17];
+
+						encode_fm_b       <= dout[42];
+						mtch_3bx_fm_b     <= dout[41];
+						lat_12_5us_fm_b   <= dout[40];
+						use_clct_fm_b     <= dout[39];
+						clct_bdj_fm_b     <= dout[38:35];
+						dcfeb_in_use_fm_b <= dout[34];
+						opt_cop_bdj_fm_b  <= dout[33:31];
+						killinput_b       <= dout[30:28];
+						l1fdlyout_b       <= dout[27:24];
+						xl1aout_b         <= dout[23:22];
+						febclkdly_b       <= dout[21:17];
+
+						encode_fm_c       <= dout[42];
+						mtch_3bx_fm_c     <= dout[41];
+						lat_12_5us_fm_c   <= dout[40];
+						use_clct_fm_c     <= dout[39];
+						clct_cdj_fm_c     <= dout[38:35];
+						dcfeb_in_use_fm_c <= dout[34];
+						opt_cop_cdj_fm_c  <= dout[33:31];
+						killinput_c       <= dout[30:28];
+						l1fdlyout_c       <= dout[27:24];
+						xl1aout_c         <= dout[23:22];
+						febclkdly_c       <= dout[21:17];
+					end
+				if(setid)
+					crateid_a            <= dout[16:10];
+					crateid_b            <= dout[16:10];
+					crateid_c            <= dout[16:10];
+				if(setfdly)
+					begin
+						cabledly_a        <= ~dout[9:2];
+						dummy_a           <= dout[1:0];
+
+						cabledly_b        <= ~dout[9:2];
+						dummy_b           <= dout[1:0];
+
+						cabledly_c        <= ~dout[9:2];
+						dummy_c           <= dout[1:0];
+					end
+			end
+	end
+	vote              encode_fm_vt_i       (.A(encode_fm_a),      .B(encode_fm_b),      .C(encode_fm_c),      .V(ENCODE_FM));
+	vote              mtch_3bx_fm_vt_i     (.A(mtch_3bx_fm_a),    .B(mtch_3bx_fm_c),    .C(mtch_3bx_fm_c),    .V(MTCH_3BX_FM));
+	vote              lat_12_5us_fm_vt_i   (.A(lat_12_5us_fm_a),  .B(lat_12_5us_fm_b),  .C(lat_12_5us_fm_c),  .V(LAT_12_5US_FM));
+	vote              use_clct_fm_vt_i     (.A(use_clct_fm_a),    .B(use_clct_fm_b),    .C(use_clct_fm_c),    .V(USE_CLCT_FM));
+	vote #(.Width(4)) clct_adj_fm_vt_i     (.A(clct_adj_fm_a),    .B(clct_adj_fm_b),    .C(clct_adj_fm_c),    .V(CLCT_ADJ_FM));
+	vote              dcfeb_in_use_fm_vt_i (.A(dcfeb_in_use_fm_a),.B(dcfeb_in_use_fm_b),.C(dcfeb_in_use_fm_c),.V(DCFEB_IN_USE_FM));
+	vote #(.Width(3)) opt_cop_adj_fm_vt_i  (.A(opt_cop_adj_fm_a), .B(opt_cop_adj_fm_b), .C(opt_cop_adj_fm_c), .V(OPT_COP_ADJ_FM));
+	vote #(.Width(3)) killinput_vt_i       (.A(killinput_a),      .B(killinput_b),      .C(killinput_c),      .V(KILLINPUT));
+	vote #(.Width(4)) l1fdlyout_vt_i       (.A(l1fdlyout_a),      .B(l1fdlyout_b),      .C(l1fdlyout_c),      .V(L1FDLYOUT));
+	vote #(.Width(2)) xl1aout_vt_i         (.A(xl1aout_a),        .B(xl1aout_b),        .C(xl1aout_c),        .V(XL1AOUT));
+	vote #(.Width(5)) febclkdly_vt_i       (.A(febclkdly_a),      .B(febclkdly_b),      .C(febclkdly_c),      .V(FEBCLKDLY));
+	vote #(.Width(7)) crateid_vt_i         (.A(crateid_a),        .B(crateid_b),        .C(crateid_c),        .V(CRATEID));
+	vote #(.Width(8)) cabledly_vt_i        (.A(cabledly_a),       .B(cabledly_b),       .C(cabledly_c),       .V(CABLEDLY));
+	vote #(.Width(2)) dummy_vt_i           (.A(dummy_a),          .B(dummy_b),          .C(dummy_c),          .V(dummy));
+
+	
 end
+else 
+begin : serfmem_reg_store_no_TMR
+
+	reg encode_fm_r;
+	reg mtch_3bx_fm_r;
+	reg lat_12_5us_fm_r;
+	reg use_clct_fm_r;
+	reg [3:0] clct_rdj_fm_r;
+	reg dcfeb_in_use_fm_r;
+	reg [2:0] opt_cop_rdj_fm_r;
+	reg [2:0] killinput_r;
+	reg [3:0] l1fdlyout_r;
+	reg [1:0] xl1aout_r;
+	reg [4:0] febclkdly_r;
+	reg [6:0] crateid_r;
+	reg [7:0] cabledly_r;
+	reg [1:0] dummy_r;
+	
+	always @(posedge CLKCMS)
+	begin
+		if(ready)
+			begin
+				encode_fm_r       <= dout[42];
+				mtch_3bx_fm_r     <= dout[41];
+				lat_12_5us_fm_r   <= dout[40];
+				use_clct_fm_r     <= dout[39];
+				clct_rdj_fm_r     <= dout[38:35];
+				dcfeb_in_use_fm_r <= dout[34];
+				opt_cop_rdj_fm_r  <= dout[33:31];
+				killinput_r       <= dout[30:28];
+				l1fdlyout_r       <= dout[27:24];
+				xl1aout_r         <= dout[23:22];
+				febclkdly_r       <= dout[21:17];
+				crateid_r         <= dout[16:10];
+				cabledly_r        <= ~dout[9:2];
+				dummy_r           <= dout[1:0];
+			end
+		else 
+			begin
+				if(setfebdly)
+					begin
+						encode_fm_r       <= dout[42];
+						mtch_3bx_fm_r     <= dout[41];
+						lat_12_5us_fm_r   <= dout[40];
+						use_clct_fm_r     <= dout[39];
+						clct_rdj_fm_r     <= dout[38:35];
+						dcfeb_in_use_fm_r <= dout[34];
+						opt_cop_rdj_fm_r  <= dout[33:31];
+						killinput_r       <= dout[30:28];
+						l1fdlyout_r       <= dout[27:24];
+						xl1aout_r         <= dout[23:22];
+						febclkdly_r       <= dout[21:17];
+					end
+				if(setid)
+					crateid_r            <= dout[16:10];
+				if(setfdly)
+					begin
+						cabledly_r        <= ~dout[9:2];
+						dummy_r           <= dout[1:0];
+					end
+			end
+	end
+	
+	assign ENCODE_FM       = encode_fm_r;
+	assign MTCH_3BX_FM     = mtch_3bx_fm_r;
+	assign LAT_12_5US_FM   = lat_12_5us_fm_r;
+	assign USE_CLCT_FM     = use_clct_fm_r;
+	assign CLCT_ADJ_FM     = clct_adj_fm_r;
+	assign DCFEB_IN_USE_FM = dcfeb_in_use_fm_r;
+	assign OPT_COP_ADJ_FM  = opt_cop_adj_fm_r;
+	assign KILLINPUT       = killinput_r;
+	assign L1FDLYOUT       = l1fdlyout_r;
+	assign XL1AOUT         = xl1aout_r;
+	assign FEBCLKDLY       = febclkdly_r;
+	assign CRATEID         = crateid_r;
+	assign CABLEDLY        = cabledly_r;
+	assign dummy           = dummy_r;
+
+end
+endgenerate
 
 //
 // Program CFEB clock delay chip on DMB

@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module trg_timer #(
+	parameter Width = 8,
 	parameter TMR = 0
 )
 (
@@ -27,18 +28,18 @@ module trg_timer #(
 	input CLR,
 	input START,
 	input STOP,
-	output reg [7:0] TIME
+	output reg [Width-1:0] TIME
 );
 
 reg  clr_cnt;
 wire clr_cnt_ho;
 reg  start_ce;
-wire [7:0] count;
+wire [Width-1:0] count;
 
 assign clr_cnt_ho = clr_cnt | HOLDOFF;
 
 cbnce #(
-	.Width(8),
+	.Width(Width),
 	.TMR(TMR)
 )
 trig_timer_i (
@@ -64,7 +65,7 @@ end
 always @(posedge CLK or posedge CLR)
 begin
 	if(CLR)
-		TIME <= 8'h00;
+		TIME <= 0;
 	else
 		if(STOP)
 			TIME <= count;
