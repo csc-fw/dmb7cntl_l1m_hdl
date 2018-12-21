@@ -609,7 +609,7 @@ begin : control_logic_TMR
 	vote #(.Width(5)) vote_ovr_a         (.A(ovr_a),         .B(ovr_b),         .C(ovr_c),         .V(vt_ovr_a));
 	vote #(.Width(7)) vote_r_act_a       (.A(r_act_a),       .B(r_act_b),       .C(r_act_c),       .V(vt_r_act_a));
 	vote #(.Width(5)) vote_rovr_1_a      (.A(rovr_1_a),      .B(rovr_1_b),      .C(rovr_1_c),      .V(vt_rovr_1_a));
-	vote #(.Width(1)) vote_disdav_a      (.A(disdav_a),      .B(disdav_b),       C(disdav_c),      .V(vt_disdav_a));
+	vote #(.Width(1)) vote_disdav_a      (.A(disdav_a),      .B(disdav_b),      .C(disdav_c),      .V(vt_disdav_a));
 	vote #(.Width(1)) vote_rdffnxt_1_a   (.A(rdffnxt_1_a),   .B(rdffnxt_1_b),   .C(rdffnxt_1_c),   .V(vt_rdffnxt_1_a));
 	vote #(.Width(1)) vote_rdffnxt_2_a   (.A(rdffnxt_2_a),   .B(rdffnxt_2_b),   .C(rdffnxt_2_c),   .V(vt_rdffnxt_2_a));
 	vote #(.Width(1)) vote_rdffnxt_3_a   (.A(rdffnxt_3_a),   .B(rdffnxt_3_b),   .C(rdffnxt_3_c),   .V(vt_rdffnxt_3_a));
@@ -652,7 +652,7 @@ begin : control_logic_TMR
 	vote #(.Width(5)) vote_ovr_b         (.A(ovr_a),         .B(ovr_b),         .C(ovr_c),         .V(vt_ovr_b));
 	vote #(.Width(7)) vote_r_act_b       (.A(r_act_a),       .B(r_act_b),       .C(r_act_c),       .V(vt_r_act_b));
 	vote #(.Width(5)) vote_rovr_1_b      (.A(rovr_1_a),      .B(rovr_1_b),      .C(rovr_1_c),      .V(vt_rovr_1_b));
-	vote #(.Width(1)) vote_disdav_b      (.A(disdav_a),      .B(disdav_b),       C(disdav_c),      .V(vt_disdav_b));
+	vote #(.Width(1)) vote_disdav_b      (.A(disdav_a),      .B(disdav_b),      .C(disdav_c),      .V(vt_disdav_b));
 	vote #(.Width(1)) vote_rdffnxt_1_b   (.A(rdffnxt_1_a),   .B(rdffnxt_1_b),   .C(rdffnxt_1_c),   .V(vt_rdffnxt_1_b));
 	vote #(.Width(1)) vote_rdffnxt_2_b   (.A(rdffnxt_2_a),   .B(rdffnxt_2_b),   .C(rdffnxt_2_c),   .V(vt_rdffnxt_2_b));
 	vote #(.Width(1)) vote_rdffnxt_3_b   (.A(rdffnxt_3_a),   .B(rdffnxt_3_b),   .C(rdffnxt_3_c),   .V(vt_rdffnxt_3_b));
@@ -695,7 +695,7 @@ begin : control_logic_TMR
 	vote #(.Width(5)) vote_ovr_c         (.A(ovr_a),         .B(ovr_b),         .C(ovr_c),         .V(vt_ovr_c));
 	vote #(.Width(7)) vote_r_act_c       (.A(r_act_a),       .B(r_act_b),       .C(r_act_c),       .V(vt_r_act_c));
 	vote #(.Width(5)) vote_rovr_1_c      (.A(rovr_1_a),      .B(rovr_1_b),      .C(rovr_1_c),      .V(vt_rovr_1_c));
-	vote #(.Width(1)) vote_disdav_c      (.A(disdav_a),      .B(disdav_b),       C(disdav_c),      .V(vt_disdav_c));
+	vote #(.Width(1)) vote_disdav_c      (.A(disdav_a),      .B(disdav_b),      .C(disdav_c),      .V(vt_disdav_c));
 	vote #(.Width(1)) vote_rdffnxt_1_c   (.A(rdffnxt_1_a),   .B(rdffnxt_1_b),   .C(rdffnxt_1_c),   .V(vt_rdffnxt_1_c));
 	vote #(.Width(1)) vote_rdffnxt_2_c   (.A(rdffnxt_2_a),   .B(rdffnxt_2_b),   .C(rdffnxt_2_c),   .V(vt_rdffnxt_2_c));
 	vote #(.Width(1)) vote_rdffnxt_3_c   (.A(rdffnxt_3_a),   .B(rdffnxt_3_b),   .C(rdffnxt_3_c),   .V(vt_rdffnxt_3_c));
