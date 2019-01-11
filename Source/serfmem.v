@@ -511,9 +511,9 @@ begin : serfmem_reg_store_no_TMR
 	reg mtch_3bx_fm_r;
 	reg lat_12_5us_fm_r;
 	reg use_clct_fm_r;
-	reg [3:0] clct_rdj_fm_r;
+	reg [3:0] clct_adj_fm_r;
 	reg dcfeb_in_use_fm_r;
-	reg [2:0] opt_cop_rdj_fm_r;
+	reg [2:0] opt_cop_adj_fm_r;
 	reg [2:0] killinput_r;
 	reg [3:0] l1fdlyout_r;
 	reg [1:0] xl1aout_r;
@@ -530,9 +530,9 @@ begin : serfmem_reg_store_no_TMR
 				mtch_3bx_fm_r     <= dout[41];
 				lat_12_5us_fm_r   <= dout[40];
 				use_clct_fm_r     <= dout[39];
-				clct_rdj_fm_r     <= dout[38:35];
+				clct_adj_fm_r     <= dout[38:35];
 				dcfeb_in_use_fm_r <= dout[34];
-				opt_cop_rdj_fm_r  <= dout[33:31];
+				opt_cop_adj_fm_r  <= dout[33:31];
 				killinput_r       <= dout[30:28];
 				l1fdlyout_r       <= dout[27:24];
 				xl1aout_r         <= dout[23:22];
@@ -549,9 +549,9 @@ begin : serfmem_reg_store_no_TMR
 						mtch_3bx_fm_r     <= dout[41];
 						lat_12_5us_fm_r   <= dout[40];
 						use_clct_fm_r     <= dout[39];
-						clct_rdj_fm_r     <= dout[38:35];
+						clct_adj_fm_r     <= dout[38:35];
 						dcfeb_in_use_fm_r <= dout[34];
-						opt_cop_rdj_fm_r  <= dout[33:31];
+						opt_cop_adj_fm_r  <= dout[33:31];
 						killinput_r       <= dout[30:28];
 						l1fdlyout_r       <= dout[27:24];
 						xl1aout_r         <= dout[23:22];
