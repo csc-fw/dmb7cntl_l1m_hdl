@@ -1449,7 +1449,7 @@ begin : control_logic_TMR
 				rdyovlp_a <= vt_dodat_a;
 				oeall_1_a <= vt_oeall_a;
 				oedata_a  <= vt_oeall_1_a;
-				if(done_ce_a) dn_oe_a   <= vt_oe_a;
+				if(done_ce_a) dn_oe_a   <= oe_a;
 				if(okdata_a && !vt_dodat_a) davnodata_a <= vt_r_act_a & fifordy_b;
 			end
 	end
@@ -1485,7 +1485,7 @@ begin : control_logic_TMR
 				rdyovlp_b <= vt_dodat_b;
 				oeall_1_b <= vt_oeall_b;
 				oedata_b  <= vt_oeall_1_b;
-				if(done_ce_b) dn_oe_b   <= vt_oe_b;
+				if(done_ce_b) dn_oe_b   <= oe_b;
 				if(okdata_b && !vt_dodat_b) davnodata_b <= vt_r_act_b & fifordy_b;
 			end
 	end
@@ -1521,7 +1521,7 @@ begin : control_logic_TMR
 				rdyovlp_c <= vt_dodat_c;
 				oeall_1_c <= vt_oeall_c;
 				oedata_c  <= vt_oeall_1_c;
-				if(done_ce_c) dn_oe_c   <= vt_oe_c;
+				if(done_ce_c) dn_oe_c   <= oe_c;
 				if(okdata_c && !vt_dodat_c) davnodata_c <= vt_r_act_c & fifordy_b;
 			end
 	end
