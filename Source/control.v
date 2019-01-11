@@ -1148,7 +1148,7 @@ begin : control_logic_TMR
 	assign busy_ce_a    = vt_gdav_3_a & !vt_busy_a;
 	assign startread_a  = vt_busy_a & !vt_busy_1_a;
 	assign done_a       = {7{pop_rst_a}} | vt_dn_oe_a;
-	assign oeovlp_a     = vt_rdyovlp_a & | oe6_a;
+	assign oeovlp_a     = vt_rdyovlp_a & |oe6_a;
 	assign pop_rst_a    = vt_pop_a | RST;
 	assign readovlp_a   = vt_ooeovlp_a & ~vt_ovlpend_a;
 	assign last_a       = readovlp_a ? preovlast : prefflast;
@@ -1156,7 +1156,7 @@ begin : control_logic_TMR
 	assign busy_ce_b    = vt_gdav_3_b & !vt_busy_b;
 	assign startread_b  = vt_busy_b & !vt_busy_1_b;
 	assign done_b       = {7{pop_rst_b}} | vt_dn_oe_b;
-	assign oeovlp_b     = vt_rdyovlp_b & | oe6_b;
+	assign oeovlp_b     = vt_rdyovlp_b & |oe6_b;
 	assign pop_rst_b    = vt_pop_b | RST;
 	assign readovlp_b   = vt_ooeovlp_b & ~vt_ovlpend_b;
 	assign last_b       = readovlp_b ? preovlast : prefflast;
@@ -1164,7 +1164,7 @@ begin : control_logic_TMR
 	assign busy_ce_c    = vt_gdav_3_c & !vt_busy_c;
 	assign startread_c  = vt_busy_c & !vt_busy_1_c;
 	assign done_c       = {7{pop_rst_c}} | vt_dn_oe_c;
-	assign oeovlp_c     = vt_rdyovlp_c & | oe6_c;
+	assign oeovlp_c     = vt_rdyovlp_c & |oe6_c;
 	assign pop_rst_c    = vt_pop_c | RST;
 	assign readovlp_c   = vt_ooeovlp_c & ~vt_ovlpend_c;
 	assign last_c       = readovlp_c ? preovlast : prefflast;
