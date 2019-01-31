@@ -68,8 +68,8 @@ module dmb7cntl_l1m_hdl #(
 	output FIFORCLK2,
 	output FFMRST_B,
 	output FFPRST_B,
-	inout  [7:1] RENFIFO_B,
-	inout  [7:1] OEFIFO_B,
+	output  [7:1] RENFIFO_B,
+	output  [7:1] OEFIFO_B,
 	//
 	input GIGAEN,
 	input EAFEB,
@@ -242,7 +242,6 @@ reg  ccbpls_1;
 reg  ccbpls_2;
 reg  plsinjen;
 
-wire [7:1] femp;
 wire pedestal;
 wire [7:0] l1abufcnt;
 wire [5:1] cfebdaverr;
@@ -258,9 +257,11 @@ wire [7:0] joef;
 wire [2:0] ttcdcal;
 
 wire [7:1] renff_b;
-wire [7:1] renffmon_b;
 wire [7:1] oeff_b;
-wire [7:1] oeffmon_b;
+wire giga_en;
+wire rd_ff_nxt;
+wire [17:0] fifo_d;
+wire [7:1] ff_or_b;
 
 wire oeovlp;
 
@@ -275,15 +276,24 @@ wire outputenl_b;
 wire outputenh_b;
 wire [16:1] diagcount;
 
+IBUF IBUF_GIGAEN_i (.O(giga_en),.I(GIGAEN));
+IBUF IBUF_RDFFNXT_i (.O(rd_ff_nxt),.I(RDFFNXT));
+
 genvar i;
 generate
 begin
 	for(i=1;i<8;i=i+1) begin: idx1
-		IOBUF  IOB_RENFIFO_B (.O(renffmon_b[i]), .IO(RENFIFO_B[i]), .I(renff_b[i]), .T(1'b0));
-		IOBUF  IOB_OENFIFO_B (.O(oeffmon_b[i]),  .IO(OEFIFO_B[i]),  .I(oeff_b[i]),  .T(1'b0));
+		OBUF  OBUF_RENFIFO_B (.O(RENFIFO_B[i]), .I(renff_b[i]));
+		OBUF  OBUF_OENFIFO_B (.O(OEFIFO_B[i]),  .I(oeff_b[i]));
 	end
 	for(i=1;i<9;i=i+1) begin: idx2
 		IOBUF  IOB_MULTI_B (.O(multin[i]), .IO(MULTI_IO[i]), .I(multout[i]), .T(outputenl_b));
+	end
+	for(i=0;i<18;i=i+1) begin: idx3
+		IBUF IBUF_FIFOD_i (.O(fifo_d[i]),.I(FIFOD[i])); //[17:0]
+	end
+	for(i=1;i<8;i=i+1) begin: idx4
+		IBUF IBUF_FFOR_B_i (.O(ff_or_b[i]),.I(FFOR_B[i])); //[7:1]
 	end
 end
 endgenerate
@@ -739,7 +749,7 @@ serfmem_i (
 // JTAGCOM -- JTAG Communications to/from VME FPGA
 //
 
-assign status = {FIFOAE[7:1],FIFOHF[7:1],FIFOF[7:1],femp[7:1],cfebdaverr[5:1],l1abufcnt[7:0],caltrgsel,pedestal,sfmwp_b,gtrgfifoerr,jtrgen[2:0]};
+assign status = {FIFOAE[7:1],FIFOHF[7:1],FIFOF[7:1],ff_or_b[7:1],cfebdaverr[5:1],l1abufcnt[7:0],caltrgsel,pedestal,sfmwp_b,gtrgfifoerr,jtrgen[2:0]};
 
 assign PREL1RLS_B = ~prel1rls;
 assign INJ_PULSE  = inject;
@@ -865,15 +875,15 @@ control_i (
 	.L1ARST(l1arst),
 	.FIFOMRST(fifomrst),
 	.GEMPTY_B(gempty_b),
-	.GIGAEN(GIGAEN),
-	.RDFFNXT(RDFFNXT),
+	.GIGAEN(giga_en),
+	.RDFFNXT(rd_ff_nxt),
 	.DAVENBL(davenbl),     //  5:1
 	.DAQMBID(daqmbid),     // 11:0
 	.CFEBBX(cfebbx),       //  3:0
 	.BXN(gbxn),            // 11:0
-	.DATAIN(FIFOD),        // 17:0
+	.DATAIN(fifo_d),        // 17:0
 	.DAVACT(davact),       // 16:0
-	.FFOR_B(FFOR_B),       //  7:1
+	.FFOR_B(ff_or_b),       //  7:1
 	.JOEF(joef),           //  7:0
 	.KILLINPUT(killinput), //  2:0
 	.STATUS(status),       // 47:0
@@ -883,7 +893,6 @@ control_i (
 	.OEOVLP(oeovlp),
 	.RENFIFO_B(renff_b),   //  7:1
 	.OEFIFO_B(oeff_b),     //  7:1
-	.FEMP(femp),           //  7:1
 	.DOUT(dout)           // 15:0
 );
 
@@ -905,8 +914,8 @@ frontmon_i (
 	.INJECT(inject),
 	.PULSE(pulse),
 	.OEOVLP(oeovlp),
-	.RENFFMON_B(renffmon_b),    //  7:1
-	.OEFFMON_B(oeffmon_b),      //  7:1
+	.RENFFMON_B(renff_b),    //  7:1
+	.OEFFMON_B(oeff_b),      //  7:1
 	.FIFOEMPT_B(status[26:20]), //  7:1
 	.FIFOFULL_B(status[33:27]), //  7:1
 	.FIFOHALF_B(status[40:34]), //  7:1

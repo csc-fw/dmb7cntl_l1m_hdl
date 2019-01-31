@@ -89,7 +89,7 @@ always @(posedge CLK)
 begin
 	pre_lct_r <= PRE_LCT_IN;
 	clct_r    <= CLCT;
-	bgtrg_1   <= ~BGTRG;
+	bgtrg_1   <= ~BGTRG; //L1ACC
 end
 
 always @(posedge CLK)

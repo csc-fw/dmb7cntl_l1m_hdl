@@ -57,10 +57,14 @@ module control_tf;
 	reg [2:0] gadd;
 	reg [7:0] tadd;
 	reg start;
-	reg[17:0] dmbf6data[255:0];
+	reg[17:0] dmbf1data[255:0];
+//	reg[17:0] dmbf6data[255:0];
 
 	// Instantiate the Unit Under Test (UUT)
-	control uut (
+	control #(
+		.TMR(1)
+	)
+	uut (
 		.CLKCMS(CLKCMS), 
 		.CLKDDU(CLKDDU), 
 		.RST(RST), 
@@ -108,7 +112,8 @@ module control_tf;
 	end
 	
 	initial begin
-	   $readmemh ("dmb_fifo6_data", dmbf6data, 0, 255);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/dmb_fifo1_data", dmbf1data, 0, 255);
+//	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/dmb_fifo6_data", dmbf6data, 0, 255);
 	end
 
 	initial begin
@@ -169,7 +174,7 @@ always @*
 begin
 	case (gadd)
 		3'h0: DAVACT = 17'h00000;
-		3'h1: DAVACT = 17'h00001;
+		3'h1: DAVACT = 17'h00002;
 		3'h2: DAVACT = 17'h00000;
 		3'h3: DAVACT = 17'h00000;
 		3'h4: DAVACT = 17'h00000;
@@ -184,12 +189,15 @@ always @(negedge CLKDDU or posedge RST) begin
 	if(RST)
 		tadd <= 8'h00;
 	else
-		if(RENFIFO_B[6] == 1'b0)
+		if(RENFIFO_B[1] == 1'b0)
+//		if(RENFIFO_B[6] == 1'b0)
 			tadd <= tadd + 1;
 end
 
-assign DATAIN = dmbf6data[tadd];
-assign FFOR_B = {1'b1,(DATAIN == 18'h00000),5'b11111};
+assign DATAIN = dmbf1data[tadd];
+//assign DATAIN = dmbf6data[tadd];
+assign FFOR_B = {6'b1,(DATAIN == 18'h00000)};
+//assign FFOR_B = {1'b1,(DATAIN == 18'h00000),5'b11111};
 
 endmodule
 

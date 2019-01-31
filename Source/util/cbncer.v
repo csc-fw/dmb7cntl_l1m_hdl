@@ -49,16 +49,17 @@ begin : cbncer_tmr
 			cnt_2 <= 0;
 			cnt_3 <= 0;
 		end
-		else if(CE) begin
-			cnt_1 <= voted_cnt_1 + 1;
-			cnt_2 <= voted_cnt_1 + 1;
-			cnt_3 <= voted_cnt_1 + 1;
-		end
-		else begin
-			cnt_1 <= voted_cnt_1;
-			cnt_2 <= voted_cnt_1;
-			cnt_3 <= voted_cnt_1;
-		end
+		else
+			if(CE) begin
+				cnt_1 <= voted_cnt_1 + 1;
+				cnt_2 <= voted_cnt_1 + 1;
+				cnt_3 <= voted_cnt_1 + 1;
+			end
+			else begin
+				cnt_1 <= voted_cnt_1;
+				cnt_2 <= voted_cnt_1;
+				cnt_3 <= voted_cnt_1;
+			end
 	end
 end
 else

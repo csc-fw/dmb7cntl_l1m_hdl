@@ -57,6 +57,7 @@ wire preinj;
 reg  fpls_1;
 reg  fpls_2;
 wire prepls;
+wire le_fped;
 reg  fped_1;
 wire rstpls;
 reg  pls_end;
