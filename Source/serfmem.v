@@ -487,13 +487,13 @@ begin : serfmem_reg_store_TMR
 					end
 			end
 	end
-	vote              encode_fm_vt_i       (.A(encode_fm_a),      .B(encode_fm_b),      .C(encode_fm_c),      .V(ENCODE_FM));
-	vote              mtch_3bx_fm_vt_i     (.A(mtch_3bx_fm_a),    .B(mtch_3bx_fm_b),    .C(mtch_3bx_fm_c),    .V(MTCH_3BX_FM));
-	vote              lat_12_5us_fm_vt_i   (.A(lat_12_5us_fm_a),  .B(lat_12_5us_fm_b),  .C(lat_12_5us_fm_c),  .V(LAT_12_5US_FM));
-	vote              use_clct_fm_vt_i     (.A(use_clct_fm_a),    .B(use_clct_fm_b),    .C(use_clct_fm_c),    .V(USE_CLCT_FM));
-	vote #(.Width(4)) clct_adj_fm_vt_i     (.A(clct_adj_fm_a),    .B(clct_adj_fm_b),    .C(clct_adj_fm_c),    .V(CLCT_ADJ_FM));
-	vote              dcfeb_in_use_fm_vt_i (.A(dcfeb_in_use_fm_a),.B(dcfeb_in_use_fm_b),.C(dcfeb_in_use_fm_c),.V(DCFEB_IN_USE_FM));
-	vote #(.Width(3)) opt_cop_adj_fm_vt_i  (.A(opt_cop_adj_fm_a), .B(opt_cop_adj_fm_b), .C(opt_cop_adj_fm_c), .V(OPT_COP_ADJ_FM));
+//	vote              encode_fm_vt_i       (.A(encode_fm_a),      .B(encode_fm_b),      .C(encode_fm_c),      .V(ENCODE_FM));
+//	vote              mtch_3bx_fm_vt_i     (.A(mtch_3bx_fm_a),    .B(mtch_3bx_fm_b),    .C(mtch_3bx_fm_c),    .V(MTCH_3BX_FM));
+//	vote              lat_12_5us_fm_vt_i   (.A(lat_12_5us_fm_a),  .B(lat_12_5us_fm_b),  .C(lat_12_5us_fm_c),  .V(LAT_12_5US_FM));
+//	vote              use_clct_fm_vt_i     (.A(use_clct_fm_a),    .B(use_clct_fm_b),    .C(use_clct_fm_c),    .V(USE_CLCT_FM));
+//	vote #(.Width(4)) clct_adj_fm_vt_i     (.A(clct_adj_fm_a),    .B(clct_adj_fm_b),    .C(clct_adj_fm_c),    .V(CLCT_ADJ_FM));
+//	vote              dcfeb_in_use_fm_vt_i (.A(dcfeb_in_use_fm_a),.B(dcfeb_in_use_fm_b),.C(dcfeb_in_use_fm_c),.V(DCFEB_IN_USE_FM));
+//	vote #(.Width(3)) opt_cop_adj_fm_vt_i  (.A(opt_cop_adj_fm_a), .B(opt_cop_adj_fm_b), .C(opt_cop_adj_fm_c), .V(OPT_COP_ADJ_FM));
 	vote #(.Width(3)) killinput_vt_i       (.A(killinput_a),      .B(killinput_b),      .C(killinput_c),      .V(KILLINPUT));
 	vote #(.Width(4)) l1fdlyout_vt_i       (.A(l1fdlyout_a),      .B(l1fdlyout_b),      .C(l1fdlyout_c),      .V(L1FDLYOUT));
 	vote #(.Width(2)) xl1aout_vt_i         (.A(xl1aout_a),        .B(xl1aout_b),        .C(xl1aout_c),        .V(XL1AOUT));
@@ -501,6 +501,18 @@ begin : serfmem_reg_store_TMR
 	vote #(.Width(7)) crateid_vt_i         (.A(crateid_a),        .B(crateid_b),        .C(crateid_c),        .V(CRATEID));
 	vote #(.Width(8)) cabledly_vt_i        (.A(cabledly_a),       .B(cabledly_b),       .C(cabledly_c),       .V(CABLEDLY));
 	vote #(.Width(2)) dummy_vt_i           (.A(dummy_a),          .B(dummy_b),          .C(dummy_c),          .V(dummy));
+//
+// Hard code new features until software is compatible
+// set for use with DCFEBs which includes TMB using an optical path
+//
+	assign ENCODE_FM       = 1'b0;
+	assign MTCH_3BX_FM     = 1'b0;
+	assign LAT_12_5US_FM   = 1'b0;
+	assign USE_CLCT_FM     = 1'b0;
+	assign CLCT_ADJ_FM     = 4'hF;
+	assign DCFEB_IN_USE_FM = 1'b1;
+	assign OPT_COP_ADJ_FM  = 3'b0;
+
 
 	
 end
@@ -567,13 +579,13 @@ begin : serfmem_reg_store_no_TMR
 			end
 	end
 	
-	assign ENCODE_FM       = encode_fm_r;
-	assign MTCH_3BX_FM     = mtch_3bx_fm_r;
-	assign LAT_12_5US_FM   = lat_12_5us_fm_r;
-	assign USE_CLCT_FM     = use_clct_fm_r;
-	assign CLCT_ADJ_FM     = clct_adj_fm_r;
-	assign DCFEB_IN_USE_FM = dcfeb_in_use_fm_r;
-	assign OPT_COP_ADJ_FM  = opt_cop_adj_fm_r;
+//	assign ENCODE_FM       = encode_fm_r;
+//	assign MTCH_3BX_FM     = mtch_3bx_fm_r;
+//	assign LAT_12_5US_FM   = lat_12_5us_fm_r;
+//	assign USE_CLCT_FM     = use_clct_fm_r;
+//	assign CLCT_ADJ_FM     = clct_adj_fm_r;
+//	assign DCFEB_IN_USE_FM = dcfeb_in_use_fm_r;
+//	assign OPT_COP_ADJ_FM  = opt_cop_adj_fm_r;
 	assign KILLINPUT       = killinput_r;
 	assign L1FDLYOUT       = l1fdlyout_r;
 	assign XL1AOUT         = xl1aout_r;
@@ -581,6 +593,18 @@ begin : serfmem_reg_store_no_TMR
 	assign CRATEID         = crateid_r;
 	assign CABLEDLY        = cabledly_r;
 	assign dummy           = dummy_r;
+
+//
+// Hard code new features until software is compatible
+// set for use with DCFEBs which includes TMB using an optical pathC
+//
+	assign ENCODE_FM       = 1'b0;
+	assign MTCH_3BX_FM     = 1'b0;
+	assign LAT_12_5US_FM   = 1'b0;
+	assign USE_CLCT_FM     = 1'b0;
+	assign CLCT_ADJ_FM     = 4'hF;
+	assign DCFEB_IN_USE_FM = 1'b1;
+	assign OPT_COP_ADJ_FM  = 3'b0;
 
 end
 endgenerate

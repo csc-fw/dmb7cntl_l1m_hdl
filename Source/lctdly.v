@@ -75,7 +75,7 @@ assign fx2in = USE_CLCT ? cdly : fdly[0];
 // CLCT Delay
 //
 //srl_16dx1 clctdelay_1 (.CLK(CLK), .CE(1'b1),.A(CLCT_ADJ),.I(CLCT),.O(cdly),.Q15()); // 16 clocks
-(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) clctdelay_1 (.CLK(CLK),.A3(CLCT_ADJ[3]),.A2(CLCT_ADJ[2]),.A1(CLCT_ADJ[1]),.A0(CLCT_ADJ[0]),.D(CLCT),.Q(cdly));
+(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) clctdelay_1 (.CLK(CLK),.A3(CLCT_ADJ[3]),.A2(CLCT_ADJ[2]),.A1(CLCT_ADJ[1]),.A0(CLCT_ADJ[0]),.D(CLCT),.Q(cdly)); // (0-15) + 1 clock
 
 //
 // Fixed Delays
@@ -84,10 +84,10 @@ assign fx2in = USE_CLCT ? cdly : fdly[0];
 //srl_16dx1 fixdelay_2 (.CLK(CLK), .CE(1'b1),.A(4'hF),.I(fx2in),  .O(fdly[1]),.Q15()); // 16 clocks
 //srl_16dx1 fixdelay_3 (.CLK(CLK), .CE(1'b1),.A(4'hF),.I(fdly[1]),.O(fdly[2]),.Q15()); // 16 clocks
 //srl_16dx1 fixdelay_4 (.CLK(CLK), .CE(1'b1),.A(4'hE),.I(fdly[2]),.O(fdly[3]),.Q15()); // 15 clocks (set .A to 14 for 3bx and asymmetric 5bx matching, set to 13 for sym. 5bx, and set to 12 for sym 7bx)
-(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_1 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(PLCT),   .Q(fdly[0]));
-(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_2 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(fx2in),  .Q(fdly[1]));
-(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_3 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(fdly[1]),.Q(fdly[2]));
-(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_4 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b0),.D(fdly[2]),.Q(fdly[3]));
+(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_1 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(PLCT),   .Q(fdly[0])); // 16 clocks
+(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_2 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(fx2in),  .Q(fdly[1])); // 16 clocks
+(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_3 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(fdly[1]),.Q(fdly[2])); // 16 clocks
+(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_4 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b0),.D(fdly[2]),.Q(fdly[3])); // 15 clocks (set .A to 14 for 3bx and asymmetric 5bx matching, set to 13 for sym. 5bx, and set to 11 for sym 7bx) (15, 14, or 12 clocks)
 //
 // for 12.5us latence add in 368 clocks of delay
 (* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) fixdelay_5 (.CLK(CLK),.A3(1'b1),.A2(1'b1),.A1(1'b1),.A0(1'b1),.D(fdly[3]),.Q(fdly[4]));
