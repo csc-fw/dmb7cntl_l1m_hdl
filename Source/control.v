@@ -736,7 +736,7 @@ begin : control_logic_TMR
 	assign  vt_ovrin_a       = (ovrin_a       & ovrin_b)       | (ovrin_b       & ovrin_c)       | (ovrin_a       & ovrin_c);      // Majority logic
 	assign  vt_ovr_a         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
 	assign  vt_r_act_a       = (r_act_a       & r_act_b)       | (r_act_b       & r_act_c)       | (r_act_a       & r_act_c);      // Majority logic
-	assign  vt_rovr_1_a      = (rovr_a        & rovr_b)        | (rovr_b        & rovr_c)        | (rovr_a        & rovr_c);      // Majority logic
+	assign  vt_rovr_1_a      = (rovr_1_a      & rovr_1_b)      | (rovr_1_b      & rovr_1_c)      | (rovr_1_a      & rovr_1_c);      // Majority logic
 	assign  vt_disdav_a      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
 	assign  vt_rdffnxt_1_a   = (rdffnxt_1_a   & rdffnxt_1_b)   | (rdffnxt_1_b   & rdffnxt_1_c)   | (rdffnxt_1_a   & rdffnxt_1_c);      // Majority logic
 	assign  vt_rdffnxt_2_a   = (rdffnxt_2_a   & rdffnxt_2_b)   | (rdffnxt_2_b   & rdffnxt_2_c)   | (rdffnxt_2_a   & rdffnxt_2_c);      // Majority logic
@@ -779,7 +779,7 @@ begin : control_logic_TMR
 	assign  vt_ovrin_b       = (ovrin_a       & ovrin_b)       | (ovrin_b       & ovrin_c)       | (ovrin_a       & ovrin_c);      // Majority logic
 	assign  vt_ovr_b         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
 	assign  vt_r_act_b       = (r_act_a       & r_act_b)       | (r_act_b       & r_act_c)       | (r_act_a       & r_act_c);      // Majority logic
-	assign  vt_rovr_1_b      = (rovr_a        & rovr_b)        | (rovr_b        & rovr_c)        | (rovr_a        & rovr_c);      // Majority logic
+	assign  vt_rovr_1_b      = (rovr_1_a      & rovr_1_b)      | (rovr_1_b      & rovr_1_c)      | (rovr_1_a      & rovr_1_c);      // Majority logic
 	assign  vt_disdav_b      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
 	assign  vt_rdffnxt_1_b   = (rdffnxt_1_a   & rdffnxt_1_b)   | (rdffnxt_1_b   & rdffnxt_1_c)   | (rdffnxt_1_a   & rdffnxt_1_c);      // Majority logic
 	assign  vt_rdffnxt_2_b   = (rdffnxt_2_a   & rdffnxt_2_b)   | (rdffnxt_2_b   & rdffnxt_2_c)   | (rdffnxt_2_a   & rdffnxt_2_c);      // Majority logic
@@ -822,7 +822,7 @@ begin : control_logic_TMR
 	assign  vt_ovrin_c       = (ovrin_a       & ovrin_b)       | (ovrin_b       & ovrin_c)       | (ovrin_a       & ovrin_c);      // Majority logic
 	assign  vt_ovr_c         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
 	assign  vt_r_act_c       = (r_act_a       & r_act_b)       | (r_act_b       & r_act_c)       | (r_act_a       & r_act_c);      // Majority logic
-	assign  vt_rovr_1_c      = (rovr_a        & rovr_b)        | (rovr_b        & rovr_c)        | (rovr_a        & rovr_c);      // Majority logic
+	assign  vt_rovr_1_c      = (rovr_1_a      & rovr_1_b)      | (rovr_1_b      & rovr_1_c)      | (rovr_1_a      & rovr_1_c);      // Majority logic
 	assign  vt_disdav_c      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
 	assign  vt_rdffnxt_1_c   = (rdffnxt_1_a   & rdffnxt_1_b)   | (rdffnxt_1_b   & rdffnxt_1_c)   | (rdffnxt_1_a   & rdffnxt_1_c);      // Majority logic
 	assign  vt_rdffnxt_2_c   = (rdffnxt_2_a   & rdffnxt_2_b)   | (rdffnxt_2_b   & rdffnxt_2_c)   | (rdffnxt_2_a   & rdffnxt_2_c);      // Majority logic
@@ -865,7 +865,7 @@ begin : control_logic_TMR
 //	assign  vt_ovrin_a       = ovrin_a;
 //	assign  vt_ovr_a         = ovr_a;
 //	assign  vt_r_act_a       = r_act_a;
-//	assign  vt_rovr_1_a      = rovr_a;
+//	assign  vt_rovr_1_a      = rovr_1_a;
 //	assign  vt_disdav_a      = disdav_a;
 //	assign  vt_rdffnxt_1_a   = rdffnxt_1_a;
 //	assign  vt_rdffnxt_2_a   = rdffnxt_2_a;
@@ -908,7 +908,7 @@ begin : control_logic_TMR
 //	assign  vt_ovrin_b       = ovrin_b;
 //	assign  vt_ovr_b         = ovr_b;
 //	assign  vt_r_act_b       = r_act_b;
-//	assign  vt_rovr_1_b      = rovr_b;
+//	assign  vt_rovr_1_b      = rovr_1_b;
 //	assign  vt_disdav_b      = disdav_b;
 //	assign  vt_rdffnxt_1_b   = rdffnxt_1_b;
 //	assign  vt_rdffnxt_2_b   = rdffnxt_2_b;
@@ -951,7 +951,7 @@ begin : control_logic_TMR
 //	assign  vt_ovrin_c       = ovrin_c;
 //	assign  vt_ovr_c         = ovr_c;
 //	assign  vt_r_act_c       = r_act_c;
-//	assign  vt_rovr_1_c      = rovr_c;
+//	assign  vt_rovr_1_c      = rovr_1_c;
 //	assign  vt_disdav_c      = disdav_c;
 //	assign  vt_rdffnxt_1_c   = rdffnxt_1_c;
 //	assign  vt_rdffnxt_2_c   = rdffnxt_2_c;
@@ -1270,46 +1270,6 @@ begin : control_logic_TMR
 	assign poplast_b    = pop_rst_b | last_b;
 	assign okdata_b     = (ddcnt == 9'd448);
 	assign okdata_rst_b = RST | okdata_b;
-
-//	assign errd_rst_a   = vt_davnodata_c | vt_datanoend_c | done_c;
-//	assign oehdra_a     = |{vt_oehdr_c[4:1]};
-//	assign oehdrb_a     = |{vt_oehdr_c[8:5]};
-//	assign stpop_a      = (vt_oehdr_c[4] & !head_d12) | vt_tail8_1_c;
-//	assign taila_a      = |{vt_tail_c[4:1]};
-//	assign tailb_a      = |{vt_tail_c[8:5]};
-//	assign done_ce_a    = last_c & !vt_ovlpend_c; // leading edge of last;
-//	assign dodatx_a     = vt_dodat_c && !readovlp_c;
-//	assign fffl_a       = ~killdcd & vt_ffrfl_c;
-//	assign oe_a         = prio_act_c & vt_rdy_c & ~{2'b0,vt_ovr_c};
-//	assign oe6_a        = prio_act_c[5:1] & vt_ovr_c;
-//	assign rovr_a       = {5{RST}} | vt_oe6_1_c;
-//	assign rst_rovr_a   = {5{RST}} | vt_rovr_1_c;
-//	assign jrdff_a      = vt_rdffnxt_2_c & ~vt_rdffnxt_3_c;
-//	assign rst_dov_a    = pop_rst_c | vt_rdoneovlp_c;
-//	assign doneovlp_a   = pop_rst_c | vt_dn_ovlp_c;
-//	assign poplast_a    = pop_rst_c | last_c;
-//	assign okdata_a     = (ddcnt == 9'd448);
-//	assign okdata_rst_a = RST | okdata_c;
-
-//	assign errd_rst_b   = vt_davnodata_c | vt_datanoend_c | done_c;
-//	assign oehdra_b     = |{vt_oehdr_c[4:1]};
-//	assign oehdrb_b     = |{vt_oehdr_c[8:5]};
-//	assign stpop_b      = (vt_oehdr_c[4] & !head_d12) | vt_tail8_1_c;
-//	assign taila_b      = |{vt_tail_c[4:1]};
-//	assign tailb_b      = |{vt_tail_c[8:5]};
-//	assign done_ce_b    = last_c & !vt_ovlpend_c; // leading edge of last;
-//	assign dodatx_b     = vt_dodat_c && !readovlp_c;
-//	assign fffl_b       = ~killdcd & vt_ffrfl_c;
-//	assign oe_b         = prio_act_c & vt_rdy_c & ~{2'b0,vt_ovr_c};
-//	assign oe6_b        = prio_act_c[5:1] & vt_ovr_c;
-//	assign rovr_b       = {5{RST}} | vt_oe6_1_c;
-//	assign rst_rovr_b   = {5{RST}} | vt_rovr_1_c;
-//	assign jrdff_b      = vt_rdffnxt_2_c & ~vt_rdffnxt_3_c;
-//	assign rst_dov_b    = pop_rst_c | vt_rdoneovlp_c;
-//	assign doneovlp_b   = pop_rst_c | vt_dn_ovlp_c;
-//	assign poplast_b    = pop_rst_c | last_c;
-//	assign okdata_b     = (ddcnt == 9'd448);
-//	assign okdata_rst_b = RST | okdata_c;
 
 	assign errd_rst_c   = vt_davnodata_c | vt_datanoend_c | done_c;
 	assign oehdra_c     = |{vt_oehdr_c[4:1]};
