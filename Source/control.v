@@ -31,6 +31,7 @@ module control #(
 	input GEMPTY_B,
 	input GIGAEN,
 	input RDFFNXT,
+	input DCFEB_IN_USE,
 	input [5:1] DAVENBL,
 	input [11:0] DAQMBID,
 	input [3:0] CFEBBX,
@@ -102,7 +103,7 @@ wire fcrst;
 
 wire [8:0] ddcnt;
 wire [23:0] l1cnt;
-wire [1:0] fmt_ver = 2'b01;
+wire [1:0] fmt_ver;
 reg  [15:0] da_in;
 wire [23:0] regcrc;
 reg  [7:1] fifordy_b;
@@ -133,6 +134,7 @@ assign killdcd  = {killalct,killtmb,killcfeb};
 assign ffhf     = killdcd | STATUS[40:34];
 assign ffmt     = killdcd | STATUS[26:20];
 assign fcrst    = RST | FIFOMRST;
+assign fmt_ver  = DCFEB_IN_USE ? 2'd2 : 2'd1;
 
 //
 // Overlap FIFO memory

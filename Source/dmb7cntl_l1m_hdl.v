@@ -881,6 +881,7 @@ control_i (
 	.GEMPTY_B(gempty_b),
 	.GIGAEN(giga_en),
 	.RDFFNXT(rd_ff_nxt),
+	.DCFEB_IN_USE(dcfeb_in_use_fm),
 	.DAVENBL(davenbl),     //  5:1
 	.DAQMBID(daqmbid),     // 11:0
 	.CFEBBX(cfebbx),       //  3:0
