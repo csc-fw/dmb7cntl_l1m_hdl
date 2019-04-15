@@ -73,7 +73,7 @@ module dmb7cntl_l1m_hdl #(
 	//
 	input GIGAEN,
 	input EAFEB,
-	input SND_WIN, // From SW1 position 3: When set high it sends the match window position 0 to cfebs for viewing on a scope instead of L1A_Match
+	input SND_WIN_B, // From SW1 position 3: When set high it sends the match window position 0 to cfebs for viewing on a scope instead of L1A_Match
 	// CCB
 	input ENL1RLS,
 	input [5:0] CCBCMD,
@@ -476,6 +476,8 @@ trgcntrl_i (
 	.PRE_LCT_OUT(lct)
 );
 
+wire snd_win;
+assign snd_win = !SND_WIN_B;
 
 //
 // Trigger encoding 
@@ -485,7 +487,7 @@ trgenc_i(
 	//inputs
 	.ENCODE(encode_fm),
 	.DCFEB_IN_USE(dcfeb_in_use_fm),
-	.SND_WIN(SND_WIN),  // Send match window position 0 instead of L1A match to DCFEB for observing on scope.
+	.SND_WIN(snd_win),  // Send match window position 0 instead of L1A match to DCFEB for observing on scope.
 	.RESYNC_RST(rst),
 	.L1ACFEB(l1acfeb),
 	.PRE_LCT_OUT(lct[5:1]), //[5:1]
