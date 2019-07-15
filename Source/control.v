@@ -56,7 +56,7 @@ module control #(
 wire rstcnt;
 wire data_hldoff;
 wire ovlpend;
-wire [7:1] ooe;
+wire [7:1] ooe, ooe_i;
 wire [7:1] jref;
 wire rstlast;
 wire [15:0] dint;
@@ -212,7 +212,7 @@ begin
 			if(done[i])
 				OEFIFO_B[i]  <= 1'b1;
 			else
-				OEFIFO_B[i] <= ~(JOEF[i] | ooe[i]);
+				OEFIFO_B[i] <= ~(JOEF[i] | ooe[i] | ooe_i[i]);
 		end
 	end
 end
@@ -1352,6 +1352,7 @@ begin : control_logic_TMR
 	assign ovlpwen    = ~pop_rst_a & ~vt_disdav_a & ~vt_dint_ovlp_b_a & vt_oedata_a;
 	assign crcen      = ~vt_disdav_a & (vt_oedata_a | vt_ht_crc_a);
 	assign ovlplast   = {{3{vt_ovlpend_a}},vt_dint_a[15]};
+	assign ooe_i      = oe_a;
 
 	assign rstcnt  = vt_rstcnt_a;
 	assign ovlpend = vt_ovlpend_a;
@@ -2413,7 +2414,7 @@ begin : control_logic_no_TMR
 	assign ovlpwen    = ~pop_rst_i & ~disdav_r & ~dint_ovlp_b_r & oedata_r;
 	assign crcen      = ~disdav_r & (oedata_r | ht_crc_r);
 	assign ovlplast   = {{3{ovlpend_r}},dint_r[15]};
-
+	assign ooe_i      = oe_i;
 
 	assign rstcnt = rstcnt_r;
 	assign ovlpend = ovlpend_r;
