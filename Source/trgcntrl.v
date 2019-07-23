@@ -50,6 +50,7 @@ module trgcntrl #(
 	output [5:0] L1A_MATCH,
 	output [5:0] PSH_AFF,
 	output [5:0] DLY_AFF,
+	output [5:0] MATCH_WIN_0,
 	output [5:0] PRE_LCT_OUT
 );
 
@@ -112,29 +113,34 @@ begin
 		(* syn_keep = "true" *) wire [5:0] d_lct_out_a;
 		(* syn_keep = "true" *) wire [5:0] d_lct_out_b;
 		(* syn_keep = "true" *) wire [5:0] d_lct_out_c;
+		(* syn_keep = "true" *) wire [5:0] match_win_0_a;
+		(* syn_keep = "true" *) wire [5:0] match_win_0_b;
+		(* syn_keep = "true" *) wire [5:0] match_win_0_c;
 		(* syn_keep = "true" *) wire [5:0] d_push_out_a;
 		(* syn_keep = "true" *) wire [5:0] d_push_out_b;
 		(* syn_keep = "true" *) wire [5:0] d_push_out_c;
 		for(i=0;i<6;i=i+1) begin: idx2
-			lctdly  lctdly_a  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_a[i]),.L1A_MATCH(l1mtch_a[i]));
-			lctdly  lctdly_b  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_b[i]),.L1A_MATCH(l1mtch_b[i]));
-			lctdly  lctdly_c  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_c[i]),.L1A_MATCH(l1mtch_c[i]));
+			lctdly  lctdly_a  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_a[i]),.MATCH_WIN_0(match_win_0_a[i]),.L1A_MATCH(l1mtch_a[i]));
+			lctdly  lctdly_b  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_b[i]),.MATCH_WIN_0(match_win_0_b[i]),.L1A_MATCH(l1mtch_b[i]));
+			lctdly  lctdly_c  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_c[i]),.MATCH_WIN_0(match_win_0_c[i]),.L1A_MATCH(l1mtch_c[i]));
 			pushdly pushdly_a (.CLK(CLK),.DIN(d_lct_out_a[i]),.DELAY(GPUSHDLY),.DOUT(d_push_out_a[i]));
 			pushdly pushdly_b (.CLK(CLK),.DIN(d_lct_out_b[i]),.DELAY(GPUSHDLY),.DOUT(d_push_out_b[i]));
 			pushdly pushdly_c (.CLK(CLK),.DIN(d_lct_out_c[i]),.DELAY(GPUSHDLY),.DOUT(d_push_out_c[i]));
 		end
 		
-		vote #(.Width(6)) l1mtch_vt    (.A(l1mtch_a),    .B(l1mtch_b),    .C(l1mtch_c),    .V(L1A_MATCH));
-		vote #(.Width(6)) lctdly_vt    (.A(d_lct_out_a), .B(d_lct_out_b), .C(d_lct_out_c), .V(DLY_AFF));
-		vote #(.Width(6)) pushmtch_vt  (.A(d_push_out_a),.B(d_push_out_b),.C(d_push_out_c),.V(PSH_AFF));
+		vote #(.Width(6)) l1mtch_vt    (.A(l1mtch_a),      .B(l1mtch_b),      .C(l1mtch_c),      .V(L1A_MATCH));
+		vote #(.Width(6)) match_win_vt (.A(match_win_0_a), .B(match_win_0_b), .C(match_win_0_c), .V(MATCH_WIN_0));
+		vote #(.Width(6)) lctdly_vt    (.A(d_lct_out_a),   .B(d_lct_out_b),   .C(d_lct_out_c),   .V(DLY_AFF));
+		vote #(.Width(6)) pushmtch_vt  (.A(d_push_out_a),  .B(d_push_out_b),  .C(d_push_out_c),  .V(PSH_AFF));
 	end
 	else
 	begin
 		wire [5:0] d_lct_out_i;
 		for(i=0;i<6;i=i+1) begin: idx2
-			lctdly  lctdly_i  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_i[i]),.L1A_MATCH(L1A_MATCH[i]));
+			lctdly  lctdly_i  (.CLK(CLK),.PLCT(PRE_LCT_OUT[i]),.CLCT(clct_r6[i]),.L1A(l1a),.LAT_12_5US(LAT_12_5US),.MTCH_3BX(MTCH_3BX),.USE_CLCT(USE_CLCT),.CLCT_ADJ(CLCT_ADJ),.OPT_COP(OPT_COP_ADJ),.DELAY(L1LATNCY),.XL1ADLY(XL1ADLY),.L1FD(L1FINEDELAY),.DOUT(d_lct_out_i[i]),.MATCH_WIN_0(MATCH_WIN_0[i]),.L1A_MATCH(L1A_MATCH[i]));
 			pushdly pushdly_i (.CLK(CLK),.DIN(d_lct_out_i[i]),.DELAY(GPUSHDLY),.DOUT(PSH_AFF[i]));
 		end
+
 		assign DLY_AFF = d_lct_out_i;
 	end
 end

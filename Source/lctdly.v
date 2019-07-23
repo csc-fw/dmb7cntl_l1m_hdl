@@ -32,6 +32,7 @@ module lctdly(
 	input [1:0] XL1ADLY,
 	input [3:0] L1FD,
 	output DOUT,
+	output MATCH_WIN_0,
 	output L1A_MATCH
 );
 
@@ -189,6 +190,11 @@ end
 //
 //srl_16dx1 finedelay_i (.CLK(CLK), .CE(1'b1),.A(L1FD),.I(pre_l1a_match),.O(L1A_MATCH),.Q15()); // L1A Fine Delay + 1 clocks
 (* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) finedelay_i (.CLK(CLK),.A3(L1FD[3]),.A2(L1FD[2]),.A1(L1FD[1]),.A0(L1FD[0]),.D(pre_l1a_match),.Q(L1A_MATCH));
+
+//
+// Fine Delay on Match_Win_0
+//
+(* syn_preserve = "true" *)  SRL16 #(.INIT(16'h0000)) match_win_i (.CLK(CLK),.A3(L1FD[3]),.A2(L1FD[2]),.A1(L1FD[1]),.A0(L1FD[0]),.D(p0),.Q(MATCH_WIN_0));
 
 always @(posedge CLK)
 begin

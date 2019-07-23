@@ -165,6 +165,7 @@ wire errorlct;
 wire [5:0] l1a_match;
 wire [5:0] psh_aff;
 wire [5:0] dly_aff;
+wire [5:0] match_win_0;
 wire [5:0] lct;
 wire [5:1] enc_bit0;
 wire [5:1] enc_bit1;
@@ -473,6 +474,7 @@ trgcntrl_i (
 	.L1A_MATCH(l1a_match), //[5:0]
 	.PSH_AFF(psh_aff),
 	.DLY_AFF(dly_aff),
+	.MATCH_WIN_0(match_win_0),
 	.PRE_LCT_OUT(lct)
 );
 
@@ -491,7 +493,7 @@ trgenc_i(
 	.RESYNC_RST(rst),
 	.L1ACFEB(l1acfeb),
 	.PRE_LCT_OUT(lct[5:1]), //[5:1]
-	.MTCH_WIN_0(dly_aff[5:1]), //[5:1]
+	.MTCH_WIN_0(match_win_0[5:1]), //[5:1]
 	.L1A_MATCH(l1a_match[5:1]),   //[5:1]
 	//outputs
 	.ENC_BIT0(enc_bit0),    //[5:1]
