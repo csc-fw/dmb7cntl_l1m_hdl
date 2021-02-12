@@ -736,8 +736,8 @@ begin : control_logic_TMR
 	assign  vt_rdy_a         = (rdy_a         & rdy_b)         | (rdy_b         & rdy_c)         | (rdy_a         & rdy_c);      // Majority logic
 	assign  vt_oe6_1_a       = (oe6_1_a       & oe6_1_b)       | (oe6_1_b       & oe6_1_c)       | (oe6_1_a       & oe6_1_c);      // Majority logic
 	assign  vt_ovrin_a       = (ovrin_a       & ovrin_b)       | (ovrin_b       & ovrin_c)       | (ovrin_a       & ovrin_c);      // Majority logic
-//	assign  vt_ovr_a         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
-	assign  vt_ovr_a         = 5'b00000;      // Majority logic
+	assign  vt_ovr_a         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
+//	assign  vt_ovr_a         = 5'b00000;      // Majority logic
 	assign  vt_r_act_a       = (r_act_a       & r_act_b)       | (r_act_b       & r_act_c)       | (r_act_a       & r_act_c);      // Majority logic
 	assign  vt_rovr_1_a      = (rovr_1_a      & rovr_1_b)      | (rovr_1_b      & rovr_1_c)      | (rovr_1_a      & rovr_1_c);      // Majority logic
 	assign  vt_disdav_a      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
@@ -780,8 +780,8 @@ begin : control_logic_TMR
 	assign  vt_rdy_b         = (rdy_a         & rdy_b)         | (rdy_b         & rdy_c)         | (rdy_a         & rdy_c);      // Majority logic
 	assign  vt_oe6_1_b       = (oe6_1_a       & oe6_1_b)       | (oe6_1_b       & oe6_1_c)       | (oe6_1_a       & oe6_1_c);      // Majority logic
 	assign  vt_ovrin_b       = (ovrin_a       & ovrin_b)       | (ovrin_b       & ovrin_c)       | (ovrin_a       & ovrin_c);      // Majority logic
-//	assign  vt_ovr_b         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
-	assign  vt_ovr_b         = 5'b00000;      // Majority logic
+	assign  vt_ovr_b         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
+//	assign  vt_ovr_b         = 5'b00000;      // Majority logic
 	assign  vt_r_act_b       = (r_act_a       & r_act_b)       | (r_act_b       & r_act_c)       | (r_act_a       & r_act_c);      // Majority logic
 	assign  vt_rovr_1_b      = (rovr_1_a      & rovr_1_b)      | (rovr_1_b      & rovr_1_c)      | (rovr_1_a      & rovr_1_c);      // Majority logic
 	assign  vt_disdav_b      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
@@ -824,8 +824,8 @@ begin : control_logic_TMR
 	assign  vt_rdy_c         = (rdy_a         & rdy_b)         | (rdy_b         & rdy_c)         | (rdy_a         & rdy_c);      // Majority logic
 	assign  vt_oe6_1_c       = (oe6_1_a       & oe6_1_b)       | (oe6_1_b       & oe6_1_c)       | (oe6_1_a       & oe6_1_c);      // Majority logic
 	assign  vt_ovrin_c       = (ovrin_a       & ovrin_b)       | (ovrin_b       & ovrin_c)       | (ovrin_a       & ovrin_c);      // Majority logic
-//	assign  vt_ovr_c         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
-	assign  vt_ovr_c         = 5'b00000;      // Majority logic
+	assign  vt_ovr_c         = (ovr_a         & ovr_b)         | (ovr_b         & ovr_c)         | (ovr_a         & ovr_c);      // Majority logic
+//	assign  vt_ovr_c         = 5'b00000;      // Majority logic
 	assign  vt_r_act_c       = (r_act_a       & r_act_b)       | (r_act_b       & r_act_c)       | (r_act_a       & r_act_c);      // Majority logic
 	assign  vt_rovr_1_c      = (rovr_1_a      & rovr_1_b)      | (rovr_1_b      & rovr_1_c)      | (rovr_1_a      & rovr_1_c);      // Majority logic
 	assign  vt_disdav_c      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
@@ -1352,9 +1352,9 @@ begin : control_logic_TMR
 
 	// used in module scope only
 	assign tail_rst   = RST | vt_tail_a[1];
-//	assign ovlpwen    = ~DCFEB_IN_USE & (~pop_rst_a & ~vt_disdav_a & ~vt_dint_ovlp_b_a & vt_oedata_a);
+	assign ovlpwen    = ~DCFEB_IN_USE & (~pop_rst_a & ~vt_disdav_a & ~vt_dint_ovlp_b_a & vt_oedata_a);
 //	assign ovlpwen    = ~pop_rst_a & ~vt_disdav_a & ~vt_dint_ovlp_b_a & vt_oedata_a;
-	assign ovlpwen    = 1'b0;
+//	assign ovlpwen    = 1'b0;
 	assign crcen      = ~vt_disdav_a & (vt_oedata_a | vt_ht_crc_a);
 	assign ovlplast   = {{3{vt_ovlpend_a}},vt_dint_a[15]};
 	assign ooe_i      = oe_a;
@@ -1994,8 +1994,8 @@ begin : control_logic_TMR
 				end
 			else
 				begin
-//					if(!DCFEB_IN_USE && oe_a[i] && last_a) ovrin_a[i] <= ~ovlpin_b;
-					if(oe_a[i] && last_a) ovrin_a[i] <= ~ovlpin_b;
+					if(!DCFEB_IN_USE && oe_a[i] && last_a) ovrin_a[i] <= ~ovlpin_b;
+//					if(oe_a[i] && last_a) ovrin_a[i] <= ~ovlpin_b;
 					ovr_a[i]  								<= vt_ovrin_a[i];
 				end
 		end
@@ -2009,8 +2009,8 @@ begin : control_logic_TMR
 				end
 			else
 				begin
-//					if(!DCFEB_IN_USE && oe_b[i] && last_b) ovrin_b[i] <= ~ovlpin_b;
-					if(oe_b[i] && last_b) ovrin_b[i] <= ~ovlpin_b;
+					if(!DCFEB_IN_USE && oe_b[i] && last_b) ovrin_b[i] <= ~ovlpin_b;
+//					if(oe_b[i] && last_b) ovrin_b[i] <= ~ovlpin_b;
 					ovr_b[i]  								<= vt_ovrin_b[i];
 				end
 		end
@@ -2024,8 +2024,8 @@ begin : control_logic_TMR
 				end
 			else
 				begin
-//					if(!DCFEB_IN_USE && oe_c[i] && last_c) ovrin_c[i] <= ~ovlpin_b;
-					if(oe_c[i] && last_c) ovrin_c[i] <= ~ovlpin_b;
+					if(!DCFEB_IN_USE && oe_c[i] && last_c) ovrin_c[i] <= ~ovlpin_b;
+//					if(oe_c[i] && last_c) ovrin_c[i] <= ~ovlpin_b;
 					ovr_c[i]  								<= vt_ovrin_c[i];
 				end
 		end
@@ -2419,8 +2419,8 @@ begin : control_logic_no_TMR
 
 	// used in module scope only
 	assign tail_rst   = RST | tail_r[1];
-//	assign ovlpwen    = ~DCFEB_IN_USE & (~pop_rst_i & ~disdav_r & ~dint_ovlp_b_r & oedata_r);
-	assign ovlpwen    = ~pop_rst_i & ~disdav_r & ~dint_ovlp_b_r & oedata_r;
+	assign ovlpwen    = ~DCFEB_IN_USE & (~pop_rst_i & ~disdav_r & ~dint_ovlp_b_r & oedata_r);
+//	assign ovlpwen    = ~pop_rst_i & ~disdav_r & ~dint_ovlp_b_r & oedata_r;
 	assign crcen      = ~disdav_r & (oedata_r | ht_crc_r);
 	assign ovlplast   = {{3{ovlpend_r}},dint_r[15]};
 	assign ooe_i      = oe_i;
@@ -2681,10 +2681,10 @@ begin : control_logic_no_TMR
 				end
 			else
 				begin
-//					if(!DCFEB_IN_USE && oe_i[i] && last_i) ovrin_r[i] <= ~ovlpin_b;
-					if(oe_i[i] && last_i) ovrin_r[i] <= ~ovlpin_b;
-//					ovr_r[i]   <= ovrin_r[i];
-					ovr_r[i]   <= 1'b0;
+					if(!DCFEB_IN_USE && oe_i[i] && last_i) ovrin_r[i] <= ~ovlpin_b;
+//					if(oe_i[i] && last_i) ovrin_r[i] <= ~ovlpin_b;
+					ovr_r[i]   <= ovrin_r[i];
+//					ovr_r[i]   <= 1'b0;
 				end
 		end
 		
