@@ -659,7 +659,7 @@ tmdv_mon_i(
 //
 // Trigger Control
 //
-trigcon #(.TMR(TMR))
+trigcon #(.TMR(0))
 trig_con_i(
 	.CLK(CLKCMS),
 	.DRCK(drck2),
@@ -679,7 +679,7 @@ trig_con_i(
 //
 // Calibration Trigger Control
 //
-calib_trig #(.TMR(TMR))
+calib_trig #(.TMR(0))
 calib_trig_i(
 	.CLKCMS(CLKCMS),
 	.CLK80(CLK80),
@@ -713,7 +713,7 @@ calib_trig_i(
 //
 // Random Triggers
 //
-random_trig  #(.TMR(TMR))
+random_trig  #(.TMR(0))
 random_trig_i(
 	.CLK(CLKCMS),
 	.RST(RST),

@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module dmb7cntl_l1m_hdl #(
-	parameter TMR = 0,
+	parameter TMR = 1,
 	parameter SIM = 0
 )
 (
@@ -294,7 +294,7 @@ begin
 		IBUF IBUF_FIFOD_i (.O(fifo_d[i]),.I(FIFOD[i])); //[17:0]
 	end
 	for(i=1;i<8;i=i+1) begin: idx4
-		IBUF IBUF_FFOR_B_i (.O(ff_or_b[i]),.I(FFOR_B[i])); //[7:1]
+		IBUF IBUF_FFOR_B_i (.O(ff_or_b[i]),.I(FFOR_B[i])); //[7:1] FIFO Output Ready Bar
 	end
 end
 endgenerate

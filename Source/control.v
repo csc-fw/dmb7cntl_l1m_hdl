@@ -56,7 +56,8 @@ module control #(
 wire rstcnt;
 wire data_hldoff;
 wire ovlpend;
-wire [7:1] ooe, ooe_i;
+//wire [7:1] ooe, ooe_i;
+wire [7:1] ooe_i, ooe_1, ooe_2;
 wire [7:1] jref;
 wire rstlast;
 wire [15:0] dint;
@@ -199,7 +200,8 @@ begin
 	if(pop_rst)
 		RENFIFO_B  <= 7'h7F;
 	else
-		RENFIFO_B <= ~(jref | (ooe & ~{7{last}}));
+//		RENFIFO_B <= ~(jref | (ooe & ~{7{last}}));
+		RENFIFO_B <= ~(jref | (ooe_2 & ~{7{last}}));
 end
 
 genvar i;
@@ -212,7 +214,8 @@ begin
 			if(done[i])
 				OEFIFO_B[i]  <= 1'b1;
 			else
-				OEFIFO_B[i] <= ~(JOEF[i] | ooe[i] | ooe_i[i]);
+//				OEFIFO_B[i] <= ~(JOEF[i] | ooe[i] | ooe_i[i]);
+				OEFIFO_B[i] <= ~(JOEF[i] | ooe_1[i] | ooe_i[i]);
 		end
 	end
 end
@@ -317,6 +320,7 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  gdav_1_a;
 	(* syn_preserve = "true" *)  reg  gdav_2_a;
 	(* syn_preserve = "true" *)  reg  gdav_3_a;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_1_a;
 	(* syn_preserve = "true" *)  reg  [7:1] datanoend_a;
 	(* syn_preserve = "true" *)  reg  popbram_a;
 	(* syn_preserve = "true" *)  reg  busy_a;
@@ -360,6 +364,7 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  gdav_1_b;
 	(* syn_preserve = "true" *)  reg  gdav_2_b;
 	(* syn_preserve = "true" *)  reg  gdav_3_b;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_1_b;
 	(* syn_preserve = "true" *)  reg  [7:1] datanoend_b;
 	(* syn_preserve = "true" *)  reg  popbram_b;
 	(* syn_preserve = "true" *)  reg  busy_b;
@@ -403,6 +408,7 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  gdav_1_c;
 	(* syn_preserve = "true" *)  reg  gdav_2_c;
 	(* syn_preserve = "true" *)  reg  gdav_3_c;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_1_c;
 	(* syn_preserve = "true" *)  reg  [7:1] datanoend_c;
 	(* syn_preserve = "true" *)  reg  popbram_c;
 	(* syn_preserve = "true" *)  reg  busy_c;
@@ -449,6 +455,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_gdav_1_a;
 	(* syn_keep = "true" *)  wire vt_gdav_2_a;
 	(* syn_keep = "true" *)  wire vt_gdav_3_a;
+	(* syn_keep = "true" *)  wire [7:1] vt_oe_1_a;
 	(* syn_keep = "true" *)  wire [7:1] vt_datanoend_a;
 	(* syn_keep = "true" *)  wire vt_popbram_a;
 	(* syn_keep = "true" *)  wire vt_busy_a;
@@ -492,6 +499,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_gdav_1_b;
 	(* syn_keep = "true" *)  wire vt_gdav_2_b;
 	(* syn_keep = "true" *)  wire vt_gdav_3_b;
+	(* syn_keep = "true" *)  wire [7:1] vt_oe_1_b;
 	(* syn_keep = "true" *)  wire [7:1] vt_datanoend_b;
 	(* syn_keep = "true" *)  wire vt_popbram_b;
 	(* syn_keep = "true" *)  wire vt_busy_b;
@@ -535,6 +543,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_gdav_1_c;
 	(* syn_keep = "true" *)  wire vt_gdav_2_c;
 	(* syn_keep = "true" *)  wire vt_gdav_3_c;
+	(* syn_keep = "true" *)  wire [7:1] vt_oe_1_c;
 	(* syn_keep = "true" *)  wire [7:1] vt_datanoend_c;
 	(* syn_keep = "true" *)  wire vt_popbram_c;
 	(* syn_keep = "true" *)  wire vt_busy_c;
@@ -589,13 +598,13 @@ begin : control_logic_TMR
 //	vote #(.Width(8)) vote_oehdr_a       (.A(oehdr_a),       .B(oehdr_b),       .C(oehdr_c),       .V(vt_oehdr_a));
 //	vote #(.Width(8)) vote_tail_a        (.A(tail_a),        .B(tail_b),        .C(tail_c),        .V(vt_tail_a));
 //	vote #(.Width(1)) vote_tail8_1_a     (.A(tail8_1_a),     .B(tail8_1_b),     .C(tail8_1_c),     .V(vt_tail8_1_a));
-////	vote #(.Width(1)) vote_dav_a         (.A(dav_a),         .B(dav_b),         .C(dav_c),         .V(vt_dav_a));
+//	vote #(.Width(1)) vote_dav_a         (.A(dav_a),         .B(dav_b),         .C(dav_c),         .V(vt_dav_a));
 //	vote #(.Width(1)) vote_rdyovlp_a     (.A(rdyovlp_a),     .B(rdyovlp_b),     .C(rdyovlp_c),     .V(vt_rdyovlp_a));
 //	vote #(.Width(1)) vote_oeall_1_a     (.A(oeall_1_a),     .B(oeall_1_b),     .C(oeall_1_c),     .V(vt_oeall_1_a));
 //	vote #(.Width(1)) vote_oedata_a      (.A(oedata_a),      .B(oedata_b),      .C(oedata_c),      .V(vt_oedata_a));
 //	vote #(.Width(7)) vote_dn_oe_a       (.A(dn_oe_a),       .B(dn_oe_b),       .C(dn_oe_c),       .V(vt_dn_oe_a));
 //	vote #(.Width(7)) vote_davnodata_a   (.A(davnodata_a),   .B(davnodata_b),   .C(davnodata_c),   .V(vt_davnodata_a));
-////	vote #(.Width(1)) vote_pop_m2_a      (.A(pop_m2_a),      .B(pop_m2_b),      .C(pop_m2_c),      .V(vt_pop_m2_a));
+//	vote #(.Width(1)) vote_pop_m2_a      (.A(pop_m2_a),      .B(pop_m2_b),      .C(pop_m2_c),      .V(vt_pop_m2_a));
 //	vote #(.Width(1)) vote_pop_m1_a      (.A(pop_m1_a),      .B(pop_m1_b),      .C(pop_m1_c),      .V(vt_pop_m1_a));
 //	vote #(.Width(1)) vote_pop_a         (.A(pop_a),         .B(pop_b),         .C(pop_c),         .V(vt_pop_a));
 //	vote #(.Width(1)) vote_oehdtl_a      (.A(oehdtl_a),      .B(oehdtl_b),      .C(oehdtl_c),      .V(vt_oehdtl_a));
@@ -711,6 +720,7 @@ begin : control_logic_TMR
 	assign  vt_gdav_1_a      = (gdav_1_a      & gdav_1_b)      | (gdav_1_b      & gdav_1_c)      | (gdav_1_a      & gdav_1_c);      // Majority logic
 	assign  vt_gdav_2_a      = (gdav_2_a      & gdav_2_b)      | (gdav_2_b      & gdav_2_c)      | (gdav_2_a      & gdav_2_c);      // Majority logic
 	assign  vt_gdav_3_a      = (gdav_3_a      & gdav_3_b)      | (gdav_3_b      & gdav_3_c)      | (gdav_3_a      & gdav_3_c);      // Majority logic
+	assign  vt_oe_1_a        = (oe_1_a        & oe_1_b)        | (oe_1_b        & oe_1_c)        | (oe_1_a        & oe_1_c);        // Majority logic
 	assign  vt_datanoend_a   = (datanoend_a   & datanoend_b)   | (datanoend_b   & datanoend_c)   | (datanoend_a   & datanoend_c);      // Majority logic
 	assign  vt_popbram_a     = (popbram_a     & popbram_b)     | (popbram_b     & popbram_c)     | (popbram_a     & popbram_c);      // Majority logic
 	assign  vt_busy_a        = (busy_a        & busy_b)        | (busy_b        & busy_c)        | (busy_a        & busy_c);      // Majority logic
@@ -755,6 +765,7 @@ begin : control_logic_TMR
 	assign  vt_gdav_1_b      = (gdav_1_a      & gdav_1_b)      | (gdav_1_b      & gdav_1_c)      | (gdav_1_a      & gdav_1_c);      // Majority logic
 	assign  vt_gdav_2_b      = (gdav_2_a      & gdav_2_b)      | (gdav_2_b      & gdav_2_c)      | (gdav_2_a      & gdav_2_c);      // Majority logic
 	assign  vt_gdav_3_b      = (gdav_3_a      & gdav_3_b)      | (gdav_3_b      & gdav_3_c)      | (gdav_3_a      & gdav_3_c);      // Majority logic
+	assign  vt_oe_1_b        = (oe_1_a        & oe_1_b)        | (oe_1_b        & oe_1_c)        | (oe_1_a        & oe_1_c);        // Majority logic
 	assign  vt_datanoend_b   = (datanoend_a   & datanoend_b)   | (datanoend_b   & datanoend_c)   | (datanoend_a   & datanoend_c);      // Majority logic
 	assign  vt_popbram_b     = (popbram_a     & popbram_b)     | (popbram_b     & popbram_c)     | (popbram_a     & popbram_c);      // Majority logic
 	assign  vt_busy_b        = (busy_a        & busy_b)        | (busy_b        & busy_c)        | (busy_a        & busy_c);      // Majority logic
@@ -799,6 +810,7 @@ begin : control_logic_TMR
 	assign  vt_gdav_1_c      = (gdav_1_a      & gdav_1_b)      | (gdav_1_b      & gdav_1_c)      | (gdav_1_a      & gdav_1_c);      // Majority logic
 	assign  vt_gdav_2_c      = (gdav_2_a      & gdav_2_b)      | (gdav_2_b      & gdav_2_c)      | (gdav_2_a      & gdav_2_c);      // Majority logic
 	assign  vt_gdav_3_c      = (gdav_3_a      & gdav_3_b)      | (gdav_3_b      & gdav_3_c)      | (gdav_3_a      & gdav_3_c);      // Majority logic
+	assign  vt_oe_1_c        = (oe_1_a        & oe_1_b)        | (oe_1_b        & oe_1_c)        | (oe_1_a        & oe_1_c);        // Majority logic
 	assign  vt_datanoend_c   = (datanoend_a   & datanoend_b)   | (datanoend_b   & datanoend_c)   | (datanoend_a   & datanoend_c);      // Majority logic
 	assign  vt_popbram_c     = (popbram_a     & popbram_b)     | (popbram_b     & popbram_c)     | (popbram_a     & popbram_c);      // Majority logic
 	assign  vt_busy_c        = (busy_a        & busy_b)        | (busy_b        & busy_c)        | (busy_a        & busy_c);      // Majority logic
@@ -1006,35 +1018,35 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [15:0] vt_dint_c;
 	(* syn_keep = "true" *)  wire vt_oeall_c;
 
-	vote #(.Width(1))  vote_rstcnt_a   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_a));
-	vote #(.Width(1))  vote_ovlpend_a  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_a));
-	vote #(.Width(16)) vote_dint_a     (.A(dint_a),    .B(dint_b),    .C(dint_c),    .V(vt_dint_a));
-	vote #(.Width(1))  vote_oeall_a    (.A(oeall_a),   .B(oeall_b),   .C(oeall_c),   .V(vt_oeall_a));
-
-	vote #(.Width(1))  vote_rstcnt_b   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_b));
-	vote #(.Width(1))  vote_ovlpend_b  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_b));
-	vote #(.Width(16)) vote_dint_b     (.A(dint_a),    .B(dint_b),    .C(dint_c),    .V(vt_dint_b));
-	vote #(.Width(1))  vote_oeall_b    (.A(oeall_a),   .B(oeall_b),   .C(oeall_c),   .V(vt_oeall_b));
-
-	vote #(.Width(1))  vote_rstcnt_c   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_c));
-	vote #(.Width(1))  vote_ovlpend_c  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_c));
-	vote #(.Width(16)) vote_dint_c     (.A(dint_a),    .B(dint_b),    .C(dint_c),    .V(vt_dint_c));
-	vote #(.Width(1))  vote_oeall_c    (.A(oeall_a),   .B(oeall_b),   .C(oeall_c),   .V(vt_oeall_c));
-
-//	assign  vt_rstcnt_a   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
-//	assign  vt_ovlpend_a  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
-//	assign  vt_dint_a     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
-//	assign  vt_oeall_a    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+//	vote #(.Width(1))  vote_rstcnt_a   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_a));
+//	vote #(.Width(1))  vote_ovlpend_a  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_a));
+//	vote #(.Width(16)) vote_dint_a     (.A(dint_a),    .B(dint_b),    .C(dint_c),    .V(vt_dint_a));
+//	vote #(.Width(1))  vote_oeall_a    (.A(oeall_a),   .B(oeall_b),   .C(oeall_c),   .V(vt_oeall_a));
 //
-//	assign  vt_rstcnt_b   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
-//	assign  vt_ovlpend_b  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
-//	assign  vt_dint_b     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
-//	assign  vt_oeall_b    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+//	vote #(.Width(1))  vote_rstcnt_b   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_b));
+//	vote #(.Width(1))  vote_ovlpend_b  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_b));
+//	vote #(.Width(16)) vote_dint_b     (.A(dint_a),    .B(dint_b),    .C(dint_c),    .V(vt_dint_b));
+//	vote #(.Width(1))  vote_oeall_b    (.A(oeall_a),   .B(oeall_b),   .C(oeall_c),   .V(vt_oeall_b));
 //
-//	assign  vt_rstcnt_c   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
-//	assign  vt_ovlpend_c  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
-//	assign  vt_dint_c     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
-//	assign  vt_oeall_c    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+//	vote #(.Width(1))  vote_rstcnt_c   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_c));
+//	vote #(.Width(1))  vote_ovlpend_c  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_c));
+//	vote #(.Width(16)) vote_dint_c     (.A(dint_a),    .B(dint_b),    .C(dint_c),    .V(vt_dint_c));
+//	vote #(.Width(1))  vote_oeall_c    (.A(oeall_a),   .B(oeall_b),   .C(oeall_c),   .V(vt_oeall_c));
+
+	assign  vt_rstcnt_a   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
+	assign  vt_ovlpend_a  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
+	assign  vt_dint_a     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
+	assign  vt_oeall_a    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+
+	assign  vt_rstcnt_b   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
+	assign  vt_ovlpend_b  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
+	assign  vt_dint_b     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
+	assign  vt_oeall_b    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+
+	assign  vt_rstcnt_c   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
+	assign  vt_ovlpend_c  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
+	assign  vt_dint_c     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
+	assign  vt_oeall_c    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
 
 //	assign  vt_rstcnt_a   = rstcnt_a;
 //	assign  vt_ovlpend_a  = ovlpend_a;
@@ -1055,21 +1067,24 @@ begin : control_logic_TMR
 	// module scope only registers
 	//
 	(* syn_preserve = "true" *)  reg  data_hldoff_a;
-	(* syn_preserve = "true" *)  reg  [7:1] ooe_a;
+//	(* syn_preserve = "true" *)  reg  [7:1] ooe_a;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_2_a;
 	(* syn_preserve = "true" *)  reg  doeall_a;
 	(* syn_preserve = "true" *)  reg  [7:1] jref_a;
 	(* syn_preserve = "true" *)  reg  rstlast_a;
 	(* syn_preserve = "true" *)  reg  [15:0] dout_a;
 
 	(* syn_preserve = "true" *)  reg  data_hldoff_b;
-	(* syn_preserve = "true" *)  reg  [7:1] ooe_b;
+//	(* syn_preserve = "true" *)  reg  [7:1] ooe_b;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_2_b;
 	(* syn_preserve = "true" *)  reg  doeall_b;
 	(* syn_preserve = "true" *)  reg  [7:1] jref_b;
 	(* syn_preserve = "true" *)  reg  rstlast_b;
 	(* syn_preserve = "true" *)  reg  [15:0] dout_b;
 
 	(* syn_preserve = "true" *)  reg  data_hldoff_c;
-	(* syn_preserve = "true" *)  reg  [7:1] ooe_c;
+//	(* syn_preserve = "true" *)  reg  [7:1] ooe_c;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_2_c;
 	(* syn_preserve = "true" *)  reg  doeall_c;
 	(* syn_preserve = "true" *)  reg  [7:1] jref_c;
 	(* syn_preserve = "true" *)  reg  rstlast_c;
@@ -1080,7 +1095,8 @@ begin : control_logic_TMR
 	// voted nets of module scope registers
 	//
 	(* syn_keep = "true" *)  wire vt_data_hldoff;
-	(* syn_keep = "true" *)  wire [7:1] vt_ooe;
+//	(* syn_keep = "true" *)  wire [7:1] vt_ooe;
+	(* syn_keep = "true" *)  wire [7:1] vt_oe_2;
 	(* syn_keep = "true" *)  wire vt_doeall;
 	(* syn_keep = "true" *)  wire [7:1] vt_jref;
 	(* syn_keep = "true" *)  wire vt_rstlast;
@@ -1094,7 +1110,8 @@ begin : control_logic_TMR
 //	vote #(.Width(16)) vote_dout        (.A(dout_a),        .B(dout_b),        .C(dout_c),        .V(vt_dout));
 
 	assign  vt_data_hldoff = (data_hldoff_a & data_hldoff_b) | (data_hldoff_b & data_hldoff_c) | (data_hldoff_a & data_hldoff_c); // Majority logic
-	assign  vt_ooe         = (ooe_a         & ooe_b)         | (ooe_b         & ooe_c)         | (ooe_a         & ooe_c);         // Majority logic
+//	assign  vt_ooe         = (ooe_a         & ooe_b)         | (ooe_b         & ooe_c)         | (ooe_a         & ooe_c);         // Majority logic
+	assign  vt_oe_2        = (oe_2_a        & oe_2_b)        | (oe_2_b        & oe_2_c)        | (oe_2_a        & oe_2_c);        // Majority logic
 	assign  vt_doeall      = (doeall_a      & doeall_b)      | (doeall_b      & doeall_c)      | (doeall_a      & doeall_c);      // Majority logic
 	assign  vt_jref        = (jref_a        & jref_b)        | (jref_b        & jref_c)        | (jref_a        & jref_c);        // Majority logic
 	assign  vt_rstlast     = (rstlast_a     & rstlast_b)     | (rstlast_b     & rstlast_c)     | (rstlast_a     & rstlast_c);     // Majority logic
@@ -1365,7 +1382,9 @@ begin : control_logic_TMR
 	assign oeall   = vt_oeall_a;
 
 	assign data_hldoff = vt_data_hldoff;
-	assign ooe         = vt_ooe;
+//	assign ooe         = vt_ooe;
+	assign ooe_1 = vt_oe_1_a;
+	assign ooe_2 = vt_oe_2;
 	assign doeall      = vt_doeall;
 	assign jref        = vt_jref;
 	assign rstlast     = vt_rstlast;
@@ -1925,25 +1944,49 @@ begin : control_logic_TMR
 		always @(posedge CLKDDU or posedge done_a[i])
 		begin
 			if(done_a[i])
-				ooe_a[i] <= 1'b0;
+				begin
+//					ooe_a[i] <= 1'b0;
+					oe_1_a[i] <= 1'b0;
+					oe_2_a[i] <= 1'b0;
+				end
 			else
-				ooe_a[i] <= oe_a[i];
+				begin
+//					ooe_a[i] <= oe_a[i];
+					oe_1_a[i] <= oe_a[i];
+					oe_2_a[i] <= vt_oe_1_a[i];
+				end
 		end
 		
 		always @(posedge CLKDDU or posedge done_b[i])
 		begin
 			if(done_b[i])
-				ooe_b[i] <= 1'b0;
+				begin
+//					ooe_b[i] <= 1'b0;
+					oe_1_b[i] <= 1'b0;
+					oe_2_b[i] <= 1'b0;
+				end
 			else
-				ooe_b[i] <= oe_b[i];
+				begin
+//					ooe_b[i] <= oe_b[i];
+					oe_1_b[i] <= oe_b[i];
+					oe_2_b[i] <= vt_oe_1_b[i];
+				end
 		end
 		
 		always @(posedge CLKDDU or posedge done_c[i])
 		begin
 			if(done_c[i])
-				ooe_c[i] <= 1'b0;
+				begin
+//					ooe_c[i] <= 1'b0;
+					oe_1_c[i] <= 1'b0;
+					oe_2_c[i] <= 1'b0;
+				end
 			else
-				ooe_c[i] <= oe_c[i];
+				begin
+//					ooe_c[i] <= oe_c[i];
+					oe_1_c[i] <= oe_c[i];
+					oe_2_c[i] <= vt_oe_1_c[i];
+				end
 		end
 //
 
@@ -2173,7 +2216,8 @@ begin : control_logic_TMR
 			end
 		else
 			begin
-				oeall_a  <= oeovlp_a | |oe_a;
+//				oeall_a  <= oeovlp_a | |oe_a;
+				oeall_a  <= oeovlp_a | |vt_oe_1_a;
 				doeall_a <= vt_oeall_a;
 			end
 	end
@@ -2187,7 +2231,8 @@ begin : control_logic_TMR
 			end
 		else
 			begin
-				oeall_b  <= oeovlp_b | |oe_b;
+//				oeall_b  <= oeovlp_b | |oe_b;
+				oeall_b  <= oeovlp_b | |vt_oe_1_b;
 				doeall_b <= vt_oeall_b;
 			end
 	end
@@ -2201,7 +2246,8 @@ begin : control_logic_TMR
 			end
 		else
 			begin
-				oeall_c  <= oeovlp_c | |oe_c;
+//				oeall_c  <= oeovlp_c | |oe_c;
+				oeall_c  <= oeovlp_c | |vt_oe_1_c;
 				doeall_c <= vt_oeall_c;
 			end
 	end
@@ -2319,7 +2365,9 @@ begin : control_logic_no_TMR
 	// module scope only registers
 	//
 	reg  data_hldoff_r;
-	reg  [7:1] ooe_r;
+	reg  [7:1] oe_1_r;
+	reg  [7:1] oe_2_r;
+//	reg  [7:1] ooe_r;
 	reg  doeall_r;
 	reg  [7:1] jref_r;
 	reg  rstlast_r;
@@ -2431,7 +2479,9 @@ begin : control_logic_no_TMR
 	assign oeall = oeall_r;
 	
 	assign data_hldoff = data_hldoff_r;
-	assign ooe = ooe_r;
+//	assign ooe = ooe_r;
+	assign ooe_1 = oe_1_r;
+	assign ooe_2 = oe_2_r;
 	assign doeall = doeall_r;
 	assign jref = jref_r;
 	assign rstlast = rstlast_r;
@@ -2652,9 +2702,17 @@ begin : control_logic_no_TMR
 		always @(posedge CLKDDU or posedge done_i[i])
 		begin
 			if(done_i[i])
-				ooe_r[i] <= 1'b0;
+				begin
+//					ooe_r[i] <= 1'b0;
+					oe_1_r[i] <= 1'b0;
+					oe_2_r[i] <= 1'b0;
+				end
 			else
-				ooe_r[i] <= oe_i[i];
+				begin
+//					ooe_r[i] <= oe_i[i];
+					oe_1_r[i] <= oe_i[i];
+					oe_2_r[i] <= oe_1_r[i];
+				end
 		end
 
 		always @(posedge CLKDDU)
@@ -2746,7 +2804,8 @@ begin : control_logic_no_TMR
 			end
 		else
 			begin
-				oeall_r  <= oeovlp_i | |oe_i;
+//				oeall_r  <= oeovlp_i | |oe_i;
+				oeall_r  <= oeovlp_i | |oe_1_r;
 				doeall_r <= oeall_r;
 			end
 	end
