@@ -2439,7 +2439,8 @@ begin : control_logic_no_TMR
 	assign rst_dov_i    = pop_rst_i | rdoneovlp_r;
 	assign doneovlp_i   = pop_rst_i | dn_ovlp_r;
 	assign poplast_i    = pop_rst_i | last_i;
-	assign okdata_i     = (ddcnt == 9'd448);
+//	assign okdata_i     = (ddcnt == 9'd448);
+	assign okdata_i     = (ddcnt == 9'd448) || ((ddcnt == 9'd5) && |(r_act_r & ~fifordy_b));  //bgb test mod for start timeout
 	assign okdata_rst_i = RST | okdata_i;
 
 	//

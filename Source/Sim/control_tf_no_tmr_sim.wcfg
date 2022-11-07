@@ -3,27 +3,17 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="F:/DMB/Firmware/ISE_14.7/dmb7cntl_l1m_hdl/control_tf_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1m_hdl/control_tf_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="control_tf" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/control_tf/GEMPTY_B" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">GEMPTY_B</obj_property>
       <obj_property name="ObjectShortName">GEMPTY_B</obj_property>
-   </wvobject>
-   <wvobject fp_name="/control_tf/DATAIN" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">DATAIN[17:0]</obj_property>
-      <obj_property name="ObjectShortName">DATAIN[17:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/control_tf/tadd" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">tadd[7:0]</obj_property>
-      <obj_property name="ObjectShortName">tadd[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/FFOR_B" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">FFOR_B[7:1]</obj_property>
@@ -48,10 +38,6 @@
    <wvobject fp_name="/control_tf/OEFIFO_B" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
       <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/control_tf/FEMP" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">FEMP[7:1]</obj_property>
-      <obj_property name="ObjectShortName">FEMP[7:1]</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/DOUT" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">DOUT[15:0]</obj_property>
@@ -86,6 +72,10 @@
       <obj_property name="ElementShortName">RDFFNXT</obj_property>
       <obj_property name="ObjectShortName">RDFFNXT</obj_property>
    </wvobject>
+   <wvobject fp_name="/control_tf/DCFEB_IN_USE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DCFEB_IN_USE</obj_property>
+      <obj_property name="ObjectShortName">DCFEB_IN_USE</obj_property>
+   </wvobject>
    <wvobject fp_name="/control_tf/DAVENBL" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">DAVENBL[5:1]</obj_property>
       <obj_property name="ObjectShortName">DAVENBL[5:1]</obj_property>
@@ -93,16 +83,21 @@
    <wvobject fp_name="/control_tf/DAQMBID" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">DAQMBID[11:0]</obj_property>
       <obj_property name="ObjectShortName">DAQMBID[11:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/CFEBBX" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">CFEBBX[3:0]</obj_property>
       <obj_property name="ObjectShortName">CFEBBX[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/BXN" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">BXN[11:0]</obj_property>
       <obj_property name="ObjectShortName">BXN[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DATAIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATAIN[17:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAIN[17:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/DAVACT" type="array" db_ref_id="1">
@@ -123,1301 +118,27 @@
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/gadd" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">gadd[2:0]</obj_property>
-      <obj_property name="ObjectShortName">gadd[2:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">gadd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">gadd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/t4add" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t4add[8:0]</obj_property>
+      <obj_property name="ObjectShortName">t4add[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/t5add" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t5add[8:0]</obj_property>
+      <obj_property name="ObjectShortName">t5add[8:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/start" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">start</obj_property>
       <obj_property name="ObjectShortName">start</obj_property>
    </wvobject>
-   <wvobject fp_name="/control_tf/dmbf6data" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">dmbf6data[255:0,17:0]</obj_property>
-      <obj_property name="ObjectShortName">dmbf6data[255:0,17:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <wvobject fp_name="/control_tf/dmbf6data[255]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[255,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[255,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[254]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[254,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[254,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[253]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[253,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[253,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[252]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[252,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[252,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[251]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[251,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[251,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[250]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[250,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[250,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[249]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[249,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[249,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[248]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[248,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[248,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[247]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[247,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[247,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[246]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[246,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[246,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[245]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[245,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[245,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[244]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[244,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[244,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[243]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[243,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[243,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[242]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[242,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[242,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[241]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[241,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[241,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[240]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[240,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[240,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[239]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[239,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[239,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[238]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[238,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[238,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[237]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[237,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[237,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[236]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[236,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[236,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[235]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[235,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[235,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[234]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[234,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[234,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[233]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[233,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[233,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[232]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[232,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[232,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[231]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[231,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[231,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[230]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[230,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[230,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[229]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[229,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[229,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[228]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[228,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[228,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[227]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[227,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[227,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[226]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[226,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[226,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[225]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[225,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[225,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[224]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[224,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[224,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[223]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[223,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[223,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[222]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[222,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[222,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[221]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[221,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[221,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[220]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[220,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[220,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[219]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[219,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[219,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[218]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[218,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[218,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[217]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[217,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[217,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[216]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[216,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[216,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[215]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[215,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[215,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[214]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[214,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[214,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[213]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[213,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[213,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[212]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[212,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[212,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[211]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[211,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[211,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[210]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[210,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[210,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[209]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[209,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[209,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[208]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[208,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[208,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[207]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[207,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[207,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[206]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[206,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[206,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[205]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[205,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[205,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[204]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[204,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[204,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[203]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[203,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[203,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[202]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[202,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[202,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[201]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[201,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[201,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[200]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[200,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[200,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[199]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[199,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[199,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[198]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[198,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[198,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[197]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[197,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[197,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[196]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[196,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[196,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[195]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[195,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[195,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[194]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[194,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[194,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[193]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[193,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[193,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[192]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[192,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[192,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[191]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[191,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[191,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[190]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[190,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[190,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[189]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[189,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[189,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[188]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[188,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[188,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[187]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[187,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[187,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[186]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[186,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[186,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[185]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[185,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[185,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[184]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[184,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[184,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[183]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[183,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[183,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[182]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[182,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[182,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[181]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[181,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[181,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[180]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[180,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[180,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[179]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[179,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[179,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[178]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[178,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[178,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[177]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[177,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[177,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[176]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[176,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[176,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[175]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[175,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[175,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[174]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[174,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[174,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[173]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[173,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[173,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[172]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[172,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[172,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[171]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[171,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[171,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[170]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[170,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[170,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[169]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[169,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[169,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[168]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[168,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[168,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[167]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[167,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[167,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[166]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[166,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[166,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[165]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[165,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[165,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[164]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[164,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[164,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[163]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[163,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[163,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[162]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[162,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[162,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[161]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[161,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[161,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[160]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[160,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[160,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[159]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[159,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[159,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[158]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[158,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[158,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[157]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[157,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[157,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[156]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[156,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[156,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[155]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[155,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[155,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[154]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[154,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[154,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[153]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[153,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[153,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[152]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[152,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[152,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[151]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[151,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[151,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[150]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[150,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[150,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[149]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[149,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[149,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[148]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[148,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[148,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[147]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[147,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[147,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[146]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[146,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[146,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[145]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[145,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[145,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[144]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[144,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[144,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[143]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[143,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[143,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[142]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[142,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[142,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[141]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[141,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[141,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[140]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[140,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[140,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[139]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[139,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[139,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[138]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[138,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[138,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[137]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[137,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[137,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[136]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[136,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[136,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[135]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[135,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[135,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[134]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[134,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[134,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[133]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[133,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[133,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[132]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[132,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[132,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[131]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[131,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[131,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[130]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[130,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[130,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[129]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[129,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[129,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[128]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[128,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[128,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[127]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[127,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[127,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[126]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[126,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[126,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[125]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[125,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[125,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[124]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[124,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[124,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[123]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[123,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[123,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[122]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[122,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[122,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[121]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[121,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[121,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[120]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[120,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[120,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[119]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[119,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[119,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[118]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[118,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[118,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[117]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[117,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[117,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[116]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[116,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[116,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[115]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[115,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[115,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[114]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[114,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[114,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[113]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[113,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[113,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[112]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[112,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[112,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[111]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[111,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[111,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[110]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[110,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[110,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[109]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[109,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[109,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[108]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[108,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[108,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[107]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[107,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[107,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[106]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[106,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[106,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[105]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[105,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[105,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[104]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[104,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[104,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[103]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[103,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[103,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[102]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[102,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[102,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[101]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[101,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[101,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[100]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[100,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[100,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[99]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[99,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[99,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[98]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[98,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[98,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[97]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[97,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[97,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[96]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[96,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[96,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[95]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[95,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[95,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[94]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[94,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[94,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[93]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[93,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[93,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[92]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[92,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[92,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[91]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[91,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[91,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[90]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[90,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[90,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[89]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[89,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[89,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[88]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[88,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[88,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[87]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[87,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[87,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[86]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[86,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[86,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[85]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[85,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[85,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[84]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[84,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[84,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[83]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[83,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[83,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[82]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[82,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[82,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[81]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[81,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[81,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[80]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[80,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[80,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[79]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[79,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[79,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[78]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[78,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[78,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[77]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[77,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[77,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[76]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[76,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[76,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[75]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[75,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[75,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[74]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[74,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[74,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[73]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[73,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[73,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[72]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[72,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[72,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[71]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[71,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[71,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[70]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[70,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[70,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[69]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[69,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[69,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[68]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[68,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[68,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[67]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[67,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[67,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[66]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[66,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[66,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[65]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[65,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[65,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[64]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[64,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[64,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[63]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[63,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[63,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[62]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[62,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[62,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[61]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[61,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[61,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[60]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[60,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[60,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[59]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[59,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[59,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[58]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[58,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[58,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[57]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[57,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[57,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[56]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[56,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[56,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[55]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[55,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[55,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[54]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[54,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[54,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[53]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[53,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[53,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[52]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[52,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[52,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[51]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[51,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[51,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[50]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[50,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[50,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[49]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[49,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[49,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[48]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[48,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[48,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[47]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[47,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[47,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[46]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[46,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[46,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[45]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[45,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[45,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[44]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[44,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[44,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[43]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[43,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[43,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[42]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[42,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[42,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[41]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[41,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[41,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[40]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[40,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[40,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[39]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[39,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[39,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[38]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[38,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[38,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[37]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[37,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[37,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[36]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[36,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[36,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[35]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[35,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[35,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[34]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[34,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[34,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[33]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[33,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[33,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[32]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[32,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[32,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[31]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[31,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[31,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[30]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[30,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[30,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[29]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[29,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[29,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[28]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[28,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[28,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[27]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[27,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[27,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[26]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[26,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[26,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[25]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[25,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[25,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[24]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[24,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[24,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[23]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[23,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[23,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[22]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[22,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[22,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[21]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[21,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[21,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[20]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[20,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[20,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[19]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[19,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[19,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[18]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[18,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[18,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[17]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[17,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[17,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[16]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[16,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[16,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[15]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[15,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[15,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[14]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[14,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[14,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[13]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[13,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[13,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[12]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[12,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[12,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[11]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[11,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[11,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[10]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[10,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[10,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[9]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[9,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[9,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[8]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[8,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[8,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[7]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[7,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[7,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[6]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[6,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[6,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[5]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[5,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[5,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[4]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[4,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[4,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[3]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[3,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[3,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[2]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[2,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[2,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[1]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[1,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[1,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/dmbf6data[0]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[0,17:0]</obj_property>
-         <obj_property name="ObjectShortName">dmbf6data[0,17:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
+   <wvobject fp_name="/control_tf/en_fifo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_fifo</obj_property>
+      <obj_property name="ObjectShortName">en_fifo</obj_property>
    </wvobject>
-   <wvobject fp_name="group571" type="group">
-      <obj_property name="label">control</obj_property>
+   <wvobject fp_name="group374" type="group">
+      <obj_property name="label">UUT</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/control_tf/uut/CLKCMS" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">CLKCMS</obj_property>
@@ -1447,32 +168,18 @@
          <obj_property name="ElementShortName">GIGAEN</obj_property>
          <obj_property name="ObjectShortName">GIGAEN</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/RDFFNXT" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">RDFFNXT</obj_property>
-         <obj_property name="ObjectShortName">RDFFNXT</obj_property>
+      <wvobject fp_name="/control_tf/uut/DCFEB_IN_USE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DCFEB_IN_USE</obj_property>
+         <obj_property name="ObjectShortName">DCFEB_IN_USE</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/DAVENBL" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">DAVENBL[5:1]</obj_property>
          <obj_property name="ObjectShortName">DAVENBL[5:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/DAQMBID" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">DAQMBID[11:0]</obj_property>
-         <obj_property name="ObjectShortName">DAQMBID[11:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/CFEBBX" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">CFEBBX[3:0]</obj_property>
-         <obj_property name="ObjectShortName">CFEBBX[3:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/BXN" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">BXN[11:0]</obj_property>
-         <obj_property name="ObjectShortName">BXN[11:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/DATAIN" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">DATAIN[17:0]</obj_property>
          <obj_property name="ObjectShortName">DATAIN[17:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/DAVACT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">DAVACT[16:0]</obj_property>
@@ -1482,18 +189,9 @@
          <obj_property name="ElementShortName">FFOR_B[7:1]</obj_property>
          <obj_property name="ObjectShortName">FFOR_B[7:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/JOEF" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">JOEF[7:0]</obj_property>
-         <obj_property name="ObjectShortName">JOEF[7:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/KILLINPUT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">KILLINPUT[2:0]</obj_property>
          <obj_property name="ObjectShortName">KILLINPUT[2:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/STATUS" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">STATUS[47:0]</obj_property>
-         <obj_property name="ObjectShortName">STATUS[47:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/DAV" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">DAV</obj_property>
@@ -1507,14 +205,31 @@
          <obj_property name="ElementShortName">OEOVLP</obj_property>
          <obj_property name="ObjectShortName">OEOVLP</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/FEMP" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">FEMP[7:1]</obj_property>
-         <obj_property name="ObjectShortName">FEMP[7:1]</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/DOUT" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">DOUT[15:0]</obj_property>
          <obj_property name="ObjectShortName">DOUT[15:0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/RENFIFO_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">RENFIFO_B[7:1]</obj_property>
+         <obj_property name="ObjectShortName">RENFIFO_B[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/OEFIFO_B" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
+         <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/da_in" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">da_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">da_in[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fifordy_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fifordy_b[7:1]</obj_property>
+         <obj_property name="ObjectShortName">fifordy_b[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/prefflast" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">prefflast</obj_property>
+         <obj_property name="ObjectShortName">prefflast</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/rstcnt" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">rstcnt</obj_property>
@@ -1524,17 +239,17 @@
          <obj_property name="ElementShortName">data_hldoff</obj_property>
          <obj_property name="ObjectShortName">data_hldoff</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpend" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpend</obj_property>
-         <obj_property name="ObjectShortName">ovlpend</obj_property>
+      <wvobject fp_name="/control_tf/uut/ooe_i" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ooe_i[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ooe_i[7:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/ooe" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">ooe[7:1]</obj_property>
-         <obj_property name="ObjectShortName">ooe[7:1]</obj_property>
+      <wvobject fp_name="/control_tf/uut/ooe_1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ooe_1[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ooe_1[7:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/jref" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">jref[7:1]</obj_property>
-         <obj_property name="ObjectShortName">jref[7:1]</obj_property>
+      <wvobject fp_name="/control_tf/uut/ooe_2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ooe_2[7:1]</obj_property>
+         <obj_property name="ObjectShortName">ooe_2[7:1]</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/rstlast" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">rstlast</obj_property>
@@ -1585,25 +300,9 @@
          <obj_property name="ElementShortName">tail_rst</obj_property>
          <obj_property name="ObjectShortName">tail_rst</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpwen" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpwen</obj_property>
-         <obj_property name="ObjectShortName">ovlpwen</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/crcen" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">crcen</obj_property>
          <obj_property name="ObjectShortName">crcen</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlplast" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlplast[3:0]</obj_property>
-         <obj_property name="ObjectShortName">ovlplast[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpren" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpren</obj_property>
-         <obj_property name="ObjectShortName">ovlpren</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/doutx" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">doutx[19:0]</obj_property>
-         <obj_property name="ObjectShortName">doutx[19:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/popbram_rst" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">popbram_rst</obj_property>
@@ -1658,6 +357,7 @@
       <wvobject fp_name="/control_tf/uut/fmt_ver" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">fmt_ver[1:0]</obj_property>
          <obj_property name="ObjectShortName">fmt_ver[1:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/regcrc" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">regcrc[23:0]</obj_property>
@@ -1667,155 +367,11 @@
       <wvobject fp_name="/control_tf/uut/qnoend" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">qnoend[11:0]</obj_property>
          <obj_property name="ObjectShortName">qnoend[11:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/preovlast" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">preovlast</obj_property>
-         <obj_property name="ObjectShortName">preovlast</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpwa" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpwa[12:0]</obj_property>
-         <obj_property name="ObjectShortName">ovlpwa[12:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpra" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpra[12:0]</obj_property>
-         <obj_property name="ObjectShortName">ovlpra[12:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.errd_rst_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.errd_rst_i [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.errd_rst_i [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdra_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdra_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdra_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdrb_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdrb_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdrb_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.stpop_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.stpop_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.stpop_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.taila_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.taila_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.taila_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.tailb_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.tailb_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.tailb_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_ce_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.done_ce_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.done_ce_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dodatx_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dodatx_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dodatx_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.fffl_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.fffl_i [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.fffl_i [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe6_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oe6_i [5:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oe6_i [5:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rovr_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rovr_i [5:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rovr_i [5:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rst_rovr_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rst_rovr_i [5:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rst_rovr_i [5:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.jrdff_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.jrdff_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.jrdff_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rst_dov_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rst_dov_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rst_dov_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.doneovlp_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.doneovlp_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.doneovlp_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.poplast_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.poplast_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.poplast_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.okdata_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.okdata_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.okdata_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.okdata_rst_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.okdata_rst_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.okdata_rst_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.busy_ce_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.busy_ce_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.busy_ce_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.startread_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.startread_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.startread_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeovlp_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oeovlp_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oeovlp_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.pop_rst_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.pop_rst_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.pop_rst_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.readovlp_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.readovlp_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.readovlp_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.last_i " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.last_i </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.last_i </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/RENFIFO_B" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">RENFIFO_B[7:1]</obj_property>
-         <obj_property name="ObjectShortName">RENFIFO_B[7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/OEFIFO_B" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
-         <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/da_in" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">da_in[15:0]</obj_property>
-         <obj_property name="ObjectShortName">da_in[15:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/fifordy_b" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">fifordy_b[7:1]</obj_property>
-         <obj_property name="ObjectShortName">fifordy_b[7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpin_b" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpin_b</obj_property>
-         <obj_property name="ObjectShortName">ovlpin_b</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/prefflast" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">prefflast</obj_property>
-         <obj_property name="ObjectShortName">prefflast</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/ovlpff_out" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">ovlpff_out[19:0]</obj_property>
-         <obj_property name="ObjectShortName">ovlpff_out[19:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/control_tf/uut/GEMPTY_B" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GEMPTY_B</obj_property>
+         <obj_property name="ObjectShortName">GEMPTY_B</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.gdav_1_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.gdav_1_r </obj_property>
@@ -1829,13 +385,17 @@
          <obj_property name="ElementShortName">\control_logic_no_TMR.gdav_3_r </obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.gdav_3_r </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.datanoend_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.busy_ce_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.busy_ce_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.busy_ce_i </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.popbram_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.popbram_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.popbram_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.r_act_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.r_act_r [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.r_act_r [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.startread_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.startread_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.startread_i </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.busy_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.busy_r </obj_property>
@@ -1849,21 +409,101 @@
          <obj_property name="ElementShortName">\control_logic_no_TMR.oehdr_r [8:1]</obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdr_r [8:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.tail_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.tail_r [8:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.tail_r [8:1]</obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.d_htov_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.d_htov_i [15:0]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.d_htov_i [15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.tail8_1_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.tail8_1_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.tail8_1_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dint_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dint_r [15:0]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dint_r [15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dout_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dout_r [15:0]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dout_r [15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.cdcd_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.cdcd_i [11:0]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.cdcd_i [11:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.data_hldoff_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.data_hldoff_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.data_hldoff_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdra_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdra_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdra_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdrb_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdrb_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdrb_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdtl_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdtl_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdtl_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ht_crc_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.ht_crc_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.ht_crc_r </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dav_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.dav_r </obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.dav_r </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdyovlp_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rdyovlp_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rdyovlp_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.okdata_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.okdata_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.okdata_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.okdata_rst_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.okdata_rst_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.okdata_rst_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dodat_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dodat_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dodat_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/fifordy_b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">fifordy_b[7:1]</obj_property>
+         <obj_property name="ObjectShortName">fifordy_b[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.prio_act_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.prio_act_i [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.prio_act_i [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdy_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dodatx_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dodatx_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dodatx_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.errd_rst_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.errd_rst_i [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.errd_rst_i [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_1_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oe_1_r [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_1_r [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_2_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oe_2_r [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_2_r [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeall_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oeall_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oeall_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.doeall_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.doeall_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.doeall_r </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeall_1_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.oeall_1_r </obj_property>
@@ -1873,13 +513,93 @@
          <obj_property name="ElementShortName">\control_logic_no_TMR.oedata_r </obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.oedata_r </obj_property>
       </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.last_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.last_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.last_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ovlpend_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.ovlpend_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.ovlpend_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_ce_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.done_ce_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.done_ce_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+      </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dn_oe_r " type="array" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.dn_oe_r [7:1]</obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.dn_oe_r [7:1]</obj_property>
       </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.poplast_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.poplast_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.poplast_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rstlast_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rstlast_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rstlast_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.st_tail_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.st_tail_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.st_tail_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.taila_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.taila_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.taila_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.tailb_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.tailb_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.tailb_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.tail_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.tail_r [8:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.tail_r [8:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdtl_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdtl_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdtl_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dtail7_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dtail7_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dtail7_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dtail78_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dtail78_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dtail78_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dtail8_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dtail8_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dtail8_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.tail8_1_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.tail8_1_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.tail8_1_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.fffl_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.fffl_i [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.fffl_i [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe6_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oe6_i [5:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oe6_i [5:1]</obj_property>
+      </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.davnodata_r " type="array" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.davnodata_r [7:1]</obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.davnodata_r [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.datanoend_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.stpop_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.stpop_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.stpop_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.pbram_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.pbram_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.pbram_r </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.pop_m2_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.pop_m2_r </obj_property>
@@ -1893,37 +613,121 @@
          <obj_property name="ElementShortName">\control_logic_no_TMR.pop_r </obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.pop_r </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oehdtl_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oehdtl_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oehdtl_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rst_dov_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rst_dov_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rst_dov_i </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ht_crc_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.ht_crc_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.ht_crc_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.pop_rst_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.pop_rst_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.pop_rst_i </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dodat_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dodat_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dodat_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.popbram_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.popbram_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.popbram_r </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.st_tail_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.st_tail_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.st_tail_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.pbram_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.pbram_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.pbram_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.disdav_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.disdav_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.disdav_r </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ffrfl_r " type="array" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.ffrfl_r [7:1]</obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.ffrfl_r [7:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdy_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe6_1_r " type="array" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.oe6_1_r [5:1]</obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.oe6_1_r [5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rstcnt_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rstcnt_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rstcnt_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpend" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpend</obj_property>
+         <obj_property name="ObjectShortName">ovlpend</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpwen" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpwen</obj_property>
+         <obj_property name="ObjectShortName">ovlpwen</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlplast" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlplast[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlplast[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpren" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpren</obj_property>
+         <obj_property name="ObjectShortName">ovlpren</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpwa" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpwa[12:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlpwa[12:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpra" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpra[12:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlpra[12:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpin_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpin_b</obj_property>
+         <obj_property name="ObjectShortName">ovlpin_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dint_ovlp_b_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dint_ovlp_b_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dint_ovlp_b_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdyovlp_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rdyovlp_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rdyovlp_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/ovlpff_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ovlpff_out[19:0]</obj_property>
+         <obj_property name="ObjectShortName">ovlpff_out[19:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/doutx" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">doutx[19:0]</obj_property>
+         <obj_property name="ObjectShortName">doutx[19:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/preovlast" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">preovlast</obj_property>
+         <obj_property name="ObjectShortName">preovlast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rovr_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rovr_i [5:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rovr_i [5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rovr_1_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rovr_1_r [5:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rovr_1_r [5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rst_rovr_i " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rst_rovr_i [5:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rst_rovr_i [5:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.doneovlp_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.doneovlp_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.doneovlp_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeovlp_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.oeovlp_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.oeovlp_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.readovlp_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.readovlp_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.readovlp_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dn_ovlp_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.dn_ovlp_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.dn_ovlp_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ooeovlp_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.ooeovlp_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.ooeovlp_r </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdoneovlp_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.rdoneovlp_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.rdoneovlp_r </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ovrin_r " type="array" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.ovrin_r [5:1]</obj_property>
@@ -1933,17 +737,29 @@
          <obj_property name="ElementShortName">\control_logic_no_TMR.ovr_r [5:1]</obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.ovr_r [5:1]</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.r_act_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.r_act_r [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.r_act_r [7:1]</obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ovlpend_r " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.ovlpend_r </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.ovlpend_r </obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rovr_1_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rovr_1_r [5:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rovr_1_r [5:1]</obj_property>
+      <wvobject fp_name="/control_tf/uut/RDFFNXT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RDFFNXT</obj_property>
+         <obj_property name="ObjectShortName">RDFFNXT</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.disdav_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.disdav_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.disdav_r </obj_property>
+      <wvobject fp_name="/control_tf/uut/JOEF" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">JOEF[7:0]</obj_property>
+         <obj_property name="ObjectShortName">JOEF[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.jrdff_i " type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.jrdff_i </obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.jrdff_i </obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/jref" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">jref[7:1]</obj_property>
+         <obj_property name="ObjectShortName">jref[7:1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.jref_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.jref_r [7:1]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.jref_r [7:1]</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdffnxt_1_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.rdffnxt_1_r </obj_property>
@@ -1956,90 +772,6 @@
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdffnxt_3_r " type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">\control_logic_no_TMR.rdffnxt_3_r </obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.rdffnxt_3_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdoneovlp_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rdoneovlp_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rdoneovlp_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dint_ovlp_b_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dint_ovlp_b_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dint_ovlp_b_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dtail7_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dtail7_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dtail7_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dtail8_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dtail8_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dtail8_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dtail78_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dtail78_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dtail78_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dn_ovlp_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dn_ovlp_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dn_ovlp_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ooeovlp_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.ooeovlp_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.ooeovlp_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rstcnt_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rstcnt_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rstcnt_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ovlpend_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.ovlpend_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.ovlpend_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dint_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dint_r [15:0]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dint_r [15:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeall_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.oeall_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.oeall_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.data_hldoff_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.data_hldoff_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.data_hldoff_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ooe_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.ooe_r [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.ooe_r [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.doeall_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.doeall_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.doeall_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.jref_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.jref_r [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.jref_r [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rstlast_r " type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.rstlast_r </obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.rstlast_r </obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dout_r " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.dout_r [15:0]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.dout_r [15:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.prio_act_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.prio_act_i [7:1]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.prio_act_i [7:1]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.d_htov_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.d_htov_i [15:0]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.d_htov_i [15:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.cdcd_i " type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">\control_logic_no_TMR.cdcd_i [11:0]</obj_property>
-         <obj_property name="ObjectShortName">\control_logic_no_TMR.cdcd_i [11:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
