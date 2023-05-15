@@ -60,17 +60,22 @@ module control_tf;
 //	reg [8:0] t3add;
 	reg [8:0] t4add;
 	reg [8:0] t5add;
+	reg [8:0] t6add;
+	reg [8:0] t7add;
 	reg start;
 	reg en_fifo;
 //	reg[17:0] dmbf1data[511:0];
 //	reg[17:0] dmbf2data[511:0];
 //	reg[17:0] dmbf3data[511:0];
-	reg[17:0] dmbf4data[511:0];
-	reg[17:0] dmbf5data[511:0];
+	reg[17:0] dmbf4data[255:0];
+	reg[17:0] dmbf5data[255:0];
+	reg[17:0] tmbdata[63:0];
+	reg[17:0] alctdata[63:0];
 
 	// Instantiate the Unit Under Test (UUT)
 	control #(
-		.TMR(0)
+		.TMR(0),
+		.STMO(9'd40)
 	)
 	uut (
 		.CLKCMS(CLKCMS), 
@@ -123,8 +128,10 @@ module control_tf;
 //	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo1_evts.dat", dmbf1data, 0, 511);
 //	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo2_evts.dat", dmbf2data, 0, 511);
 //	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo3_evts.dat", dmbf3data, 0, 511);
-	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo4_evts.dat", dmbf4data, 0, 511);
-	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo5_evts.dat", dmbf5data, 0, 511);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo4_evts.dat", dmbf4data, 0, 255);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo5_evts.dat", dmbf5data, 0, 255);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/tmb_evts.dat", tmbdata, 0, 63);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/alct_evts.dat", alctdata, 0, 63);
 	end
 
 	initial begin
@@ -190,18 +197,24 @@ end
 
 assign GEMPTY_B = en_fifo && (gadd != 4'ha);
 
+//assign davs = {alct_dav_scope[1],lct_5bx_or,cfeb_md_davs,tmb_dav_scope[1]};
+//assign lct_5bx_or = {|{lct5_m,lct5_p1}, |{lct4_m,lct4_p1}, |{lct3_m,lct3_p1}, |{lct2_m,lct2_p1}, |{lct1_m,lct1_p1}};
+//assign {lct5_p1,lct4_p1,lct3_p1,lct2_p1,lct1_p1,lct0_p1} = PSH_AFF;
+//		cfeb_md_davs <= {dly_cfeb_mov,dly_cfeb_dav};
+
+// DAVACT = {ALCT_DAV, (5BX OR of AFF)[5:1], multi-overlap_events[5:1], CFEB_DAVs[5:1], TMB_DAV}
 always @*
 begin
 	case (gadd)
-		4'h0: DAVACT = 17'h0c030;
-		4'h1: DAVACT = 17'h00000;
+		4'h0: DAVACT = 17'h00000;
+		4'h1: DAVACT = 17'h04011;
 		4'h2: DAVACT = 17'h00000;
-		4'h3: DAVACT = 17'h00008;
-		4'h4: DAVACT = 17'h08020;
+		4'h3: DAVACT = 17'h00000;
+		4'h4: DAVACT = 17'h1c031;
 		4'h5: DAVACT = 17'h00000;
-		4'h6: DAVACT = 17'h04010;
+		4'h6: DAVACT = 17'h14011;
 		4'h7: DAVACT = 17'h00000;
-		4'h8: DAVACT = 17'h08020;
+		4'h8: DAVACT = 17'h18021;
 		4'h9: DAVACT = 17'h00000;
 		4'ha: DAVACT = 17'h00000;
 		4'hb: DAVACT = 17'h00000;
@@ -220,6 +233,8 @@ always @(negedge CLKDDU or posedge RST) begin
 //		t3add <= 9'h00;
 		t4add <= 9'h00;
 		t5add <= 9'h00;
+		t6add <= 9'h00;
+		t7add <= 9'h00;
 	end
 	else begin
 //		if(RENFIFO_B[1] == 1'b0) t1add <= t1add + 1;
@@ -227,6 +242,8 @@ always @(negedge CLKDDU or posedge RST) begin
 //		if(RENFIFO_B[3] == 1'b0) t3add <= t3add + 1;
 		if(RENFIFO_B[4] == 1'b0) t4add <= t4add + 1;
 		if(RENFIFO_B[5] == 1'b0) t5add <= t5add + 1;
+		if(RENFIFO_B[6] == 1'b0) t6add <= t6add + 1;
+		if(RENFIFO_B[7] == 1'b0) t7add <= t7add + 1;
 	end
 end
 
@@ -234,16 +251,19 @@ end
 always @*
 begin
 	casex(OEFIFO_B)
-//      7'bxxxxxx0: DATAIN = dmbf1data[t1add];
-//      7'bxxxxx01: DATAIN = dmbf2data[t2add];
-//      7'bxxxx011: DATAIN = dmbf3data[t3add];
-      7'bxxx0111: DATAIN = dmbf4data[t4add];
-      7'bxx01111: DATAIN = dmbf5data[t5add];
+//      7'b1111110: DATAIN = dmbf1data[t1add];
+//      7'b1111101: DATAIN = dmbf2data[t2add];
+//      7'b1111011: DATAIN = dmbf3data[t3add];
+      7'b1110111: DATAIN = dmbf4data[t4add];
+      7'b1101111: DATAIN = dmbf5data[t5add];
+      7'b1011111: DATAIN = tmbdata[t6add];
+      7'b0111111: DATAIN = alctdata[t7add];
 		default: DATAIN = 18'h3bad3;
 	endcase
 end
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),~(|(dmbf3data[t3add])),~(|(dmbf2data[t2add])),~(|(dmbf1data[t1add]))};
-assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),3'b111};
+//assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),3'b111};
+assign FFOR_B = {(t7add >= 9'd40),(t6add >= 9'd40),(t5add >= 9'd232),(t4add >= 9'd232),3'b111};
 //assign FFOR_B = {2'b11,~(|(~dmbf5data[t5add])),~(|(~dmbf4data[t4add])),3'b111};
 
 endmodule

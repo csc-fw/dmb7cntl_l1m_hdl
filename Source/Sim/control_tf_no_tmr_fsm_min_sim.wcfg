@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1m_hdl/control_tf_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="control_tf" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="60" />
+   <wvobject fp_name="/control_tf/GEMPTY_B" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">GEMPTY_B</obj_property>
+      <obj_property name="ObjectShortName">GEMPTY_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/FFOR_B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">FFOR_B[7:1]</obj_property>
+      <obj_property name="ObjectShortName">FFOR_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/POPBRAM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">POPBRAM</obj_property>
+      <obj_property name="ObjectShortName">POPBRAM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/OEOVLP" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">OEOVLP</obj_property>
+      <obj_property name="ObjectShortName">OEOVLP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/OEFIFO_B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
+      <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/RENFIFO_B" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">RENFIFO_B[7:1]</obj_property>
+      <obj_property name="ObjectShortName">RENFIFO_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DATAIN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATAIN[17:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAIN[17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/da_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">da_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">da_in[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/dint" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dint[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dint[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DOUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DOUT[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DOUT[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAV" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DAV</obj_property>
+      <obj_property name="ObjectShortName">DAV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.disdav_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.disdav_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.disdav_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_1_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oe_1_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_1_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_2_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oe_2_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_2_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/oeall" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">oeall</obj_property>
+      <obj_property name="ObjectShortName">oeall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeall_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oeall_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oeall_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.doeall_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.doeall_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.doeall_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oeall_1_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oeall_1_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oeall_1_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/doeall" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">doeall</obj_property>
+      <obj_property name="ObjectShortName">doeall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oedata_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oedata_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oedata_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/CLKCMS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKCMS</obj_property>
+      <obj_property name="ObjectShortName">CLKCMS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/CLKDDU" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLKDDU</obj_property>
+      <obj_property name="ObjectShortName">CLKDDU</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/RST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/L1ARST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">L1ARST</obj_property>
+      <obj_property name="ObjectShortName">L1ARST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/FIFOMRST" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">FIFOMRST</obj_property>
+      <obj_property name="ObjectShortName">FIFOMRST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAVENBL" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DAVENBL[5:1]</obj_property>
+      <obj_property name="ObjectShortName">DAVENBL[5:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/DAVACT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DAVACT[16:0]</obj_property>
+      <obj_property name="ObjectShortName">DAVACT[16:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/gadd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">gadd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">gadd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/t4add" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t4add[8:0]</obj_property>
+      <obj_property name="ObjectShortName">t4add[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/t5add" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">t5add[8:0]</obj_property>
+      <obj_property name="ObjectShortName">t5add[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/en_fifo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_fifo</obj_property>
+      <obj_property name="ObjectShortName">en_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/busy_ce" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">busy_ce</obj_property>
+      <obj_property name="ObjectShortName">busy_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dodatx_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.dodatx_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.dodatx_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ce_b4_1_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.ce_b4_1_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.ce_b4_1_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ce_b5_1_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.ce_b5_1_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.ce_b5_1_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ce_l1l_1_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.ce_l1l_1_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.ce_l1l_1_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.ce_l1h_1_r " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.ce_l1h_1_r </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.ce_l1h_1_r </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.b4_hdr_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.b4_hdr_r [15:0]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.b4_hdr_r [15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.l1a_eq_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.l1a_eq_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.l1a_eq_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.l1a_lt_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.l1a_lt_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.l1a_lt_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.b5_hdr_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.b5_hdr_r [15:0]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.b5_hdr_r [15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/prio_act" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">prio_act[7:1]</obj_property>
+      <obj_property name="ObjectShortName">prio_act[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.r_act_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.r_act_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.r_act_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.dn_oe_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.dn_oe_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.dn_oe_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdy_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_i [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.cfeb_act_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.cfeb_act_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.cfeb_act_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.alct_tmb_act_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.alct_tmb_act_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.alct_tmb_act_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.go_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.go_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.go_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.gob5_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.gob5_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.gob5_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.cap_l1a_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.cap_l1a_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.cap_l1a_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.trans_l1a_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.trans_l1a_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.trans_l1a_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.last_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.last_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.last_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/l1cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">l1cnt[23:0]</obj_property>
+      <obj_property name="ObjectShortName">l1cnt[23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.l1a_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.l1a_r [23:0]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.l1a_r [23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.l1a_savd_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.l1a_savd_r [5:1,23:0]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.l1a_savd_r [5:1,23:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group119" type="group">
+      <obj_property name="label">FSM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /ALCT_TMB_ACT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ALCT_TMB_ACT</obj_property>
+         <obj_property name="ObjectShortName">ALCT_TMB_ACT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CFEB_ACT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CFEB_ACT</obj_property>
+         <obj_property name="ObjectShortName">CFEB_ACT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /DONE_CE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DONE_CE</obj_property>
+         <obj_property name="ObjectShortName">DONE_CE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /EOE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">EOE</obj_property>
+         <obj_property name="ObjectShortName">EOE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /GO" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GO</obj_property>
+         <obj_property name="ObjectShortName">GO</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /GOB5" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">GOB5</obj_property>
+         <obj_property name="ObjectShortName">GOB5</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /HEADER_END" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">HEADER_END</obj_property>
+         <obj_property name="ObjectShortName">HEADER_END</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /L1A_EQ" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1A_EQ</obj_property>
+         <obj_property name="ObjectShortName">L1A_EQ</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /L1A_LT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">L1A_LT</obj_property>
+         <obj_property name="ObjectShortName">L1A_LT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /LAST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">LAST</obj_property>
+         <obj_property name="ObjectShortName">LAST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /MT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">MT</obj_property>
+         <obj_property name="ObjectShortName">MT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /RST" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RST</obj_property>
+         <obj_property name="ObjectShortName">RST</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /STMO" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">STMO</obj_property>
+         <obj_property name="ObjectShortName">STMO</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /ACT_CHK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ACT_CHK</obj_property>
+         <obj_property name="ObjectShortName">ACT_CHK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CAP_L1A" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CAP_L1A</obj_property>
+         <obj_property name="ObjectShortName">CAP_L1A</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CE_B4" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CE_B4</obj_property>
+         <obj_property name="ObjectShortName">CE_B4</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CE_B5" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CE_B5</obj_property>
+         <obj_property name="ObjectShortName">CE_B5</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CE_L1H" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CE_L1H</obj_property>
+         <obj_property name="ObjectShortName">CE_L1H</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CE_L1L" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CE_L1L</obj_property>
+         <obj_property name="ObjectShortName">CE_L1L</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /CLR_DONE" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLR_DONE</obj_property>
+         <obj_property name="ObjectShortName">CLR_DONE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /DATA_HLDOFF" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DATA_HLDOFF</obj_property>
+         <obj_property name="ObjectShortName">DATA_HLDOFF</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /DOCHK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DOCHK</obj_property>
+         <obj_property name="ObjectShortName">DOCHK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /DODAT" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DODAT</obj_property>
+         <obj_property name="ObjectShortName">DODAT</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /INPROG" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">INPROG</obj_property>
+         <obj_property name="ObjectShortName">INPROG</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /READ_ENA" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">READ_ENA</obj_property>
+         <obj_property name="ObjectShortName">READ_ENA</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /STRT_TAIL" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">STRT_TAIL</obj_property>
+         <obj_property name="ObjectShortName">STRT_TAIL</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /TRANS_L1A" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">TRANS_L1A</obj_property>
+         <obj_property name="ObjectShortName">TRANS_L1A</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /state" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /nextstate" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">nextstate[3:0]</obj_property>
+         <obj_property name="ObjectShortName">nextstate[3:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /statename" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">statename[111:0]</obj_property>
+         <obj_property name="ObjectShortName">statename[111:0]</obj_property>
+         <obj_property name="Radix">ASCIIRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
