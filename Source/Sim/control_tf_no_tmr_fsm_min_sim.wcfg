@@ -3,14 +3,18 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/bylsma/Projects/DMB/Firmware/ISE_14.7/dmb7cntl_l1m_hdl/control_tf_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="/home/firmware/Projects/DMB/ISE_14.7/dmb7cntl_l1m_hdl/control_tf_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="control_tf" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="60" />
+   <WVObjectSize size="75" />
+   <wave_markers>
+      <marker time="3533500000" label="" />
+      <marker time="3467700000" label="" />
+   </wave_markers>
    <wvobject fp_name="/control_tf/GEMPTY_B" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">GEMPTY_B</obj_property>
       <obj_property name="ObjectShortName">GEMPTY_B</obj_property>
@@ -30,6 +34,14 @@
    <wvobject fp_name="/control_tf/OEFIFO_B" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">OEFIFO_B[7:1]</obj_property>
       <obj_property name="ObjectShortName">OEFIFO_B[7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/rstlast" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rstlast</obj_property>
+      <obj_property name="ObjectShortName">rstlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/RENFIFO_B" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">RENFIFO_B[7:1]</obj_property>
@@ -74,6 +86,10 @@
    <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.oe_2_r " type="array" db_ref_id="1">
       <obj_property name="ElementShortName">\control_logic_no_TMR.oe_2_r [7:1]</obj_property>
       <obj_property name="ObjectShortName">\control_logic_no_TMR.oe_2_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.poplast_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.poplast_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.poplast_i </obj_property>
    </wvobject>
    <wvobject fp_name="/control_tf/uut/oeall" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">oeall</obj_property>
@@ -208,6 +224,34 @@
       <obj_property name="ElementShortName">\control_logic_no_TMR.dn_oe_r [7:1]</obj_property>
       <obj_property name="ObjectShortName">\control_logic_no_TMR.dn_oe_r [7:1]</obj_property>
    </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.errd_rst_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.errd_rst_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.errd_rst_i [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.davnodata_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.davnodata_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.davnodata_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.datanoend_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_ce_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.done_ce_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.done_ce_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.poplast_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.poplast_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.poplast_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.prio_act_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.prio_act_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.prio_act_i [7:1]</obj_property>
+   </wvobject>
    <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.rdy_r " type="array" db_ref_id="1">
       <obj_property name="ElementShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
       <obj_property name="ObjectShortName">\control_logic_no_TMR.rdy_r [7:1]</obj_property>
@@ -314,10 +358,6 @@
          <obj_property name="ElementShortName">RST</obj_property>
          <obj_property name="ObjectShortName">RST</obj_property>
       </wvobject>
-      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /STMO" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">STMO</obj_property>
-         <obj_property name="ObjectShortName">STMO</obj_property>
-      </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /ACT_CHK" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">ACT_CHK</obj_property>
          <obj_property name="ObjectShortName">ACT_CHK</obj_property>
@@ -375,13 +415,13 @@
          <obj_property name="ObjectShortName">TRANS_L1A</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /state" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">state[3:0]</obj_property>
-         <obj_property name="ObjectShortName">state[3:0]</obj_property>
+         <obj_property name="ElementShortName">state[4:0]</obj_property>
+         <obj_property name="ObjectShortName">state[4:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /nextstate" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">nextstate[3:0]</obj_property>
-         <obj_property name="ObjectShortName">nextstate[3:0]</obj_property>
+         <obj_property name="ElementShortName">nextstate[4:0]</obj_property>
+         <obj_property name="ObjectShortName">nextstate[4:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.L1A_Checker_FSM_i /statename" type="array" db_ref_id="1">
@@ -389,5 +429,25 @@
          <obj_property name="ObjectShortName">statename[111:0]</obj_property>
          <obj_property name="Radix">ASCIIRADIX</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_i " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.done_i [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.datanoend_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.datanoend_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.davnodata_r " type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.davnodata_r [7:1]</obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.davnodata_r [7:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.done_ce_i " type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">\control_logic_no_TMR.done_ce_i </obj_property>
+      <obj_property name="ObjectShortName">\control_logic_no_TMR.done_ce_i </obj_property>
+   </wvobject>
+   <wvobject fp_name="/control_tf/uut/rstlast" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rstlast</obj_property>
+      <obj_property name="ObjectShortName">rstlast</obj_property>
    </wvobject>
 </wave_config>
