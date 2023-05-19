@@ -2470,7 +2470,7 @@ begin : control_logic_no_TMR
 	assign stpop_i      = (oehdr_r[4] & !head_d12) | tail8_1_r;
 	assign taila_i      = |{tail_r[4:1]};
 	assign tailb_i      = |{tail_r[8:5]};
-	assign done_ce_i    = (last_i & !ovlpend_r) & !dochk_i; // leading edge of last;
+	assign done_ce_i    = (last_i & !ovlpend_r) & !(dochk_i | act_chk_i); // leading edge of last;
 	assign dodatx_i     = dodat_i && !readovlp_i;
 	assign fffl_i       = ~killdcd & ffrfl_r;
 	assign oe_i         = prio_act_i & rdy_r & ~{2'b0,ovr_r};
