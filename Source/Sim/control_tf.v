@@ -55,8 +55,8 @@ module control_tf;
 	
 	// internal
 	reg [3:0] gadd;
-//	reg [8:0] t1add;
-//	reg [8:0] t2add;
+	reg [8:0] t1add;
+	reg [8:0] t2add;
 //	reg [8:0] t3add;
 	reg [8:0] t4add;
 	reg [8:0] t5add;
@@ -65,10 +65,10 @@ module control_tf;
 	reg start;
 	reg en_fifo;
 //	reg[17:0] dmbf1data[511:0];
-//	reg[17:0] dmbf2data[511:0];
+	reg[17:0] dmbf2data[511:0];
 //	reg[17:0] dmbf3data[511:0];
-	reg[17:0] dmbf4data[255:0];
-	reg[17:0] dmbf5data[255:0];
+	reg[17:0] dmbf4data[511:0];
+	reg[17:0] dmbf5data[511:0];
 	reg[17:0] tmbdata[63:0];
 	reg[17:0] alctdata[63:0];
 
@@ -126,10 +126,10 @@ module control_tf;
 	
 	initial begin
 //	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo1_evts.dat", dmbf1data, 0, 511);
-//	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo2_evts.dat", dmbf2data, 0, 511);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo2_evts.dat", dmbf2data, 0, 255);
 //	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo3_evts.dat", dmbf3data, 0, 511);
-	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo4_evts.dat", dmbf4data, 0, 255);
-	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo5_evts.dat", dmbf5data, 0, 255);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo4_evts.dat", dmbf4data, 0, 511);
+	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/fifo5_evts.dat", dmbf5data, 0, 511);
 	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/tmb_evts.dat", tmbdata, 0, 63);
 	   $readmemh ("../../dmb7cntl_l1m_hdl/Source/Sim/alct_evts.dat", alctdata, 0, 63);
 	end
@@ -206,15 +206,15 @@ assign GEMPTY_B = en_fifo && (gadd != 4'ha);
 always @*
 begin
 	case (gadd)
-		4'h0: DAVACT = 17'h00000;
-		4'h1: DAVACT = 17'h04011; //17'b0_0100_0000_0001_0001
-		4'h2: DAVACT = 17'h00000;
+		4'h0: DAVACT = 17'h15015; //17'b1_0101_0000_0001_0101
+		4'h1: DAVACT = 17'h15015; //17'b1_0101_0000_0001_0101
+		4'h2: DAVACT = 17'h18021; //17'b1_1000_0000_0010_0001
 		4'h3: DAVACT = 17'h00000;
-		4'h4: DAVACT = 17'h1c031; //17'b1_1100_0000_0011_0001
+		4'h4: DAVACT = 17'h18021; //17'b1_1000_0000_0010_0001
 		4'h5: DAVACT = 17'h00000;
-		4'h6: DAVACT = 17'h14011; //17'b1_0100_0000_0001_0001
+		4'h6: DAVACT = 17'h04010; //17'b0_0100_0000_0001_0000 
 		4'h7: DAVACT = 17'h00000; 
-		4'h8: DAVACT = 17'h18021; //17'b1_1000_0000_0010_0001
+		4'h8: DAVACT = 17'h08020; //17'b0_1000_0000_0010_0000
 		4'h9: DAVACT = 17'h00000;
 		4'ha: DAVACT = 17'h00000;
 		4'hb: DAVACT = 17'h00000;
@@ -228,8 +228,8 @@ end
 
 always @(negedge CLKDDU or posedge RST) begin
 	if(RST) begin
-//		t1add <= 9'h00;
-//		t2add <= 9'h00;
+		t1add <= 9'h00;
+		t2add <= 9'h00;
 //		t3add <= 9'h00;
 		t4add <= 9'h00;
 		t5add <= 9'h00;
@@ -237,8 +237,8 @@ always @(negedge CLKDDU or posedge RST) begin
 		t7add <= 9'h00;
 	end
 	else begin
-//		if(RENFIFO_B[1] == 1'b0) t1add <= t1add + 1;
-//		if(RENFIFO_B[2] == 1'b0) t2add <= t2add + 1;
+		if(RENFIFO_B[1] == 1'b0) t1add <= t1add + 1;
+		if(RENFIFO_B[2] == 1'b0) t2add <= t2add + 1;
 //		if(RENFIFO_B[3] == 1'b0) t3add <= t3add + 1;
 		if(RENFIFO_B[4] == 1'b0) t4add <= t4add + 1;
 		if(RENFIFO_B[5] == 1'b0) t5add <= t5add + 1;
@@ -252,18 +252,19 @@ always @*
 begin
 	casex(OEFIFO_B)
 //      7'b1111110: DATAIN = dmbf1data[t1add];
-//      7'b1111101: DATAIN = dmbf2data[t2add];
+      7'b1111101: DATAIN = dmbf2data[t2add];
 //      7'b1111011: DATAIN = dmbf3data[t3add];
       7'b1110111: DATAIN = dmbf4data[t4add];
       7'b1101111: DATAIN = dmbf5data[t5add];
       7'b1011111: DATAIN = tmbdata[t6add];
       7'b0111111: DATAIN = alctdata[t7add];
-		default: DATAIN = 18'h3bad3;
+		default: DATAIN = 18'hzzzzz;
+		// default: DATAIN = 18'h3bad3;
 	endcase
 end
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),~(|(dmbf3data[t3add])),~(|(dmbf2data[t2add])),~(|(dmbf1data[t1add]))};
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),3'b111};
-assign FFOR_B = {(t7add >= 9'd40),(t6add >= 9'd40),(t5add >= 9'd232),(t4add >= 9'd232),3'b111};
+assign FFOR_B = {(t7add >= 9'd48),(t6add >= 9'd48),(t5add >= 9'd348),(t4add >= 9'd348),1'b1,(t2add >= 9'd220),1'b1};
 //assign FFOR_B = {2'b11,~(|(~dmbf5data[t5add])),~(|(~dmbf4data[t4add])),3'b111};
 
 endmodule

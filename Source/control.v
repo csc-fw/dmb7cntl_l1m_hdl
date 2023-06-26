@@ -86,6 +86,7 @@ wire inprog;
 wire ovlpwen;
 wire crcen;
 wire [3:0] ovlplast;
+wire noend_error;
 
 
 //
@@ -105,7 +106,8 @@ wire [7:1] ffmt;  // FIFO empty flags OR'd with kill
 wire fcrst;
 wire ff_re;
 wire dodat;
-
+wire data_ce;
+wire flushing;
 
 
 wire [8:0] ddcnt;
@@ -116,7 +118,7 @@ wire [23:0] regcrc;
 reg  [7:1] fifordy_b;
 reg  ovlpin_b;
 reg  prefflast;
-wire [11:0] qnoend;
+wire [12:0] qnoend;
 wire preovlast;
 wire [12:0] ovlpwa;
 wire [12:0] ovlpra;
@@ -207,7 +209,7 @@ begin
 		RENFIFO_B  <= 7'h7F;
 	else
 //		RENFIFO_B <= ~(jref | (ooe & ~{7{last}}));
-		RENFIFO_B <= ~(jref | (prio_act & {7{ff_re}} & ~{7{last}}) | (ooe_2 & {7{dodat}} & ~{7{last}}));
+		RENFIFO_B <= ~(jref | (prio_act & {7{ff_re}} & ~{7{last & flushing}}) | (ooe_2 & {7{dodat}} & ~{7{last}}));
 end
 
 genvar i;
@@ -266,11 +268,11 @@ l1a_cntr_i (
 // event timeout counter
 //
 cbnce #(
-	.Width(12),
+	.Width(13),
 	.TMR(TMR)
 )
 evt_tmo_cntr_i (
-	.CLK(CLKCMS),
+	.CLK(CLKDDU),
 	.RST(ovlpend | startread | rstcnt),
 	.CE(oeall),
 	.Q(qnoend)
@@ -1603,9 +1605,9 @@ begin : control_logic_TMR
 
 	always @(posedge CLKCMS)
 	begin
-		rstcnt_a <= qnoend[11];
-		rstcnt_b <= qnoend[11];
-		rstcnt_c <= qnoend[11];
+		rstcnt_a <= qnoend[12];
+		rstcnt_b <= qnoend[12];
+		rstcnt_c <= qnoend[12];
 	end
 
 
@@ -2328,6 +2330,8 @@ begin : control_logic_no_TMR
 	reg  dav_r;
 	reg  rdyovlp_r;
 	reg  oeall_1_r;
+	reg  oeall_2_r;
+	reg  oeall_3_r;
 	reg  oedata_r;
 	reg  [7:1] dn_oe_r;
 	reg  [7:1] davnodata_r;
@@ -2367,6 +2371,35 @@ begin : control_logic_no_TMR
 	reg  [15:0] b5_hdr_r;
 	reg  [23:0] l1a_r;
 	reg  [23:0] l1a_savd_r [5:1];
+	//reg  done_ce_1_r;
+	//reg  done_ce_2_r;
+	reg  [7:1] prio_act_1_r;
+	reg  trans_tora_1_r;
+	reg  trans_tora_2_r;
+	reg  new_tora_r;
+	reg  new_cfeb_r;
+	reg  new_event_r;
+	//
+	//Data pipeline registers from the fifo
+	//
+	reg  alct_flg_r;
+	reg  tmb_flg_r;
+	reg  [15:0] da_pipe1_r;
+	reg  [15:0] da_pipe2_r;
+	reg  [15:0] tmb_in_1_r;
+	reg  [15:0] tmb_in_2_r;
+	reg  [15:0] alct_in_1_r;
+	reg  [15:0] alct_in_2_r;
+	reg  [15:0] cfeb1_in_1_r;
+	reg  [15:0] cfeb1_in_2_r;
+	reg  [15:0] cfeb2_in_1_r;
+	reg  [15:0] cfeb2_in_2_r;
+	reg  [15:0] cfeb3_in_1_r;
+	reg  [15:0] cfeb3_in_2_r;
+	reg  [15:0] cfeb4_in_1_r;
+	reg  [15:0] cfeb4_in_2_r;
+	reg  [15:0] cfeb5_in_1_r;
+	reg  [15:0] cfeb5_in_2_r;
 	
 	//
 	// module scope and local scope registers
@@ -2404,6 +2437,7 @@ begin : control_logic_no_TMR
 	reg  [11:0] cdcd_i;
 
 	wire [7:1] errd_rst_i;
+	wire err_akn_i;
 	wire oehdra_i;
 	wire oehdrb_i;
 	wire header_end_i;
@@ -2414,6 +2448,7 @@ begin : control_logic_no_TMR
 	wire dodatx_i;
 	wire [7:1] fffl_i;  // FIFO full flags AND'd with not kill
 	wire [7:1] oe_i;
+	wire data_ce_i;
 	wire [5:1] oe6_i;
 	wire [5:1] rovr_i;
 	wire [5:1] rst_rovr_i;
@@ -2428,6 +2463,8 @@ begin : control_logic_no_TMR
 	wire eoe_i;
 	wire l1a_eq_i;
 	wire l1a_lt_i;
+	wire b4_present_i;
+	wire missing_dat_i;
 	wire ce_b4_i;
 	wire ce_b5_i;
 	wire ce_l1l_i;
@@ -2437,6 +2474,7 @@ begin : control_logic_no_TMR
 	wire cfeb_act_i;
 	wire alct_tmb_act_i;
 	wire dodat_i;
+	wire do_err_i;
 	wire dochk_i;
 	wire st_tail_i;
 	wire cap_l1a_i;
@@ -2444,6 +2482,10 @@ begin : control_logic_no_TMR
 	wire mt_i;
 	wire clr_done_i;
 	wire act_chk_i;
+	wire alct_res_i;
+	wire tmb_res_i;
+	wire trans_tora_i;
+	wire trans_flg_i;
 
 	//
 	// module and local scope nets
@@ -2459,21 +2501,25 @@ begin : control_logic_no_TMR
 	wire tail_rst_i;
 	wire inprog_i;
 	wire ff_re_i;
+	wire noend_error_i;
+	wire flushing_i;
+
 
 	//
 	// Combinatorial logic for local scope variables
 	//
 	assign errd_rst_i   = davnodata_r | datanoend_r | done_i;
+	assign err_akn_i	  = |(datanoend_r & prio_act_1_r);
 	assign oehdra_i     = |{oehdr_r[4:1]};
 	assign oehdrb_i     = |{oehdr_r[8:5]};
 	assign header_end_i = oehdr_r[8];
 	assign stpop_i      = (oehdr_r[4] & !head_d12) | tail8_1_r;
 	assign taila_i      = |{tail_r[4:1]};
 	assign tailb_i      = |{tail_r[8:5]};
-	assign done_ce_i    = (last_i & !ovlpend_r) & !(dochk_i | act_chk_i); // leading edge of last;
+	assign done_ce_i    = (last_i & !ovlpend_r) & dodat_i & (|(prio_act_i & ~fifordy_b)); // leading edge of last;
 	assign dodatx_i     = dodat_i && !readovlp_i;
-	assign fffl_i       = ~killdcd & ffrfl_r;
-	assign oe_i         = prio_act_i & rdy_r & ~{2'b0,ovr_r};
+	assign fffl_i         = ~killdcd & ffrfl_r;
+	assign oe_i         = prio_act_i & rdy_r & ~{2'b00,ovr_r};
 	assign oe6_i        = prio_act_i[5:1] & ovr_r;
 	assign rovr_i       = {5{RST}} | oe6_1_r;
 	assign rst_rovr_i   = {5{RST}} | rovr_1_r;
@@ -2484,14 +2530,18 @@ begin : control_logic_no_TMR
 //	assign okdata_i     = (ddcnt == 9'd448) || ((ddcnt == 9'd5) && |(r_act_r & ~fifordy_b));  //bgb test mod for start timeout
 //	assign okdata_rst_i = RST | okdata_i;
 	assign go_i         = |oe_i;
-	assign gob5_i       = |oe_i && (DATAIN[15:0] == 16'hb5b5);
+	assign gob5_i       = |oe_i && (DATAIN[15:0] == 16'hc5b5);
 	assign eoe_i        = inprog_i && ~|r_act_r;
-	assign l1a_eq_i     = (b4_hdr_r == 16'hb4b4) && (l1a_r == l1cnt);
-	assign l1a_lt_i     = (b4_hdr_r == 16'hb4b4) && (l1a_r < l1cnt);
+	assign l1a_eq_i     = (b4_hdr_r == 16'hc4b4) && (l1a_r == l1cnt);
+	assign l1a_lt_i     = (b4_hdr_r == 16'hc4b4) && (l1a_r < l1cnt);
+	assign b4_present_i = (b4_hdr_r == 16'hc4b4);
 	assign stmo_ce_i    = strt_tmo_r & ~strt_tmo_1_r;
 	assign cfeb_act_i   = |((r_act_r & ~fifordy_b) & 7'b0011111 & prio_act_i); //CFEB mask
 	assign alct_tmb_act_i = |((r_act_r & ~fifordy_b) & 7'b1100000 & prio_act_i); //ALCT_TMB mask
 	assign mt_i         = |(prio_act_i & fifordy_b);
+	assign alct_res_i	  = trans_tora_i & |(7'b1000000 & prio_act_i);
+	assign tmb_res_i	  = trans_tora_i & |(7'b0100000 & prio_act_i);
+	assign trans_flg_i   = alct_flg_r & prio_act_i[7] | tmb_flg_r & prio_act_i[6];
 
 	//
 	// Combinatorial logic for module scope variables
@@ -2518,10 +2568,13 @@ begin : control_logic_no_TMR
 	assign last       = last_i;
 	assign tail_rst   = tail_rst_i;
 	assign inprog     = inprog_i;
-	assign ff_re      = ff_re_i;
+	assign ff_re       = ff_re_i;
+	assign flushing    = flushing_i;
 //	assign okdata     = okdata_i;
 	assign dodat      = dodat_i;
 	assign prio_act   = prio_act_i;
+	assign data_ce    = data_ce_i;
+	assign noend_error = noend_error_i;
 
 	// used in module scope only
 	assign ovlpwen    = ~DCFEB_IN_USE & (~pop_rst_i & ~disdav_r & ~dint_ovlp_b_r & oedata_r);
@@ -2548,10 +2601,102 @@ begin : control_logic_no_TMR
 	assign POPBRAM = popbram_r;
 	assign DAV = dav_r;
 	assign DOUT = dout_r;
+	
+	initial begin
+	new_tora_r = 1'b0;
+	new_cfeb_r = 1'b0;
+	end
+
+	always @(negedge CLKDDU or negedge inprog) //Negative edge
+	begin
+		if(!inprog)
+			begin
+				new_tora_r <= 1'b0; //new TMB or ALCT
+				new_cfeb_r <= 1'b0;
+			end
+		else
+			if(data_ce && !noend_error)
+				begin
+					new_tora_r  <= (DATAIN[15:0] == 16'hdb0c) || (DATAIN[15:0] == 16'hdb0a); //tmb or alct beginning of data header
+					new_cfeb_r  <= (DATAIN[15:0] == 16'hc4b4); //cfeb beginning of data present
+				end
+	end
+	
+	always @(negedge CLKDDU or negedge inprog)
+	begin
+		if(!inprog)
+			begin
+				new_event_r <= 1'b0;
+			end
+		else
+			if(flushing_i)
+				begin
+					new_event_r  <= (DATAIN[15:0] == 16'hc4b4); //cfeb beginning of data present
+				end
+	end
+
+	always @ (posedge CLKDDU)
+	begin
+		//done_ce_1_r <= done_ce_i;
+		//done_ce_2_r <= done_ce_1_r;
+		if(prio_act_i[7] && trans_tora_i)begin
+			da_pipe1_r <= alct_in_1_r;
+			da_pipe2_r <= alct_in_2_r;
+		end
+		else if(prio_act_i[6] && trans_tora_i)begin
+			da_pipe1_r <= tmb_in_1_r;
+			da_pipe2_r <= tmb_in_2_r;
+		end
+		else
+		begin
+			da_pipe1_r <= da_in;
+			da_pipe2_r <= da_pipe1_r;
+		end
+	
+		cfeb1_in_1_r <= (prio_act_i[1] && data_ce_i) ? da_in : cfeb1_in_1_r;
+		cfeb2_in_1_r <= (prio_act_i[2] && data_ce_i) ? da_in : cfeb2_in_1_r;
+		cfeb3_in_1_r <= (prio_act_i[3] && data_ce_i) ? da_in : cfeb3_in_1_r;
+		cfeb4_in_1_r <= (prio_act_i[4] && data_ce_i) ? da_in : cfeb4_in_1_r;
+		cfeb5_in_1_r <= (prio_act_i[5] && data_ce_i) ? da_in : cfeb5_in_1_r;
+		tmb_in_1_r   <= (prio_act_i[6] && data_ce_i) ? da_in : tmb_in_1_r;
+		alct_in_1_r  <= (prio_act_i[7] && data_ce_i) ? da_in : alct_in_1_r;
+		
+		cfeb1_in_2_r <= (prio_act_i[1] && data_ce_i) ? cfeb1_in_1_r : cfeb1_in_2_r;
+		cfeb2_in_2_r <= (prio_act_i[2] && data_ce_i) ? cfeb2_in_1_r : cfeb2_in_2_r;
+		cfeb3_in_2_r <= (prio_act_i[3] && data_ce_i) ? cfeb3_in_1_r : cfeb3_in_2_r;
+		cfeb4_in_2_r <= (prio_act_i[4] && data_ce_i) ? cfeb4_in_1_r : cfeb4_in_2_r;
+		cfeb5_in_2_r <= (prio_act_i[5] && data_ce_i) ? cfeb5_in_1_r : cfeb5_in_2_r;
+		tmb_in_2_r   <= (prio_act_i[6] && data_ce_i) ? tmb_in_1_r : tmb_in_2_r;
+		alct_in_2_r  <= (prio_act_i[7] && data_ce_i) ? alct_in_1_r : alct_in_2_r;
+	end
+	
+	always @ (posedge CLKDDU)
+	begin
+		trans_tora_1_r <= trans_tora_i;
+		trans_tora_2_r <= trans_tora_1_r;
+	end
+	
+	always @ (posedge CLKDDU or posedge alct_res_i)
+	begin
+		if(alct_res_i)
+			alct_flg_r <= 1'b0;
+		else
+			if(new_tora_r & noend_error_i & data_ce_i & prio_act_i[7])
+				alct_flg_r <= |(7'b1000000 & prio_act_i);
+	end
+	
+	always @ (posedge CLKDDU or posedge tmb_res_i)
+	begin
+		if(tmb_res_i)
+			tmb_flg_r  <= 1'b0;
+		else
+			if(new_tora_r & noend_error_i & data_ce_i & prio_act_i[6])
+				tmb_flg_r  <= |(7'b0100000 & prio_act_i);
+	end
 
 	always @*
 	begin
-		if(dodat_i || dochk_i || act_chk_i)
+		if(dodat_i || dochk_i || act_chk_i || do_err_i)
 			casex(r_act_r)
 				7'b1xxxxxx : prio_act_i = 7'b1000000; // ALCT
 				7'b01xxxxx : prio_act_i = 7'b0100000; // TMB
@@ -2579,9 +2724,9 @@ begin : control_logic_no_TMR
 			17'b00000000010000000 : d_htov_i = {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
 			17'b00000000100000000 : d_htov_i = {4'hF,           datanoend_r[7],BXN[4:0],l1cnt[5:0]};                              // Tail 1 code F
 			17'b00000001000000000 : d_htov_i = {4'hF,           DAVACT[10:6],2'b00,datanoend_r[5:1]};                             // Tail 2 code F
-			17'b00000010000000000 : d_htov_i = {4'hF,           fffl_i[3:1],davnodata_r[6],STATUS[14:7]};                         // Tail 3 code F
-			17'b00000100000000000 : d_htov_i = {4'hF,           davnodata_r[7],2'b00,davnodata_r[5:1],2'b00,fffl_i[5:4]};         // Tail 4 code F
-			17'b00001000000000000 : d_htov_i = {4'hE,           fffl_i[7:6],ffhf[7:6],datanoend_r[6],2'b11,ffhf[5:1]};            // Tail 5 code E
+			17'b00000010000000000 : d_htov_i = {4'hF,           fffl_i[3:1],davnodata_r[6],STATUS[14:7]};                           // Tail 3 code F
+			17'b00000100000000000 : d_htov_i = {4'hF,           davnodata_r[7],2'b00,davnodata_r[5:1],2'b00,fffl_i[5:4]};           // Tail 4 code F
+			17'b00001000000000000 : d_htov_i = {4'hE,           fffl_i[7:6],ffhf[7:6],datanoend_r[6],2'b11,ffhf[5:1]};                // Tail 5 code E
 			17'b00010000000000000 : d_htov_i = {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
 			17'b00100000000000000 : d_htov_i = {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
 			17'b01000000000000000 : d_htov_i = {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
@@ -2608,15 +2753,9 @@ begin : control_logic_no_TMR
 	always @(posedge CLKCMS or posedge pop_rst_i)
 	begin
 		if(pop_rst_i)
-			begin
-				gdav_1_r     <= 1'b0;
-				datanoend_r  <= 7'h00;
-			end
+			gdav_1_r     <= 1'b0;
 		else
-			begin
-				gdav_1_r <= GEMPTY_B;
-				if(rstcnt_r) datanoend_r  <= oe_i;
-			end
+			gdav_1_r <= GEMPTY_B;
 	end
 
 	always @(posedge CLKCMS or posedge RST)
@@ -2627,9 +2766,11 @@ begin : control_logic_no_TMR
 			popbram_r <= pbram_r;
 	end
 
-	always @(posedge CLKCMS)
+	always @(posedge CLKDDU)
 	begin
-		rstcnt_r <= qnoend[11];
+		//rstcnt_r <= qnoend[12] | noend_error_i;
+				//rstcnt_r <= (qnoend[8] | noend_error_i | (|(prio_act_i & fifordy_b))) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
+				rstcnt_r <= (qnoend[8] | noend_error_i) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
 	end
 
 
@@ -2653,9 +2794,13 @@ begin : control_logic_no_TMR
 				dav_r     <= 1'b0;
 				rdyovlp_r <= 1'b0;
 				oeall_1_r <= 1'b0;
+				oeall_2_r <= 1'b0;
+				oeall_3_r <= 1'b0;
 				oedata_r  <= 1'b0;
 				dn_oe_r   <= 7'h00;
 				davnodata_r <= 7'h00;
+				prio_act_1_r <= 7'h00;
+				datanoend_r  <= 7'h00;
 			end
 		else
 			begin
@@ -2670,9 +2815,17 @@ begin : control_logic_no_TMR
 				dav_r     <= ~disdav_r & (oehdtl_r | oedata_r);
 				rdyovlp_r <= dodat_i;
 				oeall_1_r <= oeall_r;
-				oedata_r  <= oeall_1_r;
+				oeall_2_r <= oeall_1_r;
+				oeall_3_r <= (trans_tora_1_r || trans_tora_2_r) ? oeall_r : oeall_2_r;
+				oedata_r  <= oeall_3_r;
 				if(done_ce_i || clr_done_i) dn_oe_r   <= oe_i;
-				if(stmo_ce_i) davnodata_r <= r_act_r & fifordy_b;
+				if(rstcnt_r && dodat_i) datanoend_r  <= datanoend_r | oe_i;
+				if(missing_dat_i)
+					davnodata_r <= (r_act_r & prio_act_i) | davnodata_r;
+				else
+					if(stmo_ce_i)
+						davnodata_r <= (r_act_r & fifordy_b) | davnodata_r;
+				prio_act_1_r <= prio_act_i;
 			end
 	end
 
@@ -2766,7 +2919,7 @@ begin : control_logic_no_TMR
 				rdy_r[i] <= 1'b0;
 			else
 				if(!fifordy_b[i])
-					rdy_r[i] <= dodat_i || dochk_i;
+					rdy_r[i] <= dodat_i || dochk_i || act_chk_i || do_err_i;
 		end
 		
 		always @(posedge CLKDDU or posedge done_i[i])
@@ -2835,11 +2988,11 @@ begin : control_logic_no_TMR
 				if(cap_l1a_i && prio_act_i[i]) begin
 					l1a_savd_r[i] <= l1a_r;
 				end
-				if(ce_l1l_1_r) begin 
-					l1a_r[11:0] <= da_in;
+				if(ce_l1l_i) begin 
+					l1a_r[11:0] <= da_in[11:0];
 				end
-				else if(ce_l1h_1_r) begin
-					l1a_r[23:12] <= da_in;
+				else if(ce_l1h_i) begin
+					l1a_r[23:12] <= da_in[11:0];
 				end
 				else if(trans_l1a_i && prio_act_i[i]) begin
 					l1a_r <= l1a_savd_r[i];
@@ -2878,7 +3031,8 @@ begin : control_logic_no_TMR
 		rdffnxt_2_r   <= rdffnxt_1_r;
 		rdffnxt_3_r   <= rdffnxt_2_r;
 		rdoneovlp_r   <= doneovlp_i;
-		dint_r        <= dodatx_i  ? da_in : d_htov_i;
+		//dint_r        <= dodatx_i  ? da_in : d_htov_i;
+		dint_r        <= dodatx_i  ? da_pipe2_r : d_htov_i;
 		dout_r        <= dtail78_r ? {dint_r[15:12],cdcd_i}  : dint_r;
 		dint_ovlp_b_r <= ovlpin_b;
 		dtail7_r      <= tail_r[7];
@@ -2892,8 +3046,8 @@ begin : control_logic_no_TMR
 	   ce_l1l_1_r <= ce_l1l_i;
 	   ce_l1h_1_r <= ce_l1h_i;
 	   ce_b5_1_r  <= ce_b5_i;
-		if(ce_b4_1_r)   b4_hdr_r  <= da_in;
-		if(ce_b5_1_r)   b5_hdr_r  <= da_in;
+		if(ce_b4_i)   b4_hdr_r  <= da_in;
+		if(ce_b5_i)   b5_hdr_r  <= da_in;
 	end
 
 	always @(posedge CLKDDU or posedge poplast_i)
@@ -2940,19 +3094,28 @@ L1A_Checker_FSM L1A_Checker_FSM_i (
 	.CE_L1L(ce_l1l_i),
 	.CE_L1H(ce_l1h_i),
 	.CLR_DONE(clr_done_i),
+	.DATA_CE(data_ce_i),
 	.DATA_HLDOFF(data_hldoff_i),
 	.DOCHK(dochk_i),
 	.DODAT(dodat_i),
+	.DO_ERR(do_err_i),
+	.FLUSHING(flushing_i),
 	.INPROG(inprog_i),
+	.MISSING_DAT(missing_dat_i),
+	.NOEND_ERROR(noend_error_i),
 	.READ_ENA(ff_re_i),
 	.STRT_TAIL(st_tail_i),
 	.TRANS_L1A(trans_l1a_i),
+	.TRANS_TORA(trans_tora_i),
 	//inputs
+	//.ALCT_FLG(alct_flg_r),
 	.ALCT_TMB_ACT(alct_tmb_act_i),
+	.B4_PRESENT(b4_present_i),
 	.CFEB_ACT(cfeb_act_i),
 	.CLK(CLKDDU),
 	.DONE_CE(done_ce_i),
 	.EOE(eoe_i),
+	.ERR_AKN(err_akn_i),
 	.GO(go_i),
 	.GOB5(gob5_i),
 	.HEADER_END(header_end_i),
@@ -2960,7 +3123,13 @@ L1A_Checker_FSM L1A_Checker_FSM_i (
 	.L1A_LT(l1a_lt_i),
 	.LAST(last_i),
 	.MT(mt_i),
-	.RST(RST)
+	.NEW_CFEB(new_cfeb_r),
+	.NEW_EVENT(new_event_r),
+	.NEW_TORA(new_tora_r),
+	.PROC_TMO(rstcnt_r),
+	.RST(RST),
+	//.TMB_FLG(tmb_flg_r),
+	.TRANS_FLG(trans_flg_i)
 );
 
 end
