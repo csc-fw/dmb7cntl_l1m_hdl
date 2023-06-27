@@ -1,5 +1,5 @@
 
-// Created by fizzim_tmr.pl version $Revision: 4.44 on 2023:06:16 at 17:32:28 (www.fizzim.com)
+// Created by fizzim_tmr.pl version $Revision: 4.44 on 2023:06:27 at 16:16:14 (www.fizzim.com)
 
 module L1A_Checker_FSM (
   output reg ACT_CHK,
@@ -30,6 +30,7 @@ module L1A_Checker_FSM (
   input DONE_CE,
   input EOE,
   input ERR_AKN,
+  input EXTND_MT,
   input GO,
   input GOB5,
   input HEADER_END,
@@ -42,6 +43,7 @@ module L1A_Checker_FSM (
   input NEW_TORA,
   input PROC_TMO,
   input RST,
+  input STRT_TMO,
   input TMB_FLG,
   input TRANS_FLG 
 );
@@ -67,14 +69,15 @@ module L1A_Checker_FSM (
   Save_L1A        = 5'b10000, 
   Start_Chk       = 5'b10001, 
   Start_Data      = 5'b10010, 
-  Start_Tail      = 5'b10011, 
-  Strt_Proc_Data1 = 5'b10100, 
-  Strt_Proc_Data2 = 5'b10101, 
-  Strt_Proc_Data3 = 5'b10110, 
-  Trans_L1A       = 5'b10111, 
-  Trans_Tora1     = 5'b11000, 
-  Trans_Tora2     = 5'b11001, 
-  Trans_Tora3     = 5'b11010; 
+  Start_Hold      = 5'b10011, 
+  Start_Tail      = 5'b10100, 
+  Strt_Proc_Data1 = 5'b10101, 
+  Strt_Proc_Data2 = 5'b10110, 
+  Strt_Proc_Data3 = 5'b10111, 
+  Trans_L1A       = 5'b11000, 
+  Trans_Tora1     = 5'b11001, 
+  Trans_Tora2     = 5'b11010, 
+  Trans_Tora3     = 5'b11011; 
 
   reg [4:0] state;
 
@@ -87,7 +90,7 @@ module L1A_Checker_FSM (
   always @* begin
     nextstate = 5'bxxxxx; // default to x because default_state_is_x is set
     case (state)
-      Idle           : if      (HEADER_END)                           nextstate = Act_Chk;
+      Idle           : if      (HEADER_END)                           nextstate = Start_Hold;
                        else                                           nextstate = Idle;
       Act_Chk        : if      (ALCT_TMB_ACT)                         nextstate = Start_Data;
                        else if (CFEB_ACT)                             nextstate = Start_Chk;
@@ -126,6 +129,8 @@ module L1A_Checker_FSM (
       Start_Data     : if      (GO && TRANS_FLG)                      nextstate = Trans_Tora1;
                        else if (GO)                                   nextstate = Strt_Proc_Data1;
                        else                                           nextstate = Start_Data;
+      Start_Hold     : if      (STRT_TMO)                             nextstate = Act_Chk;
+                       else                                           nextstate = Start_Hold;
       Start_Tail     :                                                nextstate = Idle;
       Strt_Proc_Data1:                                                nextstate = Strt_Proc_Data2;
       Strt_Proc_Data2:                                                nextstate = Strt_Proc_Data3;
@@ -277,6 +282,10 @@ module L1A_Checker_FSM (
                                 DATA_HLDOFF <= 1;
                                 DOCHK <= 1;
         end
+        Start_Hold     : begin
+                                ACT_CHK <= 1;
+                                DATA_HLDOFF <= 1;
+        end
         Start_Tail     : begin
                                 INPROG <= 0;
                                 STRT_TAIL <= 1;
@@ -340,6 +349,7 @@ module L1A_Checker_FSM (
       Save_L1A       : statename = "Save_L1A";
       Start_Chk      : statename = "Start_Chk";
       Start_Data     : statename = "Start_Data";
+      Start_Hold     : statename = "Start_Hold";
       Start_Tail     : statename = "Start_Tail";
       Strt_Proc_Data1: statename = "Strt_Proc_Data1";
       Strt_Proc_Data2: statename = "Strt_Proc_Data2";

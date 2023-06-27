@@ -251,6 +251,10 @@
          <obj_property name="ElementShortName">\control_logic_no_TMR.dodat_i </obj_property>
          <obj_property name="ObjectShortName">\control_logic_no_TMR.dodat_i </obj_property>
       </wvobject>
+      <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.extnd_mt_r " type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">\control_logic_no_TMR.extnd_mt_r [4:0]</obj_property>
+         <obj_property name="ObjectShortName">\control_logic_no_TMR.extnd_mt_r [4:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/control_tf/uut/ddcnt" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">ddcnt[8:0]</obj_property>
          <obj_property name="ObjectShortName">ddcnt[8:0]</obj_property>
@@ -374,8 +378,8 @@
          <obj_property name="ObjectShortName">\control_logic_no_TMR.ce_b4_i </obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/qnoend" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">qnoend[11:0]</obj_property>
-         <obj_property name="ObjectShortName">qnoend[11:0]</obj_property>
+         <obj_property name="ElementShortName">qnoend[12:0]</obj_property>
+         <obj_property name="ObjectShortName">qnoend[12:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/\control_logic_no_TMR.prio_act_i " type="array" db_ref_id="1">
@@ -972,8 +976,8 @@
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/qnoend" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">qnoend[11:0]</obj_property>
-         <obj_property name="ObjectShortName">qnoend[11:0]</obj_property>
+         <obj_property name="ElementShortName">qnoend[12:0]</obj_property>
+         <obj_property name="ObjectShortName">qnoend[12:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/control_tf/uut/doutx" type="array" db_ref_id="1">

@@ -153,6 +153,7 @@ module control_tf;
 		gadd = 4'hf;
 		en_fifo = 1'b0;
 		start = 1'b0;
+		//FFOR_B = 7'b0000101;
 
 		// Wait 100 ns for global reset to finish
 		#100;
@@ -172,6 +173,26 @@ module control_tf;
 		start = 1'b1;
 		#(1*PERIOD);
 		start = 1'b0;
+		/*
+		#(60*PERIOD);
+		FFOR_B = 7'b0000111;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000101;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000111;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000101;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000111;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000101;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000111;
+		#(1*PERIOD/2);
+		FFOR_B = 7'b0000101;
+		#(1*PERIOD/2);
+		*/
+			
 
 	end
 
@@ -264,7 +285,7 @@ begin
 end
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),~(|(dmbf3data[t3add])),~(|(dmbf2data[t2add])),~(|(dmbf1data[t1add]))};
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),3'b111};
-assign FFOR_B = {(t7add >= 9'd48),(t6add >= 9'd48),(t5add >= 9'd348),(t4add >= 9'd348),1'b1,(t2add >= 9'd220),1'b1};
+assign FFOR_B = {(t7add >= 9'd48),(t6add >= 9'd48),(t5add >= 9'd348),(t4add >= 9'd348),1'b1,(t2add >= 9'd200),1'b1};
 //assign FFOR_B = {2'b11,~(|(~dmbf5data[t5add])),~(|(~dmbf4data[t4add])),3'b111};
 
 endmodule

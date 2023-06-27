@@ -2379,6 +2379,7 @@ begin : control_logic_no_TMR
 	reg  new_tora_r;
 	reg  new_cfeb_r;
 	reg  new_event_r;
+	reg [4:0] extnd_mt_r;
 	//
 	//Data pipeline registers from the fifo
 	//
@@ -2766,13 +2767,6 @@ begin : control_logic_no_TMR
 			popbram_r <= pbram_r;
 	end
 
-	always @(posedge CLKDDU)
-	begin
-		//rstcnt_r <= qnoend[12] | noend_error_i;
-				//rstcnt_r <= (qnoend[8] | noend_error_i | (|(prio_act_i & fifordy_b))) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
-				rstcnt_r <= (qnoend[8] | noend_error_i) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
-	end
-
 
 ////////////////////////////////////////////////////////////////////////////
 //
@@ -2848,6 +2842,14 @@ begin : control_logic_no_TMR
 				if((ddcnt == STMO))	strt_tmo_r <= 1'b1;
 				strt_tmo_1_r  <= strt_tmo_r;
 			end
+	end
+
+	always @(posedge CLKDDU)
+	begin
+		//rstcnt_r <= qnoend[12] | noend_error_i;
+		//rstcnt_r <= (qnoend[8] | noend_error_i | (|(prio_act_i & fifordy_b))) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
+		extnd_mt_r <= {extnd_mt_r[3:0], |(prio_act_i & fifordy_b)};
+		rstcnt_r <= (qnoend[8] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r; //(timeout | saw new event | fifo empty after 5 clocks)
 	end
 
 	always @(posedge CLKDDU)
@@ -3116,6 +3118,7 @@ L1A_Checker_FSM L1A_Checker_FSM_i (
 	.DONE_CE(done_ce_i),
 	.EOE(eoe_i),
 	.ERR_AKN(err_akn_i),
+	//.EXTND_MT(extnd_mt_r),
 	.GO(go_i),
 	.GOB5(gob5_i),
 	.HEADER_END(header_end_i),
@@ -3128,6 +3131,7 @@ L1A_Checker_FSM L1A_Checker_FSM_i (
 	.NEW_TORA(new_tora_r),
 	.PROC_TMO(rstcnt_r),
 	.RST(RST),
+	.STRT_TMO(strt_tmo_r),
 	//.TMB_FLG(tmb_flg_r),
 	.TRANS_FLG(trans_flg_i)
 );
