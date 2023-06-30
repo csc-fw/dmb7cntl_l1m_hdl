@@ -155,8 +155,8 @@ module control_tf;
 		start = 1'b0;
 		//FFOR_B = 7'b0000101;
 
-		// Wait 100 ns for global reset to finish
-		#100;
+		// Wait 96 ns for global reset to finish
+		#96;
         
 		// Add stimulus here
 		#(25*PERIOD);
@@ -174,7 +174,9 @@ module control_tf;
 		#(1*PERIOD);
 		start = 1'b0;
 		/*
+		#7;
 		#(60*PERIOD);
+		#(43*PERIOD);
 		FFOR_B = 7'b0000111;
 		#(1*PERIOD/2);
 		FFOR_B = 7'b0000101;
@@ -229,9 +231,9 @@ begin
 	case (gadd)
 		4'h0: DAVACT = 17'h15015; //17'b1_0101_0000_0001_0101
 		4'h1: DAVACT = 17'h15015; //17'b1_0101_0000_0001_0101
-		4'h2: DAVACT = 17'h18021; //17'b1_1000_0000_0010_0001
+		4'h2: DAVACT = 17'h18020; //17'b1_1000_0000_0010_0000
 		4'h3: DAVACT = 17'h00000;
-		4'h4: DAVACT = 17'h18021; //17'b1_1000_0000_0010_0001
+		4'h4: DAVACT = 17'h08021; //17'b0_1000_0000_0010_0001
 		4'h5: DAVACT = 17'h00000;
 		4'h6: DAVACT = 17'h04010; //17'b0_0100_0000_0001_0000 
 		4'h7: DAVACT = 17'h00000; 
@@ -259,7 +261,7 @@ always @(negedge CLKDDU or posedge RST) begin
 	end
 	else begin
 		if(RENFIFO_B[1] == 1'b0) t1add <= t1add + 1;
-		if(RENFIFO_B[2] == 1'b0) t2add <= t2add + 1;
+		if(RENFIFO_B[2] == 1'b0 && !FFOR_B[2]) t2add <= t2add + 1;
 //		if(RENFIFO_B[3] == 1'b0) t3add <= t3add + 1;
 		if(RENFIFO_B[4] == 1'b0) t4add <= t4add + 1;
 		if(RENFIFO_B[5] == 1'b0) t5add <= t5add + 1;
@@ -273,7 +275,7 @@ always @*
 begin
 	casex(OEFIFO_B)
 //      7'b1111110: DATAIN = dmbf1data[t1add];
-      7'b1111101: DATAIN = dmbf2data[t2add];
+      7'b1111101: DATAIN = FFOR_B[2] ? 18'hxxxxx : dmbf2data[t2add];
 //      7'b1111011: DATAIN = dmbf3data[t3add];
       7'b1110111: DATAIN = dmbf4data[t4add];
       7'b1101111: DATAIN = dmbf5data[t5add];
@@ -285,7 +287,7 @@ begin
 end
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),~(|(dmbf3data[t3add])),~(|(dmbf2data[t2add])),~(|(dmbf1data[t1add]))};
 //assign FFOR_B = {2'b11,~(|(dmbf5data[t5add])),~(|(dmbf4data[t4add])),3'b111};
-assign FFOR_B = {(t7add >= 9'd48),(t6add >= 9'd48),(t5add >= 9'd348),(t4add >= 9'd348),1'b1,(t2add >= 9'd200),1'b1};
+assign FFOR_B = {(t7add >= 9'd48),(t6add >= 9'd48),(t5add >= 9'd348),(t4add >= 9'd348),1'b1,(t2add >= 9'd232),1'b1};
 //assign FFOR_B = {2'b11,~(|(~dmbf5data[t5add])),~(|(~dmbf4data[t4add])),3'b111};
 
 endmodule

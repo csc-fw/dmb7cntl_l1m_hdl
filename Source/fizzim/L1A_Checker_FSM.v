@@ -1,5 +1,5 @@
 
-// Created by fizzim_tmr.pl version $Revision: 4.44 on 2023:06:27 at 16:16:14 (www.fizzim.com)
+// Created by fizzim_tmr.pl version $Revision: 4.44 on 2023:06:30 at 17:00:04 (www.fizzim.com)
 
 module L1A_Checker_FSM (
   output reg ACT_CHK,
@@ -18,6 +18,7 @@ module L1A_Checker_FSM (
   output reg INPROG,
   output reg MISSING_DAT,
   output reg NOEND_ERROR,
+  output reg PROC_DATA,
   output reg READ_ENA,
   output reg STRT_TAIL,
   output reg TRANS_L1A,
@@ -171,6 +172,7 @@ module L1A_Checker_FSM (
       INPROG <= 0;
       MISSING_DAT <= 0;
       NOEND_ERROR <= 0;
+      PROC_DATA <= 0;
       READ_ENA <= 0;
       STRT_TAIL <= 0;
       TRANS_L1A <= 0;
@@ -193,6 +195,7 @@ module L1A_Checker_FSM (
       INPROG <= 1; // default
       MISSING_DAT <= 0; // default
       NOEND_ERROR <= 0; // default
+      PROC_DATA <= 0; // default
       READ_ENA <= 0; // default
       STRT_TAIL <= 0; // default
       TRANS_L1A <= 0; // default
@@ -207,6 +210,7 @@ module L1A_Checker_FSM (
                                 CLR_DONE <= 1;
                                 DATA_HLDOFF <= 1;
                                 DOCHK <= 1;
+                                MISSING_DAT <= 1;
         end
         END_PROC1      :        DODAT <= 1;
         END_PROC2      :        DODAT <= 1;
@@ -266,6 +270,7 @@ module L1A_Checker_FSM (
         Proc_Data      : begin
                                 DATA_CE <= 1;
                                 DODAT <= 1;
+                                PROC_DATA <= 1;
         end
         Save_L1A       : begin
                                 CAP_L1A <= 1;

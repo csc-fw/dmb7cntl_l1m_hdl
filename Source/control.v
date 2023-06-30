@@ -192,7 +192,7 @@ begin
 			ovlpin_b  <= 1'b1;
 		end
 	else
-		if(doeall)
+		if(doeall && |(prio_act & ~FFOR_B & ~RENFIFO_B))
 			begin
 				prefflast <= DATAIN[16];
 				ovlpin_b  <= DATAIN[17];
@@ -2379,7 +2379,9 @@ begin : control_logic_no_TMR
 	reg  new_tora_r;
 	reg  new_cfeb_r;
 	reg  new_event_r;
-	reg [4:0] extnd_mt_r;
+	reg [7:0] extnd_mt_r;
+	reg inv_data_1_r;
+	reg inv_data_2_r;
 	//
 	//Data pipeline registers from the fifo
 	//
@@ -2487,6 +2489,7 @@ begin : control_logic_no_TMR
 	wire tmb_res_i;
 	wire trans_tora_i;
 	wire trans_flg_i;
+	wire proc_data_i;
 
 	//
 	// module and local scope nets
@@ -2813,7 +2816,7 @@ begin : control_logic_no_TMR
 				oeall_3_r <= (trans_tora_1_r || trans_tora_2_r) ? oeall_r : oeall_2_r;
 				oedata_r  <= oeall_3_r;
 				if(done_ce_i || clr_done_i) dn_oe_r   <= oe_i;
-				if(rstcnt_r && dodat_i) datanoend_r  <= datanoend_r | oe_i;
+				if((rstcnt_r && dodat_i) || (rstcnt_r && do_err_i)) datanoend_r  <= datanoend_r | oe_i;
 				if(missing_dat_i)
 					davnodata_r <= (r_act_r & prio_act_i) | davnodata_r;
 				else
@@ -2848,8 +2851,8 @@ begin : control_logic_no_TMR
 	begin
 		//rstcnt_r <= qnoend[12] | noend_error_i;
 		//rstcnt_r <= (qnoend[8] | noend_error_i | (|(prio_act_i & fifordy_b))) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
-		extnd_mt_r <= {extnd_mt_r[3:0], |(prio_act_i & fifordy_b)};
-		rstcnt_r <= (qnoend[8] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r; //(timeout | saw new event | fifo empty after 5 clocks)
+		extnd_mt_r <= {extnd_mt_r[6:0], |(prio_act_i & fifordy_b)};
+		rstcnt_r <= (qnoend[8] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r & ~err_akn_i; //(timeout | saw new event | fifo empty after 8 clocks)
 	end
 
 	always @(posedge CLKDDU)
@@ -3028,10 +3031,12 @@ begin : control_logic_no_TMR
 	always @(posedge CLKDDU)
 	begin
 		rovr_1_r      <= rovr_i;
-		disdav_r      <= |(prio_act_i & fifordy_b) || dochk_i || data_hldoff_i;
-		rdffnxt_1_r   <= RDFFNXT;
-		rdffnxt_2_r   <= rdffnxt_1_r;
-		rdffnxt_3_r   <= rdffnxt_2_r;
+		inv_data_1_r  <= |(prio_act_i & fifordy_b) & proc_data_i;
+		inv_data_2_r  <= inv_data_1_r;
+		disdav_r      <= inv_data_2_r || data_hldoff_i;
+		rdffnxt_1_r    <= RDFFNXT;
+		rdffnxt_2_r    <= rdffnxt_1_r;
+		rdffnxt_3_r    <= rdffnxt_2_r;
 		rdoneovlp_r   <= doneovlp_i;
 		//dint_r        <= dodatx_i  ? da_in : d_htov_i;
 		dint_r        <= dodatx_i  ? da_pipe2_r : d_htov_i;
@@ -3088,7 +3093,7 @@ begin : control_logic_no_TMR
 // State machine for checking L1A before processing data
 //
 L1A_Checker_FSM L1A_Checker_FSM_i (
-//outputs
+//outputs from state machine
 	.ACT_CHK(act_chk_i),
 	.CAP_L1A(cap_l1a_i),
 	.CE_B4(ce_b4_i),
@@ -3105,6 +3110,7 @@ L1A_Checker_FSM L1A_Checker_FSM_i (
 	.INPROG(inprog_i),
 	.MISSING_DAT(missing_dat_i),
 	.NOEND_ERROR(noend_error_i),
+	.PROC_DATA(proc_data_i),
 	.READ_ENA(ff_re_i),
 	.STRT_TAIL(st_tail_i),
 	.TRANS_L1A(trans_l1a_i),
