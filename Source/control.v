@@ -2790,10 +2790,6 @@ begin : control_logic_no_TMR
 				tail8_1_r <= 1'b0;
 				dav_r     <= 1'b0;
 				rdyovlp_r <= 1'b0;
-				oeall_1_r <= 1'b0;
-				oeall_2_r <= 1'b0;
-				oeall_3_r <= 1'b0;
-				oedata_r  <= 1'b0;
 				dn_oe_r   <= 7'h00;
 				davnodata_r <= 7'h00;
 				prio_act_1_r <= 7'h00;
@@ -2811,10 +2807,6 @@ begin : control_logic_no_TMR
 				tail8_1_r <= tail_r[8];
 				dav_r     <= ~disdav_r & (oehdtl_r | oedata_r);
 				rdyovlp_r <= dodat_i;
-				oeall_1_r <= oeall_r;
-				oeall_2_r <= oeall_1_r;
-				oeall_3_r <= (trans_tora_1_r || trans_tora_2_r) ? oeall_r : oeall_2_r;
-				oedata_r  <= oeall_3_r;
 				if(done_ce_i || clr_done_i) dn_oe_r   <= oe_i;
 				if((rstcnt_r && dodat_i) || (rstcnt_r && do_err_i)) datanoend_r  <= datanoend_r | oe_i;
 				if(missing_dat_i)
@@ -2823,6 +2815,24 @@ begin : control_logic_no_TMR
 					if(stmo_ce_i)
 						davnodata_r <= (r_act_r & fifordy_b) | davnodata_r;
 				prio_act_1_r <= prio_act_i;
+			end
+	end
+	
+	always @(posedge CLKDDU or posedge pop_rst_i or posedge st_tail_i)
+	begin
+		if(pop_rst_i || st_tail_i)
+			begin
+				oeall_1_r <= 1'b0;
+				oeall_2_r <= 1'b0;
+				oeall_3_r <= 1'b0;
+				oedata_r  <= 1'b0;
+			end
+		else
+			begin
+				oeall_1_r <= oeall_r;
+				oeall_2_r <= oeall_1_r;
+				oeall_3_r <= (trans_tora_1_r || trans_tora_2_r) ? oeall_r : oeall_2_r;
+				oedata_r  <= oeall_3_r;
 			end
 	end
 
@@ -2851,8 +2861,8 @@ begin : control_logic_no_TMR
 	begin
 		//rstcnt_r <= qnoend[12] | noend_error_i;
 		//rstcnt_r <= (qnoend[8] | noend_error_i | (|(prio_act_i & fifordy_b))) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
-		extnd_mt_r <= {extnd_mt_r[6:0], |(prio_act_i & fifordy_b)};
-		rstcnt_r <= (qnoend[8] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r & ~err_akn_i; //(timeout | saw new event | fifo empty after 8 clocks)
+		extnd_mt_r  <= {extnd_mt_r[6:0], |(prio_act_i & fifordy_b)};
+		rstcnt_r    <= (qnoend[8] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r & ~err_akn_i; //(timeout | saw new event | fifo empty after 8 clocks)
 	end
 
 	always @(posedge CLKDDU)
@@ -3057,9 +3067,9 @@ begin : control_logic_no_TMR
 		if(ce_b5_i)   b5_hdr_r  <= da_in;
 	end
 
-	always @(posedge CLKDDU or posedge poplast_i)
+	always @(posedge CLKDDU or posedge poplast_i or posedge st_tail_i)
 	begin
-		if(poplast_i)
+		if(poplast_i || st_tail_i)
 			begin
 				oeall_r  <= 1'b0;
 				doeall_r <= 1'b0;
