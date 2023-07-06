@@ -2994,24 +2994,11 @@ begin : control_logic_no_TMR
 
 		always @(posedge CLKDDU or posedge RST)
 		begin
-			if(RST) begin
+			if(RST)
 				l1a_savd_r[i] <= 24'h000000;
-				l1a_r       <= 24'h000000;
-			end
-			else begin
-				if(cap_l1a_i && prio_act_i[i]) begin
+			else 
+				if(cap_l1a_i && prio_act_i[i])
 					l1a_savd_r[i] <= l1a_r;
-				end
-				if(ce_l1l_i) begin 
-					l1a_r[11:0] <= da_in[11:0];
-				end
-				else if(ce_l1h_i) begin
-					l1a_r[23:12] <= da_in[11:0];
-				end
-				else if(trans_l1a_i && prio_act_i[i]) begin
-					l1a_r <= l1a_savd_r[i];
-				end
-			end
 		end
 	end
 
@@ -3030,6 +3017,28 @@ begin : control_logic_no_TMR
 		else
 			if(busy_ce_i)
 				r_act_r[7] <= DAVACT[16];
+	end
+	
+	always @(posedge CLKDDU or posedge RST)
+	begin
+		if(RST) begin
+			l1a_r       <= 24'h000000;
+		end
+		else begin
+			if(ce_l1l_i) 
+				l1a_r[11:0] <= da_in[11:0];
+			else if(ce_l1h_i)
+				l1a_r[23:12] <= da_in[11:0];
+			else if(trans_l1a_i)
+				case (prio_act_i[i]) 
+					5'b00001		: l1a_r <= l1a_savd_r[1];
+					5'b00010		: l1a_r <= l1a_savd_r[2];
+					5'b00100		: l1a_r <= l1a_savd_r[3];
+					5'b01000		: l1a_r <= l1a_savd_r[4];
+					5'b10000		: l1a_r <= l1a_savd_r[5];
+					default		: l1a_r <= 24'h000000;
+				endcase
+		end
 	end
 
 	always @(negedge CLKDDU) // Negative edge
