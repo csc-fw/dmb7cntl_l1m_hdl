@@ -2859,10 +2859,9 @@ begin : control_logic_no_TMR
 
 	always @(posedge CLKDDU)
 	begin
-		//rstcnt_r <= qnoend[12] | noend_error_i;
-		//rstcnt_r <= (qnoend[8] | noend_error_i | (|(prio_act_i & fifordy_b))) & ~rstcnt_r; //(timeout | saw new event | fifo goes empty while reading data)
+		//use qnoend[8] for simulatiion
 		extnd_mt_r  <= {extnd_mt_r[6:0], |(prio_act_i & fifordy_b)};
-		rstcnt_r    <= (qnoend[8] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r & ~err_akn_i; //(timeout | saw new event | fifo empty after 8 clocks)
+		rstcnt_r    <= (qnoend[12] | noend_error_i | (&extnd_mt_r & dodat_i)) & ~rstcnt_r & ~err_akn_i; //(timeout | saw new event | fifo empty after 8 clocks)
 	end
 
 	always @(posedge CLKDDU)
