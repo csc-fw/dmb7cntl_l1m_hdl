@@ -3551,16 +3551,6 @@ begin : control_logic_no_TMR
 	reg  [15:0] tmb_in_2_r;
 	reg  [15:0] alct_in_1_r;
 	reg  [15:0] alct_in_2_r;
-	reg  [15:0] cfeb1_in_1_r;
-	reg  [15:0] cfeb1_in_2_r;
-	reg  [15:0] cfeb2_in_1_r;
-	reg  [15:0] cfeb2_in_2_r;
-	reg  [15:0] cfeb3_in_1_r;
-	reg  [15:0] cfeb3_in_2_r;
-	reg  [15:0] cfeb4_in_1_r;
-	reg  [15:0] cfeb4_in_2_r;
-	reg  [15:0] cfeb5_in_1_r;
-	reg  [15:0] cfeb5_in_2_r;
 	
 	//
 	// module scope and local scope registers
@@ -3878,19 +3868,9 @@ begin : control_logic_no_TMR
 			da_pipe2_r <= da_pipe1_r;
 		end
 	
-		cfeb1_in_1_r <= (prio_act_i[1] && data_ce) ? da_in : cfeb1_in_1_r;
-		cfeb2_in_1_r <= (prio_act_i[2] && data_ce) ? da_in : cfeb2_in_1_r;
-		cfeb3_in_1_r <= (prio_act_i[3] && data_ce) ? da_in : cfeb3_in_1_r;
-		cfeb4_in_1_r <= (prio_act_i[4] && data_ce) ? da_in : cfeb4_in_1_r;
-		cfeb5_in_1_r <= (prio_act_i[5] && data_ce) ? da_in : cfeb5_in_1_r;
 		tmb_in_1_r   <= (prio_act_i[6] && data_ce) ? da_in : tmb_in_1_r;
 		alct_in_1_r  <= (prio_act_i[7] && data_ce) ? da_in : alct_in_1_r;
 		
-		cfeb1_in_2_r <= (prio_act_i[1] && data_ce) ? cfeb1_in_1_r : cfeb1_in_2_r;
-		cfeb2_in_2_r <= (prio_act_i[2] && data_ce) ? cfeb2_in_1_r : cfeb2_in_2_r;
-		cfeb3_in_2_r <= (prio_act_i[3] && data_ce) ? cfeb3_in_1_r : cfeb3_in_2_r;
-		cfeb4_in_2_r <= (prio_act_i[4] && data_ce) ? cfeb4_in_1_r : cfeb4_in_2_r;
-		cfeb5_in_2_r <= (prio_act_i[5] && data_ce) ? cfeb5_in_1_r : cfeb5_in_2_r;
 		tmb_in_2_r   <= (prio_act_i[6] && data_ce) ? tmb_in_1_r : tmb_in_2_r;
 		alct_in_2_r  <= (prio_act_i[7] && data_ce) ? alct_in_1_r : alct_in_2_r;
 	end
