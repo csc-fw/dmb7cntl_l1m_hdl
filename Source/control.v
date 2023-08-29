@@ -3858,7 +3858,7 @@ begin : control_logic_no_TMR
 	always @ (posedge CLKDDU)	
 	begin
 		//done_ce_1_r <= done_ce_i;
-/*		//done_ce_2_r <= done_ce_1_r;
+		//done_ce_2_r <= done_ce_1_r;
 		if(prio_act_i[7] && trans_tora)begin
 			da_pipe1_r <= alct_in_1_r;
 			da_pipe2_r <= alct_in_2_r;
@@ -3870,7 +3870,6 @@ begin : control_logic_no_TMR
 			da_pipe3_r <= 16'hxxxx;
 		end
 		else
-*/
 		begin
 			da_pipe1_r <= da_in;
 			da_pipe2_r <= da_pipe1_r;
