@@ -3484,6 +3484,7 @@ begin : control_logic_no_TMR
 	reg  [8:1] tail_r;
 	reg  tail8_1_r;
 	reg  dav_r;
+	reg  dav_1_r;
 	reg  rdyovlp_r;
 	reg  oeall_1_r;
 	reg  oeall_2_r;
@@ -3515,8 +3516,13 @@ begin : control_logic_no_TMR
 	reg  dtail7_r;
 	reg  dtail8_r;
 	reg  dtail78_r;
+	reg  dtail78_1_r;
 	reg  dn_ovlp_r;
 	reg  ooeovlp_r;
+	reg  dodatx_r;
+	reg  [11:0] cdcd_r;
+
+
 	
 	//Added after L1a Checking
 	reg  strt_tmo_r;
@@ -3547,6 +3553,7 @@ begin : control_logic_no_TMR
 	reg  tmb_flg_r;
 	reg  [15:0] da_pipe1_r;
 	reg  [15:0] da_pipe2_r;
+	reg  [15:0] da_pipe3_r;
 	reg  [15:0] tmb_in_1_r;
 	reg  [15:0] tmb_in_2_r;
 	reg  [15:0] alct_in_1_r;
@@ -3595,7 +3602,6 @@ begin : control_logic_no_TMR
 	wire taila_i;
 	wire tailb_i;
 	wire done_ce_i;
-	wire dodatx_i;
 	wire [7:1] fffl_i;  // FIFO full flags AND'd with not kill
 	wire [7:1] oe_i;
 	wire [5:1] oe6_i;
@@ -3627,7 +3633,7 @@ begin : control_logic_no_TMR
 	wire tmb_res_i;
 	wire trans_flg_i;
 	//Nets in always blocks
-	reg  [15:0] d_htov_i;
+	reg  [15:0] d_htov_r;
 	reg  [11:0] cdcd_i;
 
 	//
@@ -3655,7 +3661,6 @@ begin : control_logic_no_TMR
 	assign taila_i      = |{tail_r[4:1]};
 	assign tailb_i      = |{tail_r[8:5]};
 	assign done_ce_i    = (last_i & !ovlpend_r) & dodat & (|(prio_act_i & ~fifordy_b)); // leading edge of last;
-	assign dodatx_i     = dodat && !readovlp_i;
 	assign fffl_i         = ~killdcd & ffrfl_r;
 	assign oe_i         = prio_act_i & rdy_r & ~{2'b00,ovr_r};
 	assign oe6_i        = prio_act_i[5:1] & ovr_r;
@@ -3739,7 +3744,7 @@ begin : control_logic_no_TMR
 	assign clrcrc = oehdr_r[1];
 
 	assign POPBRAM = popbram_r;
-	assign DAV = dav_r;
+	assign DAV = dav_1_r;
 	assign DOUT = dout_r;
 
 //add always blocks for nets... prio_act, d_htov, cdcd
@@ -3761,27 +3766,27 @@ begin : control_logic_no_TMR
 			prio_act_i = 7'b0000000;
 	end
 
-	always @*
+	always @(posedge CLKDDU)
 	begin
 		case({readovlp_i,tail_r,oehdr_r})
-			17'b00000000000000001 : d_htov_i = {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
-			17'b00000000000000010 : d_htov_i = {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
-			17'b00000000000000100 : d_htov_i = {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
-			17'b00000000000001000 : d_htov_i = {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
-			17'b00000000000010000 : d_htov_i = {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
-			17'b00000000000100000 : d_htov_i = {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
-			17'b00000000001000000 : d_htov_i = {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
-			17'b00000000010000000 : d_htov_i = {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
-			17'b00000000100000000 : d_htov_i = {4'hF,           datanoend_r[7],BXN[4:0],l1cnt[5:0]};                              // Tail 1 code F
-			17'b00000001000000000 : d_htov_i = {4'hF,           DAVACT[10:6],2'b00,datanoend_r[5:1]};                             // Tail 2 code F
-			17'b00000010000000000 : d_htov_i = {4'hF,           fffl_i[3:1],davnodata_r[6],STATUS[14:7]};                           // Tail 3 code F
-			17'b00000100000000000 : d_htov_i = {4'hF,           davnodata_r[7],2'b00,davnodata_r[5:1],2'b00,fffl_i[5:4]};           // Tail 4 code F
-			17'b00001000000000000 : d_htov_i = {4'hE,           fffl_i[7:6],ffhf[7:6],datanoend_r[6],2'b11,ffhf[5:1]};                // Tail 5 code E
-			17'b00010000000000000 : d_htov_i = {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
-			17'b00100000000000000 : d_htov_i = {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
-			17'b01000000000000000 : d_htov_i = {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
-			17'b10000000000000000 : d_htov_i =  doutx[15:0];                                                                      // Read overlap FIFO
-			default               : d_htov_i = 16'h0000;
+			17'b00000000000000001 : d_htov_r <= {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
+			17'b00000000000000010 : d_htov_r <= {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
+			17'b00000000000000100 : d_htov_r <= {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
+			17'b00000000000001000 : d_htov_r <= {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
+			17'b00000000000010000 : d_htov_r <= {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
+			17'b00000000000100000 : d_htov_r <= {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
+			17'b00000000001000000 : d_htov_r <= {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
+			17'b00000000010000000 : d_htov_r <= {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
+			17'b00000000100000000 : d_htov_r <= {4'hF,           datanoend_r[7],BXN[4:0],l1cnt[5:0]};                              // Tail 1 code F
+			17'b00000001000000000 : d_htov_r <= {4'hF,           DAVACT[10:6],2'b00,datanoend_r[5:1]};                             // Tail 2 code F
+			17'b00000010000000000 : d_htov_r <= {4'hF,           fffl_i[3:1],davnodata_r[6],STATUS[14:7]};                           // Tail 3 code F
+			17'b00000100000000000 : d_htov_r <= {4'hF,           davnodata_r[7],2'b00,davnodata_r[5:1],2'b00,fffl_i[5:4]};           // Tail 4 code F
+			17'b00001000000000000 : d_htov_r <= {4'hE,           fffl_i[7:6],ffhf[7:6],datanoend_r[6],2'b11,ffhf[5:1]};                // Tail 5 code E
+			17'b00010000000000000 : d_htov_r <= {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
+			17'b00100000000000000 : d_htov_r <= {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
+			17'b01000000000000000 : d_htov_r <= {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
+			17'b10000000000000000 : d_htov_r <=  doutx[15:0];                                                                      // Read overlap FIFO
+			default               : d_htov_r <= 16'h0000;
 		endcase
 	end
 
@@ -3850,27 +3855,29 @@ begin : control_logic_no_TMR
 				end
 	end
 
-	always @ (posedge CLKDDU)
+	always @ (posedge CLKDDU)	
 	begin
 		//done_ce_1_r <= done_ce_i;
-		//done_ce_2_r <= done_ce_1_r;
+/*		//done_ce_2_r <= done_ce_1_r;
 		if(prio_act_i[7] && trans_tora)begin
 			da_pipe1_r <= alct_in_1_r;
 			da_pipe2_r <= alct_in_2_r;
+			da_pipe3_r <= 16'hxxxx;
 		end
 		else if(prio_act_i[6] && trans_tora)begin
 			da_pipe1_r <= tmb_in_1_r;
 			da_pipe2_r <= tmb_in_2_r;
+			da_pipe3_r <= 16'hxxxx;
 		end
 		else
+*/
 		begin
 			da_pipe1_r <= da_in;
 			da_pipe2_r <= da_pipe1_r;
-		end
-	
+			da_pipe3_r <= da_pipe2_r;
+		end	
 		tmb_in_1_r   <= (prio_act_i[6] && data_ce) ? da_in : tmb_in_1_r;
-		alct_in_1_r  <= (prio_act_i[7] && data_ce) ? da_in : alct_in_1_r;
-		
+		alct_in_1_r  <= (prio_act_i[7] && data_ce) ? da_in : alct_in_1_r;		
 		tmb_in_2_r   <= (prio_act_i[6] && data_ce) ? tmb_in_1_r : tmb_in_2_r;
 		alct_in_2_r  <= (prio_act_i[7] && data_ce) ? alct_in_1_r : alct_in_2_r;
 	end
@@ -3911,6 +3918,7 @@ begin : control_logic_no_TMR
 				tail_r    <= 8'h00;
 				tail8_1_r <= 1'b0;
 				dav_r     <= 1'b0;
+				dav_1_r   <= 1'b0;
 				rdyovlp_r <= 1'b0;
 				dn_oe_r   <= 7'h00;
 				davnodata_r <= 7'h00;
@@ -3928,6 +3936,7 @@ begin : control_logic_no_TMR
 				tail_r   <= {tail_r[7:1],st_tail};
 				tail8_1_r <= tail_r[8];
 				dav_r     <= ~disdav_r & (oehdtl_r | oedata_r);
+				dav_1_r   <= dav_r;
 				rdyovlp_r <= dodat;
 				if(done_ce_i || clr_done) dn_oe_r   <= oe_i;
 				if((rstcnt_r && dodat) || (rstcnt_r && do_err)) datanoend_r  <= datanoend_r | oe_i;
@@ -4178,13 +4187,17 @@ begin : control_logic_no_TMR
 		rdffnxt_2_r    <= rdffnxt_1_r;
 		rdffnxt_3_r    <= rdffnxt_2_r;
 		rdoneovlp_r   <= doneovlp_i;
-		//dint_r        <= dodatx_i  ? da_in : d_htov_i;
-		dint_r        <= dodatx_i  ? da_pipe2_r : d_htov_i;
-		dout_r        <= dtail78_r ? {dint_r[15:12],cdcd_i}  : dint_r;
+		//dint_r        <= dodatx_i  ? da_in : d_htov_r;
+		dint_r        <= dodatx_r  ? da_pipe3_r : d_htov_r;
+		dout_r        <= dtail78_1_r ? {dint_r[15:12],cdcd_r}  : dint_r;
 		dint_ovlp_b_r <= ovlpin_b;
 		dtail7_r      <= tail_r[7];
 		dtail8_r      <= dtail7_r;
 		dtail78_r     <= tail_r[7] | tail_r[8];
+		dtail78_1_r   <= dtail78_r;
+		dodatx_r      <= dodat && !readovlp_i;
+		cdcd_r		  <= cdcd_i;
+
 	end
 
 	always @(posedge CLKDDU)
