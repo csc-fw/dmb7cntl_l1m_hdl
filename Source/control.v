@@ -3862,12 +3862,12 @@ begin : control_logic_no_TMR
 		if(prio_act_i[7] && trans_tora)begin
 			da_pipe1_r <= alct_in_1_r;
 			da_pipe2_r <= alct_in_2_r;
-			da_pipe3_r <= 16'hxxxx;
+			da_pipe3_r <= 16'h0000;
 		end
 		else if(prio_act_i[6] && trans_tora)begin
 			da_pipe1_r <= tmb_in_1_r;
 			da_pipe2_r <= tmb_in_2_r;
-			da_pipe3_r <= 16'hxxxx;
+			da_pipe3_r <= 16'h0000;
 		end
 		else
 		begin
