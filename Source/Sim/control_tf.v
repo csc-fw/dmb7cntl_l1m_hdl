@@ -74,7 +74,7 @@ module control_tf;
 
 	// Instantiate the Unit Under Test (UUT)
 	control #(
-		.TMR(0),
+		.TMR(1),
 		.STMO(9'd40)
 	)
 	uut (

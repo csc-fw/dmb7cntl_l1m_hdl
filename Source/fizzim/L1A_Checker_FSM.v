@@ -1,5 +1,5 @@
 
-// Created by fizzim_tmr.pl version $Revision: 4.44 on 2023:06:30 at 17:00:04 (www.fizzim.com)
+// Created by fizzim_tmr.pl version $Revision: 4.44 on 2023:08:31 at 16:26:28 (www.fizzim.com)
 
 module L1A_Checker_FSM (
   output reg ACT_CHK,
@@ -76,9 +76,7 @@ module L1A_Checker_FSM (
   Strt_Proc_Data2 = 5'b10110, 
   Strt_Proc_Data3 = 5'b10111, 
   Trans_L1A       = 5'b11000, 
-  Trans_Tora1     = 5'b11001, 
-  Trans_Tora2     = 5'b11010, 
-  Trans_Tora3     = 5'b11011; 
+  Trans_Tora1     = 5'b11001; 
 
   reg [4:0] state;
 
@@ -137,9 +135,7 @@ module L1A_Checker_FSM (
       Strt_Proc_Data2:                                                nextstate = Strt_Proc_Data3;
       Strt_Proc_Data3:                                                nextstate = Proc_Data;
       Trans_L1A      :                                                nextstate = L1A_Chk;
-      Trans_Tora1    :                                                nextstate = Trans_Tora2;
-      Trans_Tora2    :                                                nextstate = Trans_Tora3;
-      Trans_Tora3    :                                                nextstate = Proc_Data;
+      Trans_Tora1    :                                                nextstate = Proc_Data;
     endcase
   end
 
@@ -320,12 +316,6 @@ module L1A_Checker_FSM (
                                 DODAT <= 1;
                                 TRANS_TORA <= 1;
         end
-        Trans_Tora2    : begin
-                                DATA_HLDOFF <= 1;
-                                DODAT <= 1;
-                                TRANS_TORA <= 1;
-        end
-        Trans_Tora3    :        DODAT <= 1;
       endcase
     end
   end
@@ -361,8 +351,6 @@ module L1A_Checker_FSM (
       Strt_Proc_Data3: statename = "Strt_Proc_Data3";
       Trans_L1A      : statename = "Trans_L1A";
       Trans_Tora1    : statename = "Trans_Tora1";
-      Trans_Tora2    : statename = "Trans_Tora2";
-      Trans_Tora3    : statename = "Trans_Tora3";
       default        : statename = "XXXXXXXXXXXXXXX";
     endcase
   end

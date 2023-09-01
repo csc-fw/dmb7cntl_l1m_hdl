@@ -352,6 +352,7 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  [8:1] tail_a;
 	(* syn_preserve = "true" *)  reg  tail8_1_a;
 	(* syn_preserve = "true" *)  reg  dav_a;
+	(* syn_preserve = "true" *)  reg  dav_1_a;
 	(* syn_preserve = "true" *)  reg  rdyovlp_a;
 	(* syn_preserve = "true" *)  reg  oeall_1_a;
 	(* syn_preserve = "true" *)  reg  oeall_2_a;
@@ -383,8 +384,12 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  dtail7_a;
 	(* syn_preserve = "true" *)  reg  dtail8_a;
 	(* syn_preserve = "true" *)  reg  dtail78_a;
+	(* syn_preserve = "true" *)  reg  dtail78_1_a;
 	(* syn_preserve = "true" *)  reg  dn_ovlp_a;
 	(* syn_preserve = "true" *)  reg  ooeovlp_a;
+	(* syn_preserve = "true" *)  reg  dodatx_a;
+	(* syn_preserve = "true" *)  reg  [15:0] d_htov_a;
+	(* syn_preserve = "true" *)  reg  [11:0] cdcd_a;
 	
 	//Added after L1a Checking
 	(* syn_preserve = "true" *)  reg  strt_tmo_a;
@@ -415,20 +420,11 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  tmb_flg_a;
 	(* syn_preserve = "true" *)  reg  [15:0] da_pipe1_a;
 	(* syn_preserve = "true" *)  reg  [15:0] da_pipe2_a;
+	(* syn_preserve = "true" *)  reg  [15:0] da_pipe3_a;
 	(* syn_preserve = "true" *)  reg  [15:0] tmb_in_1_a;
 	(* syn_preserve = "true" *)  reg  [15:0] tmb_in_2_a;
 	(* syn_preserve = "true" *)  reg  [15:0] alct_in_1_a;
 	(* syn_preserve = "true" *)  reg  [15:0] alct_in_2_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb1_in_1_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb1_in_2_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb2_in_1_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb2_in_2_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb3_in_1_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb3_in_2_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb4_in_1_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb4_in_2_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb5_in_1_a;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb5_in_2_a;
 
 	(* syn_preserve = "true" *)  reg  gdav_1_b;
 	(* syn_preserve = "true" *)  reg  gdav_2_b;
@@ -441,6 +437,7 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  [8:1] tail_b;
 	(* syn_preserve = "true" *)  reg  tail8_1_b;
 	(* syn_preserve = "true" *)  reg  dav_b;
+	(* syn_preserve = "true" *)  reg  dav_1_b;
 	(* syn_preserve = "true" *)  reg  rdyovlp_b;
 	(* syn_preserve = "true" *)  reg  oeall_1_b;
 	(* syn_preserve = "true" *)  reg  oeall_2_b;
@@ -472,8 +469,12 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  dtail7_b;
 	(* syn_preserve = "true" *)  reg  dtail8_b;
 	(* syn_preserve = "true" *)  reg  dtail78_b;
+	(* syn_preserve = "true" *)  reg  dtail78_1_b;
 	(* syn_preserve = "true" *)  reg  dn_ovlp_b;
 	(* syn_preserve = "true" *)  reg  ooeovlp_b;
+	(* syn_preserve = "true" *)  reg  dodatx_b;
+	(* syn_preserve = "true" *)  reg  [15:0] d_htov_b;
+	(* syn_preserve = "true" *)  reg  [11:0] cdcd_b;
 	
 	//Added after L1a Checking
 	(* syn_preserve = "true" *)  reg  strt_tmo_b;
@@ -504,20 +505,11 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  tmb_flg_b;
 	(* syn_preserve = "true" *)  reg  [15:0] da_pipe1_b;
 	(* syn_preserve = "true" *)  reg  [15:0] da_pipe2_b;
+	(* syn_preserve = "true" *)  reg  [15:0] da_pipe3_b;
 	(* syn_preserve = "true" *)  reg  [15:0] tmb_in_1_b;
 	(* syn_preserve = "true" *)  reg  [15:0] tmb_in_2_b;
 	(* syn_preserve = "true" *)  reg  [15:0] alct_in_1_b;
 	(* syn_preserve = "true" *)  reg  [15:0] alct_in_2_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb1_in_1_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb1_in_2_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb2_in_1_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb2_in_2_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb3_in_1_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb3_in_2_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb4_in_1_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb4_in_2_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb5_in_1_b;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb5_in_2_b;
 
 	(* syn_preserve = "true" *)  reg  gdav_1_c;
 	(* syn_preserve = "true" *)  reg  gdav_2_c;
@@ -530,6 +522,7 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  [8:1] tail_c;
 	(* syn_preserve = "true" *)  reg  tail8_1_c;
 	(* syn_preserve = "true" *)  reg  dav_c;
+	(* syn_preserve = "true" *)  reg  dav_1_c;
 	(* syn_preserve = "true" *)  reg  rdyovlp_c;
 	(* syn_preserve = "true" *)  reg  oeall_1_c;
 	(* syn_preserve = "true" *)  reg  oeall_2_c;
@@ -561,8 +554,12 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  dtail7_c;
 	(* syn_preserve = "true" *)  reg  dtail8_c;
 	(* syn_preserve = "true" *)  reg  dtail78_c;
+	(* syn_preserve = "true" *)  reg  dtail78_1_c;
 	(* syn_preserve = "true" *)  reg  dn_ovlp_c;
 	(* syn_preserve = "true" *)  reg  ooeovlp_c;
+	(* syn_preserve = "true" *)  reg  dodatx_c;
+	(* syn_preserve = "true" *)  reg  [15:0] d_htov_c;
+	(* syn_preserve = "true" *)  reg  [11:0] cdcd_c;
 	
 	//Added after L1a Checking
 	(* syn_preserve = "true" *)  reg  strt_tmo_c;
@@ -593,21 +590,11 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  tmb_flg_c;
 	(* syn_preserve = "true" *)  reg  [15:0] da_pipe1_c;
 	(* syn_preserve = "true" *)  reg  [15:0] da_pipe2_c;
+	(* syn_preserve = "true" *)  reg  [15:0] da_pipe3_c;
 	(* syn_preserve = "true" *)  reg  [15:0] tmb_in_1_c;
 	(* syn_preserve = "true" *)  reg  [15:0] tmb_in_2_c;
 	(* syn_preserve = "true" *)  reg  [15:0] alct_in_1_c;
 	(* syn_preserve = "true" *)  reg  [15:0] alct_in_2_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb1_in_1_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb1_in_2_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb2_in_1_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb2_in_2_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb3_in_1_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb3_in_2_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb4_in_1_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb4_in_2_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb5_in_1_c;
-	(* syn_preserve = "true" *)  reg  [15:0] cfeb5_in_2_c;
-
 	//
 	// Voted local scope registers
 	//
@@ -622,6 +609,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [8:1] vt_tail_a;
 	(* syn_keep = "true" *)  wire vt_tail8_1_a;
 	(* syn_keep = "true" *)  wire vt_dav_a;
+	(* syn_keep = "true" *)  wire vt_dav_1_a;
 	(* syn_keep = "true" *)  wire vt_rdyovlp_a;	
 	(* syn_keep = "true" *)  wire vt_oeall_1_a;
 	(* syn_keep = "true" *)  wire vt_oeall_2_a;
@@ -653,8 +641,12 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_dtail7_a;
 	(* syn_keep = "true" *)  wire vt_dtail8_a;
 	(* syn_keep = "true" *)  wire vt_dtail78_a;
+	(* syn_keep = "true" *)  wire vt_dtail78_1_a;
 	(* syn_keep = "true" *)  wire vt_dn_ovlp_a;
 	(* syn_keep = "true" *)  wire vt_ooeovlp_a;
+	(* syn_keep = "true" *)  wire vt_dodatx_a;
+	(* syn_keep = "true" *)  wire [15:0] vt_d_htov_a;
+	(* syn_keep = "true" *)  wire [11:0] vt_cdcd_a;
 	
 	//Added after L1a Checking
 	(* syn_keep = "true" *)  wire vt_strt_tmo_a;
@@ -685,20 +677,11 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_tmb_flg_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe1_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe2_a;
+	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe3_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_tmb_in_1_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_tmb_in_2_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_alct_in_1_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_alct_in_2_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb1_in_1_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb1_in_2_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb2_in_1_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb2_in_2_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb3_in_1_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb3_in_2_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb4_in_1_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb4_in_2_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb5_in_1_a;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb5_in_2_a;	
 
 	(* syn_keep = "true" *)  wire vt_gdav_1_b;
 	(* syn_keep = "true" *)  wire vt_gdav_2_b;
@@ -711,6 +694,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [8:1] vt_tail_b;
 	(* syn_keep = "true" *)  wire vt_tail8_1_b;
 	(* syn_keep = "true" *)  wire vt_dav_b;
+	(* syn_keep = "true" *)  wire vt_dav_1_b;
 	(* syn_keep = "true" *)  wire vt_rdyovlp_b;
 	(* syn_keep = "true" *)  wire vt_oeall_1_b;
 	(* syn_keep = "true" *)  wire vt_oeall_2_b;
@@ -742,8 +726,12 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_dtail7_b;
 	(* syn_keep = "true" *)  wire vt_dtail8_b;
 	(* syn_keep = "true" *)  wire vt_dtail78_b;
+	(* syn_keep = "true" *)  wire vt_dtail78_1_b;
 	(* syn_keep = "true" *)  wire vt_dn_ovlp_b;
 	(* syn_keep = "true" *)  wire vt_ooeovlp_b;
+	(* syn_keep = "true" *)  wire vt_dodatx_b;
+	(* syn_keep = "true" *)  wire [15:0] vt_d_htov_b;
+	(* syn_keep = "true" *)  wire [11:0] vt_cdcd_b;
 	
 	//Added after L1a Checking
 	(* syn_keep = "true" *)  wire vt_strt_tmo_b;
@@ -774,20 +762,11 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_tmb_flg_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe1_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe2_b;
+	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe3_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_tmb_in_1_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_tmb_in_2_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_alct_in_1_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_alct_in_2_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb1_in_1_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb1_in_2_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb2_in_1_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb2_in_2_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb3_in_1_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb3_in_2_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb4_in_1_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb4_in_2_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb5_in_1_b;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb5_in_2_b;	
 
 	(* syn_keep = "true" *)  wire vt_gdav_1_c;
 	(* syn_keep = "true" *)  wire vt_gdav_2_c;
@@ -800,6 +779,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [8:1] vt_tail_c;
 	(* syn_keep = "true" *)  wire vt_tail8_1_c;
 	(* syn_keep = "true" *)  wire vt_dav_c;
+	(* syn_keep = "true" *)  wire vt_dav_1_c;
 	(* syn_keep = "true" *)  wire vt_rdyovlp_c;
 	(* syn_keep = "true" *)  wire vt_oeall_1_c;
 	(* syn_keep = "true" *)  wire vt_oeall_2_c;
@@ -831,8 +811,12 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_dtail7_c;
 	(* syn_keep = "true" *)  wire vt_dtail8_c;
 	(* syn_keep = "true" *)  wire vt_dtail78_c;
+	(* syn_keep = "true" *)  wire vt_dtail78_1_c;
 	(* syn_keep = "true" *)  wire vt_dn_ovlp_c;
 	(* syn_keep = "true" *)  wire vt_ooeovlp_c;
+	(* syn_keep = "true" *)  wire vt_dodatx_c;
+	(* syn_keep = "true" *)  wire [15:0] vt_d_htov_c;
+	(* syn_keep = "true" *)  wire [11:0] vt_cdcd_c;
 	
 	//Added after L1a Checking
 	(* syn_keep = "true" *)  wire vt_strt_tmo_c;
@@ -863,20 +847,11 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire vt_tmb_flg_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe1_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe2_c;
+	(* syn_keep = "true" *)  wire [15:0] vt_da_pipe3_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_tmb_in_1_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_tmb_in_2_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_alct_in_1_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_alct_in_2_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb1_in_1_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb1_in_2_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb2_in_1_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb2_in_2_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb3_in_1_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb3_in_2_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb4_in_1_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb4_in_2_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb5_in_1_c;
-	(* syn_keep = "true" *)  wire [15:0] vt_cfeb5_in_2_c;	
 
 	//
 	// Majority logic/Voting for replicaterd registers
@@ -1021,6 +996,7 @@ begin : control_logic_TMR
 	assign  vt_tail_a        = (tail_a        & tail_b)        | (tail_b        & tail_c)        | (tail_a        & tail_c);      // Majority logic
 	assign  vt_tail8_1_a     = (tail8_1_a     & tail8_1_b)     | (tail8_1_b     & tail8_1_c)     | (tail8_1_a     & tail8_1_c);      // Majority logic
 	assign  vt_dav_a         = (dav_a         & dav_b)         | (dav_b         & dav_c)         | (dav_a         & dav_c);      // Majority logic
+	assign  vt_dav_1_a       = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);      // Majority logic
 	assign  vt_rdyovlp_a     = (rdyovlp_a     & rdyovlp_b)     | (rdyovlp_b     & rdyovlp_c)     | (rdyovlp_a     & rdyovlp_c);      // Majority logic
 	assign  vt_oeall_1_a     = (oeall_1_a     & oeall_1_b)     | (oeall_1_b     & oeall_1_c)     | (oeall_1_a     & oeall_1_c);      // Majority logic
 	assign  vt_oeall_2_a     = (oeall_2_a     & oeall_2_b)     | (oeall_2_b     & oeall_2_c)     | (oeall_2_a     & oeall_2_c);      // Majority logic
@@ -1053,8 +1029,12 @@ begin : control_logic_TMR
 	assign  vt_dtail7_a      = (dtail7_a      & dtail7_b)      | (dtail7_b      & dtail7_c)      | (dtail7_a      & dtail7_c);      // Majority logic
 	assign  vt_dtail8_a      = (dtail8_a      & dtail8_b)      | (dtail8_b      & dtail8_c)      | (dtail8_a      & dtail8_c);      // Majority logic
 	assign  vt_dtail78_a     = (dtail78_a     & dtail78_b)     | (dtail78_b     & dtail78_c)     | (dtail78_a     & dtail78_c);      // Majority logic
+	assign  vt_dtail78_1_a   = (dtail78_1_a   & dtail78_1_b)   | (dtail78_1_b   & dtail78_1_c)   | (dtail78_1_a   & dtail78_1_c);      // Majority logic
 	assign  vt_dn_ovlp_a     = (dn_ovlp_a     & dn_ovlp_b)     | (dn_ovlp_b     & dn_ovlp_c)     | (dn_ovlp_a     & dn_ovlp_c);      // Majority logic
 	assign  vt_ooeovlp_a     = (ooeovlp_a     & ooeovlp_b)     | (ooeovlp_b     & ooeovlp_c)     | (ooeovlp_a     & ooeovlp_c);      // Majority logic
+	assign  vt_dodatx_a      = (dodatx_a      & dodatx_b)      | (dodatx_b      & dodatx_c)      | (dodatx_a      & dodatx_c);      // Majority logic
+	assign  vt_d_htov_a      = (d_htov_a      & d_htov_b)      | (d_htov_b      & d_htov_c)      | (d_htov_a      & d_htov_c);      // Majority logic
+	assign  vt_cdcd_a        = (cdcd_a        & cdcd_b)        | (cdcd_b        & cdcd_c)        | (cdcd_a        & cdcd_c);      // Majority logic
 
 	//Added after L1a Checking
 	assign  vt_strt_tmo_a     = (strt_tmo_a     & strt_tmo_b)     | (strt_tmo_b     & strt_tmo_c)     | (strt_tmo_a     & strt_tmo_c);      // Majority logic
@@ -1089,20 +1069,11 @@ begin : control_logic_TMR
 	assign  vt_tmb_flg_a       = (tmb_flg_a       & tmb_flg_b)       | (tmb_flg_b       & tmb_flg_c)       | (tmb_flg_a       & tmb_flg_c);        // Majority logic
 	assign  vt_da_pipe1_a	  = (da_pipe1_a     & da_pipe1_b)     | (da_pipe1_b     & da_pipe1_c)     | (da_pipe1_a     & da_pipe1_c);      // Majority logic
 	assign  vt_da_pipe2_a	  = (da_pipe2_a     & da_pipe2_b)     | (da_pipe2_b     & da_pipe2_c)     | (da_pipe2_a     & da_pipe2_c);      // Majority logic
+	assign  vt_da_pipe3_a	  = (da_pipe3_a     & da_pipe3_b)     | (da_pipe3_b     & da_pipe3_c)     | (da_pipe3_a     & da_pipe3_c);      // Majority logic
 	assign  vt_tmb_in_1_a	  = (tmb_in_1_a     & tmb_in_1_b)     | (tmb_in_1_b     & tmb_in_1_c)     | (tmb_in_1_a     & tmb_in_1_c);      // Majority logic
 	assign  vt_tmb_in_2_a	  = (tmb_in_2_a     & tmb_in_2_b)     | (tmb_in_2_b     & tmb_in_2_c)     | (tmb_in_2_a     & tmb_in_2_c);      // Majority logic
 	assign  vt_alct_in_1_a	  = (alct_in_1_a    & alct_in_1_b)    | (alct_in_1_b    & alct_in_1_c)    | (alct_in_1_a    & alct_in_1_c);     // Majority logic
 	assign  vt_alct_in_2_a	  = (alct_in_2_a    & alct_in_2_b)    | (alct_in_2_b    & alct_in_2_c)    | (alct_in_2_a    & alct_in_2_c);     // Majority logic
-	assign  vt_cfeb1_in_1_a	  = (cfeb1_in_1_a   & cfeb1_in_1_b)   | (cfeb1_in_1_b   & cfeb1_in_1_c)   | (cfeb1_in_1_a   & cfeb1_in_1_c);    // Majority logic
-	assign  vt_cfeb1_in_2_a	  = (cfeb1_in_2_a   & cfeb1_in_2_b)   | (cfeb1_in_2_b   & cfeb1_in_2_c)   | (cfeb1_in_2_a   & cfeb1_in_2_c);    // Majority logic
-	assign  vt_cfeb2_in_1_a	  = (cfeb2_in_1_a   & cfeb2_in_1_b)   | (cfeb2_in_1_b   & cfeb2_in_1_c)   | (cfeb2_in_1_a   & cfeb2_in_1_c);    // Majority logic
-	assign  vt_cfeb2_in_2_a	  = (cfeb2_in_2_a   & cfeb2_in_2_b)   | (cfeb2_in_2_b   & cfeb2_in_2_c)   | (cfeb2_in_2_a   & cfeb2_in_2_c);    // Majority logic
-	assign  vt_cfeb3_in_1_a	  = (cfeb3_in_1_a   & cfeb3_in_1_b)   | (cfeb3_in_1_b   & cfeb3_in_1_c)   | (cfeb3_in_1_a   & cfeb3_in_1_c);    // Majority logic
-	assign  vt_cfeb3_in_2_a	  = (cfeb3_in_2_a   & cfeb3_in_2_b)   | (cfeb3_in_2_b   & cfeb3_in_2_c)   | (cfeb3_in_2_a   & cfeb3_in_2_c);    // Majority logic
-	assign  vt_cfeb4_in_1_a	  = (cfeb4_in_1_a   & cfeb4_in_1_b)   | (cfeb4_in_1_b   & cfeb4_in_1_c)   | (cfeb4_in_1_a   & cfeb4_in_1_c);    // Majority logic
-	assign  vt_cfeb4_in_2_a	  = (cfeb4_in_2_a   & cfeb4_in_2_b)   | (cfeb4_in_2_b   & cfeb4_in_2_c)   | (cfeb4_in_2_a   & cfeb4_in_2_c);    // Majority logic
-	assign  vt_cfeb5_in_1_a	  = (cfeb5_in_1_a   & cfeb5_in_1_b)   | (cfeb5_in_1_b   & cfeb5_in_1_c)   | (cfeb5_in_1_a   & cfeb5_in_1_c);    // Majority logic
-	assign  vt_cfeb5_in_2_a	  = (cfeb5_in_2_a   & cfeb5_in_2_b)   | (cfeb5_in_2_b   & cfeb5_in_2_c)   | (cfeb5_in_2_a   & cfeb5_in_2_c);    // Majority logic
 
 	assign  vt_gdav_1_b      = (gdav_1_a      & gdav_1_b)      | (gdav_1_b      & gdav_1_c)      | (gdav_1_a      & gdav_1_c);      // Majority logic
 	assign  vt_gdav_2_b      = (gdav_2_a      & gdav_2_b)      | (gdav_2_b      & gdav_2_c)      | (gdav_2_a      & gdav_2_c);      // Majority logic
@@ -1115,6 +1086,7 @@ begin : control_logic_TMR
 	assign  vt_tail_b        = (tail_a        & tail_b)        | (tail_b        & tail_c)        | (tail_a        & tail_c);      // Majority logic
 	assign  vt_tail8_1_b     = (tail8_1_a     & tail8_1_b)     | (tail8_1_b     & tail8_1_c)     | (tail8_1_a     & tail8_1_c);      // Majority logic
 	assign  vt_dav_b         = (dav_a         & dav_b)         | (dav_b         & dav_c)         | (dav_a         & dav_c);      // Majority logic
+	assign  vt_dav_1_b       = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);      // Majority logic
 	assign  vt_rdyovlp_b     = (rdyovlp_a     & rdyovlp_b)     | (rdyovlp_b     & rdyovlp_c)     | (rdyovlp_a     & rdyovlp_c);      // Majority logic
 	assign  vt_oeall_1_b     = (oeall_1_a     & oeall_1_b)     | (oeall_1_b     & oeall_1_c)     | (oeall_1_a     & oeall_1_c);      // Majority logic
 	assign  vt_oeall_2_b     = (oeall_2_a     & oeall_2_b)     | (oeall_2_b     & oeall_2_c)     | (oeall_2_a     & oeall_2_c);      // Majority logic
@@ -1147,8 +1119,12 @@ begin : control_logic_TMR
 	assign  vt_dtail7_b      = (dtail7_a      & dtail7_b)      | (dtail7_b      & dtail7_c)      | (dtail7_a      & dtail7_c);      // Majority logic
 	assign  vt_dtail8_b      = (dtail8_a      & dtail8_b)      | (dtail8_b      & dtail8_c)      | (dtail8_a      & dtail8_c);      // Majority logic
 	assign  vt_dtail78_b     = (dtail78_a     & dtail78_b)     | (dtail78_b     & dtail78_c)     | (dtail78_a     & dtail78_c);      // Majority logic
+	assign  vt_dtail78_1_b   = (dtail78_1_a   & dtail78_1_b)   | (dtail78_1_b   & dtail78_1_c)   | (dtail78_1_a   & dtail78_1_c);      // Majority logic
 	assign  vt_dn_ovlp_b     = (dn_ovlp_a     & dn_ovlp_b)     | (dn_ovlp_b     & dn_ovlp_c)     | (dn_ovlp_a     & dn_ovlp_c);      // Majority logic
 	assign  vt_ooeovlp_b     = (ooeovlp_a     & ooeovlp_b)     | (ooeovlp_b     & ooeovlp_c)     | (ooeovlp_a     & ooeovlp_c);      // Majority logic
+	assign  vt_dodatx_b      = (dodatx_a      & dodatx_b)      | (dodatx_b      & dodatx_c)      | (dodatx_a      & dodatx_c);      // Majority logic
+	assign  vt_d_htov_b      = (d_htov_a      & d_htov_b)      | (d_htov_b      & d_htov_c)      | (d_htov_a      & d_htov_c);      // Majority logic
+	assign  vt_cdcd_b        = (cdcd_a        & cdcd_b)        | (cdcd_b        & cdcd_c)        | (cdcd_a        & cdcd_c);      // Majority logic
 	
 	//Added after L1a Checking
 	assign  vt_strt_tmo_b     = (strt_tmo_a     & strt_tmo_b)     | (strt_tmo_b     & strt_tmo_c)     | (strt_tmo_a     & strt_tmo_c);      // Majority logic
@@ -1183,20 +1159,11 @@ begin : control_logic_TMR
 	assign  vt_tmb_flg_b      = (tmb_flg_a       & tmb_flg_b)       | (tmb_flg_b       & tmb_flg_c)       | (tmb_flg_a       & tmb_flg_c);        // Majority logic
 	assign  vt_da_pipe1_b	  = (da_pipe1_a     & da_pipe1_b)     | (da_pipe1_b     & da_pipe1_c)     | (da_pipe1_a     & da_pipe1_c);      // Majority logic
 	assign  vt_da_pipe2_b	  = (da_pipe2_a     & da_pipe2_b)     | (da_pipe2_b     & da_pipe2_c)     | (da_pipe2_a     & da_pipe2_c);      // Majority logic
+	assign  vt_da_pipe3_b	  = (da_pipe3_a     & da_pipe3_b)     | (da_pipe3_b     & da_pipe3_c)     | (da_pipe3_a     & da_pipe3_c);      // Majority logic
 	assign  vt_tmb_in_1_b	  = (tmb_in_1_a     & tmb_in_1_b)     | (tmb_in_1_b     & tmb_in_1_c)     | (tmb_in_1_a     & tmb_in_1_c);      // Majority logic
 	assign  vt_tmb_in_2_b	  = (tmb_in_2_a     & tmb_in_2_b)     | (tmb_in_2_b     & tmb_in_2_c)     | (tmb_in_2_a     & tmb_in_2_c);      // Majority logic
 	assign  vt_alct_in_1_b	  = (alct_in_1_a    & alct_in_1_b)    | (alct_in_1_b    & alct_in_1_c)    | (alct_in_1_a    & alct_in_1_c);     // Majority logic
 	assign  vt_alct_in_2_b	  = (alct_in_2_a    & alct_in_2_b)    | (alct_in_2_b    & alct_in_2_c)    | (alct_in_2_a    & alct_in_2_c);     // Majority logic
-	assign  vt_cfeb1_in_1_b	  = (cfeb1_in_1_a   & cfeb1_in_1_b)   | (cfeb1_in_1_b   & cfeb1_in_1_c)   | (cfeb1_in_1_a   & cfeb1_in_1_c);    // Majority logic
-	assign  vt_cfeb1_in_2_b	  = (cfeb1_in_2_a   & cfeb1_in_2_b)   | (cfeb1_in_2_b   & cfeb1_in_2_c)   | (cfeb1_in_2_a   & cfeb1_in_2_c);    // Majority logic
-	assign  vt_cfeb2_in_1_b	  = (cfeb2_in_1_a   & cfeb2_in_1_b)   | (cfeb2_in_1_b   & cfeb2_in_1_c)   | (cfeb2_in_1_a   & cfeb2_in_1_c);    // Majority logic
-	assign  vt_cfeb2_in_2_b	  = (cfeb2_in_2_a   & cfeb2_in_2_b)   | (cfeb2_in_2_b   & cfeb2_in_2_c)   | (cfeb2_in_2_a   & cfeb2_in_2_c);    // Majority logic
-	assign  vt_cfeb3_in_1_b	  = (cfeb3_in_1_a   & cfeb3_in_1_b)   | (cfeb3_in_1_b   & cfeb3_in_1_c)   | (cfeb3_in_1_a   & cfeb3_in_1_c);    // Majority logic
-	assign  vt_cfeb3_in_2_b	  = (cfeb3_in_2_a   & cfeb3_in_2_b)   | (cfeb3_in_2_b   & cfeb3_in_2_c)   | (cfeb3_in_2_a   & cfeb3_in_2_c);    // Majority logic
-	assign  vt_cfeb4_in_1_b	  = (cfeb4_in_1_a   & cfeb4_in_1_b)   | (cfeb4_in_1_b   & cfeb4_in_1_c)   | (cfeb4_in_1_a   & cfeb4_in_1_c);    // Majority logic
-	assign  vt_cfeb4_in_2_b	  = (cfeb4_in_2_a   & cfeb4_in_2_b)   | (cfeb4_in_2_b   & cfeb4_in_2_c)   | (cfeb4_in_2_a   & cfeb4_in_2_c);    // Majority logic
-	assign  vt_cfeb5_in_1_b	  = (cfeb5_in_1_a   & cfeb5_in_1_b)   | (cfeb5_in_1_b   & cfeb5_in_1_c)   | (cfeb5_in_1_a   & cfeb5_in_1_c);    // Majority logic
-	assign  vt_cfeb5_in_2_b	  = (cfeb5_in_2_a   & cfeb5_in_2_b)   | (cfeb5_in_2_b   & cfeb5_in_2_c)   | (cfeb5_in_2_a   & cfeb5_in_2_c);    // Majority logic
 
 	assign  vt_gdav_1_c      = (gdav_1_a      & gdav_1_b)      | (gdav_1_b      & gdav_1_c)      | (gdav_1_a      & gdav_1_c);      // Majority logic
 	assign  vt_gdav_2_c      = (gdav_2_a      & gdav_2_b)      | (gdav_2_b      & gdav_2_c)      | (gdav_2_a      & gdav_2_c);      // Majority logic
@@ -1209,6 +1176,7 @@ begin : control_logic_TMR
 	assign  vt_tail_c        = (tail_a        & tail_b)        | (tail_b        & tail_c)        | (tail_a        & tail_c);      // Majority logic
 	assign  vt_tail8_1_c     = (tail8_1_a     & tail8_1_b)     | (tail8_1_b     & tail8_1_c)     | (tail8_1_a     & tail8_1_c);      // Majority logic
 	assign  vt_dav_c         = (dav_a         & dav_b)         | (dav_b         & dav_c)         | (dav_a         & dav_c);      // Majority logic
+	assign  vt_dav_1_c       = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);      // Majority logic
 	assign  vt_rdyovlp_c     = (rdyovlp_a     & rdyovlp_b)     | (rdyovlp_b     & rdyovlp_c)     | (rdyovlp_a     & rdyovlp_c);      // Majority logic
 	assign  vt_oeall_1_c     = (oeall_1_a     & oeall_1_b)     | (oeall_1_b     & oeall_1_c)     | (oeall_1_a     & oeall_1_c);      // Majority logic
 	assign  vt_oeall_2_c     = (oeall_2_a     & oeall_2_b)     | (oeall_2_b     & oeall_2_c)     | (oeall_2_a     & oeall_2_c);      // Majority logic
@@ -1241,8 +1209,12 @@ begin : control_logic_TMR
 	assign  vt_dtail7_c      = (dtail7_a      & dtail7_b)      | (dtail7_b      & dtail7_c)      | (dtail7_a      & dtail7_c);      // Majority logic
 	assign  vt_dtail8_c      = (dtail8_a      & dtail8_b)      | (dtail8_b      & dtail8_c)      | (dtail8_a      & dtail8_c);      // Majority logic
 	assign  vt_dtail78_c     = (dtail78_a     & dtail78_b)     | (dtail78_b     & dtail78_c)     | (dtail78_a     & dtail78_c);      // Majority logic
+	assign  vt_dtail78_1_c   = (dtail78_1_a   & dtail78_1_b)   | (dtail78_1_b   & dtail78_1_c)   | (dtail78_1_a   & dtail78_1_c);      // Majority logic
 	assign  vt_dn_ovlp_c     = (dn_ovlp_a     & dn_ovlp_b)     | (dn_ovlp_b     & dn_ovlp_c)     | (dn_ovlp_a     & dn_ovlp_c);      // Majority logic
 	assign  vt_ooeovlp_c     = (ooeovlp_a     & ooeovlp_b)     | (ooeovlp_b     & ooeovlp_c)     | (ooeovlp_a     & ooeovlp_c);      // Majority logic
+	assign  vt_dodatx_c      = (dodatx_a      & dodatx_b)      | (dodatx_b      & dodatx_c)      | (dodatx_a      & dodatx_c);      // Majority logic
+	assign  vt_d_htov_c      = (d_htov_a      & d_htov_b)      | (d_htov_b      & d_htov_c)      | (d_htov_a      & d_htov_c);      // Majority logic
+	assign  vt_cdcd_c        = (cdcd_a        & cdcd_b)        | (cdcd_b        & cdcd_c)        | (cdcd_a        & cdcd_c);      // Majority logic
 	
 	//Added after L1a Checking
 	assign  vt_strt_tmo_c     = (strt_tmo_a     & strt_tmo_b)     | (strt_tmo_b     & strt_tmo_c)     | (strt_tmo_a     & strt_tmo_c);      // Majority logic
@@ -1277,20 +1249,11 @@ begin : control_logic_TMR
 	assign  vt_tmb_flg_c       = (tmb_flg_a       & tmb_flg_b)       | (tmb_flg_b       & tmb_flg_c)       | (tmb_flg_a       & tmb_flg_c);        // Majority logic
 	assign  vt_da_pipe1_c	  = (da_pipe1_a     & da_pipe1_b)     | (da_pipe1_b     & da_pipe1_c)     | (da_pipe1_a     & da_pipe1_c);      // Majority logic
 	assign  vt_da_pipe2_c	  = (da_pipe2_a     & da_pipe2_b)     | (da_pipe2_b     & da_pipe2_c)     | (da_pipe2_a     & da_pipe2_c);      // Majority logic
+	assign  vt_da_pipe3_c	  = (da_pipe3_a     & da_pipe3_b)     | (da_pipe3_b     & da_pipe3_c)     | (da_pipe3_a     & da_pipe3_c);      // Majority logic
 	assign  vt_tmb_in_1_c	  = (tmb_in_1_a     & tmb_in_1_b)     | (tmb_in_1_b     & tmb_in_1_c)     | (tmb_in_1_a     & tmb_in_1_c);      // Majority logic
 	assign  vt_tmb_in_2_c	  = (tmb_in_2_a     & tmb_in_2_b)     | (tmb_in_2_b     & tmb_in_2_c)     | (tmb_in_2_a     & tmb_in_2_c);      // Majority logic
 	assign  vt_alct_in_1_c	  = (alct_in_1_a    & alct_in_1_b)    | (alct_in_1_b    & alct_in_1_c)    | (alct_in_1_a    & alct_in_1_c);     // Majority logic
 	assign  vt_alct_in_2_c	  = (alct_in_2_a    & alct_in_2_b)    | (alct_in_2_b    & alct_in_2_c)    | (alct_in_2_a    & alct_in_2_c);     // Majority logic
-	assign  vt_cfeb1_in_1_c	  = (cfeb1_in_1_a   & cfeb1_in_1_b)   | (cfeb1_in_1_b   & cfeb1_in_1_c)   | (cfeb1_in_1_a   & cfeb1_in_1_c);    // Majority logic
-	assign  vt_cfeb1_in_2_c	  = (cfeb1_in_2_a   & cfeb1_in_2_b)   | (cfeb1_in_2_b   & cfeb1_in_2_c)   | (cfeb1_in_2_a   & cfeb1_in_2_c);    // Majority logic
-	assign  vt_cfeb2_in_1_c	  = (cfeb2_in_1_a   & cfeb2_in_1_b)   | (cfeb2_in_1_b   & cfeb2_in_1_c)   | (cfeb2_in_1_a   & cfeb2_in_1_c);    // Majority logic
-	assign  vt_cfeb2_in_2_c	  = (cfeb2_in_2_a   & cfeb2_in_2_b)   | (cfeb2_in_2_b   & cfeb2_in_2_c)   | (cfeb2_in_2_a   & cfeb2_in_2_c);    // Majority logic
-	assign  vt_cfeb3_in_1_c	  = (cfeb3_in_1_a   & cfeb3_in_1_b)   | (cfeb3_in_1_b   & cfeb3_in_1_c)   | (cfeb3_in_1_a   & cfeb3_in_1_c);    // Majority logic
-	assign  vt_cfeb3_in_2_c	  = (cfeb3_in_2_a   & cfeb3_in_2_b)   | (cfeb3_in_2_b   & cfeb3_in_2_c)   | (cfeb3_in_2_a   & cfeb3_in_2_c);    // Majority logic
-	assign  vt_cfeb4_in_1_c	  = (cfeb4_in_1_a   & cfeb4_in_1_b)   | (cfeb4_in_1_b   & cfeb4_in_1_c)   | (cfeb4_in_1_a   & cfeb4_in_1_c);    // Majority logic
-	assign  vt_cfeb4_in_2_c	  = (cfeb4_in_2_a   & cfeb4_in_2_b)   | (cfeb4_in_2_b   & cfeb4_in_2_c)   | (cfeb4_in_2_a   & cfeb4_in_2_c);    // Majority logic
-	assign  vt_cfeb5_in_1_c	  = (cfeb5_in_1_a   & cfeb5_in_1_b)   | (cfeb5_in_1_b   & cfeb5_in_1_c)   | (cfeb5_in_1_a   & cfeb5_in_1_c);    // Majority logic
-	assign  vt_cfeb5_in_2_c	  = (cfeb5_in_2_a   & cfeb5_in_2_b)   | (cfeb5_in_2_b   & cfeb5_in_2_c)   | (cfeb5_in_2_a   & cfeb5_in_2_c);    // Majority logic
 	
 //	assign  vt_gdav_1_a      = gdav_1_a;
 //	assign  vt_gdav_2_a      = gdav_2_a;
@@ -1429,16 +1392,19 @@ begin : control_logic_TMR
 	(* syn_preserve = "true" *)  reg  ovlpend_a;
 	(* syn_preserve = "true" *)  reg  [15:0] dint_a;
 	(* syn_preserve = "true" *)  reg  oeall_a;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_1_a;
 
 	(* syn_preserve = "true" *)  reg  rstcnt_b;
 	(* syn_preserve = "true" *)  reg  ovlpend_b;
 	(* syn_preserve = "true" *)  reg  [15:0] dint_b;
 	(* syn_preserve = "true" *)  reg  oeall_b;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_1_b;
 
 	(* syn_preserve = "true" *)  reg  rstcnt_c;
 	(* syn_preserve = "true" *)  reg  ovlpend_c;
 	(* syn_preserve = "true" *)  reg  [15:0] dint_c;
 	(* syn_preserve = "true" *)  reg  oeall_c;
+	(* syn_preserve = "true" *)  reg  [7:1] oe_1_c;
 
 	//
 	// voted nets of module and local scope registers
@@ -1460,6 +1426,25 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [15:0] vt_dint_c;
 	(* syn_keep = "true" *)  wire vt_oeall_c;
 	(* syn_keep = "true" *)  wire [7:1] vt_oe_1_c;
+	
+	assign  vt_rstcnt_a   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
+	assign  vt_ovlpend_a  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
+	assign  vt_dint_a     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
+	assign  vt_oeall_a    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+	assign  vt_oe_1_a     = (oe_1_a    & oe_1_b)    | (oe_1_b    & oe_1_c)    | (oe_1_a    & oe_1_c);    // Majority logic
+
+	assign  vt_rstcnt_b   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
+	assign  vt_ovlpend_b  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
+	assign  vt_dint_b     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
+	assign  vt_oeall_b    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+	assign  vt_oe_1_b     = (oe_1_a    & oe_1_b)    | (oe_1_b    & oe_1_c)    | (oe_1_a    & oe_1_c);    // Majority logic
+
+	assign  vt_rstcnt_c   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
+	assign  vt_ovlpend_c  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
+	assign  vt_dint_c     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
+	assign  vt_oeall_c    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
+	assign  vt_oe_1_c     = (oe_1_a    & oe_1_b)    | (oe_1_b    & oe_1_c)    | (oe_1_a    & oe_1_c);    // Majority logic
+	
 
 //	vote #(.Width(1))  vote_rstcnt_a   (.A(rstcnt_a),  .B(rstcnt_b),  .C(rstcnt_c),  .V(vt_rstcnt_a));
 //	vote #(.Width(1))  vote_ovlpend_a  (.A(ovlpend_a), .B(ovlpend_b), .C(ovlpend_c), .V(vt_ovlpend_a));
@@ -1497,7 +1482,6 @@ begin : control_logic_TMR
 	//
 //	(* syn_preserve = "true" *)  reg  data_hldoff_a;
 //	(* syn_preserve = "true" *)  reg  [7:1] ooe_a;
-	(* syn_preserve = "true" *)  reg  [7:1] oe_1_a;
 	(* syn_preserve = "true" *)  reg  [7:1] oe_2_a;
 	(* syn_preserve = "true" *)  reg  doeall_a;
 	(* syn_preserve = "true" *)  reg  [7:1] jref_a;
@@ -1506,7 +1490,6 @@ begin : control_logic_TMR
 
 //	(* syn_preserve = "true" *)  reg  data_hldoff_b;
 //	(* syn_preserve = "true" *)  reg  [7:1] ooe_b;
-	(* syn_preserve = "true" *)  reg  [7:1] oe_1_b;
 	(* syn_preserve = "true" *)  reg  [7:1] oe_2_b;
 	(* syn_preserve = "true" *)  reg  doeall_b;
 	(* syn_preserve = "true" *)  reg  [7:1] jref_b;
@@ -1515,31 +1498,11 @@ begin : control_logic_TMR
 
 //	(* syn_preserve = "true" *)  reg  data_hldoff_c;
 //	(* syn_preserve = "true" *)  reg  [7:1] ooe_c;
-	(* syn_preserve = "true" *)  reg  [7:1] oe_1_c;
 	(* syn_preserve = "true" *)  reg  [7:1] oe_2_c;
 	(* syn_preserve = "true" *)  reg  doeall_c;
 	(* syn_preserve = "true" *)  reg  [7:1] jref_c;
 	(* syn_preserve = "true" *)  reg  rstlast_c;
 	(* syn_preserve = "true" *)  reg  [15:0] dout_c;
-	
-	//
-	assign  vt_rstcnt_a   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
-	assign  vt_ovlpend_a  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
-	assign  vt_dint_a     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
-	assign  vt_oeall_a    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
-	assign  vt_oe_1_a     = (oe_1_a    & oe_1_b)    | (oe_1_b    & oe_1_c)    | (oe_1_a    & oe_1_c);    // Majority logic
-
-	assign  vt_rstcnt_b   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
-	assign  vt_ovlpend_b  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
-	assign  vt_dint_b     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
-	assign  vt_oeall_b    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
-	assign  vt_oe_1_b     = (oe_1_a    & oe_1_b)    | (oe_1_b    & oe_1_c)    | (oe_1_a    & oe_1_c);    // Majority logic
-
-	assign  vt_rstcnt_c   = (rstcnt_a  & rstcnt_b)  | (rstcnt_b  & rstcnt_c)  | (rstcnt_a  & rstcnt_c);  // Majority logic
-	assign  vt_ovlpend_c  = (ovlpend_a & ovlpend_b) | (ovlpend_b & ovlpend_c) | (ovlpend_a & ovlpend_c); // Majority logic
-	assign  vt_dint_c     = (dint_a    & dint_b)    | (dint_b    & dint_c)    | (dint_a    & dint_c);    // Majority logic
-	assign  vt_oeall_c    = (oeall_a   & oeall_b)   | (oeall_b   & oeall_c)   | (oeall_a   & oeall_c);   // Majority logic
-	assign  vt_oe_1_c     = (oe_1_a    & oe_1_b)    | (oe_1_b    & oe_1_c)    | (oe_1_a    & oe_1_c);    // Majority logic
 
 	//
 	// voted nets of module scope registers
@@ -1611,7 +1574,6 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire taila_a;
 	(* syn_keep = "true" *)  wire tailb_a;
 	(* syn_keep = "true" *)  wire done_ce_a;
-	(* syn_keep = "true" *)  wire dodatx_a;
 	(* syn_keep = "true" *)  wire [7:1] fffl_a;  // FIFO full flags AND'd with not kill
 	(* syn_keep = "true" *)  wire [7:1] oe_a;
 	(* syn_keep = "true" *)  wire [5:1] oe6_a;
@@ -1621,6 +1583,8 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire rst_dov_a;
 	(* syn_keep = "true" *)  wire doneovlp_a;
 	(* syn_keep = "true" *)  wire poplast_a;
+	(* syn_keep = "true" *)  wire pop_tl_rst_a;
+	(* syn_keep = "true" *)  wire pop_tl_last_a;
 	//(* syn_keep = "true" *)  wire okdata_a;
 	//(* syn_keep = "true" *)  wire okdata_rst_a;
 	
@@ -1640,6 +1604,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire alct_res_a;
 	(* syn_keep = "true" *)  wire tmb_res_a;
 	(* syn_keep = "true" *)  wire trans_flg_a;
+	//Nets in always blocks
 	
 	(* syn_keep = "true" *)  wire [7:1] errd_rst_b;
 	(* syn_keep = "true" *)  wire oehdra_b;
@@ -1648,7 +1613,6 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire taila_b;
 	(* syn_keep = "true" *)  wire tailb_b;
 	(* syn_keep = "true" *)  wire done_ce_b;
-	(* syn_keep = "true" *)  wire dodatx_b;
 	(* syn_keep = "true" *)  wire [7:1] fffl_b;  // FIFO full flags AND'd with not kill
 	(* syn_keep = "true" *)  wire [7:1] oe_b;
 	(* syn_keep = "true" *)  wire [5:1] oe6_b;
@@ -1658,6 +1622,8 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire rst_dov_b;
 	(* syn_keep = "true" *)  wire doneovlp_b;
 	(* syn_keep = "true" *)  wire poplast_b;
+	(* syn_keep = "true" *)  wire pop_tl_rst_b;
+	(* syn_keep = "true" *)  wire pop_tl_last_b;
 	//(* syn_keep = "true" *)  wire okdata_b;
 	//(* syn_keep = "true" *)  wire okdata_rst_b;
 	
@@ -1677,6 +1643,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire alct_res_b;
 	(* syn_keep = "true" *)  wire tmb_res_b;
 	(* syn_keep = "true" *)  wire trans_flg_b;
+	//Nets in always blocks
 	
 	(* syn_keep = "true" *)  wire [7:1] errd_rst_c;
 	(* syn_keep = "true" *)  wire oehdra_c;
@@ -1685,7 +1652,6 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire taila_c;
 	(* syn_keep = "true" *)  wire tailb_c;
 	(* syn_keep = "true" *)  wire done_ce_c;
-	(* syn_keep = "true" *)  wire dodatx_c;
 	(* syn_keep = "true" *)  wire [7:1] fffl_c;  // FIFO full flags AND'd with not kill
 	(* syn_keep = "true" *)  wire [7:1] oe_c;
 	(* syn_keep = "true" *)  wire [5:1] oe6_c;
@@ -1695,6 +1661,8 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire rst_dov_c;
 	(* syn_keep = "true" *)  wire doneovlp_c;
 	(* syn_keep = "true" *)  wire poplast_c;
+	(* syn_keep = "true" *)  wire pop_tl_rst_c;
+	(* syn_keep = "true" *)  wire pop_tl_last_c;
 	//(* syn_keep = "true" *)  wire okdata_c;
 	//(* syn_keep = "true" *)  wire okdata_rst_c;
 	
@@ -1714,18 +1682,13 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire alct_res_c;
 	(* syn_keep = "true" *)  wire tmb_res_c;
 	(* syn_keep = "true" *)  wire trans_flg_c;
+	//Nets in always blocks
 
 	//
 	// local scope nets implemented in "always" blocks
-	//
-	(* syn_keep = "true" *)  reg  [15:0] d_htov_a;
-	(* syn_keep = "true" *)  reg  [11:0] cdcd_a;
-	
-	(* syn_keep = "true" *)  reg  [15:0] d_htov_b;
-	(* syn_keep = "true" *)  reg  [11:0] cdcd_b;
-	
-	(* syn_keep = "true" *)  reg  [15:0] d_htov_c;
-	(* syn_keep = "true" *)  reg  [11:0] cdcd_c;
+	(* syn_keep = "true" *)  reg  [11:0] cdcd_ai;
+	(* syn_keep = "true" *)  reg  [11:0] cdcd_bi;
+	(* syn_keep = "true" *)  reg  [11:0] cdcd_ci;
 	
 	//
 	// module and local scope nets
@@ -1773,7 +1736,6 @@ begin : control_logic_TMR
 	assign taila_a      = |{vt_tail_a[4:1]};
 	assign tailb_a      = |{vt_tail_a[8:5]};
 	assign done_ce_a    = (last_a & !vt_ovlpend_a) & dodat & (|(prio_act_a & ~fifordy_b)); // leading edge of last;
-	assign dodatx_a     = dodat && !readovlp_a;
 	assign fffl_a         = ~killdcd & vt_ffrfl_a;
 	assign oe_a         = prio_act_a & vt_rdy_a & ~{2'b0,vt_ovr_a};
 	assign oe6_a        = prio_act_a[5:1] & vt_ovr_a;
@@ -1783,6 +1745,9 @@ begin : control_logic_TMR
 	assign rst_dov_a    = pop_rst_a | vt_rdoneovlp_a;
 	assign doneovlp_a   = pop_rst_a | vt_dn_ovlp_a;
 	assign poplast_a    = pop_rst_a | last_a;
+	assign pop_tl_rst_a = pop_rst_a | st_tail;
+	assign pop_tl_last_a= poplast_a | st_tail;
+	
 	//assign okdata_a     = (ddcnt == 9'd448);
 	//assign okdata_rst_a = RST | okdata_a;
 	
@@ -1810,7 +1775,6 @@ begin : control_logic_TMR
 	assign taila_b      = |{vt_tail_b[4:1]};
 	assign tailb_b      = |{vt_tail_b[8:5]};
 	assign done_ce_b    = (last_b & !vt_ovlpend_b) & dodat & (|(prio_act_b & ~fifordy_b)); // leading edge of last;
-	assign dodatx_b     = dodat && !readovlp_b;
 	assign fffl_b         = ~killdcd & vt_ffrfl_b;
 	assign oe_b         = prio_act_b & vt_rdy_b & ~{2'b0,vt_ovr_b};
 	assign oe6_b        = prio_act_b[5:1] & vt_ovr_b;
@@ -1820,6 +1784,8 @@ begin : control_logic_TMR
 	assign rst_dov_b    = pop_rst_b | vt_rdoneovlp_b;
 	assign doneovlp_b   = pop_rst_b | vt_dn_ovlp_b;
 	assign poplast_b    = pop_rst_b | last_b;
+	assign pop_tl_rst_b = pop_rst_b | st_tail;
+	assign pop_tl_last_b= poplast_b | st_tail;
 	//assign okdata_b     = (ddcnt == 9'd448);
 	//assign okdata_rst_b = RST | okdata_b;
 	
@@ -1847,7 +1813,6 @@ begin : control_logic_TMR
 	assign taila_c      = |{vt_tail_c[4:1]};
 	assign tailb_c      = |{vt_tail_c[8:5]};
 	assign done_ce_c    = (last_c & !vt_ovlpend_c) & dodat & (|(prio_act_c & ~fifordy_b)); // leading edge of last;
-	assign dodatx_c     = dodat && !readovlp_c;
 	assign fffl_c       = ~killdcd & vt_ffrfl_c;
 	assign oe_c         = prio_act_c & vt_rdy_c & ~{2'b0,vt_ovr_c};
 	assign oe6_c        = prio_act_c[5:1] & vt_ovr_c;
@@ -1857,6 +1822,8 @@ begin : control_logic_TMR
 	assign rst_dov_c    = pop_rst_c | vt_rdoneovlp_c;
 	assign doneovlp_c   = pop_rst_c | vt_dn_ovlp_c;
 	assign poplast_c    = pop_rst_c | last_c;
+	assign pop_tl_rst_c = pop_rst_c | st_tail;
+	assign pop_tl_last_c= poplast_c | st_tail;
 	//assign okdata_c     = (ddcnt == 9'd448);
 	//assign okdata_rst_c = RST | okdata_c;
 	
@@ -1962,7 +1929,7 @@ begin : control_logic_TMR
 	assign clrcrc = vt_oehdr_a[1];
 
 	assign POPBRAM = vt_popbram_a;
-	assign DAV = vt_dav_a;
+	assign DAV = vt_dav_1_a;
 	assign DOUT = vt_dout;
 
 //	
@@ -2012,86 +1979,86 @@ begin : control_logic_TMR
 			prio_act_c = 7'b0000000;
 	end
 
-	always @*
+	always @(posedge CLKDDU)
 	begin
 		case({readovlp_a,vt_tail_a,vt_oehdr_a})
-			17'b00000000000000001 : d_htov_a = {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
-			17'b00000000000000010 : d_htov_a = {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
-			17'b00000000000000100 : d_htov_a = {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
-			17'b00000000000001000 : d_htov_a = {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
-			17'b00000000000010000 : d_htov_a = {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
-			17'b00000000000100000 : d_htov_a = {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
-			17'b00000000001000000 : d_htov_a = {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
-			17'b00000000010000000 : d_htov_a = {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
-			17'b00000000100000000 : d_htov_a = {4'hF,           vt_datanoend_a[7],BXN[4:0],l1cnt[5:0]};                           // Tail 1 code F
-			17'b00000001000000000 : d_htov_a = {4'hF,           DAVACT[10:6],2'b00,vt_datanoend_a[5:1]};                          // Tail 2 code F
-			17'b00000010000000000 : d_htov_a = {4'hF,           fffl_a[3:1],vt_davnodata_a[6],STATUS[14:7]};                      // Tail 3 code F
-			17'b00000100000000000 : d_htov_a = {4'hF,           vt_davnodata_a[7],2'b00,vt_davnodata_a[5:1],2'b00,fffl_a[5:4]};   // Tail 4 code F
-			17'b00001000000000000 : d_htov_a = {4'hE,           fffl_a[7:6],ffhf[7:6],vt_datanoend_a[6],2'b11,ffhf[5:1]};         // Tail 5 code E
-			17'b00010000000000000 : d_htov_a = {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
-			17'b00100000000000000 : d_htov_a = {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
-			17'b01000000000000000 : d_htov_a = {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
-			17'b10000000000000000 : d_htov_a =  doutx[15:0];                                                                      // Read overlap FIFO
-			default               : d_htov_a = 16'h0000;
+			17'b00000000000000001 : d_htov_a <= {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
+			17'b00000000000000010 : d_htov_a <= {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
+			17'b00000000000000100 : d_htov_a <= {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
+			17'b00000000000001000 : d_htov_a <= {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
+			17'b00000000000010000 : d_htov_a <= {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
+			17'b00000000000100000 : d_htov_a <= {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
+			17'b00000000001000000 : d_htov_a <= {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
+			17'b00000000010000000 : d_htov_a <= {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
+			17'b00000000100000000 : d_htov_a <= {4'hF,           vt_datanoend_a[7],BXN[4:0],l1cnt[5:0]};                           // Tail 1 code F
+			17'b00000001000000000 : d_htov_a <= {4'hF,           DAVACT[10:6],2'b00,vt_datanoend_a[5:1]};                          // Tail 2 code F
+			17'b00000010000000000 : d_htov_a <= {4'hF,           fffl_a[3:1],vt_davnodata_a[6],STATUS[14:7]};                      // Tail 3 code F
+			17'b00000100000000000 : d_htov_a <= {4'hF,           vt_davnodata_a[7],2'b00,vt_davnodata_a[5:1],2'b00,fffl_a[5:4]};   // Tail 4 code F
+			17'b00001000000000000 : d_htov_a <= {4'hE,           fffl_a[7:6],ffhf[7:6],vt_datanoend_a[6],2'b11,ffhf[5:1]};         // Tail 5 code E
+			17'b00010000000000000 : d_htov_a <= {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
+			17'b00100000000000000 : d_htov_a <= {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
+			17'b01000000000000000 : d_htov_a <= {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
+			17'b10000000000000000 : d_htov_a <=  doutx[15:0];                                                                      // Read overlap FIFO
+			default               : d_htov_a <= 16'h0000;
 		endcase
 		case({readovlp_b,vt_tail_b,vt_oehdr_b})
-			17'b00000000000000001 : d_htov_b = {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
-			17'b00000000000000010 : d_htov_b = {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
-			17'b00000000000000100 : d_htov_b = {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
-			17'b00000000000001000 : d_htov_b = {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
-			17'b00000000000010000 : d_htov_b = {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
-			17'b00000000000100000 : d_htov_b = {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
-			17'b00000000001000000 : d_htov_b = {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
-			17'b00000000010000000 : d_htov_b = {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
-			17'b00000000100000000 : d_htov_b = {4'hF,           vt_datanoend_b[7],BXN[4:0],l1cnt[5:0]};                           // Tail 1 code F
-			17'b00000001000000000 : d_htov_b = {4'hF,           DAVACT[10:6],2'b00,vt_datanoend_b[5:1]};                          // Tail 2 code F
-			17'b00000010000000000 : d_htov_b = {4'hF,           fffl_b[3:1],vt_davnodata_b[6],STATUS[14:7]};                      // Tail 3 code F
-			17'b00000100000000000 : d_htov_b = {4'hF,           vt_davnodata_b[7],2'b00,vt_davnodata_b[5:1],2'b00,fffl_b[5:4]};   // Tail 4 code F
-			17'b00001000000000000 : d_htov_b = {4'hE,           fffl_b[7:6],ffhf[7:6],vt_datanoend_b[6],2'b11,ffhf[5:1]};         // Tail 5 code E
-			17'b00010000000000000 : d_htov_b = {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
-			17'b00100000000000000 : d_htov_b = {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
-			17'b01000000000000000 : d_htov_b = {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
-			17'b10000000000000000 : d_htov_b =  doutx[15:0];                                                                      // Read overlap FIFO
-			default               : d_htov_b = 16'h0000;
+			17'b00000000000000001 : d_htov_b <= {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
+			17'b00000000000000010 : d_htov_b <= {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
+			17'b00000000000000100 : d_htov_b <= {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
+			17'b00000000000001000 : d_htov_b <= {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
+			17'b00000000000010000 : d_htov_b <= {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
+			17'b00000000000100000 : d_htov_b <= {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
+			17'b00000000001000000 : d_htov_b <= {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
+			17'b00000000010000000 : d_htov_b <= {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
+			17'b00000000100000000 : d_htov_b <= {4'hF,           vt_datanoend_b[7],BXN[4:0],l1cnt[5:0]};                           // Tail 1 code F
+			17'b00000001000000000 : d_htov_b <= {4'hF,           DAVACT[10:6],2'b00,vt_datanoend_b[5:1]};                          // Tail 2 code F
+			17'b00000010000000000 : d_htov_b <= {4'hF,           fffl_b[3:1],vt_davnodata_b[6],STATUS[14:7]};                      // Tail 3 code F
+			17'b00000100000000000 : d_htov_b <= {4'hF,           vt_davnodata_b[7],2'b00,vt_davnodata_b[5:1],2'b00,fffl_b[5:4]};   // Tail 4 code F
+			17'b00001000000000000 : d_htov_b <= {4'hE,           fffl_b[7:6],ffhf[7:6],vt_datanoend_b[6],2'b11,ffhf[5:1]};         // Tail 5 code E
+			17'b00010000000000000 : d_htov_b <= {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
+			17'b00100000000000000 : d_htov_b <= {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
+			17'b01000000000000000 : d_htov_b <= {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
+			17'b10000000000000000 : d_htov_b <=  doutx[15:0];                                                                      // Read overlap FIFO
+			default               : d_htov_b <= 16'h0000;
 		endcase
 		case({readovlp_c,vt_tail_c,vt_oehdr_c})
-			17'b00000000000000001 : d_htov_c = {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
-			17'b00000000000000010 : d_htov_c = {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
-			17'b00000000000000100 : d_htov_c = {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
-			17'b00000000000001000 : d_htov_c = {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
-			17'b00000000000010000 : d_htov_c = {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
-			17'b00000000000100000 : d_htov_c = {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
-			17'b00000000001000000 : d_htov_c = {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
-			17'b00000000010000000 : d_htov_c = {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
-			17'b00000000100000000 : d_htov_c = {4'hF,           vt_datanoend_c[7],BXN[4:0],l1cnt[5:0]};                           // Tail 1 code F
-			17'b00000001000000000 : d_htov_c = {4'hF,           DAVACT[10:6],2'b00,vt_datanoend_c[5:1]};                          // Tail 2 code F
-			17'b00000010000000000 : d_htov_c = {4'hF,           fffl_c[3:1],vt_davnodata_c[6],STATUS[14:7]};                      // Tail 3 code F
-			17'b00000100000000000 : d_htov_c = {4'hF,           vt_davnodata_c[7],2'b00,vt_davnodata_c[5:1],2'b00,fffl_c[5:4]};   // Tail 4 code F
-			17'b00001000000000000 : d_htov_c = {4'hE,           fffl_c[7:6],ffhf[7:6],vt_datanoend_c[6],2'b11,ffhf[5:1]};         // Tail 5 code E
-			17'b00010000000000000 : d_htov_c = {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
-			17'b00100000000000000 : d_htov_c = {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
-			17'b01000000000000000 : d_htov_c = {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
-			17'b10000000000000000 : d_htov_c =  doutx[15:0];                                                                      // Read overlap FIFO
-			default               : d_htov_c = 16'h0000;
+			17'b00000000000000001 : d_htov_c <= {3'b100,head_d12,l1cnt[11:0]};                                                     // Header 1 code 8 or 9
+			17'b00000000000000010 : d_htov_c <= {3'b100,head_d12,l1cnt[23:12]};                                                    // Header 2 code 8 or 9
+			17'b00000000000000100 : d_htov_c <= {3'b100,head_d12,DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[15:11]}; // Header 3 code 8 or 9
+			17'b00000000000001000 : d_htov_c <= {3'b100,head_d12,BXN[11:0]};                                                       // Header 4 code 8 or 9
+			17'b00000000000010000 : d_htov_c <= {4'hA,           DAVACT[16],DAVACT[0],fmt_ver[1:0],fendaverr,2'b00,DAVACT[5:1]};   // Header 5 code A
+			17'b00000000000100000 : d_htov_c <= {4'hA,           DAQMBID[11:0]};                                                   // Header 6 code A
+			17'b00000000001000000 : d_htov_c <= {4'hA,           DAVACT[16],DAVACT[0],DAVACT[10:6],BXN[4:0]};                      // Header 7 code A
+			17'b00000000010000000 : d_htov_c <= {4'hA,           CFEBBX[3:0],fmt_ver[1:0],fendaverr,l1cnt[4:0]};                   // Header 8 code A
+			17'b00000000100000000 : d_htov_c <= {4'hF,           vt_datanoend_c[7],BXN[4:0],l1cnt[5:0]};                           // Tail 1 code F
+			17'b00000001000000000 : d_htov_c <= {4'hF,           DAVACT[10:6],2'b00,vt_datanoend_c[5:1]};                          // Tail 2 code F
+			17'b00000010000000000 : d_htov_c <= {4'hF,           fffl_c[3:1],vt_davnodata_c[6],STATUS[14:7]};                      // Tail 3 code F
+			17'b00000100000000000 : d_htov_c <= {4'hF,           vt_davnodata_c[7],2'b00,vt_davnodata_c[5:1],2'b00,fffl_c[5:4]};   // Tail 4 code F
+			17'b00001000000000000 : d_htov_c <= {4'hE,           fffl_c[7:6],ffhf[7:6],vt_datanoend_c[6],2'b11,ffhf[5:1]};         // Tail 5 code E
+			17'b00010000000000000 : d_htov_c <= {4'hE,           DAQMBID[11:0]};                                                   // Tail 6 code E
+			17'b00100000000000000 : d_htov_c <= {4'hE,           12'h000};                                                         // Tail 7 code E CRC place holder
+			17'b01000000000000000 : d_htov_c <= {4'hE,           12'h000};                                                         // Tail 8 code E CRC place holder
+			17'b10000000000000000 : d_htov_c <=  doutx[15:0];                                                                      // Read overlap FIFO
+			default               : d_htov_c <= 16'h0000;
 		endcase
 	end
 
 	always @*
 	begin
 		case({vt_dtail8_a,vt_dtail7_a})
-			2'b01   : cdcd_a = {regcrc[22],regcrc[10:0]};  // Tail 7 CRC
-			2'b10   : cdcd_a = {regcrc[23],regcrc[21:11]}; // Tail 8 CRC
-			default : cdcd_a = 12'h000;
+			2'b01   : cdcd_ai = {regcrc[22],regcrc[10:0]};  // Tail 7 CRC
+			2'b10   : cdcd_ai = {regcrc[23],regcrc[21:11]}; // Tail 8 CRC
+			default : cdcd_ai = 12'h000;
 		endcase
 		case({vt_dtail8_b,vt_dtail7_b})
-			2'b01   : cdcd_b = {regcrc[22],regcrc[10:0]};  // Tail 7 CRC
-			2'b10   : cdcd_b = {regcrc[23],regcrc[21:11]}; // Tail 8 CRC
-			default : cdcd_b = 12'h000;
+			2'b01   : cdcd_bi = {regcrc[22],regcrc[10:0]};  // Tail 7 CRC
+			2'b10   : cdcd_bi = {regcrc[23],regcrc[21:11]}; // Tail 8 CRC
+			default : cdcd_bi = 12'h000;
 		endcase
 		case({vt_dtail8_c,vt_dtail7_c})
-			2'b01   : cdcd_c = {regcrc[22],regcrc[10:0]};  // Tail 7 CRC
-			2'b10   : cdcd_c = {regcrc[23],regcrc[21:11]}; // Tail 8 CRC
-			default : cdcd_c = 12'h000;
+			2'b01   : cdcd_ci = {regcrc[22],regcrc[10:0]};  // Tail 7 CRC
+			2'b10   : cdcd_ci = {regcrc[23],regcrc[21:11]}; // Tail 8 CRC
+			default : cdcd_ci = 12'h000;
 		endcase
 	end
 
@@ -2278,31 +2245,23 @@ begin : control_logic_TMR
 		if(prio_act_a[7] && trans_tora)begin
 			da_pipe1_a <= vt_alct_in_1_a;
 			da_pipe2_a <= vt_alct_in_2_a;
+			da_pipe3_a <= 16'h0000;
 		end
 		else if(prio_act_a[6] && trans_tora)begin
 			da_pipe1_a <= vt_tmb_in_1_a;
 			da_pipe2_a <= vt_tmb_in_2_a;
+			da_pipe3_a <= 16'h0000;
 		end
 		else
 		begin
 			da_pipe1_a <= da_in;
 			da_pipe2_a <= vt_da_pipe1_a;
+			da_pipe3_a <= vt_da_pipe2_a;
 		end
 	
-		cfeb1_in_1_a <= (prio_act_a[1] && data_ce) ? da_in : vt_cfeb1_in_1_a;
-		cfeb2_in_1_a <= (prio_act_a[2] && data_ce) ? da_in : vt_cfeb2_in_1_a;
-		cfeb3_in_1_a <= (prio_act_a[3] && data_ce) ? da_in : vt_cfeb3_in_1_a;
-		cfeb4_in_1_a <= (prio_act_a[4] && data_ce) ? da_in : vt_cfeb4_in_1_a;
-		cfeb5_in_1_a <= (prio_act_a[5] && data_ce) ? da_in : vt_cfeb5_in_1_a;
 		tmb_in_1_a   <= (prio_act_a[6] && data_ce) ? da_in : vt_tmb_in_1_a;
-		alct_in_1_a  <= (prio_act_a[7] && data_ce) ? da_in : vt_alct_in_1_a;
-		
-		cfeb1_in_2_a <= (prio_act_a[1] && data_ce) ? vt_cfeb1_in_1_a : vt_cfeb1_in_2_a;
-		cfeb2_in_2_a <= (prio_act_a[2] && data_ce) ? vt_cfeb2_in_1_a : vt_cfeb2_in_2_a;
-		cfeb3_in_2_a <= (prio_act_a[3] && data_ce) ? vt_cfeb3_in_1_a : vt_cfeb3_in_2_a;
-		cfeb4_in_2_a <= (prio_act_a[4] && data_ce) ? vt_cfeb4_in_1_a : vt_cfeb4_in_2_a;
-		cfeb5_in_2_a <= (prio_act_a[5] && data_ce) ? vt_cfeb5_in_1_a : vt_cfeb5_in_2_a;
 		tmb_in_2_a   <= (prio_act_a[6] && data_ce) ? vt_tmb_in_1_a   : vt_tmb_in_2_a;
+		alct_in_1_a  <= (prio_act_a[7] && data_ce) ? da_in : vt_alct_in_1_a;		
 		alct_in_2_a  <= (prio_act_a[7] && data_ce) ? vt_alct_in_1_a  : vt_alct_in_2_a;
 	end
 	
@@ -2313,31 +2272,23 @@ begin : control_logic_TMR
 		if(prio_act_b[7] && trans_tora)begin
 			da_pipe1_b <= vt_alct_in_1_b;
 			da_pipe2_b <= vt_alct_in_2_b;
+			da_pipe3_b <= 16'h0000;
 		end
 		else if(prio_act_b[6] && trans_tora)begin
 			da_pipe1_b <= vt_tmb_in_1_b;
 			da_pipe2_b <= vt_tmb_in_2_b;
+			da_pipe3_b <= 16'h0000;
 		end
 		else
 		begin
 			da_pipe1_b <= da_in;
 			da_pipe2_b <= vt_da_pipe1_b;
+			da_pipe3_b <= vt_da_pipe2_b;
 		end
 	
-		cfeb1_in_1_b <= (prio_act_b[1] && data_ce) ? da_in : vt_cfeb1_in_1_b;
-		cfeb2_in_1_b <= (prio_act_b[2] && data_ce) ? da_in : vt_cfeb2_in_1_b;
-		cfeb3_in_1_b <= (prio_act_b[3] && data_ce) ? da_in : vt_cfeb3_in_1_b;
-		cfeb4_in_1_b <= (prio_act_b[4] && data_ce) ? da_in : vt_cfeb4_in_1_b;
-		cfeb5_in_1_b <= (prio_act_b[5] && data_ce) ? da_in : vt_cfeb5_in_1_b;
 		tmb_in_1_b   <= (prio_act_b[6] && data_ce) ? da_in : vt_tmb_in_1_b;
-		alct_in_1_b  <= (prio_act_b[7] && data_ce) ? da_in : vt_alct_in_1_b;
-		
-		cfeb1_in_2_b <= (prio_act_b[1] && data_ce) ? vt_cfeb1_in_1_b : vt_cfeb1_in_2_b;
-		cfeb2_in_2_b <= (prio_act_b[2] && data_ce) ? vt_cfeb2_in_1_b : vt_cfeb2_in_2_b;
-		cfeb3_in_2_b <= (prio_act_b[3] && data_ce) ? vt_cfeb3_in_1_b : vt_cfeb3_in_2_b;
-		cfeb4_in_2_b <= (prio_act_b[4] && data_ce) ? vt_cfeb4_in_1_b : vt_cfeb4_in_2_b;
-		cfeb5_in_2_b <= (prio_act_b[5] && data_ce) ? vt_cfeb5_in_1_b : vt_cfeb5_in_2_b;
 		tmb_in_2_b   <= (prio_act_b[6] && data_ce) ? vt_tmb_in_1_b   : vt_tmb_in_2_b;
+		alct_in_1_b  <= (prio_act_b[7] && data_ce) ? da_in : vt_alct_in_1_b;	
 		alct_in_2_b  <= (prio_act_b[7] && data_ce) ? vt_alct_in_1_b  : vt_alct_in_2_b;
 	end
 
@@ -2348,31 +2299,23 @@ begin : control_logic_TMR
 		if(prio_act_c[7] && trans_tora)begin
 			da_pipe1_c <= vt_alct_in_1_c;
 			da_pipe2_c <= vt_alct_in_2_c;
+			da_pipe3_c <= 16'h0000;
 		end
 		else if(prio_act_c[6] && trans_tora)begin
 			da_pipe1_c <= vt_tmb_in_1_c;
 			da_pipe2_c <= vt_tmb_in_2_c;
+			da_pipe3_c <= 16'h0000;
 		end
 		else
 		begin
 			da_pipe1_c <= da_in;
 			da_pipe2_c <= vt_da_pipe1_c;
+			da_pipe3_c <= vt_da_pipe2_c;
 		end
 	
-		cfeb1_in_1_c <= (prio_act_c[1] && data_ce) ? da_in : vt_cfeb1_in_1_c;
-		cfeb2_in_1_c <= (prio_act_c[2] && data_ce) ? da_in : vt_cfeb2_in_1_c;
-		cfeb3_in_1_c <= (prio_act_c[3] && data_ce) ? da_in : vt_cfeb3_in_1_c;
-		cfeb4_in_1_c <= (prio_act_c[4] && data_ce) ? da_in : vt_cfeb4_in_1_c;
-		cfeb5_in_1_c <= (prio_act_c[5] && data_ce) ? da_in : vt_cfeb5_in_1_c;
 		tmb_in_1_c   <= (prio_act_c[6] && data_ce) ? da_in : vt_tmb_in_1_c;
-		alct_in_1_c  <= (prio_act_c[7] && data_ce) ? da_in : vt_alct_in_1_c;
-		
-		cfeb1_in_2_c <= (prio_act_c[1] && data_ce) ? vt_cfeb1_in_1_b : vt_cfeb1_in_2_c;
-		cfeb2_in_2_c <= (prio_act_c[2] && data_ce) ? vt_cfeb2_in_1_b : vt_cfeb2_in_2_c;
-		cfeb3_in_2_c <= (prio_act_c[3] && data_ce) ? vt_cfeb3_in_1_b : vt_cfeb3_in_2_c;
-		cfeb4_in_2_c <= (prio_act_c[4] && data_ce) ? vt_cfeb4_in_1_b : vt_cfeb4_in_2_c;
-		cfeb5_in_2_c <= (prio_act_c[5] && data_ce) ? vt_cfeb5_in_1_b : vt_cfeb5_in_2_c;
 		tmb_in_2_c   <= (prio_act_c[6] && data_ce) ? vt_tmb_in_1_b   : vt_tmb_in_2_c;
+		alct_in_1_c  <= (prio_act_c[7] && data_ce) ? da_in : vt_alct_in_1_c;	
 		alct_in_2_c  <= (prio_act_c[7] && data_ce) ? vt_alct_in_1_b  : vt_alct_in_2_c;
 	end
 
@@ -2460,6 +2403,7 @@ begin : control_logic_TMR
 				tail_a    <= 8'h00;
 				tail8_1_a <= 1'b0;
 				dav_a     <= 1'b0;
+				dav_1_a   <= 1'b0;
 				rdyovlp_a <= 1'b0;
 				dn_oe_a   <= 7'h00;
 				davnodata_a <= 7'h00;
@@ -2478,6 +2422,7 @@ begin : control_logic_TMR
 				tail_a   <= {vt_tail_a[7:1],st_tail};
 				tail8_1_a <= vt_tail_a[8];
 				dav_a     <= ~vt_disdav_a & (vt_oehdtl_a | vt_oedata_a);
+				dav_1_a   <= dav_a;
 				rdyovlp_a <= dodat;
 				if(done_ce_a || clr_done) dn_oe_a   <= oe_a;
 				if((rstcnt_a && dodat) || (rstcnt_a && do_err)) datanoend_a  <= vt_datanoend_a | oe_a;
@@ -2505,6 +2450,7 @@ begin : control_logic_TMR
 				tail_b    <= 8'h00;
 				tail8_1_b <= 1'b0;
 				dav_b     <= 1'b0;
+				dav_1_b   <= 1'b0;
 				rdyovlp_b <= 1'b0;
 				dn_oe_b   <= 7'h00;
 				davnodata_b <= 7'h00;
@@ -2523,6 +2469,7 @@ begin : control_logic_TMR
 				tail_b   <= {vt_tail_b[7:1],st_tail};
 				tail8_1_b <= vt_tail_b[8];
 				dav_b     <= ~vt_disdav_b & (vt_oehdtl_b | vt_oedata_b);
+				dav_1_b   <= dav_b;
 				rdyovlp_b <= dodat;
 				if(done_ce_b || clr_done) dn_oe_b   <= oe_b;
 				if((rstcnt_b && dodat) || (rstcnt_b && do_err)) datanoend_b  <= vt_datanoend_b | oe_b;
@@ -2550,6 +2497,7 @@ begin : control_logic_TMR
 				tail_c    <= 8'h00;
 				tail8_1_c <= 1'b0;
 				dav_c     <= 1'b0;
+				dav_1_c   <= 1'b0;
 				rdyovlp_c <= 1'b0;
 				dn_oe_c   <= 7'h00;
 				davnodata_c <= 7'h00;
@@ -2568,6 +2516,7 @@ begin : control_logic_TMR
 				tail_c   <= {vt_tail_c[7:1],st_tail};
 				tail8_1_c <= vt_tail_c[8];
 				dav_c     <= ~vt_disdav_c & (vt_oehdtl_c | vt_oedata_c);
+				dav_1_c   <= dav_c;
 				rdyovlp_c <= dodat;
 				if(done_ce_c || clr_done) dn_oe_c   <= oe_c;
 				if((rstcnt_c && dodat) || (rstcnt_c && do_err)) datanoend_c  <= vt_datanoend_c | oe_c;
@@ -3248,12 +3197,15 @@ begin : control_logic_TMR
 		rdffnxt_3_a    <= vt_rdffnxt_2_a;
 		rdoneovlp_a   <= doneovlp_a;
 		//dint_a        <= dodatx_a  ? da_in : d_htov_a;
-		dint_a        <= dodatx_a  ? vt_da_pipe2_a : d_htov_a;
-		dout_a        <= vt_dtail78_a ? {vt_dint_a[15:12],cdcd_a}  : vt_dint_a;
+		dint_a        <= vt_dodatx_a  ? vt_da_pipe3_a : vt_d_htov_a;
+		dout_a        <= vt_dtail78_1_a ? {vt_dint_a[15:12],vt_cdcd_a}  : vt_dint_a;
 		dint_ovlp_b_a <= ovlpin_b;
 		dtail7_a      <= vt_tail_a[7];
 		dtail8_a      <= vt_dtail7_a;
 		dtail78_a     <= vt_tail_a[7] | vt_tail_a[8];
+		dtail78_1_a   <= vt_dtail78_a;
+		dodatx_a      <= dodat && !readovlp_a;
+		cdcd_a		  <= cdcd_ai;
 
 		rovr_1_b      <= rovr_b;
 		inv_data_1_b  <= |(prio_act_b & fifordy_b) & proc_data;
@@ -3264,12 +3216,15 @@ begin : control_logic_TMR
 		rdffnxt_3_b    <= vt_rdffnxt_2_b;
 		rdoneovlp_b   <= doneovlp_b;
 		//dint_b        <= dodatx_b  ? da_in : d_htov_b;
-		dint_b        <= dodatx_b  ? vt_da_pipe2_b : d_htov_b;
-		dout_b        <= vt_dtail78_b ? {vt_dint_b[15:12],cdcd_b}  : vt_dint_b;
+		dint_b        <= vt_dodatx_b  ? vt_da_pipe3_b : vt_d_htov_b;
+		dout_b        <= vt_dtail78_1_b ? {vt_dint_b[15:12],vt_cdcd_b}  : vt_dint_b;
 		dint_ovlp_b_b <= ovlpin_b;
 		dtail7_b      <= vt_tail_b[7];
 		dtail8_b      <= vt_dtail7_b;
 		dtail78_b     <= vt_tail_b[7] | vt_tail_b[8];
+		dtail78_1_b   <= vt_dtail78_b;
+		dodatx_b      <= dodat && !readovlp_b;
+		cdcd_b		  <= cdcd_bi;
 
 		rovr_1_c      <= rovr_c;
 		inv_data_1_c  <= |(prio_act_c & fifordy_b) & proc_data;
@@ -3280,12 +3235,15 @@ begin : control_logic_TMR
 		rdffnxt_3_c    <= vt_rdffnxt_2_c;
 		rdoneovlp_c   <= doneovlp_c;
 		//dint_c        <= dodatx_c  ? da_in : d_htov_c;
-		dint_c        <= dodatx_c  ? vt_da_pipe2_c : d_htov_c;
-		dout_c        <= vt_dtail78_c ? {vt_dint_c[15:12],cdcd_c}  : vt_dint_c;
+		dint_c        <= vt_dodatx_c  ? vt_da_pipe3_c : vt_d_htov_c;
+		dout_c        <= vt_dtail78_1_c ? {vt_dint_c[15:12],vt_cdcd_c}  : vt_dint_c;
 		dint_ovlp_b_c <= ovlpin_b;
 		dtail7_c      <= vt_tail_c[7];
 		dtail8_c      <= vt_dtail7_c;
 		dtail78_c     <= vt_tail_c[7] | vt_tail_c[8];
+		dtail78_1_c   <= vt_dtail78_c;
+		dodatx_c      <= dodat && !readovlp_c;
+		cdcd_c		  <= cdcd_ci;
 	end
 //
 
@@ -3319,9 +3277,9 @@ begin : control_logic_TMR
 		if(ce_b5)   b5_hdr_c  <= da_in;
 	end
 
-	always @(posedge CLKDDU or posedge poplast_a)
+	always @(posedge CLKDDU or posedge pop_tl_last_a)
 	begin
-		if(poplast_a || st_tail)
+		if(pop_tl_last_a)
 			begin
 				oeall_a  <= 1'b0;
 				doeall_a <= 1'b0;
@@ -3334,9 +3292,9 @@ begin : control_logic_TMR
 			end
 	end
 
-	always @(posedge CLKDDU or posedge poplast_b)
+	always @(posedge CLKDDU or posedge pop_tl_last_b)
 	begin
-		if(poplast_b || st_tail)
+		if(pop_tl_last_b)
 			begin
 				oeall_b  <= 1'b0;
 				doeall_b <= 1'b0;
@@ -3349,9 +3307,9 @@ begin : control_logic_TMR
 			end
 	end
 
-	always @(posedge CLKDDU or posedge poplast_c)
+	always @(posedge CLKDDU or posedge pop_tl_last_c)
 	begin
-		if(poplast_c || st_tail)
+		if(pop_tl_last_c)
 			begin
 				oeall_c  <= 1'b0;
 				doeall_c <= 1'b0;
@@ -3520,6 +3478,7 @@ begin : control_logic_no_TMR
 	reg  dn_ovlp_r;
 	reg  ooeovlp_r;
 	reg  dodatx_r;
+	reg  [15:0] d_htov_r;
 	reg  [11:0] cdcd_r;
 
 
@@ -3633,7 +3592,6 @@ begin : control_logic_no_TMR
 	wire tmb_res_i;
 	wire trans_flg_i;
 	//Nets in always blocks
-	reg  [15:0] d_htov_r;
 	reg  [11:0] cdcd_i;
 
 	//
@@ -3876,8 +3834,8 @@ begin : control_logic_no_TMR
 			da_pipe3_r <= da_pipe2_r;
 		end	
 		tmb_in_1_r   <= (prio_act_i[6] && data_ce) ? da_in : tmb_in_1_r;
-		alct_in_1_r  <= (prio_act_i[7] && data_ce) ? da_in : alct_in_1_r;		
 		tmb_in_2_r   <= (prio_act_i[6] && data_ce) ? tmb_in_1_r : tmb_in_2_r;
+		alct_in_1_r  <= (prio_act_i[7] && data_ce) ? da_in : alct_in_1_r;		
 		alct_in_2_r  <= (prio_act_i[7] && data_ce) ? alct_in_1_r : alct_in_2_r;
 	end
 	
