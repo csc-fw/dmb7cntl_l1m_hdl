@@ -394,10 +394,8 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	(* syn_preserve = "true" *)  reg  strt_tmo_a;
 	(* syn_preserve = "true" *)  reg  strt_tmo_1_a;
-	(* syn_preserve = "true" *)  reg  ce_b4_1_a;
-	(* syn_preserve = "true" *)  reg  ce_b5_1_a;
-	(* syn_preserve = "true" *)  reg  ce_l1l_1_a;
-	(* syn_preserve = "true" *)  reg  ce_l1h_1_a;
+	(* syn_preserve = "true" *)  reg  proc_data_1_a;
+	(* syn_preserve = "true" *)  reg  proc_data_2_a;
 	(* syn_preserve = "true" *)  reg  [15:0] b4_hdr_a;
 	(* syn_preserve = "true" *)  reg  [15:0] b5_hdr_a;
 	(* syn_preserve = "true" *)  reg  [23:0] l1a_a;
@@ -479,10 +477,8 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	(* syn_preserve = "true" *)  reg  strt_tmo_b;
 	(* syn_preserve = "true" *)  reg  strt_tmo_1_b;
-	(* syn_preserve = "true" *)  reg  ce_b4_1_b;
-	(* syn_preserve = "true" *)  reg  ce_b5_1_b;
-	(* syn_preserve = "true" *)  reg  ce_l1l_1_b;
-	(* syn_preserve = "true" *)  reg  ce_l1h_1_b;
+	(* syn_preserve = "true" *)  reg  proc_data_1_b;
+	(* syn_preserve = "true" *)  reg  proc_data_2_b;
 	(* syn_preserve = "true" *)  reg  [15:0] b4_hdr_b;
 	(* syn_preserve = "true" *)  reg  [15:0] b5_hdr_b;
 	(* syn_preserve = "true" *)  reg  [23:0] l1a_b;
@@ -564,10 +560,8 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	(* syn_preserve = "true" *)  reg  strt_tmo_c;
 	(* syn_preserve = "true" *)  reg  strt_tmo_1_c;
-	(* syn_preserve = "true" *)  reg  ce_b4_1_c;
-	(* syn_preserve = "true" *)  reg  ce_b5_1_c;
-	(* syn_preserve = "true" *)  reg  ce_l1l_1_c;
-	(* syn_preserve = "true" *)  reg  ce_l1h_1_c;
+	(* syn_preserve = "true" *)  reg  proc_data_1_c;
+	(* syn_preserve = "true" *)  reg  proc_data_2_c;
 	(* syn_preserve = "true" *)  reg  [15:0] b4_hdr_c;
 	(* syn_preserve = "true" *)  reg  [15:0] b5_hdr_c;
 	(* syn_preserve = "true" *)  reg  [23:0] l1a_c;
@@ -651,10 +645,7 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	(* syn_keep = "true" *)  wire vt_strt_tmo_a;
 	(* syn_keep = "true" *)  wire vt_strt_tmo_1_a;
-	(* syn_keep = "true" *)  wire vt_ce_b4_1_a;
-	(* syn_keep = "true" *)  wire vt_ce_b5_1_a;
-	(* syn_keep = "true" *)  wire vt_ce_l1l_1_a;
-	(* syn_keep = "true" *)  wire vt_ce_l1h_1_a;
+	(* syn_keep = "true" *)  wire vt_proc_data_1_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_b4_hdr_a;
 	(* syn_keep = "true" *)  wire [15:0] vt_b5_hdr_a;
 	(* syn_keep = "true" *)  wire [23:0] vt_l1a_a;
@@ -736,10 +727,7 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	(* syn_keep = "true" *)  wire vt_strt_tmo_b;
 	(* syn_keep = "true" *)  wire vt_strt_tmo_1_b;
-	(* syn_keep = "true" *)  wire vt_ce_b4_1_b;
-	(* syn_keep = "true" *)  wire vt_ce_b5_1_b;
-	(* syn_keep = "true" *)  wire vt_ce_l1l_1_b;
-	(* syn_keep = "true" *)  wire vt_ce_l1h_1_b;
+	(* syn_keep = "true" *)  wire vt_proc_data_1_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_b4_hdr_b;
 	(* syn_keep = "true" *)  wire [15:0] vt_b5_hdr_b;
 	(* syn_keep = "true" *)  wire [23:0] vt_l1a_b;
@@ -821,10 +809,7 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	(* syn_keep = "true" *)  wire vt_strt_tmo_c;
 	(* syn_keep = "true" *)  wire vt_strt_tmo_1_c;
-	(* syn_keep = "true" *)  wire vt_ce_b4_1_c;
-	(* syn_keep = "true" *)  wire vt_ce_b5_1_c;
-	(* syn_keep = "true" *)  wire vt_ce_l1l_1_c;
-	(* syn_keep = "true" *)  wire vt_ce_l1h_1_c;
+	(* syn_keep = "true" *)  wire vt_proc_data_1_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_b4_hdr_c;
 	(* syn_keep = "true" *)  wire [15:0] vt_b5_hdr_c;
 	(* syn_keep = "true" *)  wire [23:0] vt_l1a_c;
@@ -1039,10 +1024,7 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	assign  vt_strt_tmo_a     = (strt_tmo_a     & strt_tmo_b)     | (strt_tmo_b     & strt_tmo_c)     | (strt_tmo_a     & strt_tmo_c);      // Majority logic
 	assign  vt_strt_tmo_1_a   = (strt_tmo_1_a   & strt_tmo_1_b)   | (strt_tmo_1_b   & strt_tmo_1_c)   | (strt_tmo_1_a   & strt_tmo_1_c);    // Majority logic
-	assign  vt_ce_b4_1_a		  = (ce_b4_1_a      & ce_b4_1_b)      | (ce_b4_1_b      & ce_b4_1_c)      | (ce_b4_1_a      & ce_b4_1_c);       // Majority logic
-	assign  vt_ce_b5_1_a		  = (ce_b5_1_a      & ce_b5_1_b)      | (ce_b5_1_b      & ce_b5_1_c)      | (ce_b5_1_a      & ce_b5_1_c);       // Majority logic
-	assign  vt_ce_l1l_1_a	  = (ce_l1l_1_a     & ce_l1l_1_b)     | (ce_l1l_1_b     & ce_l1l_1_c)     | (ce_l1l_1_a     & ce_l1l_1_c);      // Majority logic
-	assign  vt_ce_l1h_1_a	  = (ce_l1h_1_a     & ce_l1h_1_b)     | (ce_l1h_1_b     & ce_l1h_1_c)     | (ce_l1h_1_a     & ce_l1h_1_c);      // Majority logic
+	assign  vt_proc_data_1_a  = (proc_data_1_a  & proc_data_1_b)  | (proc_data_1_b  & proc_data_1_c)  | (proc_data_1_a  & proc_data_1_c);   // Majority logic
 	assign  vt_b4_hdr_a		  = (b4_hdr_a       & b4_hdr_b)       | (b4_hdr_b       & b4_hdr_c)       | (b4_hdr_a       & b4_hdr_c);        // Majority logic
 	assign  vt_b5_hdr_a		  = (b5_hdr_a       & b5_hdr_b)       | (b5_hdr_b       & b5_hdr_c)       | (b5_hdr_a       & b5_hdr_c);        // Majority logic
 	assign  vt_l1a_a		 	  = (l1a_a          & l1a_b)          | (l1a_b          & l1a_c)          | (l1a_a          & l1a_c);           // Majority logic
@@ -1129,10 +1111,7 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	assign  vt_strt_tmo_b     = (strt_tmo_a     & strt_tmo_b)     | (strt_tmo_b     & strt_tmo_c)     | (strt_tmo_a     & strt_tmo_c);      // Majority logic
 	assign  vt_strt_tmo_1_b   = (strt_tmo_1_a   & strt_tmo_1_b)   | (strt_tmo_1_b   & strt_tmo_1_c)   | (strt_tmo_1_a   & strt_tmo_1_c);    // Majority logic
-	assign  vt_ce_b4_1_b		  = (ce_b4_1_a      & ce_b4_1_b)      | (ce_b4_1_b      & ce_b4_1_c)      | (ce_b4_1_a      & ce_b4_1_c);       // Majority logic
-	assign  vt_ce_b5_1_b		  = (ce_b5_1_a      & ce_b5_1_b)      | (ce_b5_1_b      & ce_b5_1_c)      | (ce_b5_1_a      & ce_b5_1_c);       // Majority logic
-	assign  vt_ce_l1l_1_b	  = (ce_l1l_1_a     & ce_l1l_1_b)     | (ce_l1l_1_b     & ce_l1l_1_c)     | (ce_l1l_1_a     & ce_l1l_1_c);      // Majority logic
-	assign  vt_ce_l1h_1_b	  = (ce_l1h_1_a     & ce_l1h_1_b)     | (ce_l1h_1_b     & ce_l1h_1_c)     | (ce_l1h_1_a     & ce_l1h_1_c);      // Majority logic
+	assign  vt_proc_data_1_b  = (proc_data_1_a  & proc_data_1_b)  | (proc_data_1_b  & proc_data_1_c)  | (proc_data_1_a  & proc_data_1_c);   // Majority logic
 	assign  vt_b4_hdr_b		  = (b4_hdr_a       & b4_hdr_b)       | (b4_hdr_b       & b4_hdr_c)       | (b4_hdr_a       & b4_hdr_c);        // Majority logic
 	assign  vt_b5_hdr_b		  = (b5_hdr_a       & b5_hdr_b)       | (b5_hdr_b       & b5_hdr_c)       | (b5_hdr_a       & b5_hdr_c);        // Majority logic
 	assign  vt_l1a_b		 	  = (l1a_a          & l1a_b)          | (l1a_b          & l1a_c)          | (l1a_a          & l1a_c);           // Majority logic
@@ -1219,10 +1198,7 @@ begin : control_logic_TMR
 	//Added after L1a Checking
 	assign  vt_strt_tmo_c     = (strt_tmo_a     & strt_tmo_b)     | (strt_tmo_b     & strt_tmo_c)     | (strt_tmo_a     & strt_tmo_c);      // Majority logic
 	assign  vt_strt_tmo_1_c   = (strt_tmo_1_a   & strt_tmo_1_b)   | (strt_tmo_1_b   & strt_tmo_1_c)   | (strt_tmo_1_a   & strt_tmo_1_c);    // Majority logic
-	assign  vt_ce_b4_1_c		  = (ce_b4_1_a      & ce_b4_1_b)      | (ce_b4_1_b      & ce_b4_1_c)      | (ce_b4_1_a      & ce_b4_1_c);       // Majority logic
-	assign  vt_ce_b5_1_c		  = (ce_b5_1_a      & ce_b5_1_b)      | (ce_b5_1_b      & ce_b5_1_c)      | (ce_b5_1_a      & ce_b5_1_c);       // Majority logic
-	assign  vt_ce_l1l_1_c	  = (ce_l1l_1_a     & ce_l1l_1_b)     | (ce_l1l_1_b     & ce_l1l_1_c)     | (ce_l1l_1_a     & ce_l1l_1_c);      // Majority logic
-	assign  vt_ce_l1h_1_c	  = (ce_l1h_1_a     & ce_l1h_1_b)     | (ce_l1h_1_b     & ce_l1h_1_c)     | (ce_l1h_1_a     & ce_l1h_1_c);      // Majority logic
+	assign  vt_proc_data_1_c  = (proc_data_1_a  & proc_data_1_b)  | (proc_data_1_b  & proc_data_1_c)  | (proc_data_1_a  & proc_data_1_c);   // Majority logic
 	assign  vt_b4_hdr_c		  = (b4_hdr_a       & b4_hdr_b)       | (b4_hdr_b       & b4_hdr_c)       | (b4_hdr_a       & b4_hdr_c);        // Majority logic
 	assign  vt_b5_hdr_c		  = (b5_hdr_a       & b5_hdr_b)       | (b5_hdr_b       & b5_hdr_c)       | (b5_hdr_a       & b5_hdr_c);        // Majority logic
 	assign  vt_l1a_c		 	  = (l1a_a          & l1a_b)          | (l1a_b          & l1a_c)          | (l1a_a          & l1a_c);           // Majority logic
@@ -2154,15 +2130,15 @@ begin : control_logic_TMR
 //
 ////////////////////////////////////////////////////////////////////////////
 
-	always @(negedge CLKDDU or negedge inprog) //Negative edge
+	always @(negedge CLKDDU or posedge act_chk) //Negative edge
 	begin
-		if(!inprog)
+		if(act_chk)
 			begin
 				new_tora_a <= 1'b0; //new TMB or ALCT
 				new_cfeb_a <= 1'b0;
 			end
 		else
-			if(data_ce && !noend_error)
+			if(data_ce && !noend_error && proc_data_2_a)
 				begin
 					new_tora_a  <= (DATAIN[15:0] == 16'hdb0c) || (DATAIN[15:0] == 16'hdb0a); //tmb or alct beginning of data header
 					new_cfeb_a  <= (DATAIN[15:0] == 16'hc4b4); //cfeb beginning of data present
@@ -2182,15 +2158,15 @@ begin : control_logic_TMR
 				end
 	end
 
-	always @(negedge CLKDDU or negedge inprog) //Negative edge
+	always @(negedge CLKDDU or posedge act_chk) //Negative edge
 	begin
-		if(!inprog)
+		if(act_chk)
 			begin
 				new_tora_b <= 1'b0; //new TMB or ALCT
 				new_cfeb_b <= 1'b0;
 			end
 		else
-			if(data_ce && !noend_error)
+			if(data_ce && !noend_error && proc_data_2_b)
 				begin
 					new_tora_b  <= (DATAIN[15:0] == 16'hdb0c) || (DATAIN[15:0] == 16'hdb0a); //tmb or alct beginning of data header
 					new_cfeb_b  <= (DATAIN[15:0] == 16'hc4b4); //cfeb beginning of data present
@@ -2210,15 +2186,15 @@ begin : control_logic_TMR
 				end
 	end
 
-	always @(negedge CLKDDU or negedge inprog) //Negative edge
+	always @(negedge CLKDDU or posedge act_chk) //Negative edge
 	begin
-		if(!inprog)
+		if(act_chk)
 			begin
 				new_tora_c <= 1'b0; //new TMB or ALCT
 				new_cfeb_c <= 1'b0;
 			end
 		else
-			if(data_ce && !noend_error)
+			if(data_ce && !noend_error && proc_data_2_c)
 				begin
 					new_tora_c  <= (DATAIN[15:0] == 16'hdb0c) || (DATAIN[15:0] == 16'hdb0a); //tmb or alct beginning of data header
 					new_cfeb_c  <= (DATAIN[15:0] == 16'hc4b4); //cfeb beginning of data present
@@ -3249,30 +3225,24 @@ begin : control_logic_TMR
 
 	always @(posedge CLKDDU)
 	begin
-	   ce_b4_1_a  <= ce_b4;
-	   ce_l1l_1_a <= ce_l1l;
-	   ce_l1h_1_a <= ce_l1h;
-	   ce_b5_1_a  <= ce_b5;
+		proc_data_1_a <= proc_data;
+		proc_data_2_a <= vt_proc_data_1_a;
 		if(ce_b4)   b4_hdr_a  <= da_in;
 		if(ce_b5)   b5_hdr_a  <= da_in;
 	end
 	
 	always @(posedge CLKDDU)
 	begin
-	   ce_b4_1_b  <= ce_b4;
-	   ce_l1l_1_b <= ce_l1l;
-	   ce_l1h_1_b <= ce_l1h;
-	   ce_b5_1_b  <= ce_b5;
+		proc_data_1_b <= proc_data;
+		proc_data_2_b <= vt_proc_data_1_b;
 		if(ce_b4)   b4_hdr_b  <= da_in;
 		if(ce_b5)   b5_hdr_b  <= da_in;
 	end
 
 	always @(posedge CLKDDU)
 	begin
-	   ce_b4_1_c  <= ce_b4;
-	   ce_l1l_1_c <= ce_l1l;
-	   ce_l1h_1_c <= ce_l1h;
-	   ce_b5_1_c  <= ce_b5;
+		proc_data_1_c <= proc_data;
+		proc_data_2_c <= vt_proc_data_1_c;
 		if(ce_b4)   b4_hdr_c  <= da_in;
 		if(ce_b5)   b5_hdr_c  <= da_in;
 	end
@@ -3486,10 +3456,8 @@ begin : control_logic_no_TMR
 	//Added after L1a Checking
 	reg  strt_tmo_r;
 	reg  strt_tmo_1_r;
-	reg  ce_b4_1_r;
-	reg  ce_b5_1_r;
-	reg  ce_l1l_1_r;
-	reg  ce_l1h_1_r;
+	reg  proc_data_1_r;
+	reg  proc_data_2_r;
 	reg  [15:0] b4_hdr_r;
 	reg  [15:0] b5_hdr_r;
 	reg  [23:0] l1a_r;
@@ -3785,15 +3753,15 @@ begin : control_logic_no_TMR
 // 80 MHz clock domain registers
 //
 ////////////////////////////////////////////////////////////////////////////
-	always @(negedge CLKDDU or negedge inprog) //Negative edge
+	always @(negedge CLKDDU or posedge act_chk) //Negative edge
 	begin
-		if(!inprog)
+		if(act_chk)
 			begin
 				new_tora_r <= 1'b0; //new TMB or ALCT
 				new_cfeb_r <= 1'b0;
 			end
 		else
-			if(data_ce && !noend_error)
+			if(data_ce && !noend_error && proc_data_2_r)
 				begin
 					new_tora_r  <= (DATAIN[15:0] == 16'hdb0c) || (DATAIN[15:0] == 16'hdb0a); //tmb or alct beginning of data header
 					new_cfeb_r  <= (DATAIN[15:0] == 16'hc4b4); //cfeb beginning of data present
@@ -4159,10 +4127,8 @@ begin : control_logic_no_TMR
 
 	always @(posedge CLKDDU)
 	begin
-	   ce_b4_1_r  <= ce_b4;
-	   ce_l1l_1_r <= ce_l1l;
-	   ce_l1h_1_r <= ce_l1h;
-	   ce_b5_1_r  <= ce_b5;
+		proc_data_1_r <= proc_data;
+		proc_data_2_r <= proc_data_1_r;
 		if(ce_b4)   b4_hdr_r  <= da_in;
 		if(ce_b5)   b5_hdr_r  <= da_in;
 	end
