@@ -2304,9 +2304,9 @@ begin : control_logic_TMR
 		end
 	
 		tmb_in_1_c   <= (prio_act_c[6] && data_ce) ? da_in : vt_tmb_in_1_c;
-		tmb_in_2_c   <= (prio_act_c[6] && data_ce) ? vt_tmb_in_1_b   : vt_tmb_in_2_c;
+		tmb_in_2_c   <= (prio_act_c[6] && data_ce) ? vt_tmb_in_1_c   : vt_tmb_in_2_c;
 		alct_in_1_c  <= (prio_act_c[7] && data_ce) ? da_in : vt_alct_in_1_c;	
-		alct_in_2_c  <= (prio_act_c[7] && data_ce) ? vt_alct_in_1_b  : vt_alct_in_2_c;
+		alct_in_2_c  <= (prio_act_c[7] && data_ce) ? vt_alct_in_1_c  : vt_alct_in_2_c;
 	end
 
 	always @ (posedge CLKDDU)
