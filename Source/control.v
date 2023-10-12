@@ -1067,7 +1067,6 @@ begin : control_logic_TMR
 	assign  vt_tail_b        = (tail_a        & tail_b)        | (tail_b        & tail_c)        | (tail_a        & tail_c);      // Majority logic
 	assign  vt_tail8_1_b     = (tail8_1_a     & tail8_1_b)     | (tail8_1_b     & tail8_1_c)     | (tail8_1_a     & tail8_1_c);      // Majority logic
 	assign  vt_dav_b         = (dav_a         & dav_b)         | (dav_b         & dav_c)         | (dav_a         & dav_c);      // Majority logic
-	assign  vt_dav_1_b       = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);      // Majority logic
 	assign  vt_rdyovlp_b     = (rdyovlp_a     & rdyovlp_b)     | (rdyovlp_b     & rdyovlp_c)     | (rdyovlp_a     & rdyovlp_c);      // Majority logic
 	assign  vt_oeall_1_b     = (oeall_1_a     & oeall_1_b)     | (oeall_1_b     & oeall_1_c)     | (oeall_1_a     & oeall_1_c);      // Majority logic
 	assign  vt_oeall_2_b     = (oeall_2_a     & oeall_2_b)     | (oeall_2_b     & oeall_2_c)     | (oeall_2_a     & oeall_2_c);      // Majority logic
@@ -1155,7 +1154,6 @@ begin : control_logic_TMR
 	assign  vt_tail_c        = (tail_a        & tail_b)        | (tail_b        & tail_c)        | (tail_a        & tail_c);      // Majority logic
 	assign  vt_tail8_1_c     = (tail8_1_a     & tail8_1_b)     | (tail8_1_b     & tail8_1_c)     | (tail8_1_a     & tail8_1_c);      // Majority logic
 	assign  vt_dav_c         = (dav_a         & dav_b)         | (dav_b         & dav_c)         | (dav_a         & dav_c);      // Majority logic
-	assign  vt_dav_1_c       = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);      // Majority logic
 	assign  vt_rdyovlp_c     = (rdyovlp_a     & rdyovlp_b)     | (rdyovlp_b     & rdyovlp_c)     | (rdyovlp_a     & rdyovlp_c);      // Majority logic
 	assign  vt_oeall_1_c     = (oeall_1_a     & oeall_1_b)     | (oeall_1_b     & oeall_1_c)     | (oeall_1_a     & oeall_1_c);      // Majority logic
 	assign  vt_oeall_2_c     = (oeall_2_a     & oeall_2_b)     | (oeall_2_b     & oeall_2_c)     | (oeall_2_a     & oeall_2_c);      // Majority logic
@@ -2415,7 +2413,7 @@ begin : control_logic_TMR
 				tail_a   <= {vt_tail_a[7:1],st_tail};
 				tail8_1_a <= vt_tail_a[8];
 				dav_a     <= ~vt_disdav_a & (vt_oehdtl_a | vt_oedata_a);
-				dav_1_a   <= dav_a;
+				dav_1_a   <= vt_dav_a;
 				crcen_a   <= crcen_m1_a;
 				rdyovlp_a <= dodat;
 				if(done_ce_a || clr_done) dn_oe_a   <= oe_a;
@@ -2464,7 +2462,7 @@ begin : control_logic_TMR
 				tail_b   <= {vt_tail_b[7:1],st_tail};
 				tail8_1_b <= vt_tail_b[8];
 				dav_b     <= ~vt_disdav_b & (vt_oehdtl_b | vt_oedata_b);
-				dav_1_b   <= dav_b;
+				dav_1_b   <= vt_dav_b;
 				crcen_b   <= crcen_m1_b;
 				rdyovlp_b <= dodat;
 				if(done_ce_b || clr_done) dn_oe_b   <= oe_b;
@@ -2513,7 +2511,7 @@ begin : control_logic_TMR
 				tail_c   <= {vt_tail_c[7:1],st_tail};
 				tail8_1_c <= vt_tail_c[8];
 				dav_c     <= ~vt_disdav_c & (vt_oehdtl_c | vt_oedata_c);
-				dav_1_c   <= dav_c;
+				dav_1_c   <= vt_dav_c;
 				crcen_c   <= crcen_m1_c;
 				rdyovlp_c <= dodat;
 				if(done_ce_c || clr_done) dn_oe_c   <= oe_c;
