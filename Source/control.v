@@ -1005,7 +1005,7 @@ begin : control_logic_TMR
 	assign  vt_disdav_a      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
 	assign  vt_rdffnxt_1_a   = (rdffnxt_1_a   & rdffnxt_1_b)   | (rdffnxt_1_b   & rdffnxt_1_c)   | (rdffnxt_1_a   & rdffnxt_1_c);      // Majority logic
 	assign  vt_rdffnxt_2_a   = (rdffnxt_2_a   & rdffnxt_2_b)   | (rdffnxt_2_b   & rdffnxt_2_c)   | (rdffnxt_2_a   & rdffnxt_2_c);      // Majority logic
-	assign  vt_rdffnxt_3_a   = (rdffnxt_1_a   & rdffnxt_3_b)   | (rdffnxt_3_b   & rdffnxt_3_c)   | (rdffnxt_3_a   & rdffnxt_3_c);      // Majority logic
+	assign  vt_rdffnxt_3_a   = (rdffnxt_3_a   & rdffnxt_3_b)   | (rdffnxt_3_b   & rdffnxt_3_c)   | (rdffnxt_3_a   & rdffnxt_3_c);      // Majority logic
 	assign  vt_rdoneovlp_a   = (rdoneovlp_a   & rdoneovlp_b)   | (rdoneovlp_b   & rdoneovlp_c)   | (rdoneovlp_a   & rdoneovlp_c);      // Majority logic
 	assign  vt_dint_ovlp_b_a = (dint_ovlp_b_a & dint_ovlp_b_b) | (dint_ovlp_b_b & dint_ovlp_b_c) | (dint_ovlp_b_a & dint_ovlp_b_c); // Majority logic
 	assign  vt_dtail7_a      = (dtail7_a      & dtail7_b)      | (dtail7_b      & dtail7_c)      | (dtail7_a      & dtail7_c);      // Majority logic
@@ -1092,7 +1092,7 @@ begin : control_logic_TMR
 	assign  vt_disdav_b      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
 	assign  vt_rdffnxt_1_b   = (rdffnxt_1_a   & rdffnxt_1_b)   | (rdffnxt_1_b   & rdffnxt_1_c)   | (rdffnxt_1_a   & rdffnxt_1_c);      // Majority logic
 	assign  vt_rdffnxt_2_b   = (rdffnxt_2_a   & rdffnxt_2_b)   | (rdffnxt_2_b   & rdffnxt_2_c)   | (rdffnxt_2_a   & rdffnxt_2_c);      // Majority logic
-	assign  vt_rdffnxt_3_b   = (rdffnxt_1_a   & rdffnxt_3_b)   | (rdffnxt_3_b   & rdffnxt_3_c)   | (rdffnxt_3_a   & rdffnxt_3_c);      // Majority logic
+	assign  vt_rdffnxt_3_b   = (rdffnxt_3_a   & rdffnxt_3_b)   | (rdffnxt_3_b   & rdffnxt_3_c)   | (rdffnxt_3_a   & rdffnxt_3_c);      // Majority logic
 	assign  vt_rdoneovlp_b   = (rdoneovlp_a   & rdoneovlp_b)   | (rdoneovlp_b   & rdoneovlp_c)   | (rdoneovlp_a   & rdoneovlp_c);      // Majority logic
 	assign  vt_dint_ovlp_b_b = (dint_ovlp_b_a & dint_ovlp_b_b) | (dint_ovlp_b_b & dint_ovlp_b_c) | (dint_ovlp_b_a & dint_ovlp_b_c); // Majority logic
 	assign  vt_dtail7_b      = (dtail7_a      & dtail7_b)      | (dtail7_b      & dtail7_c)      | (dtail7_a      & dtail7_c);      // Majority logic
@@ -1179,7 +1179,7 @@ begin : control_logic_TMR
 	assign  vt_disdav_c      = (disdav_a      & disdav_b)      | (disdav_b      & disdav_c)      | (disdav_a      & disdav_c);      // Majority logic
 	assign  vt_rdffnxt_1_c    = (rdffnxt_1_a   & rdffnxt_1_b)   | (rdffnxt_1_b   & rdffnxt_1_c)   | (rdffnxt_1_a   & rdffnxt_1_c);      // Majority logic
 	assign  vt_rdffnxt_2_c    = (rdffnxt_2_a   & rdffnxt_2_b)   | (rdffnxt_2_b   & rdffnxt_2_c)   | (rdffnxt_2_a   & rdffnxt_2_c);      // Majority logic
-	assign  vt_rdffnxt_3_c    = (rdffnxt_1_a   & rdffnxt_3_b)   | (rdffnxt_3_b   & rdffnxt_3_c)   | (rdffnxt_3_a   & rdffnxt_3_c);      // Majority logic
+	assign  vt_rdffnxt_3_c    = (rdffnxt_3_a   & rdffnxt_3_b)   | (rdffnxt_3_b   & rdffnxt_3_c)   | (rdffnxt_3_a   & rdffnxt_3_c);      // Majority logic
 	assign  vt_rdoneovlp_c   = (rdoneovlp_a   & rdoneovlp_b)   | (rdoneovlp_b   & rdoneovlp_c)   | (rdoneovlp_a   & rdoneovlp_c);      // Majority logic
 	assign  vt_dint_ovlp_b_c = (dint_ovlp_b_a & dint_ovlp_b_b) | (dint_ovlp_b_b & dint_ovlp_b_c) | (dint_ovlp_b_a & dint_ovlp_b_c); // Majority logic
 	assign  vt_dtail7_c      = (dtail7_a      & dtail7_b)      | (dtail7_b      & dtail7_c)      | (dtail7_a      & dtail7_c);      // Majority logic
