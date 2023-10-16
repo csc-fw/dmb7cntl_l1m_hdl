@@ -979,7 +979,6 @@ begin : control_logic_TMR
 	assign  vt_tail_a        = (tail_a        & tail_b)        | (tail_b        & tail_c)        | (tail_a        & tail_c);      // Majority logic
 	assign  vt_tail8_1_a     = (tail8_1_a     & tail8_1_b)     | (tail8_1_b     & tail8_1_c)     | (tail8_1_a     & tail8_1_c);      // Majority logic
 	assign  vt_dav_a         = (dav_a         & dav_b)         | (dav_b         & dav_c)         | (dav_a         & dav_c);      // Majority logic
-	assign  vt_dav_1_a       = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);      // Majority logic
 	assign  vt_rdyovlp_a     = (rdyovlp_a     & rdyovlp_b)     | (rdyovlp_b     & rdyovlp_c)     | (rdyovlp_a     & rdyovlp_c);      // Majority logic
 	assign  vt_oeall_1_a     = (oeall_1_a     & oeall_1_b)     | (oeall_1_b     & oeall_1_c)     | (oeall_1_a     & oeall_1_c);      // Majority logic
 	assign  vt_oeall_2_a     = (oeall_2_a     & oeall_2_b)     | (oeall_2_b     & oeall_2_c)     | (oeall_2_a     & oeall_2_c);      // Majority logic
@@ -1513,6 +1512,7 @@ begin : control_logic_TMR
 	assign  vt_jref        = (jref_a        & jref_b)        | (jref_b        & jref_c)        | (jref_a        & jref_c);        // Majority logic
 	assign  vt_rstlast     = (rstlast_a     & rstlast_b)     | (rstlast_b     & rstlast_c)     | (rstlast_a     & rstlast_c);     // Majority logic
 	assign  vt_dout        = (dout_a        & dout_b)        | (dout_b        & dout_c)        | (dout_a        & dout_c);        // Majority logic
+	assign  vt_dav_1_a     = (dav_1_a       & dav_1_b)       | (dav_1_b       & dav_1_c)       | (dav_1_a       & dav_1_c);       // Majority logic
 	assign  vt_crcen_a     = (crcen_a       & crcen_b)       | (crcen_b       & crcen_c)       | (crcen_a       & crcen_c);       // Majority logic
 
 //	assign  vt_data_hldoff = data_hldoff_a;
