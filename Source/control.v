@@ -176,7 +176,7 @@ initial begin
 	prefflast = 1'b0;
 end		
 
-  
+
 generate
 if(TMR==1) 
 begin : control_last_TMR
@@ -189,6 +189,7 @@ begin : control_last_no_TMR
 end
 endgenerate
 
+//assign preovlast = 1'b0; // Temporary for MEx/1 OOS
 //
 // Data inputs
 //
@@ -600,7 +601,6 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [8:1] vt_tail_a;
 	(* syn_keep = "true" *)  wire vt_tail8_1_a;
 	(* syn_keep = "true" *)  wire vt_dav_a;
-	(* syn_keep = "true" *)  wire vt_dav_1_a;
 	(* syn_keep = "true" *)  wire vt_rdyovlp_a;	
 	(* syn_keep = "true" *)  wire vt_oeall_1_a;
 	(* syn_keep = "true" *)  wire vt_oeall_2_a;
@@ -1495,6 +1495,7 @@ begin : control_logic_TMR
 	(* syn_keep = "true" *)  wire [7:1] vt_jref;
 	(* syn_keep = "true" *)  wire vt_rstlast;
 	(* syn_keep = "true" *)  wire [15:0] vt_dout;
+	(* syn_keep = "true" *)  wire vt_dav_1_a;
 	(* syn_keep = "true" *)  wire vt_crcen_a;
 
 
