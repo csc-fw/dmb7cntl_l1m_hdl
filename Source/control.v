@@ -176,7 +176,7 @@ initial begin
 	prefflast = 1'b0;
 end		
 
-
+  
 generate
 if(TMR==1) 
 begin : control_last_TMR
@@ -189,7 +189,6 @@ begin : control_last_no_TMR
 end
 endgenerate
 
-//assign preovlast = 1'b0; // Temporary for MEx/1 OOS
 //
 // Data inputs
 //
@@ -1969,6 +1968,49 @@ begin : control_logic_TMR
 		else
 			prio_act_c = 7'b0000000;
 	end
+
+//	always @*
+//	begin
+//		if(dodat || dochk || act_chk || do_err)
+//			casex(vt_r_act_a)
+//				7'b1xxxxxx : prio_act_a = 7'b1000000; // ALCT
+//				7'b01xxxxx : prio_act_a = 7'b0100000; // TMB
+//				7'b00xxxx1 : prio_act_a = 7'b0000001; // CFEB 1
+//				7'b00x1xx0 : prio_act_a = 7'b0001000; // CFEB 4
+//				7'b00x01x0 : prio_act_a = 7'b0000100; // CFEB 3
+//				7'b00x0010 : prio_act_a = 7'b0000010; // CFEB 2
+//				7'b0010000 : prio_act_a = 7'b0010000; // CFEB 5
+//				default    : prio_act_a = 7'b0000000;
+//			endcase
+//		else
+//			prio_act_a = 7'b0000000;
+//		if(dodat || dochk || act_chk || do_err)
+//			casex(vt_r_act_b)
+//				7'b1xxxxxx : prio_act_b = 7'b1000000; // ALCT
+//				7'b01xxxxx : prio_act_b = 7'b0100000; // TMB
+//				7'b00xxxx1 : prio_act_b = 7'b0000001; // CFEB 1
+//				7'b00x1xx0 : prio_act_b = 7'b0001000; // CFEB 4
+//				7'b00x01x0 : prio_act_b = 7'b0000100; // CFEB 3
+//				7'b00x0010 : prio_act_b = 7'b0000010; // CFEB 2
+//				7'b0010000 : prio_act_b = 7'b0010000; // CFEB 5
+//				default    : prio_act_b = 7'b0000000;
+//			endcase
+//		else
+//			prio_act_b = 7'b0000000;
+//		if(dodat || dochk || act_chk || do_err)
+//			casex(vt_r_act_c)
+//				7'b1xxxxxx : prio_act_c = 7'b1000000; // ALCT
+//				7'b01xxxxx : prio_act_c = 7'b0100000; // TMB
+//				7'b00xxxx1 : prio_act_c = 7'b0000001; // CFEB 1
+//				7'b00x1xx0 : prio_act_c = 7'b0001000; // CFEB 4
+//				7'b00x01x0 : prio_act_c = 7'b0000100; // CFEB 3
+//				7'b00x0010 : prio_act_c = 7'b0000010; // CFEB 2
+//				7'b0010000 : prio_act_c = 7'b0010000; // CFEB 5
+//				default    : prio_act_c = 7'b0000000;
+//			endcase
+//		else
+//			prio_act_c = 7'b0000000;
+//	end
 
 	always @(posedge CLKDDU)
 	begin
